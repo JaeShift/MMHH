@@ -99,15 +99,6 @@ export default function AboutSection() {
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <motion.button
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Your Consultation
-              </motion.button>
-            </motion.div>
           </div>
 
           <div className="space-y-8">

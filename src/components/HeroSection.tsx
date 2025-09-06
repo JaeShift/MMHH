@@ -1,177 +1,73 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ArrowDown, Sparkles, Heart, Brain } from 'lucide-react'
-
-const HeroSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const,
-      },
-    },
-  }
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut" as const,
-      },
-    },
-  }
-
+// Calming, editorial hero aligned to the provided reference
+export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50" aria-label="Welcome to Modern Mental Health and Hormones">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 w-32 h-32 bg-primary-200/30 rounded-full blur-3xl"
-          variants={floatingVariants}
-          animate="animate"
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-secondary-200/30 rounded-full blur-3xl"
-          variants={floatingVariants}
-          animate="animate"
-          transition={{ delay: 1 }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-sage-200/20 rounded-full blur-3xl"
-          variants={floatingVariants}
-          animate="animate"
-          transition={{ delay: 2 }}
-        />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-8"
-        >
-          {/* Badge */}
-          <motion.div variants={itemVariants}>
-            <motion.div
-              className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-primary-200 rounded-full px-4 py-2 text-sm font-medium text-primary-700"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+    <section id="home" className="relative bg-cream section-texture">
+      <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        {/* Left copy */}
+        <div>
+          {/* Brand */}
+          <div className="mb-8 flex items-center gap-3">
+            <span
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(110,139,116,.18), rgba(201,149,58,.18))",
+              }}
             >
-              <Sparkles className="w-4 h-4" />
-              <span>Professional Healthcare Excellence</span>
-            </motion.div>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-              <span className="block">Modern Mental Health</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-                & Hormones
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive women's healthcare focused on mental wellness and hormonal balance.
-              <span className="block mt-2 text-lg text-gray-500">
-                Expert care by Stephanie Nichols, MSN, APRN-CNP, FNP-BC, PMHNP-BC
-              </span>
+              {/* simple cross/leaf mark */}
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden>
+                <path d="M11 3h2v18h-2z" fill="currentColor" opacity=".8" />
+                <path d="M3 11h18v2H3z" fill="currentColor" opacity=".8" />
+                <path d="M17 7c1.5 0 3 1.2 3 3-1.5 0-3-1.2-3-3Z" fill="#6e8b74" />
+                <path d="M7 17c-1.5 0-3-1.2-3-3 1.5 0 3 1.2 3 3Z" fill="#6e8b74" />
+              </svg>
+            </span>
+            <p className="font-sans-body text-sm text-sage-600">
+              Modern Mental Health and Hormones
             </p>
-          </motion.div>
+          </div>
 
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Schedule Consultation
-            </motion.button>
-            <motion.button
-              className="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-50 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
+          <h1 className="font-serif-display display-hero text-forest">
+            Compassionate Care,
+            <br className="hidden sm:block" /> Right From Home
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-charcoal">
+            Modern Mental Health and Hormones provides telehealth services focused on
+            women’s mental wellness and mid‑life hormone health, led by Nurse
+            Practitioner Stephanie Nichols.
+          </p>
 
-          {/* Features */}
-          <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
-            <motion.div
-              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="bg-primary-100 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mental Wellness</h3>
-              <p className="text-gray-600 text-sm">Comprehensive mental health support tailored for women</p>
-            </motion.div>
+          <div className="mt-8">
+            <a href="#contact" className="btn-pill">
+              Book a Telehealth Appointment
+            </a>
+          </div>
+        </div>
 
-            <motion.div
-              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="bg-secondary-100 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-secondary-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hormone Balance</h3>
-              <p className="text-gray-600 text-sm">Expert hormone therapy and optimization</p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="bg-sage-100 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-6 h-6 text-sage-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Holistic Care</h3>
-              <p className="text-gray-600 text-sm">Integrative approach to women's health and wellness</p>
-            </motion.div>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-16"
-          >
-            <motion.div
-              className="inline-flex flex-col items-center space-y-2 cursor-pointer"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <span className="text-sm text-gray-500">Scroll to learn more</span>
-              <ArrowDown className="w-5 h-5 text-gray-400" />
-            </motion.div>
-          </motion.div>
-        </motion.div>
+        {/* Right-side portrait placeholder with soft shapes */}
+        <div className="relative">
+          <div
+            className="absolute -top-8 -left-8 w-40 h-40 rounded-full"
+            style={{
+              background: "radial-gradient(closest-side, rgba(201,149,58,.18), transparent)",
+            }}
+          />
+          <div
+            className="absolute -bottom-10 -right-6 w-52 h-52 rounded-full"
+            style={{
+              background: "radial-gradient(closest-side, rgba(110,139,116,.18), transparent)",
+            }}
+          />
+          <div className="relative rounded-3xl overflow-hidden ring-1 ring-sage-200 bg-white/70">
+            <div className="aspect-[4/5] w-full flex items-center justify-center bg-[linear-gradient(135deg,_#f3eee4,_#efe7d8)]">
+              <span className="text-sage-600 font-medium">Your Portrait Here</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default HeroSection

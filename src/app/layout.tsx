@@ -1,31 +1,19 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import "./globals.css";
+import type { Metadata } from "next";
+import { DM_Serif_Display, Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const serif = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: 'Modern Mental Health and Hormones | Stephanie Nichols',
-  description: 'Professional healthcare practice specializing in women\'s mental health and hormone therapy. Expert care for your mental wellness journey.',
-  keywords: 'mental health, hormones, women\'s health, therapy, healthcare, Stephanie Nichols',
-  authors: [{ name: 'Stephanie Nichols' }],
-  openGraph: {
-    title: 'Modern Mental Health and Hormones',
-    description: 'Professional healthcare practice specializing in women\'s mental health and hormone therapy.',
-    type: 'website',
-  },
-}
+  title: "Modern Mental Health and Hormones",
+  description: "Telehealth for women’s mental wellness & mid-life hormone health by NP Stephanie Nichols.",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
-      </body>
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+      <body className="bg-cream text-charcoal antialiased">{children}</body>
     </html>
-  )
+  );
 }
