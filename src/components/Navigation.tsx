@@ -21,7 +21,7 @@ const Navigation = () => {
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About Stephanie' },
     { href: '#services', label: 'Services' },
-    { href: '#approach', label: 'Our Approach' },
+    { href: '#approach', label: 'My Approach' },
     { href: '#contact', label: 'Contact' },
   ]
 
