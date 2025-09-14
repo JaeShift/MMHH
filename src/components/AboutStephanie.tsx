@@ -21,7 +21,7 @@ export default function AboutStephanie() {
                 Specialized Care for Women
               </h2>
               <p className="text-slate-700 text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8">
-                We specialize in comprehensive mental health and hormone care for women navigating life's transitions. Our practice combines evidence-based medicine with personalized, compassionate care.
+                We specialize in comprehensive mental health and hormone care for women navigating life&apos;s transitions. Our practice combines evidence-based medicine with personalized, compassionate care.
               </p>
               <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
                 From stress and sleep challenges to hormonal changes and mood concerns, we provide stigma-free support tailored to your unique needs and goals.
@@ -84,7 +84,7 @@ export default function AboutStephanie() {
               <div className="prose prose-slate max-w-none text-center">
                 <p>
                   With 30+ years in healthcare, Stephanie has supported patients through every stage of life—from bedside
-                  care to clinical leadership. After a decade at Nationwide Children's Hospital and years in internal
+                  care to clinical leadership. After a decade at Nationwide Children&apos;s Hospital and years in internal
                   medicine, she founded Modern Mental Health & Hormones to offer compassionate, stigma‑free care tailored
                   to women navigating stress, sleep issues, and hormonal change.
                 </p>
