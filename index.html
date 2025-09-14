@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Mental Health & Hormones | Columbus, OH</title>
+  <meta name="description" content="Personalized care for mid-life women's mental health and hormones in Columbus, Ohio. Book with Nurse Practitioner Stephanie Nichols." />
+  <style>
+    :root{
+      --brand-1:#5D3A5A;  /* plum: primary */
+      --brand-2:#8BA89C;  /* sage */
+      --surface:#F5F7F6;  /* background */
+      --neutral-1:#2E2E2E;/* text */
+      --accent:#D9C9B5;   /* secondary */
+      --muted:#E7ECEA;    /* subtle tints */
+      --white:#ffffff;
+      --focus:#1F2326;
+      --radius-lg:16px;
+      --radius-sm:10px;
+      --shadow:0 8px 30px rgba(0,0,0,.08);
+      --maxw:1100px;
+    }
+    /* Switch to Palette B by adding class="theme-b" on <body> */
+    body.theme-b{
+      --brand-1:#2F7D82;
+      --brand-2:#D88A9A;
+      --surface:#F8F6F2;
+      --neutral-1:#1F2326;
+      --accent:#EAF0EF;
+      --muted:#EFF3F2;
+    }
+    html,body{margin:0;padding:0;background:var(--surface);color:var(--neutral-1);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;}
+    h1,h2,h3{font-family:"DM Serif Display", Georgia, serif;line-height:1.2;margin:0 0 .5rem}
+    a{color:var(--brand-1);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .btn{display:inline-block;border:none;border-radius:999px;padding:12px 18px;font-weight:600;cursor:pointer;text-align:center}
+    .btn-primary{background:var(--brand-1);color:var(--white)}
+    .btn-primary:hover{opacity:.95}
+    .btn-secondary{background:var(--accent);color:var(--neutral-1)}
+    .badge{display:inline-block;background:var(--brand-2);color:#082019;padding:6px 10px;border-radius:999px;font-size:.85rem}
+    .shadow{box-shadow:var(--shadow)}
+    .card{background:var(--white);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+    /* Header */
+    .announce{background:var(--brand-2);color:#09221c;font-weight:600;text-align:center;padding:8px 12px;font-size:.95rem}
+    header{position:sticky;top:0;background:var(--surface);backdrop-filter:saturate(180%) blur(6px);z-index:10;border-bottom:1px solid rgba(0,0,0,.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:800}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600}
+    /* Hero */
+    .hero{padding:56px 0}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .hero img{width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+    .hero h1{font-size:2.4rem}
+    .hero p{font-size:1.1rem;margin:.5rem 0 1.5rem}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .note{margin-top:.5rem;font-size:.95rem;color:#334}
+    /* Trust band */
+    .trust{padding:28px 0}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .trust-item{background:var(--accent);border-radius:var(--radius-sm);padding:12px 14px;font-weight:600}
+    /* Sections */
+    section{padding:56px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card h3{margin-bottom:.4rem}
+    .service-card p{margin:0 0 .6rem}
+    /* About */
+    .about-photo{width:100%;max-width:380px;border-radius:999px;border:10px solid var(--accent);box-shadow:var(--shadow)}
+    /* FAQ */
+    details{background:var(--white);border-radius:var(--radius-lg);padding:14px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
+    summary{font-weight:700;cursor:pointer}
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #cfd8d5;background:#fff;font-size:1rem}
+    input:focus,textarea:focus,button:focus,a:focus{outline:3px solid var(--brand-2);outline-offset:2px}
+    footer{padding:36px 0;margin-top:24px;border-top:1px solid rgba(0,0,0,.06);font-size:.95rem}
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns:1fr;gap:20px}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .trust-grid{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .about-photo{max-width:280px}
+    }
+    @media (max-width: 540px){
+      .services-grid{grid-template-columns:1fr}
+      .hero h1{font-size:2rem}
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="announce">Now accepting patients starting mid‑November.</div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MM</div>
+        <strong>Modern Mental Health & Hormones</strong>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#hormone-mood">Hormone & Mood</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a class="btn btn-primary" id="bookBtn" href="#contact">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <img src="stephanie-headshot.jpg" alt="Stephanie Nichols, CNP — Nurse Practitioner in Columbus, Ohio, Founder of Modern Mental Health & Hormones" />
+      <div>
+        <span class="badge">Columbus, Ohio</span>
+        <h1>Mid‑Life Care for Your Mind & Hormones</h1>
+        <p>Personalized, evidence‑based support for women navigating stress, mood changes, sleep shifts, and perimenopause.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Book an Appointment</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
+        </div>
+        <div class="note">Now accepting patients starting mid‑November.</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="trust">
+    <div class="container trust-grid">
+      <div class="trust-item">Evidence‑based & personalized</div>
+      <div class="trust-item">One provider, consistent follow‑up</div>
+      <div class="trust-item">Virtual & in‑office options</div>
+    </div>
+  </div>
+
+  <section id="intro">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Care designed for women in their 40s and 50s</h2>
+        <p>Modern Mental Health & Hormones (MMHH) is a calm, clinical space led by nurse practitioner <strong>Stephanie Nichols, CNP</strong>. We blend mental health care and hormone evaluation so your plan makes sense for your life. Whether you're dealing with mood changes, brain fog, stress, or sleep disruption, you'll work one‑on‑one with a single provider who listens, explains, and follows up—so you always know the next step.</p>
+      </div>
+      <div class="card">
+        <h2>What makes MMHH different</h2>
+        <ul>
+          <li>Whole‑person approach: mind, body, hormones, lifestyle</li>
+          <li>Clear plans with practical steps</li>
+          <li>"Start low, go slow" when using medications</li>
+          <li>Lab‑informed decisions when indicated</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="card service-card">
+          <h3>Mid‑Life Hormone Consultation (60 min)</h3>
+          <p>History, symptom mapping, review of cycle changes, medication/supplement check, and labs if indicated.</p>
+          <p><em>Includes:</em> Options from behavioral tools to menopausal hormone therapy (MHT) when appropriate, with a written plan.</p>
+          <p><strong>Follow‑up:</strong> 4–8 weeks, then every 3–6 months.</p>
+        </div>
+        <div class="card service-card">
+          <h3>Mood & Anxiety Evaluation (45–60 min)</h3>
+          <p>Targeted screening, review of contributors (sleep, hormones, life stress), and a collaborative plan.</p>
+          <p><em>Includes:</em> CBT‑style skills; medication if appropriate; clear safety plan.</p>
+          <p><strong>Follow‑up:</strong> 4–6 weeks initially.</p>
+        </div>
+        <div class="card service-card">
+          <h3>Medication Management (25 min)</h3>
+          <p>Fine‑tuning response, minimizing side effects, and tracking results with shared decisions.</p>
+          <p><strong>Follow‑up:</strong> Every 1–3 months depending on stability.</p>
+        </div>
+        <div class="card service-card">
+          <h3>Sleep & Stress Reset (45 min)</h3>
+          <p>Restore sleep quality and regulate stress systems: schedule, light, movement, nutrition, and behavioral tools.</p>
+          <p><strong>Follow‑up:</strong> 4–6 weeks, then as needed.</p>
+        </div>
+        <div class="card service-card">
+          <h3>Lifestyle & Prevention Coaching (30 min)</h3>
+          <p>Heart‑brain‑metabolism in mid‑life; practical, sustainable changes, goals, and accountability.</p>
+          <p><strong>Follow‑up:</strong> Monthly or quarterly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hormone-mood">
+    <div class="container grid-2">
+      <div>
+        <h2>Hormones & Mood in Mid‑Life</h2>
+        <p>Perimenopause and menopause can influence serotonin, sleep, and stress systems—changing how you feel day to day. You're not imagining it, and you're not alone.</p>
+        <ul>
+          <li><strong>Assessment:</strong> history & symptom mapping, screening tools, medication review, and labs when indicated.</li>
+          <li><strong>Care Options:</strong> cognitive & behavioral strategies, SSRIs/SNRIs or other medications when appropriate, MHT for eligible patients, and sleep/nutrition/movement skills.</li>
+          <li><strong>Shared Decisions:</strong> we discuss risks, benefits, and preferences—your plan fits your goals.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Common Questions</h3>
+        <details><summary>Is it my hormones or something else?</summary><p>Often it's a mix. We sort through contributors and test when useful.</p></details>
+        <details><summary>What labs might help?</summary><p>Depends on history and symptoms (e.g., CBC, CMP, TSH, ferritin, B12, vitamin D).</p></details>
+        <details><summary>Do you offer virtual visits?</summary><p>We offer in-person appointments in Columbus.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container grid-2">
+      <div>
+        <img class="about-photo" src="stephanie-headshot.jpg" alt="Stephanie Nichols, CNP — Nurse Practitioner in Columbus, Ohio, Founder of Modern Mental Health & Hormones" />
+      </div>
+      <div>
+        <h2>Meet Stephanie Nichols, CNP</h2>
+        <p>Stephanie Nichols is a nurse practitioner and the founder of Modern Mental Health & Hormones in Columbus, Ohio. She brings decades in nursing and extensive NP experience, much of it within Central Ohio Primary Care (COPC). Beginning in mid‑November, Stephanie will be welcoming new patients to her independent practice focused on the unique needs of mid‑life women.</p>
+        <p><strong>Prior practice:</strong> <a href="https://copc.com/Doctors/Details/464-stephanie-nichols" target="_blank" rel="noopener">Central Ohio Primary Care (COPC) profile</a></p>
+        <ul>
+          <li>Board certification: FNP‑BC (add PMHNP‑BC if confirmed)</li>
+          <li>Clinical interests: perimenopause & menopause, anxiety/depression in mid‑life, sleep, cognition, cardiometabolic risk</li>
+          <li>Care philosophy: collaborative plans, "start low, go slow," lab‑informed decisions, clear follow‑up</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faqs">
+    <div class="container">
+      <h2>FAQs</h2>
+      <details><summary>Do you accept my insurance?</summary><p>We'll list accepted plans before launch. HSA/FSA may be used. Email <a href="mailto:info@modernmhh.com">info@modernmhh.com</a> with questions.</p></details>
+      <details><summary>Do you prescribe menopausal hormone therapy (MHT)?</summary><p>Yes, when appropriate and safe after shared decision‑making.</p></details>
+      <details><summary>What's your refill policy?</summary><p>Refills are managed during visits. For urgent needs, email and allow 2 business days.</p></details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Have questions before you book? Send a message—Stephanie reads every note.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! We will reply within 2 business days.');">
+          <label>
+            <span class="sr">Name</span>
+            <input required type="text" name="name" placeholder="Your name" aria-label="Your name" />
+          </label>
+          <label>
+            <span class="sr">Email</span>
+            <input required type="email" name="email" placeholder="Your email" aria-label="Your email" />
+          </label>
+          <label>
+            <span class="sr">Phone (optional)</span>
+            <input type="tel" name="phone" placeholder="Phone (optional)" aria-label="Phone (optional)" />
+          </label>
+          <label>
+            <span class="sr">Message</span>
+            <textarea required name="message" rows="5" placeholder="How can we help?" aria-label="Your message"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Prefer to schedule?</h3>
+        <p>Appointments available starting mid‑November.</p>
+        <a class="btn btn-primary" href="#" id="scheduleLink">Book Now</a>
+        <p style="margin-top:10px"><a href="mailto:info@modernmhh.com">info@modernmhh.com</a></p>
+        <p>Columbus, Ohio</p>
+        <small>Modern Mental Health & Hormones is not a crisis clinic. If you are in crisis, call 988 or go to the nearest emergency department.</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="yr"></span> Modern Mental Health & Hormones • <a href="mailto:info@modernmhh.com">info@modernmhh.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Accessibility helper for "sr" class (screen-reader only) if used
+    (function(){
+      const style = document.createElement('style');
+      style.textContent = `.sr{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}`;
+      document.head.appendChild(style);
+    })();
+
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          el.setAttribute('tabindex','-1'); el.focus({preventScroll:true});
+        }
+      });
+    });
+
+    // Dynamic "Book Now" behavior before mid-November
+    (function(){
+      const now = new Date();
+      const year = now.getFullYear();
+      // Set to Nov 15 of this year as "mid‑November"
+      const openDate = new Date(year, 10, 15);
+      const bookBtn = document.getElementById('bookBtn');
+      const scheduleLink = document.getElementById('scheduleLink');
+      const yr = document.getElementById('yr'); if (yr) yr.textContent = year;
+
+      if(now < openDate){
+        bookBtn.textContent = 'Book Now (Opens Mid‑Nov)';
+        bookBtn.setAttribute('aria-disabled','true');
+        bookBtn.href = '#contact';
+        if(scheduleLink){
+          scheduleLink.textContent = 'Join Waitlist';
+          scheduleLink.addEventListener('click', function(e){
+            e.preventDefault();
+            window.location.hash = '#contact';
+            alert('Waitlist: Please send your name and preferred days/times in the message form. We\'ll email you when slots open.');
+          });
+        }
+      }else{
+        // TODO: replace with actual Wix Bookings or external scheduler link
+        const bookingUrl = '#contact';
+        bookBtn.href = bookingUrl;
+        if(scheduleLink){ scheduleLink.href = bookingUrl; }
+      }
+    })();
+  </script>
+</body>
+</html>
