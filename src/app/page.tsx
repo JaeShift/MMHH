@@ -24,7 +24,7 @@ export default function Page() {
       <Header />
 
       {/* HERO */}
-      <section id="home" className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
+      <section id="home" className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/hero.jpg"
@@ -39,7 +39,7 @@ export default function Page() {
             <div className="text-center lg:text-left px-8 md:px-16 lg:px-24">
               <div className="max-w-4xl text-white">
                 <motion.h1 
-                  className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-8"
+                  className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg mb-8"
                   initial={{ opacity: 0, y: 60, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -60, scale: 0.95 }}
