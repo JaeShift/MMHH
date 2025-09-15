@@ -22,8 +22,14 @@ export default function AboutStephaniePage() {
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
                 About Stephanie Nichols
               </h1>
-              <p className="text-xl text-neutral-600 leading-relaxed">
-                PMHNP-BC, FNP-BC • Psychiatric Mental Health & Family Nurse Practitioner
+              <p className="text-xl text-neutral-600 leading-relaxed mb-2">
+                PMHNP-BC, FNP-BC, BSN, RN
+              </p>
+              <p className="text-lg text-neutral-600 leading-relaxed mb-2">
+                Founder | Psychiatric Mental Health & Family Nurse Practitioner
+              </p>
+              <p className="text-lg text-neutral-600 leading-relaxed">
+                NAMS Certified Menopause Practitioner
               </p>
             </motion.div>
           </div>
@@ -45,13 +51,13 @@ export default function AboutStephaniePage() {
                   </h2>
                   <div className="prose prose-slate max-w-none">
                     <p className="text-slate-600 leading-relaxed mb-4">
-                      Stephanie&apos;s journey in healthcare began over three decades ago, driven by a passion for women&apos;s health and a recognition of the unique challenges women face during midlife transitions. Her extensive experience spans both acute care and outpatient settings, giving her a comprehensive understanding of the full spectrum of women&apos;s health needs.
+                      With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life — from bedside care to clinical leadership, pediatrics to internal medicine. My career began as a nurse&apos;s aide and grew into a lifelong calling. I earned my BSN in 1998, my Master&apos;s in Family Practice Nursing in 2010, and most recently, my post-master&apos;s certification as a Psychiatric Mental Health Nurse Practitioner in 2024.
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                      After completing her advanced practice nursing education, Stephanie specialized in psychiatric mental health and family practice. Her dual certification allows her to address both the physical and mental aspects of women&apos;s health, recognizing that these are often interconnected, especially during hormonal transitions.
+                      For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today. Over the years, I&apos;ve seen a growing need — especially among professional women — for compassionate, stigma-free support that addresses both mental health and hormonal health. That need inspired me to create Modern Mental Health and Hormones.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                      Stephanie&apos;s career includes a decade at Nationwide Children&apos;s Hospital, where she developed expertise in complex patient care and family-centered approaches. This experience, combined with years in internal medicine, provides her with a unique perspective on the continuum of care from adolescence through adulthood.
+                      I am deeply passionate about helping women navigate the emotional and physical challenges of midlife. Stress, shifting hormones, and invisible burdens can steal energy and joy, but they don&apos;t have to. As a NAMS-certified menopause practitioner, I specialize in the unique intersection of hormonal and mental health, offering women the tools to reclaim their vitality and confidence.
                     </p>
                   </div>
                 </motion.div>
@@ -100,13 +106,25 @@ export default function AboutStephaniePage() {
                 </h2>
                 <div className="prose prose-slate max-w-none">
                   <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                    Stephanie believes in a collaborative approach to care, where patients are active partners in their health journey. She takes time to listen, understand each woman&apos;s unique situation, and develop personalized treatment plans that align with individual goals and preferences.
+                    At Modern Mental Health and Hormones, our philosophy is simple but powerful:
+                  </p>
+                  <p className="text-2xl font-semibold text-slate-800 mb-6 italic text-center">
+                    Midlife is not a decline — it&apos;s a transformation.
                   </p>
                   <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                    Her practice is built on the foundation of evidence-based medicine, combined with a deep respect for the complexity of women&apos;s health. She understands that there&apos;s no one-size-fits-all approach to mental health and hormone management, which is why she offers both traditional and alternative treatment options.
+                    We empower women to let go of stress, rediscover comfort in their own bodies, and reignite the energy to thrive in both work and life. By blending traditional medical expertise with holistic and integrative approaches, I tailor care to meet your personal goals and preferences.
                   </p>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Stephanie founded Modern Mental Health & Hormones to offer compassionate, stigma-free care tailored to women navigating stress, sleep issues, and hormonal change. Her approach blends evidence-based medication management with holistic, integrative therapies—always aligned with your goals and preferences.
+                  <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+                    I believe in a collaborative approach to care, where patients are active partners in their health journey. I take time to listen, understand each woman&apos;s unique situation, and develop personalized treatment plans that align with individual goals and preferences.
+                  </p>
+                  <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+                    My practice is built on the foundation of evidence-based medicine, combined with a deep respect for the complexity of women&apos;s health. I understand that there&apos;s no one-size-fits-all approach to mental health and hormone management, which is why I offer both traditional and alternative treatment options.
+                  </p>
+                  <p className="text-xl font-semibold text-slate-800 mb-4 text-center">
+                    You deserve care that honors all of you — body, mind, and spirit.
+                  </p>
+                  <p className="text-xl font-semibold text-slate-800 text-center">
+                    Let&apos;s take this journey together.
                   </p>
                 </div>
               </motion.div>

@@ -102,22 +102,39 @@ export default function AboutStephanie() {
                 Stephanie Nichols
               </h1>
               <p className="text-lg md:text-xl text-slate-700 mb-2">
-                PMHNP-BC, FNP-BC
+                PMHNP-BC, FNP-BC, BSN, RN
+              </p>
+              <p className="text-base text-slate-600 mb-2">
+                Founder | Psychiatric Mental Health & Family Nurse Practitioner
               </p>
               <p className="text-base text-slate-600 mb-6">
-                Psychiatric Mental Health & Family Nurse Practitioner • NAMS Certified Menopause Practitioner
+                NAMS Certified Menopause Practitioner
               </p>
 
               <div className="prose prose-slate max-w-none">
-                <p>
-                  With 30+ years in healthcare, Stephanie has supported patients through every stage of life—from bedside
-                  care to clinical leadership. After a decade at Nationwide Children&apos;s Hospital and years in internal
-                  medicine, she founded Modern Mental Health & Hormones to offer compassionate, stigma‑free care tailored
-                  to women navigating stress, sleep issues, and hormonal change.
+                <p className="mb-4">
+                  With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life — from bedside care to clinical leadership, pediatrics to internal medicine. My career began as a nurse&apos;s aide and grew into a lifelong calling. I earned my BSN in 1998, my Master&apos;s in Family Practice Nursing in 2010, and most recently, my post-master&apos;s certification as a Psychiatric Mental Health Nurse Practitioner in 2024.
                 </p>
-                <p>
-                  Her approach blends evidence‑based medication management with holistic, integrative therapies—always
-                  aligned with your goals and preferences.
+                <p className="mb-4">
+                  For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today. Over the years, I&apos;ve seen a growing need — especially among professional women — for compassionate, stigma-free support that addresses both mental health and hormonal health. That need inspired me to create Modern Mental Health and Hormones.
+                </p>
+                <p className="mb-4">
+                  I am deeply passionate about helping women navigate the emotional and physical challenges of midlife. Stress, shifting hormones, and invisible burdens can steal energy and joy, but they don&apos;t have to. As a NAMS-certified menopause practitioner, I specialize in the unique intersection of hormonal and mental health, offering women the tools to reclaim their vitality and confidence.
+                </p>
+                <p className="mb-4">
+                  At Modern Mental Health and Hormones, our philosophy is simple but powerful:
+                </p>
+                <p className="text-lg font-semibold text-slate-800 mb-4 italic">
+                  Midlife is not a decline — it&apos;s a transformation.
+                </p>
+                <p className="mb-4">
+                  We empower women to let go of stress, rediscover comfort in their own bodies, and reignite the energy to thrive in both work and life. By blending traditional medical expertise with holistic and integrative approaches, I tailor care to meet your personal goals and preferences.
+                </p>
+                <p className="text-lg font-semibold text-slate-800 mb-4">
+                  You deserve care that honors all of you — body, mind, and spirit.
+                </p>
+                <p className="text-lg font-semibold text-slate-800">
+                  Let&apos;s take this journey together.
                 </p>
               </div>
 
