@@ -1,12 +1,10 @@
 "use client";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 // Drop this component in place of your current About component to preview the layout only.
 // Nothing here changes global styles.
 export default function AboutStephanie() {
-  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className="w-full">
       {/* Section 1: About Modern Mental Health & Hormones */}
