@@ -55,49 +55,22 @@ export default function FocusAreas() {
           </motion.p>
         </motion.div>
 
-        {/* Two engaging columns */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {cols.map(({ heading, items }, colIndex) => (
+        {/* Unified list without section headers */}
+        <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 max-w-6xl mx-auto">
+          {cols.flatMap(({ items }) => items).map(({ t, d }, itemIndex) => (
             <motion.div 
-              key={heading} 
-              className="card p-8"
-              initial={{ opacity: 0, y: 50 }}
+              key={t} 
+              className=""
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.5, delay: 0.3 + (colIndex * 0.1) }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.4, delay: 0.1 + (itemIndex * 0.05) }}
               viewport={{ amount: 0.01 }}
-              whileHover={{ y: -5 }}
             >
-              <motion.h3 
-                className="font-serif text-2xl font-bold text-neutral-900 mb-6 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4, delay: 0.4 + (colIndex * 0.1) }}
-                viewport={{ amount: 0.01 }}
-              >
-                {heading}
-              </motion.h3>
-              <ul className="space-y-5">
-                {items.map(({ t, d }, itemIndex) => (
-                  <motion.li 
-                    key={t} 
-                    className="grid grid-cols-[16px_1fr] gap-4"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3, delay: 0.5 + (colIndex * 0.1) + (itemIndex * 0.05) }}
-                    viewport={{ amount: 0.01 }}
-                  >
-                    {/* custom bullet (CSS), not an icon */}
-                    <span className="svc-dot mt-2" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold text-lg text-neutral-900 mb-2">{t}</div>
-                      <p className="text-neutral-600 leading-relaxed">{d}</p>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
+              <div className="mb-6">
+                <div className="font-semibold text-lg text-neutral-900 mb-3">• {t}</div>
+                <p className="text-neutral-600 leading-relaxed pl-4">{d}</p>
+              </div>
             </motion.div>
           ))}
         </div>

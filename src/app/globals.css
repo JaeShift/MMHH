@@ -192,18 +192,18 @@ html,body{
 /* Default (mobile): lamp completely clear of text area */
 .hero-img {
   object-fit: cover;
-  object-position: 96% 65%;  /* X=96% (lamp & chair far right), Y=65% (show chair + floor) */
+  object-position: 30% 65% !important;  /* X=30% (dramatic shift to show right side), Y=65% (show chair + floor) */
 }
 
 @media (min-width: 768px) {
   .hero-img {
-    object-position: 97% 65%; /* desktop: lamp completely out of text zone */
+    object-position: 40% 65% !important; /* desktop: dramatic shift to show right side */
   }
 }
 
 @media (min-width: 1280px) {
   .hero-img {
-    object-position: 98% 65%; /* large screens: lamp at extreme right, text completely clear */
+    object-position: 50% 65% !important; /* large screens: dramatic shift to show right side */
   }
 }
 

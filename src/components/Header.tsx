@@ -22,9 +22,12 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2" aria-label="Primary">
-          <a href="#services" className="hover:text-brand-2">Services</a>
           <a href="#about" className="hover:text-brand-2">About</a>
-          <a href="#testimonials" className="hover:text-brand-2">Stories</a>
+          <div className="w-px h-4 bg-slate-300"></div>
+          <a href="#provider" className="hover:text-brand-2">Provider</a>
+          <div className="w-px h-4 bg-slate-300"></div>
+          <a href="#services" className="hover:text-brand-2">Care</a>
+          <div className="w-px h-4 bg-slate-300"></div>
           <a href="#contact" className="hover:text-brand-2">Contact</a>
         </nav>
 
@@ -46,9 +49,9 @@ export default function Header() {
       {open && (
         <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} className="md:hidden border-t border-neutral-200 bg-white">
           <div className="container py-4 flex flex-col gap-3">
-            <a href="#services" onClick={()=>setOpen(false)}>Services</a>
             <a href="#about" onClick={()=>setOpen(false)}>About</a>
-            <a href="#testimonials" onClick={()=>setOpen(false)}>Stories</a>
+            <a href="#provider" onClick={()=>setOpen(false)}>Provider</a>
+            <a href="#services" onClick={()=>setOpen(false)}>Care</a>
             <a href="#contact" onClick={()=>setOpen(false)}>Contact</a>
           </div>
         </motion.div>

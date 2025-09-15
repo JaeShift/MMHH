@@ -16,7 +16,7 @@ export default function AboutStephanie() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="tracking-wider text-sm font-semibold text-slate-500 mb-4">ABOUT M.M.H.H.</p>
+              <p className="tracking-wider text-sm font-semibold text-slate-500 mb-4">ABOUT MODERN MENTAL HEALTH & HORMONES</p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 leading-tight mb-6">
                 Specialized Care for Women
               </h2>
@@ -28,21 +28,17 @@ export default function AboutStephanie() {
               </p>
             </motion.div>
           </div>
-        </div>
-      </div>
-
-      {/* Credibility row */}
-      <div className="py-10 md:py-14 bg-white">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid sm:grid-cols-3 gap-4">
+          
+          {/* Credibility boxes moved here */}
+          <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-6xl mx-auto px-6 lg:px-8">
             {[
               {
                 title: "Evidence‑based & integrative",
                 body: "Medication management plus therapy‑aligned, lifestyle‑first care.",
               },
               {
-                title: "Designed for midlife",
-                body: "Special focus on stress, sleep, and hormonal shifts.",
+                title: "Telehealth practice",
+                body: "Convenient virtual care from the comfort of your home.",
               },
               {
                 title: "Personal, unrushed visits",
@@ -58,8 +54,9 @@ export default function AboutStephanie() {
         </div>
       </div>
 
+
       {/* Section 2: Meet Stephanie (content + headshot) */}
-      <div className="pt-8 pb-16 md:pt-12 md:pb-24">
+      <div id="provider" className="pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left column — text */}
@@ -70,18 +67,19 @@ export default function AboutStephanie() {
               transition={{ duration: 0.5 }}
               className="order-2 lg:order-1"
             >
-              <p className="tracking-wider text-sm font-semibold text-slate-500 mb-3 text-center">MEET YOUR PROVIDER</p>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-4 text-center">
+              <div className="bg-slate-50 -mx-4 px-16 py-8 shadow-sm border border-slate-200">
+              <p className="tracking-wider text-sm font-semibold text-slate-500 mb-3">MEET YOUR PROVIDER</p>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-4">
                 Stephanie Nichols
               </h1>
-              <p className="text-lg md:text-xl text-slate-700 mb-2 text-center">
+              <p className="text-lg md:text-xl text-slate-700 mb-2">
                 PMHNP-BC, FNP-BC
               </p>
-              <p className="text-base text-slate-600 mb-6 text-center">
+              <p className="text-base text-slate-600 mb-6">
                 Psychiatric Mental Health & Family Nurse Practitioner • NAMS Certified Menopause Practitioner
               </p>
 
-              <div className="prose prose-slate max-w-none text-center">
+              <div className="prose prose-slate max-w-none">
                 <p>
                   With 30+ years in healthcare, Stephanie has supported patients through every stage of life—from bedside
                   care to clinical leadership. After a decade at Nationwide Children&apos;s Hospital and years in internal
@@ -95,7 +93,7 @@ export default function AboutStephanie() {
               </div>
 
               {/* Quick facts chips */}
-              <div className="mt-6 flex flex-wrap gap-2 justify-center">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {[
                   "30+ years in care",
                   "Dual‑certified NP",
@@ -109,6 +107,7 @@ export default function AboutStephanie() {
                     {t}
                   </span>
                 ))}
+              </div>
               </div>
             </motion.div>
 
