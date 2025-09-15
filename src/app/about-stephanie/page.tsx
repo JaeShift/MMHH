@@ -45,13 +45,13 @@ export default function AboutStephaniePage() {
                   </h2>
                   <div className="prose prose-slate max-w-none">
                     <p className="text-slate-600 leading-relaxed mb-4">
-                      Stephanie's journey in healthcare began over three decades ago, driven by a passion for women's health and a recognition of the unique challenges women face during midlife transitions. Her extensive experience spans both acute care and outpatient settings, giving her a comprehensive understanding of the full spectrum of women's health needs.
+                      Stephanie&apos;s journey in healthcare began over three decades ago, driven by a passion for women&apos;s health and a recognition of the unique challenges women face during midlife transitions. Her extensive experience spans both acute care and outpatient settings, giving her a comprehensive understanding of the full spectrum of women&apos;s health needs.
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                      After completing her advanced practice nursing education, Stephanie specialized in psychiatric mental health and family practice. Her dual certification allows her to address both the physical and mental aspects of women's health, recognizing that these are often interconnected, especially during hormonal transitions.
+                      After completing her advanced practice nursing education, Stephanie specialized in psychiatric mental health and family practice. Her dual certification allows her to address both the physical and mental aspects of women&apos;s health, recognizing that these are often interconnected, especially during hormonal transitions.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                      Stephanie's career includes a decade at Nationwide Children's Hospital, where she developed expertise in complex patient care and family-centered approaches. This experience, combined with years in internal medicine, provides her with a unique perspective on the continuum of care from adolescence through adulthood.
+                      Stephanie&apos;s career includes a decade at Nationwide Children&apos;s Hospital, where she developed expertise in complex patient care and family-centered approaches. This experience, combined with years in internal medicine, provides her with a unique perspective on the continuum of care from adolescence through adulthood.
                     </p>
                   </div>
                 </motion.div>
@@ -100,10 +100,10 @@ export default function AboutStephaniePage() {
                 </h2>
                 <div className="prose prose-slate max-w-none">
                   <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                    Stephanie believes in a collaborative approach to care, where patients are active partners in their health journey. She takes time to listen, understand each woman's unique situation, and develop personalized treatment plans that align with individual goals and preferences.
+                    Stephanie believes in a collaborative approach to care, where patients are active partners in their health journey. She takes time to listen, understand each woman&apos;s unique situation, and develop personalized treatment plans that align with individual goals and preferences.
                   </p>
                   <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                    Her practice is built on the foundation of evidence-based medicine, combined with a deep respect for the complexity of women's health. She understands that there's no one-size-fits-all approach to mental health and hormone management, which is why she offers both traditional and alternative treatment options.
+                    Her practice is built on the foundation of evidence-based medicine, combined with a deep respect for the complexity of women&apos;s health. She understands that there&apos;s no one-size-fits-all approach to mental health and hormone management, which is why she offers both traditional and alternative treatment options.
                   </p>
                   <p className="text-slate-600 leading-relaxed text-lg">
                     Stephanie founded Modern Mental Health & Hormones to offer compassionate, stigma-free care tailored to women navigating stress, sleep issues, and hormonal change. Her approach blends evidence-based medication management with holistic, integrative therapies—always aligned with your goals and preferences.
@@ -141,7 +141,7 @@ export default function AboutStephaniePage() {
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <h3 className="font-semibold text-slate-900 mb-4">Specializations</h3>
                     <ul className="text-slate-600 space-y-2">
-                      <li>• Women's mental health</li>
+                      <li>• Women&apos;s mental health</li>
                       <li>• Hormone therapy and management</li>
                       <li>• Perimenopause and menopause care</li>
                       <li>• Telehealth practice</li>
