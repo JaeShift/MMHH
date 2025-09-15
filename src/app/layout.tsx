@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Inter, Crimson_Text } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const dmserif = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
+const crimsonText = Crimson_Text({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
   title: "Modern Mental Health & Hormones | Columbus, OH",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     // Switch to Palette B by adding: className="theme-b"
-    <html lang="en" className={`${inter.variable} ${dmserif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${crimsonText.variable}`}>
       <body className="antialiased">
         {children}
         {/* SEO JSON-LD */}

@@ -54,6 +54,7 @@ html,body{
   -moz-osx-font-smoothing:grayscale;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 /* Containers */
@@ -189,21 +190,21 @@ html,body{
    HERO image alignment helpers
    ============================== */
 
-/* Default (mobile): lamp completely clear of text area */
+/* Default (mobile): shift right to hide windows */
 .hero-img {
   object-fit: cover;
-  object-position: 30% 65% !important;  /* X=30% (dramatic shift to show right side), Y=65% (show chair + floor) */
+  object-position: -10% 65% !important;  /* X=-10% (shift further right to hide windows), Y=65% (show chair + floor) */
 }
 
 @media (min-width: 768px) {
   .hero-img {
-    object-position: 40% 65% !important; /* desktop: dramatic shift to show right side */
+    object-position: -5% 65% !important; /* tablet: shift right to hide windows */
   }
 }
 
 @media (min-width: 1280px) {
   .hero-img {
-    object-position: 50% 65% !important; /* large screens: dramatic shift to show right side */
+    object-position: 0% 65% !important; /* desktop: shift right to hide windows */
   }
 }
 

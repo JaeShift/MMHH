@@ -24,7 +24,7 @@ export default function Page() {
       <Header />
 
       {/* HERO */}
-      <section id="home" className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
+      <section id="home" className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/hero.jpg"
@@ -35,39 +35,113 @@ export default function Page() {
           />
           <div className="absolute inset-0 hero-overlay pointer-events-none" />
 
-          <div className="absolute inset-0 flex items-center justify-start">
-            <div className="pl-8 md:pl-16 lg:pl-24">
+          <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
+            <div className="text-center lg:text-left px-8 md:px-16 lg:px-24">
               <div className="max-w-4xl text-white">
                 <motion.h1 
-                  className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-6 pl-4 md:pl-8 lg:pl-12"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-8"
+                  initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -60, scale: 0.95 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                   viewport={{ amount: 0.01 }}
                 >
-                  Modern Mental Health<br/>& Hormones
+                  <motion.span
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ amount: 0.01 }}
+                  >
+                    Modern Mental Health
+                  </motion.span>
+                  <br/>
+                  <motion.span
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ amount: 0.01 }}
+                  >
+                    & Hormones
+                  </motion.span>
+                  <motion.span 
+                    className="inline-block w-px h-12 bg-white mx-4"
+                    initial={{ opacity: 0, scaleY: 0 }}
+                    whileInView={{ opacity: 1, scaleY: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                    viewport={{ amount: 0.01 }}
+                  ></motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    viewport={{ amount: 0.01 }}
+                  >
+                    Telehealth
+                  </motion.span>
                 </motion.h1>
-                <motion.p 
-                  className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl pl-6 md:pl-10 lg:pl-14"
+                
+                {/* Divider line matching title width */}
+                <motion.div 
+                  className="w-full max-w-4xl h-px bg-white/60 mb-8"
+                  initial={{ opacity: 0, scaleX: 0 }}
+                  whileInView={{ opacity: 1, scaleX: 1 }}
+                  exit={{ opacity: 0, scaleX: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ amount: 0.01 }}
+                ></motion.div>
+                
+                <motion.div 
+                  className="flex flex-wrap gap-8 justify-center lg:justify-start"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ amount: 0.01 }}
                 >
-                  Specialized care for women navigating mid-life mood, sleep, stress, and hormone changes—led by Nurse Practitioner Stephanie Nichols.
-                </motion.p>
-                <motion.div 
-                  className="flex flex-wrap gap-4 pl-12 md:pl-20 lg:pl-24"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ amount: 0.01 }}
-                >
-                  <a href="#book" className="btn bg-white/90 text-neutral-900 hover:bg-white hover:text-neutral-900 shadow-lg hover:shadow-xl transition-all duration-200 text-lg px-8 py-4">Request Appointment</a>
-                  <a href="#services" className="btn bg-white/90 text-neutral-900 hover:bg-white hover:text-neutral-900 shadow-lg hover:shadow-xl transition-all duration-200 text-lg px-8 py-4">View Services</a>
+                  <motion.a 
+                    href="#book" 
+                    className="inline-flex items-center text-white text-xl font-medium hover:text-white/80 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ amount: 0.01 }}
+                  >
+                    Request Appointment
+                    <motion.svg 
+                      className="w-5 h-5 ml-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </motion.svg>
+                  </motion.a>
+                  <motion.a 
+                    href="#services" 
+                    className="inline-flex items-center text-white text-xl font-medium hover:text-white/80 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                    viewport={{ amount: 0.01 }}
+                  >
+                    View Services
+                    <motion.svg 
+                      className="w-5 h-5 ml-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </motion.svg>
+                  </motion.a>
                 </motion.div>
               </div>
             </div>
@@ -76,15 +150,22 @@ export default function Page() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="pt-8 pb-0">
+      <motion.section 
+        id="about" 
+        className="pt-8 pb-0"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ amount: 0.1 }}
+      >
         <AboutStephanie />
-      </section>
+      </motion.section>
 
       {/* SERVICES (no icons) */}
       <FocusAreas />
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" className="pt-8 pb-0">
+      <section id="testimonials" className="pb-0">
         <div className="container">
           <Testimonials />
         </div>

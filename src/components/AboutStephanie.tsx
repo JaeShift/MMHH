@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 // Drop this component in place of your current About component to preview the layout only.
 // Nothing here changes global styles.
 export default function AboutStephanie() {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className="w-full">
       {/* Section 1: About Modern Mental Health & Hormones */}
@@ -26,6 +29,34 @@ export default function AboutStephanie() {
               <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
                 From stress and sleep challenges to hormonal changes and mood concerns, we provide stigma-free support tailored to your unique needs and goals.
               </p>
+              
+              {/* Read More Button */}
+              <motion.div 
+                className="mt-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ amount: 0.01 }}
+              >
+                <motion.a
+                  href="/about-practice"
+                  className="inline-flex items-center text-[#849468] font-medium hover:text-[#596163] transition-colors duration-300 group"
+                  whileHover={{ scale: 1.05, x: 4 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
+                  <motion.svg 
+                    className="w-4 h-4 ml-2" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </motion.svg>
+                </motion.a>
+              </motion.div>
             </motion.div>
           </div>
           
@@ -61,10 +92,10 @@ export default function AboutStephanie() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left column — text */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="order-2 lg:order-1"
             >
               <div className="bg-slate-50 -mx-4 px-16 py-8 shadow-sm border border-slate-200">
@@ -108,15 +139,37 @@ export default function AboutStephanie() {
                   </span>
                 ))}
               </div>
+
+              {/* Learn More Link */}
+              <div className="mt-8">
+                <motion.a
+                  href="/about-stephanie"
+                  className="inline-flex items-center text-[#849468] font-medium hover:text-[#596163] transition-colors duration-300 group"
+                  whileHover={{ scale: 1.05, x: 4 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More About Stephanie
+                  <motion.svg 
+                    className="w-4 h-4 ml-2" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </motion.svg>
+                </motion.a>
+              </div>
               </div>
             </motion.div>
 
             {/* Right column — headshot with layered frame */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="relative order-1 lg:order-2"
             >
               <div className="absolute -inset-3 bg-slate-200/40 blur-sm" aria-hidden></div>
@@ -138,6 +191,9 @@ export default function AboutStephanie() {
           </div>
         </div>
       </div>
+
+      {/* Divider line */}
+      <div className="w-full h-px bg-slate-300 mt-16 mb-8"></div>
 
     </div>
   );

@@ -17,18 +17,18 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 ${scrolled ? "navbar-blur" : "bg-white"}`}>
       <div className="container flex items-center justify-between h-16">
-        <Link href="#home" aria-label="Modern Mental Health & Hormones home" className="font-serif text-2xl">
+        <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="font-serif text-2xl">
           <span className="text-gradient">MMHH</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2" aria-label="Primary">
-          <a href="#about" className="hover:text-brand-2">About</a>
+          <a href="/#about" className="hover:text-brand-2">About</a>
           <div className="w-px h-4 bg-slate-300"></div>
-          <a href="#provider" className="hover:text-brand-2">Provider</a>
+          <a href="/#provider" className="hover:text-brand-2">Provider</a>
           <div className="w-px h-4 bg-slate-300"></div>
-          <a href="#services" className="hover:text-brand-2">Care</a>
+          <a href="/#services" className="hover:text-brand-2">Care</a>
           <div className="w-px h-4 bg-slate-300"></div>
-          <a href="#contact" className="hover:text-brand-2">Contact</a>
+          <a href="/#contact" className="hover:text-brand-2">Contact</a>
         </nav>
 
 
@@ -49,10 +49,10 @@ export default function Header() {
       {open && (
         <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} className="md:hidden border-t border-neutral-200 bg-white">
           <div className="container py-4 flex flex-col gap-3">
-            <a href="#about" onClick={()=>setOpen(false)}>About</a>
-            <a href="#provider" onClick={()=>setOpen(false)}>Provider</a>
-            <a href="#services" onClick={()=>setOpen(false)}>Care</a>
-            <a href="#contact" onClick={()=>setOpen(false)}>Contact</a>
+            <a href="/#about" onClick={()=>setOpen(false)}>About</a>
+            <a href="/#provider" onClick={()=>setOpen(false)}>Provider</a>
+            <a href="/#services" onClick={()=>setOpen(false)}>Care</a>
+            <a href="/#contact" onClick={()=>setOpen(false)}>Contact</a>
           </div>
         </motion.div>
       )}
