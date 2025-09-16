@@ -54,7 +54,7 @@ export default function FocusAreas() {
         </motion.div>
 
         {/* 3x3 grid with square-constrained text */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {cols.flatMap(({ items }) => items).map(({ t, d }, itemIndex) => (
             <motion.div 
               key={t} 

@@ -10,7 +10,7 @@ export default function AboutStephanie() {
       {/* Section 1: About Modern Mental Health & Hormones */}
       <div className="w-full pt-12 pb-16 md:pt-16 md:pb-20 bg-slate-100">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function AboutStephanie() {
           </div>
           
           {/* Credibility boxes moved here */}
-          <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-7xl mx-auto px-6 lg:px-8">
             {[
               {
                 title: "Evidence‑based & integrative",

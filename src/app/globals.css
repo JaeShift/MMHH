@@ -58,7 +58,15 @@ html,body{
 }
 
 /* Containers */
-.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+@media (min-width: 1400px) {
+  .container{max-width:1400px;padding:0 2rem}
+}
+
+@media (min-width: 1600px) {
+  .container{max-width:1600px;padding:0 3rem}
+}
 
 /* Components */
 .btn{
@@ -190,21 +198,27 @@ html,body{
    HERO image alignment helpers
    ============================== */
 
-/* Default (mobile): shift right to hide windows */
+/* Default (mobile): center the image better */
 .hero-img {
   object-fit: cover;
-  object-position: -10% 65% !important;  /* X=-10% (shift further right to hide windows), Y=65% (show chair + floor) */
+  object-position: 20% 65% !important;  /* X=20% (show more of the left side), Y=65% (show chair + floor) */
 }
 
 @media (min-width: 768px) {
   .hero-img {
-    object-position: -5% 65% !important; /* tablet: shift right to hide windows */
+    object-position: 25% 65% !important; /* tablet: slightly more right but still balanced */
   }
 }
 
 @media (min-width: 1280px) {
   .hero-img {
-    object-position: 0% 65% !important; /* desktop: shift right to hide windows */
+    object-position: 30% 65% !important; /* desktop: balanced view with chair and plant visible */
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-img {
+    object-position: 35% 65% !important; /* large desktop: slightly more right for better balance */
   }
 }
 

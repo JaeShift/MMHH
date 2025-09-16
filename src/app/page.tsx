@@ -36,8 +36,8 @@ export default function Page() {
           <div className="absolute inset-0 hero-overlay pointer-events-none" />
 
           <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
-            <div className="text-center lg:text-left px-8 md:px-16 lg:px-24">
-              <div className="max-w-4xl text-white">
+            <div className="text-center lg:text-left px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
+              <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl text-white">
                 <motion.h1 
                   className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg mb-8"
                   initial={{ opacity: 0, y: 60, scale: 0.95 }}

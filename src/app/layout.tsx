@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Modern Mental Health & Hormones | Columbus, OH",
   description:
     "Personalized care for mid-life women's mental health and hormones. Evidence-based treatment for mood, sleep, stress, and perimenopause in Columbus, Ohio. Book with Nurse Practitioner Stephanie Nichols.",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
