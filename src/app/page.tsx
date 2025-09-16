@@ -24,7 +24,7 @@ export default function Page() {
       <Header />
 
       {/* HERO */}
-      <section id="home" className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] w-full overflow-hidden">
+      <section id="home" className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/hero.jpg"
@@ -35,11 +35,12 @@ export default function Page() {
           />
           <div className="absolute inset-0 hero-overlay pointer-events-none" />
 
-          <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
-            <div className="text-center lg:text-left px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
-              <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl text-white">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-left px-8 md:px-16 lg:px-20 xl:px-24 2xl:px-28 lg:ml-[-36rem] xl:ml-[-46rem] 2xl:ml-[-56rem]">
+              <div className="max-w-6xl lg:max-w-7xl xl:max-w-8xl 2xl:max-w-9xl text-white">
                 <motion.h1 
-                  className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg mb-8"
+                  className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight drop-shadow-2xl mb-6"
+                  style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0px 0px 16px rgba(0,0,0,0.6)' }}
                   initial={{ opacity: 0, y: 60, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -60, scale: 0.95 }}
@@ -52,7 +53,7 @@ export default function Page() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ amount: 0.01 }}
                   >
-                    Modern Mental Health
+                    Modern
                   </motion.span>
                   <br/>
                   <motion.span
@@ -61,24 +62,30 @@ export default function Page() {
                     transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ amount: 0.01 }}
                   >
-                    & Hormones
+                    Mental Health
                   </motion.span>
-                  <motion.span 
-                    className="inline-block w-px h-12 bg-white mx-4"
-                    initial={{ opacity: 0, scaleY: 0 }}
-                    whileInView={{ opacity: 1, scaleY: 1 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    viewport={{ amount: 0.01 }}
-                  ></motion.span>
+                  <br/>
                   <motion.span
-                    initial={{ opacity: 0, x: 30 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
                     viewport={{ amount: 0.01 }}
                   >
-                    Telehealth
+                    & Hormones
                   </motion.span>
                 </motion.h1>
+                
+                {/* Telehealth subtitle */}
+                <motion.p 
+                  className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-light tracking-wide mb-6"
+                  style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ amount: 0.01 }}
+                >
+                  Telehealth Practice
+                </motion.p>
                 
                 {/* Divider line matching title width */}
                 <motion.div 

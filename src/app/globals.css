@@ -198,31 +198,27 @@ html,body{
    HERO image alignment helpers
    ============================== */
 
-/* Default (mobile): zoomed out view */
+/* Default (mobile): show more of the windows on the right */
 .hero-img {
   object-fit: cover;
-  object-position: 30% 50% !important;  /* X=30% (centered), Y=50% (more vertical center) */
-  transform: scale(0.9) !important; /* Zoom out by 10% */
+  object-position: 95% 70% !important;  /* X=95% (move even more right), Y=70% (move photo up slightly) */
 }
 
 @media (min-width: 768px) {
   .hero-img {
-    object-position: 35% 50% !important; /* tablet: slightly more right */
-    transform: scale(0.85) !important; /* Zoom out by 15% */
+    object-position: 96% 70% !important; /* tablet: more windows visible */
   }
 }
 
 @media (min-width: 1280px) {
   .hero-img {
-    object-position: 40% 50% !important; /* desktop: balanced view */
-    transform: scale(0.8) !important; /* Zoom out by 20% */
+    object-position: 97% 70% !important; /* desktop: windows more prominent */
   }
 }
 
 @media (min-width: 1536px) {
   .hero-img {
-    object-position: 45% 50% !important; /* large desktop: more right */
-    transform: scale(0.75) !important; /* Zoom out by 25% */
+    object-position: 98% 70% !important; /* large desktop: maximum right positioning */
   }
 }
 

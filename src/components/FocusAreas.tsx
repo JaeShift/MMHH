@@ -32,7 +32,7 @@ export default function FocusAreas() {
           viewport={{ amount: 0.01 }}
         >
           <motion.h2 
-            className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-4"
+            className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
@@ -42,7 +42,7 @@ export default function FocusAreas() {
             Care Provided
           </motion.h2>
           <motion.p 
-            className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl lg:text-3xl text-neutral-600 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -75,10 +75,10 @@ export default function FocusAreas() {
               }}
             >
               <div>
-                <h3 className="font-serif text-xl font-semibold text-neutral-900 mb-4 pb-2 inline-block border-b-2 border-slate-300 group-hover:border-[#849468] transition-colors duration-300">
+                <h3 className="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 mb-4 pb-2 inline-block border-b-2 border-slate-300 group-hover:border-[#849468] transition-colors duration-300">
                   {t}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-lg md:text-xl text-neutral-600 leading-relaxed">
                   {d}
                 </p>
               </div>

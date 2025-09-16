@@ -17,18 +17,18 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 ${scrolled ? "navbar-blur" : "bg-white"}`}>
       <div className="container flex items-center justify-between h-16">
-        <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="font-serif text-2xl">
+        <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="font-serif text-3xl lg:text-4xl">
           <span className="text-gradient">MMHH</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2" aria-label="Primary">
-          <Link href="/#about" className="hover:text-brand-2">About</Link>
+          <Link href="/#about" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">About</Link>
           <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#provider" className="hover:text-brand-2">Provider</Link>
+          <Link href="/#provider" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Provider</Link>
           <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#services" className="hover:text-brand-2">Care</Link>
+          <Link href="/#services" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Care</Link>
           <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#contact" className="hover:text-brand-2">Contact</Link>
+          <Link href="/#contact" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Contact</Link>
         </nav>
 
 
@@ -49,10 +49,10 @@ export default function Header() {
       {open && (
         <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} className="md:hidden border-t border-neutral-200 bg-white">
           <div className="container py-4 flex flex-col gap-3">
-            <Link href="/#about" onClick={()=>setOpen(false)}>About</Link>
-            <Link href="/#provider" onClick={()=>setOpen(false)}>Provider</Link>
-            <Link href="/#services" onClick={()=>setOpen(false)}>Care</Link>
-            <Link href="/#contact" onClick={()=>setOpen(false)}>Contact</Link>
+            <Link href="/#about" className="text-lg" onClick={()=>setOpen(false)}>About</Link>
+            <Link href="/#provider" className="text-lg" onClick={()=>setOpen(false)}>Provider</Link>
+            <Link href="/#services" className="text-lg" onClick={()=>setOpen(false)}>Care</Link>
+            <Link href="/#contact" className="text-lg" onClick={()=>setOpen(false)}>Contact</Link>
           </div>
         </motion.div>
       )}
