@@ -198,27 +198,31 @@ html,body{
    HERO image alignment helpers
    ============================== */
 
-/* Default (mobile): center the image better */
+/* Default (mobile): zoomed out view */
 .hero-img {
   object-fit: cover;
-  object-position: 20% 65% !important;  /* X=20% (show more of the left side), Y=65% (show chair + floor) */
+  object-position: 30% 50% !important;  /* X=30% (centered), Y=50% (more vertical center) */
+  transform: scale(0.9) !important; /* Zoom out by 10% */
 }
 
 @media (min-width: 768px) {
   .hero-img {
-    object-position: 25% 65% !important; /* tablet: slightly more right but still balanced */
+    object-position: 35% 50% !important; /* tablet: slightly more right */
+    transform: scale(0.85) !important; /* Zoom out by 15% */
   }
 }
 
 @media (min-width: 1280px) {
   .hero-img {
-    object-position: 30% 65% !important; /* desktop: balanced view with chair and plant visible */
+    object-position: 40% 50% !important; /* desktop: balanced view */
+    transform: scale(0.8) !important; /* Zoom out by 20% */
   }
 }
 
 @media (min-width: 1536px) {
   .hero-img {
-    object-position: 35% 65% !important; /* large desktop: slightly more right for better balance */
+    object-position: 45% 50% !important; /* large desktop: more right */
+    transform: scale(0.75) !important; /* Zoom out by 25% */
   }
 }
 
