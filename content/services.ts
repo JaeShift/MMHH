@@ -23,7 +23,7 @@ export const services: Service[] = [
     title: 'Anxiety & Depression Treatment',
     subtitle: 'Comprehensive mental health care that addresses the unique challenges women face during life transitions',
     intro: [
-      'Anxiety and depression can disrupt work, relationships, and daily life—especially in mid-life when hormonal changes can intensify symptoms. I provide care that helps you feel heard, understood, and supported while we find a plan that restores stability, energy, and peace of mind.'
+      'Anxiety and depression can disrupt work, relationships, and daily life—especially when hormonal changes can intensify symptoms. I provide care that helps you feel heard, understood, and supported while we find a plan that restores stability, energy, and peace of mind.'
     ],
     expect: [
       'Comprehensive evaluation of symptoms, history, and relevant hormone factors',
@@ -153,7 +153,7 @@ export const services: Service[] = [
     title: 'Individualized Hormone Therapy (HRT)',
     subtitle: 'Personalized hormone replacement therapy designed to restore balance and improve quality of life',
     intro: [
-      'Hormonal shifts can be confusing—and deeply felt. I provide individualized hormone therapy options, alongside non-hormonal strategies, to stabilize mood, improve energy, and enhance quality of life in mid-life and beyond.'
+      'Hormonal shifts can be confusing—and deeply felt. I provide individualized hormone therapy options, alongside non-hormonal strategies, to stabilize mood, improve energy, and enhance quality of life.'
     ],
     expect: [
       'Thorough review of symptoms, history, preferences, and safety',
@@ -231,7 +231,7 @@ export const services: Service[] = [
     title: 'Weight Management & Metabolic Health',
     subtitle: 'Comprehensive metabolic health support that addresses the complex factors affecting weight and wellness in midlife',
     intro: [
-      'Weight changes and slowed metabolism are common in mid-life. I provide medical support tailored to your body\'s needs—aimed at metabolic health, energy, and sustainable results without quick-fix promises.'
+      'Weight changes and slowed metabolism are common. I provide medical support tailored to your body\'s needs—aimed at metabolic health, energy, and sustainable results without quick-fix promises.'
     ],
     expect: [
       'Review of history, medications, hormones, sleep, and eating patterns',

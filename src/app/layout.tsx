@@ -16,7 +16,7 @@ const crimsonPro = Crimson_Pro({
 export const metadata: Metadata = {
   title: "Modern Mental Health & Hormones | Columbus, OH",
   description:
-    "Personalized care for mid-life women's mental health and hormones. Evidence-based treatment for mood, sleep, stress, and perimenopause in Columbus, Ohio. Book with Nurse Practitioner Stephanie Nichols.",
+    "Personalized care for women's mental health and hormones. Evidence-based treatment for mood, sleep, stress, and perimenopause in Columbus, Ohio. Book with Nurse Practitioner Stephanie Nichols.",
   viewport: "width=device-width, initial-scale=1",
 };
 

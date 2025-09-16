@@ -63,7 +63,7 @@ export default function Page() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  Specialized, compassionate care for women in mid-life —
+                  Specialized, compassionate care for women —
                   integrating mental health and hormone expertise.
                 </motion.p>
 

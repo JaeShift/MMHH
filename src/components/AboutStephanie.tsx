@@ -71,7 +71,7 @@ export default function AboutStephanie() {
             <div className="space-y-4">
               <p>With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life from bedside care to clinical leadership, pediatrics to internal medicine.</p>
               <p>For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today.</p>
-              <p>I&apos;m passionate about helping women navigate mid-life transitions with comprehensive, stigma-free support that addresses both mental health and hormonal health.</p>
+              <p>I&apos;m passionate about helping women navigate life transitions with comprehensive, stigma-free support that addresses both mental health and hormonal health.</p>
               <ul className="mt-4 list-disc pl-5">
                 <li>Dual board-certified PMHNP-BC & FNP-BC</li>
                 <li>NAMS Certified Menopause Practitioner</li>

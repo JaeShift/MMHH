@@ -18,7 +18,7 @@ export default function Hero() {
         <div>
           <h1 className="text-white text-5xl md:text-6xl">Modern mental health, hormone-informed.</h1>
           <p className="mt-4 text-white/90 text-lg max-w-2xl">
-            Individualized evaluation and prescribing to help you feel like yourself again.
+            Specialized, compassionate care for women — integrating mental health and hormone expertise.
           </p>
           <div className="mt-6 flex gap-4">
             <a href="#services" className="inline-flex rounded-full bg-[#3B4340] px-6 py-3 text-white font-medium hover:bg-[#2a302d] transition-colors">
