@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function FocusAreas() {
   const cols = [
@@ -91,16 +92,16 @@ export default function FocusAreas() {
                   </p>
                 </div>
               </div>
-              <motion.a 
-                href={`/care/${encodeURIComponent(t.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''))}`}
-                className="inline-flex items-center text-[#2a302d] hover:text-[#6b8c4a] font-medium mt-4 transition-colors duration-150"
-                whileHover={{ scale: 1.05, x: 4, transition: { duration: 0.15 } }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 + (itemIndex * 0.1) }}
-                viewport={{ amount: 0.2 }}
-              >
+              <Link href={`/care/${encodeURIComponent(t.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''))}`}>
+                <motion.div
+                  className="inline-flex items-center text-[#2a302d] hover:text-[#6b8c4a] font-medium mt-4 transition-colors duration-150 cursor-pointer"
+                  whileHover={{ scale: 1.05, x: 4, transition: { duration: 0.15 } }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 + (itemIndex * 0.1) }}
+                  viewport={{ amount: 0.2 }}
+                >
                 Read More 
                 <motion.svg 
                   className="w-4 h-4 ml-2" 
@@ -112,7 +113,8 @@ export default function FocusAreas() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </motion.svg>
-              </motion.a>
+                </motion.div>
+              </Link>
             </motion.div>
           ))}
         </div>

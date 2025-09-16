@@ -35,57 +35,33 @@ export default function AboutStephaniePage() {
           </div>
         </section>
 
-        {/* Professional Background */}
+        {/* Centered Headshot */}
         <section className="py-16">
           <div className="container mx-auto px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  viewport={{ amount: 0.2 }}
-                >
-                  <h2 className="font-serif text-3xl font-semibold text-slate-900 mb-6">
-                    Professional Background
-                  </h2>
-                  <div className="prose prose-slate max-w-none">
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life — from bedside care to clinical leadership, pediatrics to internal medicine. My career began as a nurse&apos;s aide and grew into a lifelong calling. I earned my BSN in 1998, my Master&apos;s in Family Practice Nursing in 2010, and most recently, my post-master&apos;s certification as a Psychiatric Mental Health Nurse Practitioner in 2024.
-                    </p>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today. Over the years, I&apos;ve seen a growing need — especially among professional women — for compassionate, stigma-free support that addresses both mental health and hormonal health. That need inspired me to create Modern Mental Health and Hormones.
-                    </p>
-                    <p className="text-slate-600 leading-relaxed">
-                      I am deeply passionate about helping women navigate the emotional and physical challenges of midlife. Stress, shifting hormones, and invisible burdens can steal energy and joy, but they don&apos;t have to. As a NAMS-certified menopause practitioner, I specialize in the unique intersection of hormonal and mental health, offering women the tools to reclaim their vitality and confidence.
-                    </p>
+            <div className="max-w-md mx-auto">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ amount: 0.2 }}
+                className="relative"
+              >
+                <div className="absolute -inset-3 bg-slate-200/40 blur-sm" aria-hidden></div>
+                <div className="absolute right-6 top-6 h-40 w-40 bg-[#3b4340]/20" aria-hidden></div>
+                <div className="absolute -top-8 -bottom-8 left-0 right-0 translate-x-12 border border-slate-200 bg-white shadow-xl" aria-hidden></div>
+                <div className="relative p-3">
+                  <div className="overflow-hidden">
+                    <Image
+                      src="/stephanie-headshot.jpg"
+                      alt="Stephanie Nichols headshot"
+                      width={400}
+                      height={400}
+                      className="h-auto w-full object-cover"
+                      priority
+                    />
                   </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                  viewport={{ amount: 0.2 }}
-                  className="relative"
-                >
-                  <div className="absolute -inset-3 bg-slate-200/40 blur-sm" aria-hidden></div>
-                  <div className="absolute right-6 top-6 h-40 w-40 bg-[#3b4340]/20" aria-hidden></div>
-                  <div className="absolute -top-8 -bottom-8 left-0 right-0 translate-x-12 border border-slate-200 bg-white shadow-xl" aria-hidden></div>
-                  <div className="relative p-3">
-                    <div className="overflow-hidden">
-                      <Image
-                        src="/stephanie-headshot.jpg"
-                        alt="Stephanie Nichols headshot"
-                        width={400}
-                        height={400}
-                        className="h-auto w-full object-cover"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
