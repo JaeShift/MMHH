@@ -4,9 +4,9 @@ import { services, serviceBySlug } from '../../../../content/services';
 import { Metadata } from 'next';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const service = serviceBySlug(params.slug);
+  const resolvedParams = await params;
+  const service = serviceBySlug(resolvedParams.slug);
   
   if (!service) {
     return {
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ServicePage({ params }: PageProps) {
-  const service = serviceBySlug(params.slug);
+export default async function ServicePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const service = serviceBySlug(resolvedParams.slug);
 
   if (!service) {
     notFound();
