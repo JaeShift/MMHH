@@ -4,41 +4,36 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative">
-      <div className="relative h-[68vh] min-h-[520px] w-full">
-        {/* Background gradient fallback */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800" />
-        
-        {/* Background image */}
-        <Image
-          src="/hero.jpg"           // put a wide, soft editorial healthcare image here
-          alt="Modern Mental Health & Hormones"
-          fill
-          className="object-cover"
-          priority
-          quality={95}
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/40" />
-
-        {/* Copy */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="container">
-            <div className="max-w-3xl text-white">
-              <h1 className="font-serif text-5xl leading-tight drop-shadow mb-4">
-                Modern Mental Health & Hormones
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-6">
-                Personalized, evidence-based care for women navigating mid-life mood, sleep, stress, and hormone changes—led by Nurse Practitioner Stephanie Nichols.
-              </p>
-              <div className="flex gap-3">
-                <a href="#book" className="btn btn-primary">Join Waitlist</a>
-                <a href="#services" className="btn btn-ghost">Explore Services</a>
-              </div>
-            </div>
+    <section className="relative">
+      <Image 
+        src="/hero.jpg" 
+        alt="Modern Mental Health & Hormones"
+        width={1920}
+        height={1080}
+        className="h-[60vh] md:h-[72vh] w-full object-cover" 
+        priority
+      />
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 mx-auto flex max-w-4xl items-end px-6 pb-12">
+        <div>
+          <h1 className="text-white text-5xl md:text-6xl">Modern mental health, hormone-informed.</h1>
+          <p className="mt-4 text-white/90 text-lg max-w-2xl">
+            Individualized evaluation and prescribing to help you feel like yourself again.
+          </p>
+          <div className="mt-6 flex gap-4">
+            <a href="#services" className="inline-flex rounded-full bg-[#3B4340] px-6 py-3 text-white font-medium hover:bg-[#2a302d] transition-colors">
+              Explore Areas of Care
+            </a>
+            <a href="#contact" className="inline-flex rounded-full bg-white/90 px-6 py-3 text-[#3B4340] font-medium hover:bg-white transition-colors">
+              Request an Appointment
+            </a>
+          </div>
+          
+          {/* Trust Strip */}
+          <div className="mt-8 flex flex-wrap gap-2">
+            {["PMHNP-BC & FNP-BC","NAMS Certified","Ohio Telehealth","HIPAA-Compliant"].map(t => (
+              <span key={t} className="rounded-full border border-white/30 bg-white/80 px-3 py-1 text-sm text-neutral-700">{t}</span>
+            ))}
           </div>
         </div>
       </div>

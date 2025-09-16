@@ -6,7 +6,13 @@
    Design System — MMHH (Hero-matched palette)
    ============================== */
 :root{
-  /* Brand pulled from your hero.jpg */
+  /* New Design System Colors */
+  --primary: #3B4340;
+  --text-primary: #111827;
+  --text-muted: #4B5563;
+  --surface-soft: #FAF8F5;
+  
+  /* Legacy support */
   --brand-1:#3b4340;   /* dark muted green-gray */
   --brand-2:#596163;   /* slate wall */
   --brand-3:#957557;   /* warm wood accent */
@@ -55,6 +61,29 @@ html,body{
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+/* Typography System */
+@layer components {
+  h1, h2 {
+    @apply font-heading italic tracking-wide leading-tight text-neutral-900;
+  }
+  
+  h3 {
+    @apply font-heading italic leading-snug text-neutral-900;
+  }
+  
+  p, li {
+    @apply font-body leading-relaxed text-[17px] md:text-[18px] text-neutral-800;
+  }
+  
+  a {
+    @apply font-body underline-offset-4 decoration-transparent hover:decoration-current;
+  }
+  
+  small {
+    @apply text-sm text-neutral-600;
+  }
 }
 
 /* Consistent 1.5 line spacing for text elements */
