@@ -3,39 +3,57 @@
 @tailwind utilities;
 
 /* ==============================
-   Design System — MMHH (Hero-matched palette)
+   Design System — MMHH (Luxury Earthy Palette)
    ============================== */
 :root{
-  /* New Design System Colors */
-  --primary: #3B4340;
-  --text-primary: #111827;
-  --text-muted: #4B5563;
-  --surface-soft: #FAF8F5;
+  /* Luxury Earthy Color Palette */
+  --sugar: #FCF8F0;        /* Lightest warm cream */
+  --bisque: #E2D9CD;       /* Soft warm beige */
+  --wheat: #B6A593;        /* Medium warm taupe */
+  --pistachio: #B5BDAC;    /* Soft sage green */
+  --mocha: #6B5B4D;        /* Rich warm brown */
+  --espresso: #392E26;     /* Deepest brown */
   
-  /* Legacy support */
-  --brand-1:#3b4340;   /* dark muted green-gray */
-  --brand-2:#596163;   /* slate wall */
-  --brand-3:#957557;   /* warm wood accent */
+  /* Primary Brand Colors */
+  --primary: #6B5B4D;      /* Mocha as primary */
+  --primary-dark: #392E26; /* Espresso as darker variant */
+  --accent: #B5BDAC;       /* Pistachio as accent */
+  
+  /* Text Colors */
+  --text-primary: #000000;    /* Black for main text */
+  --text-secondary: #000000;  /* Black for secondary text */
+  --text-muted: #4A4A4A;      /* Dark gray for muted text */
+  
+  /* Surface Colors */
+  --surface: #FCF8F0;         /* Sugar as main background */
+  --surface-soft: #FCF8F0;    /* Sugar */
+  --surface-muted: #E2D9CD;   /* Bisque for subtle backgrounds */
+  --surface-elevated: #ffffff; /* Pure white for cards */
+  
+  /* Legacy Brand Colors (updated) */
+  --brand-1: #6B5B4D;      /* Mocha */
+  --brand-2: #392E26;      /* Espresso */
+  --brand-3: #B5BDAC;      /* Pistachio */
 
-  /* Neutrals */
-  --neutral-900:#0b1324;
-  --neutral-700:#2a3245;
-  --neutral-400:#7b8193;
-  --neutral-200:#e7e9ef;
-  --neutral-100:#f6f7fb;
-  --white:#fff;
-
-  /* Surfaces */
-  --surface:#f4f1ea;
-  --surface-muted:#eee8dd;
+  /* Neutral Scale */
+  --neutral-900: #392E26;  /* Espresso */
+  --neutral-800: #4A3E35;  /* Between espresso and mocha */
+  --neutral-700: #6B5B4D;  /* Mocha */
+  --neutral-600: #8B7B6D;  /* Warmer neutral */
+  --neutral-500: #A69B8E;  /* Mid-tone */
+  --neutral-400: #B6A593;  /* Wheat */
+  --neutral-300: #C9BEB1;  /* Lighter wheat */
+  --neutral-200: #E2D9CD;  /* Bisque */
+  --neutral-100: #F5F1E9;  /* Lighter sugar */
+  --white: #ffffff;
 
   /* Radii & shadows */
   --radius-sm:10px;
   --radius-md:14px;
   --radius-lg:22px;
-  --shadow-sm:0 2px 10px rgba(15,118,110,.08);
-  --shadow-md:0 10px 30px rgba(89,97,99,.18);
-  --shadow-lg:0 18px 60px rgba(15,23,42,.18);
+  --shadow-sm:0 2px 10px rgba(57,46,38,.08);
+  --shadow-md:0 10px 30px rgba(107,91,77,.12);
+  --shadow-lg:0 18px 60px rgba(57,46,38,.15);
 
   /* Typography fallback (Next/font also sets vars) */
   --font-sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
@@ -53,9 +71,9 @@ html.theme-b{
 /* Base */
 html,body{
   background:var(--surface);
-  color:var(--neutral-900);
+  color:var(--text-primary);
   font-family:var(--font-sans);
-  line-height:1.5;
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   margin: 0;
@@ -63,26 +81,40 @@ html,body{
   scroll-behavior: smooth;
 }
 
+/* Remove default text selection highlight */
+::selection {
+  background: transparent;
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
 /* Typography System */
 @layer components {
   h1, h2 {
-    @apply font-heading italic tracking-wide leading-tight text-neutral-900;
+    @apply font-heading italic tracking-wide leading-tight;
+    color: var(--text-primary);
   }
   
   h3 {
-    @apply font-heading italic leading-snug text-neutral-900;
+    @apply font-heading italic leading-snug;
+    color: var(--text-primary);
   }
   
   p, li {
-    @apply font-body leading-relaxed text-[17px] md:text-[18px] text-neutral-800;
+    @apply font-body leading-relaxed text-[17px] md:text-[18px];
+    color: var(--text-secondary);
   }
   
   a {
     @apply font-body underline-offset-4 decoration-transparent hover:decoration-current;
+    color: var(--primary);
   }
   
   small {
-    @apply text-sm text-neutral-600;
+    @apply text-sm;
+    color: var(--text-muted);
   }
 }
 
@@ -112,18 +144,18 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
   will-change:transform;
 }
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.btn-primary{background:var(--brand-2);color:#fff}
-.btn-primary:hover{background:var(--brand-1)}
-.btn-ghost{background:transparent;color:var(--brand-2);border-color:var(--neutral-200)}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-ghost{background:transparent;color:var(--primary);border-color:var(--neutral-200)}
 .btn-ghost:hover{background:var(--surface-muted)}
 
 .badge{
   display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;
-  padding:.4rem .9rem;background:color-mix(in srgb, var(--brand-2) 10%, transparent);
-  color:var(--brand-2);font-weight:600;
+  padding:.4rem .9rem;background:color-mix(in srgb, var(--accent) 15%, transparent);
+  color:var(--primary);font-weight:600;
 }
 
-.card{background:#fff;border:1px solid var(--neutral-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+.card{background:var(--surface-elevated);border:1px solid var(--neutral-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
 
 .section{padding:4rem 0}
 .section-muted{padding:4rem 0;background:var(--surface-muted);border-top:1px solid var(--neutral-200);border-bottom:1px solid var(--neutral-200)}
@@ -137,7 +169,7 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
   text-transform: uppercase;
   font-weight: 700;
   font-size: .78rem;
-  color: color-mix(in srgb, var(--brand-2) 70%, var(--neutral-400));
+  color: var(--text-muted);
 }
 
 /* Elegant underline for section titles */
@@ -150,7 +182,7 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
   left:0; bottom:-10px;
   width:74px; height:4px;
   border-radius:999px;
-  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  background: linear-gradient(90deg, var(--accent), var(--primary));
   opacity:.9;
 }
 
@@ -168,7 +200,7 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
 }
 .quote-card .belief{
   font-style: italic;
-  color: var(--brand-1);
+  color: var(--primary);
   font-size: 1.15rem;
 }
 
@@ -183,7 +215,7 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
   content: "";
   position: absolute;
   inset: 12px -24px -12px 12px; /* extended right border: -24px instead of -12px */
-  background: var(--brand-2);   /* dark slate background from your palette */
+  background: var(--primary-dark);   /* espresso background */
   border-radius: var(--radius-lg);
   z-index: 0;
   box-shadow: var(--shadow-sm);
@@ -199,24 +231,23 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
 
 /* Utilities */
 .text-gradient{
-  background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
+  background:linear-gradient(135deg,var(--primary),var(--accent));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
 /* Nav */
 .navbar-blur{
   backdrop-filter:blur(10px);
-  background:rgba(255,255,255,.72);
+  background:color-mix(in srgb, var(--surface) 85%, transparent);
   border-bottom:1px solid var(--neutral-200)
 }
 /* Clinical Services visual accents (no icon fonts) */
 .svc-dot{
   width:12px;height:12px;border-radius:999px;
-  background: var(--brand-2);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-2) 20%, white);
+  background: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, white);
   display:inline-block;
 }
-
 
 /* Footer */
 .footer{border-top:1px solid var(--neutral-200);background:var(--surface-muted)}
@@ -263,5 +294,5 @@ p, .text-base, .text-lg, .text-xl, .text-2xl {
   }
 }
 
-/* Optional dark overlay using brand slate */
-.hero-overlay{background:linear-gradient(0deg, color-mix(in srgb, var(--brand-2) 55%, transparent), color-mix(in srgb, #000 30%, transparent))}
+/* Optional dark overlay using luxury colors */
+.hero-overlay{background:linear-gradient(0deg, color-mix(in srgb, var(--primary-dark) 45%, transparent), color-mix(in srgb, var(--espresso) 25%, transparent))}

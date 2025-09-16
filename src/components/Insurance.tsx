@@ -38,7 +38,7 @@ export default function Insurance() {
   };
 
   return (
-    <section id="insurance" className="section-muted">
+    <section id="insurance" className="py-16 md:py-20 bg-[color:var(--surface-muted)]">
       <div className="container">
         <motion.div 
           className="text-center mb-12"
@@ -48,7 +48,7 @@ export default function Insurance() {
           viewport={{ amount: 0.01 }}
         >
           <motion.h2 
-            className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-4"
+            className="text-4xl md:text-5xl font-semibold text-black mb-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -57,7 +57,7 @@ export default function Insurance() {
             Insurance & Billing
           </motion.h2>
           <motion.p 
-            className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-black max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -79,15 +79,15 @@ export default function Insurance() {
             >
               <motion.button
                 onClick={() => toggleItem(index)}
-                className="w-full text-left p-6 bg-white border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-1)] focus:ring-opacity-50"
+                className="w-full text-left p-6 bg-[color:var(--surface)] border border-[color:var(--neutral-200)] rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)] focus:ring-opacity-50"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.99 }}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="font-semibold text-lg text-neutral-900 pr-4">{item.question}</h3>
+                  <h3 className="font-semibold text-lg text-black pr-4">{item.question}</h3>
                   <div className="flex-shrink-0">
                     <motion.svg
-                      className="w-5 h-5 text-neutral-500"
+                      className="w-5 h-5 text-[color:var(--text-muted)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -103,14 +103,14 @@ export default function Insurance() {
               <AnimatePresence>
                 {openItem === index && (
                   <motion.div 
-                    className="px-6 pb-6 bg-white border-l border-r border-b border-neutral-200 rounded-b-lg"
+                    className="px-6 pb-6 bg-[color:var(--surface)] border-l border-r border-b border-[color:var(--neutral-200)] rounded-b-lg"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     <motion.p 
-                      className="text-neutral-600 leading-relaxed pt-4"
+                      className="text-black leading-relaxed pt-4"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.1 }}

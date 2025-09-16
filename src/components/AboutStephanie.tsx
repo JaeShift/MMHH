@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function AboutStephanie() {
   return (
     <div className="w-full">
       {/* Section 1: About Modern Mental Health & Hormones */}
-      <div id="about" className="w-full pt-12 pb-16 md:pt-16 md:pb-20 bg-slate-100">
-        <div className="container mx-auto px-6 lg:px-8">
+      <div id="about" className="w-full py-20 md:py-32 lg:py-40 bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)] relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[color:var(--accent)]/20 rounded-full opacity-60 blur-xl"></div>
+        <div className="absolute top-40 right-16 w-24 h-24 bg-[color:var(--wheat)]/15 rounded-full opacity-50 blur-lg"></div>
+        <div className="absolute bottom-20 left-1/3 w-20 h-20 bg-[color:var(--bisque)]/25 rounded-full opacity-40 blur-md"></div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -15,16 +21,16 @@ export default function AboutStephanie() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="tracking-wider text-sm font-semibold text-slate-500 mb-4">
+              <p className="tracking-wider text-sm font-semibold text-[color:var(--text-muted)] mb-4">
                 ABOUT MODERN MENTAL HEALTH & HORMONES
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 leading-tight mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-[color:var(--text-primary)] leading-tight mb-6">
                 Specialized Care for Women
               </h2>
-              <p className="text-slate-700 text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 leading-6">
+              <p className="text-[color:var(--text-secondary)] text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 leading-6">
                 We specialize in comprehensive mental health and hormone care for women navigating life&apos;s transitions. Our practice combines evidence-based medicine with personalized, compassionate care.
               </p>
-              <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-6">
+              <p className="text-[color:var(--text-secondary)] text-base md:text-lg max-w-2xl mx-auto leading-6">
                 From stress and sleep challenges to hormonal changes and mood concerns, we provide stigma-free support tailored to your unique needs and goals.
               </p>
 
@@ -37,8 +43,8 @@ export default function AboutStephanie() {
                 viewport={{ amount: 0.01 }}
               >
                 <motion.a
-                  href="#about"
-                  className="inline-flex items-center text-[color:var(--brand-1)] font-medium hover:text-[color:var(--brand-2)] transition-colors duration-300 group"
+                  href="#provider"
+                  className="inline-flex items-center text-[color:var(--primary)] font-medium hover:text-[color:var(--primary-dark)] transition-colors duration-300 group"
                   whileHover={{ scale: 1.05, x: 4 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -60,32 +66,92 @@ export default function AboutStephanie() {
         </div>
       </div>
 
-      {/* Section 2: Meet Stephanie */}
-      <section className="py-20 md:py-24">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl">Meet Your Provider</h2>
-          <p className="mt-4 text-lg text-neutral-600">Stephanie Nichols, PMHNP-BC, FNP-BC, NCMP</p>
+      {/* Inverted wave transition between about sections */}
+      <div className="relative h-20 overflow-hidden bg-[color:var(--surface-muted)]">
+        <svg className="absolute bottom-0 w-full h-20 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ transform: 'scaleY(-1)' }}>
+          <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" fill="currentColor"/>
+        </svg>
+      </div>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {/* Left column — text */}
-            <div className="space-y-4">
-              <p>With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life from bedside care to clinical leadership, pediatrics to internal medicine.</p>
-              <p>For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today.</p>
-              <p>I&apos;m passionate about helping women navigate life transitions with comprehensive, stigma-free support that addresses both mental health and hormonal health.</p>
-              <ul className="mt-4 list-disc pl-5">
+      {/* Section 2: Meet Stephanie */}
+      <section id="provider" className="pt-16 pb-32 md:pt-24 md:pb-40 bg-gradient-to-b from-white to-[color:var(--surface)] relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-32 right-10 w-40 h-40 bg-[color:var(--accent)]/15 rounded-full opacity-50 blur-2xl"></div>
+        <div className="absolute bottom-32 left-16 w-28 h-28 bg-[color:var(--wheat)]/20 rounded-full opacity-40 blur-xl"></div>
+        <div className="absolute top-1/2 left-8 w-16 h-16 bg-[color:var(--pistachio)]/10 rounded-full opacity-35 blur-lg"></div>
+        
+        <div className="container relative z-10">
+          <div className="bg-white/98 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-lg border border-[color:var(--neutral-200)]">
+            <h2 className="text-4xl md:text-5xl font-semibold text-[color:var(--text-primary)]">Meet Your Provider</h2>
+            <p className="mt-6 text-xl text-[color:var(--text-secondary)]">Stephanie Nichols, PMHNP-BC, FNP-BC, NCMP</p>
+
+            <div className="mt-12 grid gap-10 md:grid-cols-2">
+              {/* Left column — text */}
+              <div className="space-y-6">
+              <p className="text-lg">With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life from bedside care to clinical leadership, pediatrics to internal medicine.</p>
+              <p className="text-lg">For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today.</p>
+              <p className="text-lg">I&apos;m passionate about helping women navigate life transitions with comprehensive, stigma-free support that addresses both mental health and hormonal health.</p>
+              <ul className="mt-6 list-disc pl-5 text-lg space-y-2">
                 <li>Dual board-certified PMHNP-BC & FNP-BC</li>
                 <li>NAMS Certified Menopause Practitioner</li>
                 <li>Telehealth across Ohio</li>
               </ul>
 
+              {/* Read More Button */}
+              <motion.div 
+                className="mt-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ amount: 0.2 }}
+              >
+                <Link href="/about-stephanie">
+                  <motion.span
+                    className="inline-flex items-center text-[color:var(--text-secondary)] font-medium hover:text-[color:var(--text-primary)] transition-colors duration-300 cursor-pointer"
+                    whileHover={{ scale: 1.05, x: 4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Read More About Stephanie
+                    <motion.svg 
+                      className="w-4 h-4 ml-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </motion.svg>
+                  </motion.span>
+                </Link>
+              </motion.div>
+
             </div>
-            <img src="/stephanie-headshot.jpg" alt="Stephanie Nichols" className="rounded-2xl object-cover w-full h-full" />
+            <div className="flex justify-center md:justify-center md:-mt-32 md:ml-8">
+              <div className="relative">
+                {/* Decorative background behind image */}
+                <div className="absolute -top-12 -left-12 w-80 h-80 bg-gradient-to-br from-[color:var(--accent)] to-[color:var(--wheat)] rounded-2xl -z-10 opacity-25"></div>
+                <img 
+                  src="/stephanie-headshot.jpg" 
+                  alt="Stephanie Nichols" 
+                  className="rounded-2xl object-cover w-full h-[42rem] md:w-[34rem] md:h-[42rem] relative z-10" 
+                />
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
-
-      {/* Divider line */}
-      <div className="w-full h-px bg-slate-300 mt-16 mb-8"></div>
+      
+      {/* Elegant organic transition at bottom of Meet Your Provider section */}
+      <div className="relative h-24 overflow-hidden">
+        <svg className="absolute bottom-0 w-full h-24 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor" opacity="0.8"/>
+        </svg>
+        <svg className="absolute bottom-0 w-full h-24 text-[color:var(--accent)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor" opacity="0.3"/>
+        </svg>
+      </div>
 
     </div>
   );

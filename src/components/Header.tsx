@@ -15,26 +15,26 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 ${scrolled ? "navbar-blur" : "bg-white"}`}>
+    <header className={`sticky top-0 z-50 ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"}`}>
       <div className="container flex items-center justify-between h-16">
         <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="font-serif text-3xl lg:text-4xl">
           <span className="text-gradient">MMHH</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2" aria-label="Primary">
-          <Link href="/#about" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">About</Link>
-          <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#provider" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Provider</Link>
-          <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#services" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Care</Link>
-          <div className="w-px h-4 bg-slate-300"></div>
-          <Link href="/#contact" className="text-lg lg:text-xl xl:text-2xl hover:text-brand-2">Contact</Link>
+          <Link href="/#about" className="text-sm lg:text-base xl:text-lg text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]">About</Link>
+          <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
+          <Link href="/#provider" className="text-sm lg:text-base xl:text-lg text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]">Provider</Link>
+          <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
+          <Link href="/#services" className="text-sm lg:text-base xl:text-lg text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]">Care</Link>
+          <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
+          <Link href="/#contact" className="text-sm lg:text-base xl:text-lg text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]">Contact</Link>
         </nav>
 
 
         {/* Mobile */}
         <button
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-200"
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[color:var(--neutral-200)] text-[color:var(--text-secondary)]"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen(v => !v)}
@@ -47,12 +47,12 @@ export default function Header() {
       </div>
 
       {open && (
-        <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} className="md:hidden border-t border-neutral-200 bg-white">
+        <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} className="md:hidden border-t border-[color:var(--neutral-200)] bg-[color:var(--surface-elevated)]">
           <div className="container py-4 flex flex-col gap-3">
-            <Link href="/#about" className="text-lg" onClick={()=>setOpen(false)}>About</Link>
-            <Link href="/#provider" className="text-lg" onClick={()=>setOpen(false)}>Provider</Link>
-            <Link href="/#services" className="text-lg" onClick={()=>setOpen(false)}>Care</Link>
-            <Link href="/#contact" className="text-lg" onClick={()=>setOpen(false)}>Contact</Link>
+            <Link href="/#about" className="text-base text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]" onClick={()=>setOpen(false)}>About</Link>
+            <Link href="/#provider" className="text-base text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]" onClick={()=>setOpen(false)}>Provider</Link>
+            <Link href="/#services" className="text-base text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]" onClick={()=>setOpen(false)}>Care</Link>
+            <Link href="/#contact" className="text-base text-[color:var(--text-secondary)] hover:text-[color:var(--primary)]" onClick={()=>setOpen(false)}>Contact</Link>
           </div>
         </motion.div>
       )}
