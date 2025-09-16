@@ -90,13 +90,13 @@ export default function AboutStephanie() {
 
               <div className="prose prose-slate max-w-none">
                 <p className="mb-4 leading-6 text-lg md:text-xl">
-                  With over 30 years in healthcare, I've had the privilege of walking alongside patients through every stage of life from bedside care to clinical leadership, pediatrics to internal medicine. My career began as a nurse's aide and grew into a lifelong calling. I earned my BSN in 1998, my Master's in Family Practice Nursing in 2010, and most recently, my post-master's certification as a Psychiatric Mental Health Nurse Practitioner in 2024.
+                  With over 30 years in healthcare, I&apos;ve had the privilege of walking alongside patients through every stage of life from bedside care to clinical leadership, pediatrics to internal medicine. My career began as a nurse&apos;s aide and grew into a lifelong calling. I earned my BSN in 1998, my Master&apos;s in Family Practice Nursing in 2010, and most recently, my post-master&apos;s certification as a Psychiatric Mental Health Nurse Practitioner in 2024.
                 </p>
                 <p className="mb-4 leading-6 text-lg md:text-xl">
-                  For more than a decade, I served at Nationwide Children's Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today. Over the years, I've seen a growing need especially among professional women for compassionate, stigma-free support that addresses both mental health and hormonal health. That need inspired me to create Modern Mental Health and Hormones.
+                  For more than a decade, I served at Nationwide Children&apos;s Hospital, first as a nurse and later as a manager within the neurology and neurosurgery unit. In 2010, I transitioned into adult care, joining an internal medicine practice where I continue to care for patients today. Over the years, I&apos;ve seen a growing need especially among professional women for compassionate, stigma-free support that addresses both mental health and hormonal health. That need inspired me to create Modern Mental Health and Hormones.
                 </p>
                 <p className="mb-4 leading-6 text-lg md:text-xl">
-                  I am deeply passionate about helping women navigate the emotional and physical challenges of midlife. Stress, shifting hormones, and invisible burdens can steal energy and joy, but they don't have to. As a NAMS-certified menopause practitioner, I specialize in the unique intersection of hormonal and mental health, offering women the tools to reclaim their vitality and confidence.
+                  I am deeply passionate about helping women navigate the emotional and physical challenges of midlife. Stress, shifting hormones, and invisible burdens can steal energy and joy, but they don&apos;t have to. As a NAMS-certified menopause practitioner, I specialize in the unique intersection of hormonal and mental health, offering women the tools to reclaim their vitality and confidence.
                 </p>
               </div>
 

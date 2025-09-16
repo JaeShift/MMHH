@@ -75,10 +75,6 @@ export default function FocusAreas() {
                 scale: 1.05,
                 transition: { duration: 0.2, ease: "easeOut" }
               }}
-              transition={{ 
-                duration: 0.3, 
-                ease: "easeOut"
-              }}
             >
               <div>
                 <div>
