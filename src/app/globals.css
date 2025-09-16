@@ -7,7 +7,7 @@
    ============================== */
 :root{
   /* Brand pulled from your hero.jpg */
-  --brand-1:#849468;   /* sage green (plants) */
+  --brand-1:#3b4340;   /* dark muted green-gray */
   --brand-2:#596163;   /* slate wall */
   --brand-3:#957557;   /* warm wood accent */
 
@@ -20,8 +20,8 @@
   --white:#fff;
 
   /* Surfaces */
-  --surface:var(--white);
-  --surface-muted:#f8fafc;
+  --surface:#f4f1ea;
+  --surface-muted:#eee8dd;
 
   /* Radii & shadows */
   --radius-sm:10px;
@@ -49,12 +49,17 @@ html,body{
   background:var(--surface);
   color:var(--neutral-900);
   font-family:var(--font-sans);
-  line-height:var(--leading);
+  line-height:1.5;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+/* Consistent 1.5 line spacing for text elements */
+p, .text-base, .text-lg, .text-xl, .text-2xl {
+  line-height: 1.5;
 }
 
 /* Containers */
@@ -186,6 +191,13 @@ html,body{
 
 /* Footer */
 .footer{border-top:1px solid var(--neutral-200);background:var(--surface-muted)}
+
+/* Adobe Caslon Pro override */
+.adobe-caslon-italic {
+  font-family: "adobe-caslon-pro", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
 
 /* ==============================
    HERO image alignment helpers updated 

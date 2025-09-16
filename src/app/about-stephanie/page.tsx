@@ -70,7 +70,7 @@ export default function AboutStephaniePage() {
                   className="relative"
                 >
                   <div className="absolute -inset-3 bg-slate-200/40 blur-sm" aria-hidden></div>
-                  <div className="absolute right-6 top-6 h-40 w-40 bg-[#849468]/20" aria-hidden></div>
+                  <div className="absolute right-6 top-6 h-40 w-40 bg-[#3b4340]/20" aria-hidden></div>
                   <div className="absolute -top-8 -bottom-8 left-0 right-0 translate-x-12 border border-slate-200 bg-white shadow-xl" aria-hidden></div>
                   <div className="relative p-3">
                     <div className="overflow-hidden">
@@ -190,7 +190,7 @@ export default function AboutStephaniePage() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <motion.a
                   href="mailto:info@modernmhh.com"
-                  className="inline-flex items-center bg-[#849468] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#596163] transition-colors duration-300"
+                  className="inline-flex items-center bg-[#3b4340] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#596163] transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -198,7 +198,7 @@ export default function AboutStephaniePage() {
                 </motion.a>
                 <motion.a
                   href="/#services"
-                  className="inline-flex items-center text-[#849468] font-medium hover:text-[#596163] transition-colors duration-300"
+                  className="inline-flex items-center text-[#3b4340] font-medium hover:text-[#596163] transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -220,7 +220,7 @@ export default function AboutStephaniePage() {
             >
               <Link
                 href="/#about"
-                className="inline-flex items-center text-[#849468] hover:text-[#596163] transition-colors duration-300"
+                className="inline-flex items-center text-[#3b4340] hover:text-[#596163] transition-colors duration-300"
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

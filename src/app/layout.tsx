@@ -1,10 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Crimson_Text } from "next/font/google";
+import { Inter, Crimson_Text, Crimson_Pro } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const crimsonText = Crimson_Text({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-serif" });
+
+const crimsonPro = Crimson_Pro({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  weight: ['400', '600'],
+  variable: '--font-caslon',
+});
 
 export const metadata: Metadata = {
   title: "Modern Mental Health & Hormones | Columbus, OH",
@@ -16,7 +23,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     // Switch to Palette B by adding: className="theme-b"
-    <html lang="en" className={`${inter.variable} ${crimsonText.variable}`}>
+    <html lang="en" className={`${inter.variable} ${crimsonText.variable} ${crimsonPro.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://use.typekit.net" />
+        <link rel="stylesheet" href="https://use.typekit.net/jqn6aqv.css" />
+      </head>
       <body className="antialiased">
         {children}
         {/* SEO JSON-LD */}

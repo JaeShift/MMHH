@@ -6,25 +6,25 @@ export default function FocusAreas() {
     {
       heading: "Mental Health",
       items: [
-        { t: "Anxiety & Depression", d: "Diagnosis and medication management with structured follow-up." },
-        { t: "PMDD & Cyclical Mood", d: "Targeted evaluation and treatment for severe premenstrual symptoms." },
-        { t: "Sleep & Insomnia", d: "Assessment and treatment for mid-life sleep disruption." },
-        { t: "ADHD & Focus Concerns", d: "Evaluation, prescribing when appropriate, and monitoring." },
-        { t: "Perimenopause & Menopause", d: "Treatment for hot flashes, mood changes, sleep issues, and more." },
-        { t: "Hormone Therapy (HRT)", d: "Individualized hormonal and non-hormonal options with ongoing monitoring." },
-        { t: "Thyroid & Related Concerns", d: "Evaluation of thyroid contributions to mood, energy, and sleep." },
-        { t: "Stress Management", d: "Comprehensive approaches to managing work, family, and life stressors." },
-        { t: "Weight & Metabolism", d: "Support for metabolic health and sustainable weight management strategies." },
+        { t: "Anxiety & Depression", d: "I provide personalized evaluation and medication management for anxiety and depression, helping you regain emotional stability, energy, and peace of mind." },
+        { t: "PMDD & Cyclical Mood", d: "For women experiencing PMDD or monthly mood shifts, I offer targeted treatment that reduces severe emotional and physical symptoms, helping you feel more in control throughout your cycle." },
+        { t: "Sleep & Insomnia", d: "When sleepless nights affect your health, I create tailored treatment plans that address both hormonal and mental health factors, so you can finally rest and restore your energy." },
+        { t: "ADHD & Focus Concerns", d: "If concentration and follow-through feel like a daily battle, I provide comprehensive ADHD evaluation and medication management to improve focus, reduce overwhelm, and support your success at work and home." },
+        { t: "Perimenopause & Menopause", d: "Hot flashes, mood changes, and sleep problems don't have to define this stage of life. I specialize in helping women navigate perimenopause and menopause with treatment designed for relief and balance." },
+        { t: "Hormone Therapy (HRT)", d: "Hormonal shifts can feel overwhelming. I provide individualized hormone therapy (HRT) and non-hormonal options to restore energy, stabilize mood, and improve quality of life in mid-life and beyond." },
+        { t: "Thyroid & Related Concerns", d: "Thyroid imbalances often affect mood, energy, and sleep. I offer thorough evaluation and treatment that connects thyroid health with your mental and emotional well-being." },
+        { t: "Stress Management", d: "Chronic stress takes a toll on both body and mind. I provide personalized medication management and strategies that strengthen resilience, calm, and balance in daily life." },
+        { t: "Weight & Metabolism", d: "Weight changes and slowed metabolism are common in mid-life. I offer prescribing support and individualized strategies for long-term, sustainable weight management." },
       ],
     },
   ];
 
   return (
-    <section id="services" className="pt-8 pb-20 md:pt-12 md:pb-28">
+    <section id="services" className="pt-16 pb-32 md:pt-20 md:pb-40">
       <div className="container">
-        <div className="bg-stone-100 rounded-full pt-20 pb-48 -mx-20 md:-mx-40 lg:-mx-56 xl:-mx-64 2xl:-mx-72 px-24 md:px-48 lg:px-56 xl:px-64 2xl:px-72">
-        <motion.div 
-          className="text-center mb-12"
+        <div className="rounded-full pt-24 pb-56 -mx-20 md:-mx-40 lg:-mx-56 xl:-mx-64 2xl:-mx-72 px-24 md:px-48 lg:px-56 xl:px-64 2xl:px-72 shadow-lg border border-stone-200/50" style={{backgroundColor: 'var(--surface-muted)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.08)'}}>
+          <motion.div 
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -32,33 +32,34 @@ export default function FocusAreas() {
           viewport={{ amount: 0.01 }}
         >
           <motion.h2 
-            className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-4"
+            className="italic text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-8"
+            style={{fontFamily: 'var(--font-serif)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ amount: 0.01 }}
           >
-            Care Provided
+            Areas of Care
           </motion.h2>
           <motion.p 
-            className="text-xl md:text-2xl lg:text-3xl text-neutral-600 max-w-4xl mx-auto leading-relaxed"
+            className="font-body text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto leading-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ amount: 0.01 }}
           >
-            Focused care for women in mid-life—integrating mental health and hormone expertise with safe, evidence-based prescribing.
+            Conditions that commonly affect mood, focus, & overall balance.
           </motion.p>
         </motion.div>
 
-        {/* 3x3 grid with square-constrained text */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        {/* Service grid with proper spacing */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-7xl mx-auto">
           {cols.flatMap(({ items }) => items).map(({ t, d }, itemIndex) => (
             <motion.div 
               key={t} 
-              className="group h-56 flex flex-col justify-between"
+              className="group h-72 flex flex-col justify-between p-6 rounded-lg"
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -40, scale: 0.9 }}
@@ -69,23 +70,31 @@ export default function FocusAreas() {
               }}
               viewport={{ amount: 0.2 }}
               whileHover={{ 
-                y: -8, 
-                scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" }
+                y: -12, 
+                scale: 1.05,
+                transition: { duration: 0.2, ease: "easeOut" }
+              }}
+              transition={{ 
+                duration: 0.3, 
+                ease: "easeOut"
               }}
             >
               <div>
-                <h3 className="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 mb-4 pb-2 inline-block border-b-2 border-slate-300 group-hover:border-[#849468] transition-colors duration-300">
-                  {t}
-                </h3>
-                <p className="text-lg md:text-xl text-neutral-600 leading-relaxed">
-                  {d}
-                </p>
+                <div>
+                  <h3 className="italic text-xl md:text-2xl lg:text-3xl font-semibold text-neutral-900 mb-4 pb-2 border-b-2 border-[#3b4340] group-hover:border-[#6b8c4a] transition-colors duration-300 whitespace-nowrap inline-block"
+                      style={{fontFamily: 'var(--font-serif)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}
+                  >
+                    {t}
+                  </h3>
+                  <p className="font-body text-lg md:text-xl text-neutral-600 leading-6">
+                    {d}
+                  </p>
+                </div>
               </div>
               <motion.a 
                 href={`/care/${encodeURIComponent(t.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''))}`}
-                className="inline-flex items-center text-[#849468] font-medium hover:text-[#596163] transition-colors duration-300 mt-4"
-                whileHover={{ scale: 1.05, x: 4 }}
+                className="inline-flex items-center text-[#2a302d] hover:text-[#6b8c4a] font-medium mt-4 transition-colors duration-150"
+                whileHover={{ scale: 1.05, x: 4, transition: { duration: 0.15 } }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
