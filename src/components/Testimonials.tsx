@@ -40,7 +40,7 @@ export default function Testimonials() {
           viewport={{ amount: 0.01 }}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold text-black mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,13 +49,13 @@ export default function Testimonials() {
             Hear from Patients
           </motion.h2>
           <motion.p 
-            className="text-lg text-black max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ amount: 0.01 }}
           >
-            Hear from women who have experienced improved health and wellness through our comprehensive services.
+            Hear from women who have experienced improved health and wellness through my comprehensive services.
           </motion.p>
         </motion.div>
         

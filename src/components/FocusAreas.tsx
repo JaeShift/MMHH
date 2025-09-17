@@ -22,7 +22,7 @@ export default function FocusAreas() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22,1,0.36,1] } }
+    show: { opacity: 1, y: 0 }
   };
 
   return (
@@ -45,9 +45,9 @@ export default function FocusAreas() {
           {/* Decorative background element */}
           <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[40rem] h-[40rem] bg-[color:var(--accent)]/15 rounded-full opacity-50 -z-10"></div>
           
-          <h2 className="text-4xl md:text-5xl font-semibold text-[color:var(--text-primary)] relative">Areas of Care</h2>
-          <div className="w-24 h-1 bg-[color:var(--primary)] mx-auto mt-4 mb-4 rounded-full"></div>
-          <p className="text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto">Conditions that impact mood, focus, and daily well-being.</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[color:var(--text-primary)] relative mb-6">Areas of Care</h2>
+          <div className="w-24 h-1 bg-[color:var(--mocha)] mx-auto mt-4 mb-6 rounded-full"></div>
+          <p className="text-xl md:text-2xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">Conditions that impact mood, focus, and daily well-being.</p>
         </motion.div>
 
         <motion.div 
@@ -63,22 +63,32 @@ export default function FocusAreas() {
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {cols.flatMap(({ items }) => items).map(({ t, d }, itemIndex) => (
+          {cols.flatMap(({ items }) => items).map(({ t, d }, index) => (
             <motion.article 
-              key={t}
+              key={`${t}-${index}`}
               className="rounded-2xl border border-[color:var(--neutral-200)] bg-[color:var(--surface-elevated)] p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative"
               variants={fadeUp}
+              whileHover={{ 
+                scale: 1.02, 
+                y: -8
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ 
+                duration: 0.08, 
+                ease: "easeOut",
+                layout: { duration: 0.5, ease: "easeOut" }
+              }}
               style={{
                 boxShadow: '0 10px 25px -5px rgba(57, 46, 38, 0.08), 0 10px 10px -5px rgba(107, 91, 77, 0.04), 0 0 0 1px rgba(226, 217, 205, 0.3)'
               }}
             >
-              <h3 className="text-2xl font-semibold text-[color:var(--text-primary)]">{t}</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold text-[color:var(--text-primary)]">{t}</h3>
               {/* Divider line between header and text */}
-              <div className="w-16 h-px bg-[color:var(--primary)] mt-5 mb-5"></div>
-              <p className="text-[color:var(--text-secondary)]">{d}</p>
+              <div className="w-16 h-px bg-[color:var(--mocha)] mt-5 mb-5"></div>
+              <p className="text-base md:text-lg text-[color:var(--text-secondary)] leading-relaxed">{d}</p>
               <Link 
                 href={`/care/${encodeURIComponent(t.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''))}`}
-                className="mt-5 inline-flex text-sm uppercase tracking-wide text-[color:var(--primary)] hover:text-[color:var(--primary-dark)]"
+                className="mt-6 inline-flex text-base font-medium tracking-wide text-[color:var(--mocha)] hover:text-[color:var(--espresso)] transition-colors duration-300"
               >
                 Read More &gt;
               </Link>

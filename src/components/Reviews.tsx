@@ -52,7 +52,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ amount: 0.01 }}
           >
-            Hear from women who have experienced improved health and wellness through our comprehensive services.
+            Hear from women who have experienced improved health and wellness through my comprehensive services.
           </motion.p>
         </motion.div>
         

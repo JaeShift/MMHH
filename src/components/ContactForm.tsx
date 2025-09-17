@@ -66,17 +66,17 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn px-6 py-2 bg-[color:var(--brand-1)] text-white font-medium rounded-md hover:bg-[color:var(--brand-2)] transition-colors"
+        className="btn px-6 py-2 text-white font-medium rounded-md transition-colors bg-[#75866D] hover:bg-[#677560]"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
       </button>
 
       {status === "success" && (
-        <p className="text-green-600 mt-2">Thank you! We’ll be in touch soon.</p>
+        <p className="text-green-600 mt-2">Thank you! I&apos;ll be in touch soon.</p>
       )}
       {status === "error" && (
         <p className="text-red-600 mt-2">
-          Something went wrong. Please email us at{" "}
+          Something went wrong. Please email me at{" "}
           <a href="mailto:info@modernmhh.com" className="underline">
             info@modernmhh.com
           </a>

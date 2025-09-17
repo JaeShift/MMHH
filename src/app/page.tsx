@@ -14,7 +14,8 @@ export default function Page() {
     <>
       {/* Development Notice Banner */}
       <motion.div
-        className="bg-[color:var(--primary-dark)] text-white text-center py-4 px-4 border-b border-[color:var(--primary)]"
+        className="text-white text-center py-4 px-4 border-b border-[#677560]"
+        style={{ backgroundColor: '#75866D' }}
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -56,41 +57,52 @@ export default function Page() {
             <div className="container mx-auto px-6 lg:px-8">
               <div className="max-w-3xl">
                 <motion.h1
-                  className="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight mb-4"
+                  className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-relaxed mb-8 text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  style={{ textShadow: '0 4px 8px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)' }}
                 >
-                  Modern Mental Health &amp; Hormones
+                  <div className="mb-2">Modern Mental Health</div>
+                  <div>&amp; Hormones</div>
                 </motion.h1>
 
                 <motion.p
-                  className="text-white/95 text-lg md:text-xl lg:text-2xl mb-8 leading-6"
+                  className="text-white text-xl md:text-2xl lg:text-3xl mb-12 leading-relaxed text-center max-w-4xl mx-auto font-medium"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
                 >
                   Specialized, compassionate care for women —
                   integrating mental health and hormone expertise.
                 </motion.p>
 
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-3"
+                  className="flex flex-col sm:flex-row gap-6 justify-center"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <a
                     href="#contact"
-                    className="inline-flex items-center justify-center rounded-md bg-[color:var(--primary)] px-5 py-3 font-semibold text-white hover:bg-[color:var(--primary-dark)] transition-colors"
+                    className="inline-flex items-center justify-center text-lg font-bold text-white hover:text-gray-200 transition-all duration-300 transform hover:scale-105 group"
+                    style={{ textShadow: '0 2px 4px rgba(0,0,0,0.7)' }}
                   >
                     Request Appointment
+                    <svg className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </a>
                   <a
                     href="#services"
-                    className="inline-flex items-center justify-center rounded-md bg-white/90 px-5 py-3 font-semibold text-[color:var(--primary-dark)] hover:bg-white transition-colors"
+                    className="inline-flex items-center justify-center text-lg font-bold text-white hover:text-gray-200 transition-all duration-300 transform hover:scale-105 group"
+                    style={{ textShadow: '0 2px 4px rgba(0,0,0,0.7)' }}
                   >
                     View Services
+                    <svg className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </a>
                 </motion.div>
               </div>
@@ -151,12 +163,12 @@ export default function Page() {
       <section id="contact" className="bg-[color:var(--surface)] py-20">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-[color:var(--text-primary)]">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[color:var(--text-primary)]">
               Ready to Work Together?
             </h2>
-            <p className="text-[color:var(--text-secondary)]">
+            <p className="text-xl md:text-2xl text-[color:var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
               Send a secure message below to request an appointment or ask a
-              question. We'll respond promptly.
+              question. I&apos;ll respond promptly.
             </p>
           </div>
 

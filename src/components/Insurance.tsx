@@ -9,11 +9,11 @@ export default function Insurance() {
   const insuranceQAs = [
     {
       question: "Do you accept insurance?",
-      answer: "We provide superbills for out-of-network reimbursement and accept HSA/FSA. We&apos;re actively onboarding insurance plans and will update this page as contracts are finalized."
+      answer: "I provide superbills for out-of-network reimbursement and accept HSA/FSA. I'm actively onboarding insurance plans and will update this page as contracts are finalized."
     },
     {
       question: "What if you're out-of-network for my plan?",
-      answer: "If we're out-of-network for your plan, we can provide a detailed superbill so you can request reimbursement from your insurer. Many patients find this process straightforward."
+      answer: "If I'm out-of-network for your plan, I can provide a detailed superbill so you can request reimbursement from your insurer. Many patients find this process straightforward."
     },
     {
       question: "Do you accept HSA/FSA payments?",
@@ -21,15 +21,15 @@ export default function Insurance() {
     },
     {
       question: "How do prior authorizations work?",
-      answer: "When prior authorization is required for medications or testing, we&apos;ll submit requests and coordinate with your insurer and lab to ensure smooth processing."
+      answer: "When prior authorization is required for medications or testing, I&apos;ll submit requests and coordinate with your insurer and lab to ensure smooth processing."
     },
     {
       question: "Can I get a cost estimate before my visit?",
-      answer: "Yes! Upon request, we provide Good Faith Estimates consistent with the No Surprises Act for patients who are not using insurance. We&apos;ll also verify benefits and confirm any out-of-pocket costs before your appointment."
+      answer: "Yes! Upon request, I provide Good Faith Estimates consistent with the No Surprises Act for patients who are not using insurance. I&apos;ll also verify benefits and confirm any out-of-pocket costs before your appointment."
     },
     {
       question: "How can I verify my coverage?",
-      answer: "Email info@modernmhh.com with your insurer and member ID. We&apos;ll verify benefits and confirm any out-of-pocket costs before your appointment."
+      answer: "Email info@modernmhh.com with your insurer and member ID. I&apos;ll verify benefits and confirm any out-of-pocket costs before your appointment."
     }
   ];
 
@@ -48,7 +48,7 @@ export default function Insurance() {
           viewport={{ amount: 0.01 }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-semibold text-black mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -57,13 +57,13 @@ export default function Insurance() {
             Insurance & Billing
           </motion.h2>
           <motion.p 
-            className="text-lg md:text-xl text-black max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-black max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ amount: 0.01 }}
           >
-            We aim to make care accessible and transparent. Coverage varies by plan; we&apos;ll help you understand your options before you&apos;re seen.
+            I aim to make care accessible and transparent. Coverage varies by plan; I&apos;ll help you understand your options before you&apos;re seen.
           </motion.p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Insurance() {
                 whileTap={{ scale: 0.99 }}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="font-semibold text-lg text-black pr-4">{item.question}</h3>
+                  <h3 className="font-semibold text-xl md:text-2xl text-black pr-4">{item.question}</h3>
                   <div className="flex-shrink-0">
                     <motion.svg
                       className="w-5 h-5 text-[color:var(--text-muted)]"

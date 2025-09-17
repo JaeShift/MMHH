@@ -23,7 +23,7 @@ export const services: Service[] = [
     title: 'Anxiety & Depression Treatment',
     subtitle: 'Comprehensive mental health care that addresses the unique challenges women face during life transitions',
     intro: [
-      'Anxiety and depression can disrupt work, relationships, and daily life—especially when hormonal changes can intensify symptoms. I provide care that helps you feel heard, understood, and supported while we find a plan that restores stability, energy, and peace of mind.'
+      'Anxiety and depression can disrupt work, relationships, and daily life—especially when hormonal changes can intensify symptoms. I provide care that helps you feel heard, understood, and supported while I find a plan that restores stability, energy, and peace of mind.'
     ],
     expect: [
       'Comprehensive evaluation of symptoms, history, and relevant hormone factors',
@@ -210,7 +210,7 @@ export const services: Service[] = [
     expect: [
       'Conversation about stressors, sleep, coping patterns, and supports',
       'Practical plan you can use immediately, not a long to-do list',
-      'Clear guidance on when medication can help and how we\'ll monitor it',
+      'Clear guidance on when medication can help and how I\'ll monitor it',
       'Regular follow-ups to adjust and build on what\'s working'
     ],
     approaches: [

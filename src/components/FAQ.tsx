@@ -1,8 +1,8 @@
 export default function FAQ() {
     const faqs = [
-      { q: "Do you accept insurance?", a: "We provide superbills for out-of-network reimbursement and accept HSA/FSA. We’ll post updates about in-network plans as we onboard. Transparent self-pay pricing is available." },
-      { q: "Are visits virtual or in person?", a: "We offer telehealth appointments across Ohio." },
-      { q: "When are you accepting patients?", a: "We’re opening our schedule in mid-November. Join the waitlist to be notified first." },
+      { q: "Do you accept insurance?", a: "I provide superbills for out-of-network reimbursement and accept HSA/FSA. I'll post updates about in-network plans as I onboard. Transparent self-pay pricing is available." },
+      { q: "Are visits virtual or in person?", a: "I offer telehealth appointments across Ohio." },
+      { q: "When are you accepting patients?", a: "I'm opening my schedule in mid-November. Join the waitlist to be notified first." },
       { q: "What conditions do you treat?", a: "Anxiety, depression, ADHD, PMDD, perimenopause symptoms, sleep issues, and more—using medication, psychotherapy-informed strategies, and lifestyle care." }
     ];
     return (
