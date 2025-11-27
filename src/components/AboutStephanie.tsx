@@ -65,7 +65,7 @@ export default function AboutStephanie() {
                 Instead of just masking symptoms, you receive integrative, personalized care—so you can finally feel like yourself again.
               </p>
               <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                Our belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, we'll create a plan that supports your mind, body, and spirit.
+                Our belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, we&apos;ll create a plan that supports your mind, body, and spirit.
               </p>
               <p className="text-[color:var(--text-primary)] text-lg sm:text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-6 leading-relaxed">
                 Now accepting patients across the state of Ohio.
@@ -168,13 +168,13 @@ export default function AboutStephanie() {
                 className="text-base sm:text-lg text-black" 
                 style={{ lineHeight: '1.6' }}
               >
-                Hi, I'm Stephanie Nichols, MSN, APRN, PMHNP-BC, FNP-BC. As a psychiatric nurse practitioner I believe that mental health and hormonal health are deeply connected—and that your care should be as unique as you are.
+                Hi, I&apos;m Stephanie Nichols, MSN, APRN, PMHNP-BC, FNP-BC. As a psychiatric nurse practitioner I believe that mental health and hormonal health are deeply connected—and that your care should be as unique as you are.
               </p>
               <p 
                 className="text-base sm:text-lg text-black" 
                 style={{ lineHeight: '1.6' }}
               >
-                With over 25 years of experience in internal medicine, neurology, and psychiatry, I've seen how life's transitions and challenges can impact both the mind and body. My journey into mental health care was inspired by a desire to provide compassionate, personalized care that addresses the root causes of emotional and physical struggles. I combine traditional medicine with integrative approaches to help women feel empowered, balanced, and truly well.
+                With over 25 years of experience in internal medicine, neurology, and psychiatry, I&apos;ve seen how life&apos;s transitions and challenges can impact both the mind and body. My journey into mental health care was inspired by a desire to provide compassionate, personalized care that addresses the root causes of emotional and physical struggles. I combine traditional medicine with integrative approaches to help women feel empowered, balanced, and truly well.
               </p>
               <motion.div 
                 className="mt-6 text-left"

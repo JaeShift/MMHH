@@ -24,7 +24,7 @@ export default function Hero() {
               </h1>
 
               <p className="mt-3 md:mt-4 text-white/90 text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl mb-6 md:mb-8 leading-relaxed font-caslon" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                Specialized mental health and hormone care for women navigating life's transitions.
+                Specialized mental health and hormone care for women navigating life&apos;s transitions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
