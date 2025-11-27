@@ -42,8 +42,8 @@ export default function Page() {
       {/* Header / Navigation */}
       <Header />
 
-      {/* Main content with padding for fixed header */}
-      <div className="pt-[132px]">
+      {/* Main content - no extra padding needed with sticky header */}
+      <div>
       {/* HERO */}
       <HeroSection />
 

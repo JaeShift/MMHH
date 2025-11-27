@@ -40,7 +40,7 @@ export default function AboutMe() {
 
       <Header />
       
-      <main className="min-h-screen bg-gradient-to-b from-[#F5F1E8] via-[#EBE4D6] to-[#E0D5C7] relative overflow-hidden pt-[132px]">
+      <main className="min-h-screen bg-gradient-to-b from-[#F5F1E8] via-[#EBE4D6] to-[#E0D5C7] relative overflow-hidden">
         <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
           <motion.div
             className="absolute top-20 -left-20 w-96 h-96 bg-[#C8B5A0]/10 rounded-full blur-3xl"
