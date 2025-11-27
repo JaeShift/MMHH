@@ -44,7 +44,7 @@ export default function Insurance() {
       answer: (
         <div className="space-y-4">
           <p>
-            Modern MHH accepts insurance and private pay. If you're out-of-network, I can
+            Modern MHH accepts insurance and private pay. If you&apos;re out-of-network, I can
             provide a superbill to help you request reimbursement from your insurance
             provider. You can also review our{" "}
             <Link
