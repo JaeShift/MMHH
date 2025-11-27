@@ -37,7 +37,7 @@ export default function Insurance() {
     },
     {
       question: "Do you offer telehealth?",
-      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across [state(s) where I'm licensed]. You can receive care from home or anywhere you feel comfortable."
+      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across [state(s) where I&apos;m licensed]. You can receive care from home or anywhere you feel comfortable."
     },
     {
       question: "Do you take insurance?",
@@ -217,7 +217,7 @@ export default function Insurance() {
                     Still Have Questions?
                   </h3>
                   <p className="text-base sm:text-lg text-white/90 mb-6 max-w-xl mx-auto">
-                    I'm here to help you understand your care options and answer any questions you may have
+                    I&apos;m here to help you understand your care options and answer any questions you may have
                   </p>
                   <Link
                     href="/book"

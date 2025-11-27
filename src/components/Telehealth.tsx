@@ -70,7 +70,7 @@ export default function Telehealth() {
             <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
           </div>
           <p className="text-base sm:text-lg md:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Whether you're in Columbus, Ohio or anywhere in the state, every visit follows this simple path
+            Whether you&apos;re in Columbus, Ohio or anywhere in the state, every visit follows this simple path
           </p>
         </motion.div>
         

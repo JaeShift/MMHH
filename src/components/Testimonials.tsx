@@ -102,7 +102,7 @@ export default function Testimonials() {
 
                 {/* Quote text */}
                 <blockquote className="relative text-base sm:text-lg text-[color:var(--text-primary)] leading-relaxed mb-6">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 
                 {/* Author */}

@@ -230,7 +230,7 @@ export default function FocusAreas() {
                 Specialty Services
               </h3>
               <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto">
-                Expert care for the unique challenges women face throughout life's transitions
+                Expert care for the unique challenges women face throughout life&apos;s transitions
               </p>
             </div>
 
