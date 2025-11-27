@@ -17,18 +17,18 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40 sm:bg-black/35" />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl text-left">
-              <h1 className="font-caslon text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal leading-tight text-white mb-3 md:mb-4 tracking-wide" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)' }}>
-                <span className="block">Modern Mental&nbsp;Health</span>
+            <div className="max-w-6xl text-left space-y-8 sm:space-y-10 md:space-y-12">
+              <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-white tracking-tight" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.6)' }}>
+                <span className="block">Modern Mental Health</span>
                 <span className="block">&amp; Hormones</span>
               </h1>
 
-              <p className="mt-3 md:mt-4 text-white/90 text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl mb-6 md:mb-8 leading-relaxed font-caslon" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+              <p className="text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl leading-relaxed" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.7)' }}>
                 Specialized mental health and hormone care for women navigating life&apos;s transitions.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
-                <a href="/book" className="inline-flex items-center justify-center text-sm xs:text-base sm:text-lg font-bold text-white bg-white/20 backdrop-blur-sm px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-105">
+              <div className="pt-4 sm:pt-6">
+                <a href="/book" className="inline-flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold text-white bg-[#75866D] px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full hover:bg-[#677560] transition-all duration-300 transform hover:scale-105 shadow-2xl">
                   Request Appointment
                 </a>
               </div>

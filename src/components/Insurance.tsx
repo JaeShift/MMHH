@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 
 type FAQ = {
   question: string;
   answer: React.ReactNode;
+  category?: string;
 };
 
 export default function Insurance() {
@@ -42,7 +44,7 @@ export default function Insurance() {
       answer: (
         <div className="space-y-4">
           <p>
-            Modern MHH accepts insurance and private pay. If you&apos;re out-of-network, I can
+            Modern MHH accepts insurance and private pay. If you're out-of-network, I can
             provide a superbill to help you request reimbursement from your insurance
             provider. You can also review our{" "}
             <Link
@@ -84,106 +86,151 @@ export default function Insurance() {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-20 bg-[color:var(--surface-muted)]">
-      <div className="container">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ amount: 0.01 }}
-        >
-          <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ amount: 0.2, once: false }}
-          >
-            Frequently Asked Questions
-          </motion.h2>
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-black max-w-4xl mx-auto leading-relaxed px-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ amount: 0.2, once: false }}
-          >
-            Everything you need to know about Modern Mental Health & Hormones
-          </motion.p>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto">
-          {faqs.map((item, index) => (
+    <section id="faq" className="relative py-20 sm:py-24 lg:py-32 bg-[#EBE4D6]">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="relative bg-white rounded-[48px] overflow-hidden shadow-2xl">
+          <div className="relative z-10 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12">
+            {/* Header */}
             <motion.div 
-              key={index} 
-              className="mb-3 sm:mb-4"
+              className="text-center mb-16 sm:mb-20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              viewport={{ amount: 0.1, once: false }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <motion.button
-                onClick={() => toggleItem(index)}
-                className={`w-full text-left p-4 sm:p-5 md:p-6 bg-[color:var(--surface)] border border-[color:var(--neutral-200)] ${
-                  openItem === index ? 'rounded-t-lg border-b-0' : 'rounded-lg'
-                } shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)] focus:ring-opacity-50`}
-                whileHover={{ y: openItem === index ? 0 : -2 }}
-                whileTap={{ scale: 0.99 }}
-              >
-                <div className="flex justify-between items-center">
-                  <h3 className="font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-black pr-4">{item.question}</h3>
-                  <div className="flex-shrink-0">
-                    <motion.svg
-                      className="w-5 h-5 text-[color:var(--text-muted)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      animate={{ rotate: openItem === index ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </motion.svg>
-                  </div>
-                </div>
-              </motion.button>
-              
-              <AnimatePresence initial={false}>
-                {openItem === index && (
-                  <motion.div 
-                    className="overflow-hidden bg-[color:var(--surface)] border-l border-r border-b border-[color:var(--neutral-200)] rounded-b-lg"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ 
-                      height: "auto", 
-                      opacity: 1,
-                      transition: {
-                        height: { duration: 0.3, ease: "easeInOut" },
-                        opacity: { duration: 0.2, ease: "easeIn" }
-                      }
-                    }}
-                    exit={{ 
-                      height: 0, 
-                      opacity: 0,
-                      transition: {
-                        height: { duration: 0.3, ease: "easeInOut" },
-                        opacity: { duration: 0.2, ease: "easeOut" }
-                      }
-                    }}
-                  >
-                    <div className="px-4 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4">
-                      <p className="text-black leading-relaxed text-sm sm:text-base md:text-lg" style={{ lineHeight: '1.6' }}>
-                        {item.answer}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <p className="uppercase tracking-[0.4em] text-xs sm:text-sm text-[#75866D] font-semibold mb-4">
+                Common Questions
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+              </div>
+              <p className="text-base sm:text-lg md:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+                Everything you need to know about Modern Mental Health & Hormones
+              </p>
             </motion.div>
-          ))}
-        </div>
 
+            {/* FAQ Items */}
+            <div className="max-w-4xl mx-auto space-y-4">
+              {faqs.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  <div className={`group relative bg-[#E8E1D3] rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                    openItem === index 
+                      ? 'border-[#75866D] shadow-xl' 
+                      : 'border-[#DDD6C9] shadow-md hover:shadow-lg hover:border-[#8B9D7F]/50'
+                  }`}>
+                    {/* Side accent bar */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${
+                      openItem === index 
+                        ? 'bg-gradient-to-b from-[#75866D] to-[#8B9D7F]' 
+                        : 'bg-transparent group-hover:bg-[#8B9D7F]/30'
+                    }`}></div>
+
+                    <button
+                      onClick={() => toggleItem(index)}
+                      className="relative w-full text-left p-6 sm:p-8 focus:outline-none"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg sm:text-xl md:text-2xl text-[color:var(--text-primary)] leading-tight pr-4">
+                            {item.question}
+                          </h3>
+                        </div>
+                        
+                        <motion.div 
+                          className={`flex-shrink-0 p-2 rounded-full transition-colors duration-300 ${
+                            openItem === index 
+                              ? 'bg-[#75866D]' 
+                              : 'bg-[color:var(--neutral-200)] group-hover:bg-[#8B9D7F]/20'
+                          }`}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          {openItem === index ? (
+                            <Minus className="w-5 h-5 text-white" strokeWidth={2.5} />
+                          ) : (
+                            <Plus className="w-5 h-5 text-[#75866D]" strokeWidth={2.5} />
+                          )}
+                        </motion.div>
+                      </div>
+                    </button>
+                    
+                    <AnimatePresence initial={false}>
+                      {openItem === index && (
+                        <motion.div 
+                          className="overflow-hidden"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ 
+                            height: "auto", 
+                            opacity: 1,
+                            transition: {
+                              height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+                              opacity: { duration: 0.3, delay: 0.1 }
+                            }
+                          }}
+                          exit={{ 
+                            height: 0, 
+                            opacity: 0,
+                            transition: {
+                              height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+                              opacity: { duration: 0.2 }
+                            }
+                          }}
+                        >
+                          <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                            <div className="pt-4 border-t-2 border-[#8B9D7F]/20">
+                              <div className="text-base sm:text-lg text-[color:var(--text-secondary)] leading-relaxed">
+                                {item.answer}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA Section */}
+            <motion.div
+              className="mt-16 sm:mt-20 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-br from-[#75866D] to-[#8B9D7F] rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl max-w-3xl mx-auto relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
+                <div className="relative">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4">
+                    Still Have Questions?
+                  </h3>
+                  <p className="text-base sm:text-lg text-white/90 mb-6 max-w-xl mx-auto">
+                    I'm here to help you understand your care options and answer any questions you may have
+                  </p>
+                  <Link
+                    href="/book"
+                    className="inline-block bg-white text-[#75866D] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#F5F1E8] transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Get in Touch
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-  

@@ -161,7 +161,7 @@ export default function Page() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[color:var(--surface-elevated)] border-t border-[color:var(--neutral-200)] py-8">
+      <footer className="bg-[#C5B9AA] border-t border-[#B5A999] py-8">
         <motion.div
           className="container mx-auto px-6 lg:px-8"
           initial={{ opacity: 0 }}
