@@ -16,7 +16,7 @@ export default function Page() {
     <>
       {/* Development Notice Banner */}
       <motion.div
-        className="text-white text-center py-3 px-4 border-b border-[#677560] relative z-50"
+        className="text-white text-center py-3 px-4 border-b border-[#677560] fixed top-0 left-0 right-0 z-[60]"
         style={{ backgroundColor: '#75866D' }}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -42,6 +42,8 @@ export default function Page() {
       {/* Header / Navigation */}
       <Header />
 
+      {/* Main content with padding for fixed header */}
+      <div className="pt-[132px]">
       {/* HERO */}
       <HeroSection />
 
@@ -199,6 +201,7 @@ export default function Page() {
           </div>
         </motion.div>
       </footer>
+      </div>
     </>
   );
 }
