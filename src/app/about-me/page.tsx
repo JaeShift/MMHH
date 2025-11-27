@@ -16,28 +16,14 @@ export default function AboutMe() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-[#F8F9F6] to-[color:var(--surface)] relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <main className="min-h-screen bg-gradient-to-b from-white via-[#FDFCFB] to-[#F5F3F0] relative overflow-hidden">
+      {/* Subtle Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-40">
         <motion.div
-          className="absolute top-20 -left-20 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"
+          className="absolute top-20 -left-20 w-96 h-96 bg-[#8B9D7F]/5 rounded-full blur-3xl"
           animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 -right-20 w-96 h-96 bg-[#75866D]/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.1, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
           }}
           transition={{
             duration: 25,
@@ -46,10 +32,10 @@ export default function AboutMe() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#C8B5A0]/10 rounded-full blur-3xl"
+          className="absolute bottom-20 -right-20 w-96 h-96 bg-[#75866D]/5 rounded-full blur-3xl"
           animate={{
-            x: [-100, 100, -100],
-            y: [-50, 50, -50],
+            x: [0, -50, 0],
+            y: [0, -30, 0],
           }}
           transition={{
             duration: 30,
@@ -60,7 +46,7 @@ export default function AboutMe() {
       </div>
 
       {/* Hero Section */}
-      <section ref={containerRef} className="pt-32 pb-20 relative overflow-hidden">
+      <section ref={containerRef} className="pt-24 pb-12 relative overflow-hidden">
         {/* Floating decorative elements */}
         <motion.div
           className="absolute top-20 left-10 opacity-20"
@@ -130,7 +116,7 @@ export default function AboutMe() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 md:py-20 relative z-10">
+      <section className="pt-4 pb-12 md:pt-6 md:pb-20 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             
@@ -147,36 +133,24 @@ export default function AboutMe() {
                 <div className="flex justify-center mb-12">
                   <motion.div
                     className="relative"
-                    initial={{ scale: 0.8, opacity: 0 }}
+                    initial={{ scale: 0.9, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   >
-                    {/* Outer glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/40 to-[#75866D]/40 rounded-full blur-2xl scale-110"></div>
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/20 to-[#75866D]/20 rounded-full blur-3xl"></div>
                     
                     {/* Main image container */}
                     <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-                      {/* Animated border ring */}
-                      <motion.div
-                        className="absolute -inset-2 bg-gradient-to-br from-[#8B9D7F] via-[#75866D] to-[#C8B5A0] rounded-full opacity-75"
-                        animate={{
-                          rotate: 360,
-                        }}
-                        transition={{
-                          duration: 20,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                      />
-                      
-                      {/* Inner white ring */}
-                      <div className="absolute -inset-1 bg-white rounded-full"></div>
+                      {/* Simple elegant border */}
+                      <div className="absolute -inset-3 bg-gradient-to-br from-[#8B9D7F] via-[#75866D] to-[#C8B5A0] rounded-full opacity-60 blur-sm"></div>
+                      <div className="absolute -inset-1 bg-white rounded-full shadow-xl"></div>
                       
                       {/* Image */}
                       <motion.div 
                         className="relative w-full h-full rounded-full overflow-hidden shadow-2xl"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.03 }}
                         transition={{ duration: 0.3 }}
                       >
                         <Image
@@ -189,28 +163,6 @@ export default function AboutMe() {
                         />
                       </motion.div>
                     </div>
-
-                    {/* Floating particles around image */}
-                    {[...Array(8)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-2 h-2 bg-[#8B9D7F] rounded-full"
-                        style={{
-                          top: `${50 + 45 * Math.sin((i * Math.PI * 2) / 8)}%`,
-                          left: `${50 + 45 * Math.cos((i * Math.PI * 2) / 8)}%`,
-                        }}
-                        animate={{
-                          scale: [1, 1.5, 1],
-                          opacity: [0.3, 0.8, 0.3],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          delay: i * 0.2,
-                          ease: "easeInOut"
-                        }}
-                      />
-                    ))}
                   </motion.div>
                 </div>
 
@@ -250,94 +202,34 @@ export default function AboutMe() {
               </div>
             </motion.div>
 
-            {/* Story Cards */}
-            <div className="space-y-8 mb-16">
-              {/* Card 1 */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6 }}
-                className="relative"
-              >
-                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl rounded-3xl p-8 sm:p-10 md:p-12 border border-white/60 shadow-2xl relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
-                  {/* Animated gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Decorative element */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-full"></div>
-                  
-                  <div className="relative z-10">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "4rem" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                      className="h-1 bg-gradient-to-r from-[#75866D] to-[#8B9D7F] mb-6 rounded-full"
-                    />
-                    <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] leading-relaxed font-light">
-                      I'm Stephanie Nichols, a Psychiatric Mental Health Nurse Practitioner with over 25 years of clinical experience in internal medicine, neurology, and psychiatry. My journey into mental health care has been shaped by a lifelong passion for helping others and a deep understanding of the intricate connection between physical and mental wellness.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+            {/* Professional Story Section - Unified */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="mb-20"
+            >
+              <div className="bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-xl rounded-3xl p-10 sm:p-12 md:p-16 border border-white/60 shadow-2xl relative overflow-hidden">
+                {/* Subtle decorative elements */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#8B9D7F]/5 to-transparent rounded-bl-full"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-br from-[#75866D]/5 to-transparent rounded-tr-full"></div>
+                
+                <div className="relative z-10 space-y-6 text-lg sm:text-xl text-[color:var(--text-secondary)] leading-relaxed">
+                  <p>
+                    I&apos;m Stephanie Nichols, a Psychiatric Mental Health Nurse Practitioner with over 25 years of clinical experience in internal medicine, neurology, and psychiatry. My journey into mental health care has been shaped by a lifelong passion for helping others and a deep understanding of the intricate connection between physical and mental wellness.
+                  </p>
 
-              {/* Card 2 */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
-              >
-                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl rounded-3xl p-8 sm:p-10 md:p-12 border border-white/60 shadow-2xl relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#75866D]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#C8B5A0]/10 to-transparent rounded-br-full"></div>
-                  
-                  <div className="relative z-10">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "4rem" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.5 }}
-                      className="h-1 bg-gradient-to-r from-[#C8B5A0] to-[#75866D] mb-6 rounded-full"
-                    />
-                    <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] leading-relaxed font-light">
-                      Before specializing in psychiatry, I spent a decade working in neurology and neurosurgery, followed by 15 years in internal medicine. These experiences gave me a unique perspective on how the body and mind are deeply intertwined. I've seen firsthand how hormonal changes can impact mental health, and I've dedicated my practice to helping women navigate these challenges with thoughtful, personalized care. My additional training in women's hormone therapy and membership in The Menopause Society reflect my commitment to providing comprehensive, integrative care for women at every stage of life.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+                  <p>
+                    Before specializing in psychiatry, I spent a decade working in neurology and neurosurgery, followed by 15 years in internal medicine. These experiences gave me a unique perspective on how the body and mind are deeply intertwined. I&apos;ve seen firsthand how hormonal changes can impact mental health, and I&apos;ve dedicated my practice to helping women navigate these challenges with thoughtful, personalized care. My additional training in women&apos;s hormone therapy and membership in The Menopause Society reflect my commitment to providing comprehensive, integrative care for women at every stage of life.
+                  </p>
 
-              {/* Card 3 */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative"
-              >
-                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl rounded-3xl p-8 sm:p-10 md:p-12 border border-white/60 shadow-2xl relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br from-[#75866D]/10 to-transparent rounded-tl-full"></div>
-                  
-                  <div className="relative z-10">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "4rem" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.7 }}
-                      className="h-1 bg-gradient-to-r from-[#8B9D7F] to-[#C8B5A0] mb-6 rounded-full"
-                    />
-                    <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] leading-relaxed font-light">
-                      My path to psychiatry wasn't a straight line—it was a calling that emerged from my work in internal medicine. I saw a profound need for compassionate mental health care and felt compelled to return to school to better serve my patients. This decision was driven by my belief that no single treatment fits everyone. I combine traditional medicine with integrative approaches, tailoring care to each individual's unique needs and goals.
-                    </p>
-                  </div>
+                  <p>
+                    My path to psychiatry wasn&apos;t a straight line—it was a calling that emerged from my work in internal medicine. I saw a profound need for compassionate mental health care and felt compelled to return to school to better serve my patients. This decision was driven by my belief that no single treatment fits everyone. I combine traditional medicine with integrative approaches, tailoring care to each individual&apos;s unique needs and goals.
+                  </p>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
 
             {/* Personal Story Section with Split Design */}
             <motion.div
@@ -375,7 +267,7 @@ export default function AboutMe() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-base sm:text-lg text-[color:var(--text-secondary)] leading-relaxed"
                   >
-                    On a personal note, I've faced my own share of life's challenges, including the loss of my husband. That experience taught me resilience, empathy, and the importance of truly listening to others. It's also shaped the way I connect with my patients—I understand what it feels like to navigate uncertainty and rebuild a sense of stability. My friends and family describe me as funny, smart, and loyal, and I bring those qualities into my work every day.
+                    On a personal note, I&apos;ve faced my own share of life&apos;s challenges, including the loss of my husband. That experience taught me resilience, empathy, and the importance of truly listening to others. It&apos;s also shaped the way I connect with my patients—I understand what it feels like to navigate uncertainty and rebuild a sense of stability. My friends and family describe me as funny, smart, and loyal, and I bring those qualities into my work every day.
                   </motion.p>
                 </div>
 
@@ -388,7 +280,7 @@ export default function AboutMe() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-base sm:text-lg text-[color:var(--text-secondary)] leading-relaxed"
                   >
-                    When I'm not in the office, you might find me enjoying time with loved ones, solving puzzles (both literal and metaphorical), or engaging in lifelong learning. I'm also passionate about giving back through medical mission work, which has deepened my appreciation for the diverse ways people experience and heal from life's challenges.
+                    When I&apos;m not in the office, you might find me enjoying time with loved ones, solving puzzles (both literal and metaphorical), or engaging in lifelong learning. I&apos;m also passionate about giving back through medical mission work, which has deepened my appreciation for the diverse ways people experience and heal from life&apos;s challenges.
                   </motion.p>
 
                   <motion.div
@@ -404,7 +296,7 @@ export default function AboutMe() {
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                       </svg>
                       <p className="text-lg sm:text-xl text-[color:var(--text-primary)] leading-relaxed font-light italic">
-                        If you're looking for a provider who will listen without judgment, explore all treatment options with you, and empower you to take charge of your mental health, I'd be honored to work with you.
+                        If you&apos;re looking for a provider who will listen without judgment, explore all treatment options with you, and empower you to take charge of your mental health, I&apos;d be honored to work with you.
                       </p>
                     </div>
                   </motion.div>
