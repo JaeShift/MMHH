@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================
+   Design System — MMHH (Luxury Earthy Palette)
+   ============================== */
+:root{
+  /* Luxury Earthy Color Palette */
+  --sugar: #FCF8F0;        /* Lightest warm cream */
+  --bisque: #E2D9CD;       /* Soft warm beige */
+  --wheat: #B6A593;        /* Medium warm taupe */
+  --pistachio: #B5BDAC;    /* Soft sage green */
+  --mocha: #6B5B4D;        /* Rich warm brown */
+  --espresso: #392E26;     /* Deepest brown */
+  
+  /* Primary Brand Colors */
+  --primary: #E2D9CD;      /* Bisque as primary */
+  --primary-dark: #B6A593; /* Wheat as darker variant */
+  --accent: #B5BDAC;       /* Pistachio as accent */
+  
+  /* Text Colors */
+  --text-primary: #000000;    /* Black for main text */
+  --text-secondary: #000000;  /* Black for secondary text */
+  --text-muted: #4A4A4A;      /* Dark gray for muted text */
+  
+  /* Surface Colors */
+  --surface: #FCF8F0;         /* Sugar as main background */
+  --surface-soft: #FCF8F0;    /* Sugar */
+  --surface-muted: #E2D9CD;   /* Bisque for subtle backgrounds */
+  --surface-elevated: #ffffff; /* Pure white for cards */
+  
+  /* Legacy Brand Colors (updated) */
+  --brand-1: #6B5B4D;      /* Mocha */
+  --brand-2: #392E26;      /* Espresso */
+  --brand-3: #B5BDAC;      /* Pistachio */
+
+  /* Neutral Scale */
+  --neutral-900: #392E26;  /* Espresso */
+  --neutral-800: #4A3E35;  /* Between espresso and mocha */
+  --neutral-700: #6B5B4D;  /* Mocha */
+  --neutral-600: #8B7B6D;  /* Warmer neutral */
+  --neutral-500: #A69B8E;  /* Mid-tone */
+  --neutral-400: #B6A593;  /* Wheat */
+  --neutral-300: #C9BEB1;  /* Lighter wheat */
+  --neutral-200: #E2D9CD;  /* Bisque */
+  --neutral-100: #F5F1E9;  /* Lighter sugar */
+  --white: #ffffff;
+
+  /* Radii & shadows */
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --shadow-sm:0 2px 10px rgba(57,46,38,.08);
+  --shadow-md:0 10px 30px rgba(107,91,77,.12);
+  --shadow-lg:0 18px 60px rgba(57,46,38,.15);
+
+  /* Typography fallback (Next/font also sets vars) */
+  --font-sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+  --font-serif:Georgia,"Times New Roman",serif;
+  --leading:1.6;
+}
+
+/* Optional Alt Palette (cooler) — add class="theme-b" to <html> to use */
+html.theme-b{
+  --brand-1:#7ca28a;
+  --brand-2:#3f4a4b;
+  --brand-3:#ab7e62;
+}
+
+/* Base */
+html,body{
+  background:var(--surface);
+  color:var(--text-primary);
+  font-family:var(--font-sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Improve touch targets */
+  button, a, input, textarea, select {
+    min-height: 44px;
+  }
+  
+  /* Better spacing on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Text selection styling */
+::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--text-primary);
+}
+
+/* Typography System */
+@layer components {
+  h1, h2 {
+    @apply font-heading italic tracking-wide leading-tight;
+    color: var(--text-primary);
+  }
+  
+  h3 {
+    @apply font-heading italic leading-snug;
+    color: var(--text-primary);
+  }
+  
+  p, li {
+    @apply font-body leading-relaxed text-[17px] md:text-[18px];
+    color: var(--text-secondary);
+  }
+  
+  a {
+    @apply font-body underline-offset-4 decoration-transparent hover:decoration-current;
+    color: var(--primary);
+  }
+  
+  small {
+    @apply text-sm;
+    color: var(--text-muted);
+  }
+}
+
+/* Consistent 1.5 line spacing for text elements */
+p, .text-base, .text-lg, .text-xl, .text-2xl {
+  line-height: 1.5;
+}
+
+/* Containers */
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+@media (min-width: 1400px) {
+  .container{max-width:1400px;padding:0 2rem}
+}
+
+@media (min-width: 1600px) {
+  .container{max-width:1600px;padding:0 3rem}
+}
+
+/* Components */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:600;padding:.875rem 1.25rem;
+  border-radius:var(--radius-md);border:1px solid transparent;
+  box-shadow:var(--shadow-sm);
+  transition:transform .08s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+  will-change:transform;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-ghost{background:transparent;color:var(--primary);border-color:var(--neutral-200)}
+.btn-ghost:hover{background:var(--surface-muted)}
+
+.badge{
+  display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;
+  padding:.4rem .9rem;background:color-mix(in srgb, var(--accent) 15%, transparent);
+  color:var(--primary);font-weight:600;
+}
+
+.card{background:var(--surface-elevated);border:1px solid var(--neutral-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+
+.section{padding:4rem 0}
+.section-muted{padding:4rem 0;background:var(--surface-muted);border-top:1px solid var(--neutral-200);border-bottom:1px solid var(--neutral-200)}
+/* ==============================
+   ABOUT — editorial helpers
+   ============================== */
+
+/* Small uppercase label above headings */
+.eyebrow {
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .78rem;
+  color: var(--text-muted);
+}
+
+/* Elegant underline for section titles */
+.underline-accent {
+  position: relative;
+}
+.underline-accent::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-10px;
+  width:74px; height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  opacity:.9;
+}
+
+/* Improve paragraph measure + rhythm */
+.prose-mmhh p{ max-width: 70ch; }
+.prose-mmhh p + p{ margin-top: 1rem; }
+
+/* Quote/Belief card */
+.quote-card{
+  background: var(--surface-muted);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.1rem 1.25rem;
+}
+.quote-card .belief{
+  font-style: italic;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+/* Photo with offset frame */
+.photo-stack {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-lg);
+}
+
+.photo-stack::after {
+  content: "";
+  position: absolute;
+  inset: 12px -24px -12px 12px; /* extended right border: -24px instead of -12px */
+  background: var(--primary-dark);   /* espresso background */
+  border-radius: var(--radius-lg);
+  z-index: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.photo-stack img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Utilities */
+.text-gradient{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* Nav */
+.navbar-blur{
+  backdrop-filter:blur(10px);
+  background:color-mix(in srgb, var(--surface) 85%, transparent);
+  border-bottom:1px solid var(--neutral-200)
+}
+/* Clinical Services visual accents (no icon fonts) */
+.svc-dot{
+  width:12px;height:12px;border-radius:999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, white);
+  display:inline-block;
+}
+
+/* Footer */
+.footer{border-top:1px solid var(--neutral-200);background:var(--surface-muted)}
+
+/* Adobe Caslon Pro override */
+.adobe-caslon-italic {
+  font-family: "adobe-caslon-pro", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+/* ==============================
+   HERO image alignment helpers updated 
+   ============================== */
+/* Make Next/Image fill behave like a properly framed photo
+   Mobile: center the subject
+   Desktop: bias toward the right to keep the chair/plant in frame
+*/
+/* ==============================
+   HERO image alignment helpers
+   ============================== */
+
+/* Default (mobile): show more of the windows on the right */
+.hero-img {
+  object-fit: cover;
+  object-position: 95% 70% !important;  /* X=95% (move even more right), Y=70% (move photo up slightly) */
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    object-position: 96% 70% !important; /* tablet: more windows visible */
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-img {
+    object-position: 97% 70% !important; /* desktop: windows more prominent */
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-img {
+    object-position: 98% 70% !important; /* large desktop: maximum right positioning */
+  }
+}
+
+/* Optional dark overlay using luxury colors */
+.hero-overlay{background:linear-gradient(0deg, color-mix(in srgb, var(--primary-dark) 45%, transparent), color-mix(in srgb, var(--espresso) 25%, transparent))}
