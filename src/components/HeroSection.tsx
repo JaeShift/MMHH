@@ -23,13 +23,8 @@ export default function Hero() {
                 <span className="block">&amp; Hormones</span>
               </h1>
 
-              <h2 className="font-caslon text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-normal mb-3 md:mb-4 leading-tight tracking-wide" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                <span className="block">Your concerns are connected.</span>
-                <span className="block">Your care should be too.</span>
-              </h2>
-
-              <p className="mt-3 md:mt-4 text-white/90 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-6 md:mb-8 leading-relaxed">
-                Specialized mental health and hormone care for women.
+              <p className="mt-3 md:mt-4 text-white/90 text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl mb-6 md:mb-8 leading-relaxed font-caslon" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                Specialized mental health and hormone care for women navigating life's transitions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
