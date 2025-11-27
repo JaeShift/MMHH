@@ -59,16 +59,16 @@ export default function AboutStephanie() {
               <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
               <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                Are you a woman in midlife who feels dismissed or told your symptoms are “just part of aging” or “all in your head”? Many women in this stage of life experience a complex mix of hormonal changes, lifestyle stressors, and mental health symptoms that are often treated in isolation—or not addressed at all.
+                We help women in midlife who feel dismissed, overwhelmed, or stuck reclaim their energy, balance, and confidence by addressing the root causes of their mental health and hormonal challenges.
+              </p>
+              <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
+                Instead of just masking symptoms, you receive integrative, personalized care—so you can finally feel like yourself again.
+              </p>
+              <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
+                Our belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, we'll create a plan that supports your mind, body, and spirit.
               </p>
               <p className="text-[color:var(--text-primary)] text-lg sm:text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-6 leading-relaxed">
-                Your exhaustion, mood swings, and sense of feeling lost are real.
-              </p>
-              <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                I provide the safe and supportive mental health care you’ve been searching for. Together, we’ll create a personalized plan tailored to your unique needs. Treatment options may include hormone optimization, integrative therapies, and mindful medication management.
-              </p>
-              <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                My goal is to empower you to <span className="italic font-bold text-[color:var(--text-primary)]">reclaim</span> your energy, <span className="italic font-bold text-[color:var(--text-primary)]">restore</span> balance in your life, <span className="italic font-bold text-[color:var(--text-primary)]">rediscover</span> your confidence, and truly live better.
+                Now accepting patients across the state of Ohio.
               </p>
               {/* Learn More Button → now points on-page */}
               <motion.div 
@@ -168,35 +168,53 @@ export default function AboutStephanie() {
                 className="text-base sm:text-lg text-black" 
                 style={{ lineHeight: '1.6' }}
               >
-                I am a dual board-certified Psychiatric Mental Health Nurse Practitioner (PMHNP-BC) and Family Nurse Practitioner (FNP-BC). I hold the Women&apos;s Hormone Therapy Specialist designation from the Heather Hirsch Academy and am a member of The Menopause Society (MSCP certification pending). I have a ***interest in the complex interplay of hormones and mental health across the female lifespan. Originally from Ohio, I have lived and practiced in Central Ohio for over 25 years.
+                Hi, I'm Stephanie Nichols, MSN, APRN, PMHNP-BC, FNP-BC. As a psychiatric nurse practitioner I believe that mental health and hormonal health are deeply connected—and that your care should be as unique as you are.
               </p>
               <p 
                 className="text-base sm:text-lg text-black" 
                 style={{ lineHeight: '1.6' }}
               >
-                With over 25 years of extensive clinical experience in internal medicine and neuro-care, I understand that mental wellness is inseparable from hormonal health. I provide thoughtful, personalized care for the anxiety, mood shifts, sleep disruption, and brain fog accompanying life&apos;s hormonal transitions.
+                With over 25 years of experience in internal medicine, neurology, and psychiatry, I've seen how life's transitions and challenges can impact both the mind and body. My journey into mental health care was inspired by a desire to provide compassionate, personalized care that addresses the root causes of emotional and physical struggles. I combine traditional medicine with integrative approaches to help women feel empowered, balanced, and truly well.
               </p>
-              <p 
-                className="text-base sm:text-lg text-black italic border-l-4 border-[color:var(--mocha)] pl-4" 
-                style={{ lineHeight: '1.6' }}
+              <motion.div 
+                className="mt-6 text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ amount: 0.1 }}
               >
-                &quot;Through a collaborative approach, I guide women to a place where they feel safe and validated. My mission is to empower them to regain balance, clarity, and control, regardless of the challenges posed by life transitions, chronic stress, or past trauma.&quot;
-              </p>
-              <p 
-                className="text-base sm:text-lg text-black" 
-                style={{ lineHeight: '1.6' }}
-              >
-                My mission is to move women from surviving complex hormonal and mental health symptoms to truly thriving with clarity, balance, and control.
-              </p>
+                <motion.a
+                  href="/about-me"
+                  className="inline-flex items-center justify-center text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-full transition-all duration-300"
+                  style={{ backgroundColor: '#75866D' }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}
+                >
+                  About Me
+                  <motion.svg 
+                    className="w-4 h-4 ml-2" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </motion.svg>
+                </motion.a>
+              </motion.div>
             </motion.div>
             <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                 <Image
                   src="/stephanie-headshot.jpg" 
                   alt="Stephanie Nichols" 
                   width={544}
                   height={672}
-                  className="rounded-2xl object-cover w-full h-auto aspect-[4/5]"
+                  className="rounded-2xl object-cover w-full h-auto"
+                  style={{ maxHeight: '600px', objectFit: 'cover' }}
                 />
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                   <Image
