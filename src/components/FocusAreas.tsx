@@ -132,34 +132,33 @@ export default function FocusAreas() {
           </div>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <div className="max-w-[90rem] mx-auto space-y-16 sm:space-y-20 md:space-y-24">
-          {/* Core Treatment Pillars - Professional Medical Grade Design */}
-          <motion.article
-            className="md:col-span-2 lg:col-span-3 rounded-3xl border-2 border-[#8B9D7F]/30 bg-gradient-to-br from-white via-[#F8F9F6] to-white shadow-2xl overflow-hidden"
-            variants={fadeUp}
-            transition={{ duration: 0.3 }}
+        {/* Unified Content Container */}
+        <div className="max-w-[90rem] mx-auto">
+          <motion.div
+            className="bg-white/50 backdrop-blur-sm rounded-[48px] shadow-2xl overflow-hidden border border-white/30 p-8 sm:p-10 md:p-12 lg:p-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {/* Header Section */}
-            <div className="bg-gradient-to-r from-[#75866D] via-[#8B9D7F] to-[#75866D] px-8 sm:px-12 py-8 sm:py-10 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
-              <div className="relative z-10">
-                <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-white/80 mb-3 font-semibold">
+            {/* Core Treatment Pillars Section */}
+            <div className="mb-16 sm:mb-20 md:mb-24">
+              {/* Pillars Header */}
+              <div className="text-center mb-12 sm:mb-14">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#75866D] mb-3 font-semibold">
                   Integrated Care Approach
                 </p>
-                <h3 className="font-caslon text-2xl sm:text-3xl md:text-4xl font-normal text-white mb-4">
+                <h3 className="font-caslon text-2xl sm:text-3xl md:text-4xl font-normal text-black mb-4">
                   Core Treatment Pillars
                 </h3>
-                <div className="w-20 h-0.5 bg-white/60 mx-auto mb-4"></div>
-                <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+                <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent mx-auto mb-4"></div>
+                <p className="text-sm sm:text-base md:text-lg text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
                   Evidence-based care tailored to your unique needs, combining psychiatric expertise with hormonal optimization and integrative wellness strategies
                 </p>
               </div>
-            </div>
 
-            {/* Pillars Grid */}
-            <div className="p-8 sm:p-10 md:p-12">
-              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Pillars Grid */}
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
                 {pillars.map((pillar, index) => (
                   <motion.div 
                     key={pillar.title}
@@ -170,7 +169,7 @@ export default function FocusAreas() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     {/* Pillar Card */}
-                    <div className="relative h-full rounded-2xl border border-[color:var(--neutral-200)] bg-white p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="relative h-full rounded-2xl border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       {/* Number Badge */}
                       <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#75866D] to-[#8B9D7F] flex items-center justify-center shadow-lg">
                         <span className="text-white font-bold text-lg">{index + 1}</span>
@@ -205,7 +204,7 @@ export default function FocusAreas() {
 
               {/* Bottom note */}
               <motion.div 
-                className="mt-8 sm:mt-10 text-center"
+                className="text-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -216,69 +215,83 @@ export default function FocusAreas() {
                 </p>
               </motion.div>
             </div>
-          </motion.article>
 
-          {/* Specialty Services Grid - Premium Medical Design */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="text-center mb-12 sm:mb-16">
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">
-                Specialty Services
-              </h3>
-              <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto">
-                Expert care for the unique challenges women face throughout life&apos;s transitions
-              </p>
+            {/* Decorative Divider */}
+            <div className="relative mb-16 sm:mb-20 md:mb-24">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t-2 border-gradient-to-r from-transparent via-[#8B9D7F]/30 to-transparent"></div>
+              </div>
+              <div className="relative flex justify-center">
+                <span className="bg-gradient-to-r from-[#EBE4D6] via-white/50 to-[#EBE4D6] px-6 py-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                    <div className="w-2 h-2 rounded-full bg-[#75866D]"></div>
+                    <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  </div>
+                </span>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {serviceCategories.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <motion.article
-                    key={service.category}
-                    className="group relative"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="relative h-full rounded-2xl border-2 border-[color:var(--neutral-200)] bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                      {/* Gradient background on hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                      
-                      {/* Icon */}
-                      <div className={`relative mb-6 inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                        <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
-                      </div>
+            {/* Specialty Services Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-center mb-12 sm:mb-14">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#75866D] mb-3 font-semibold">
+                  Comprehensive Care
+                </p>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">
+                  Specialty Services
+                </h3>
+                <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent mx-auto mb-4"></div>
+                <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto">
+                  Expert care for the unique challenges women face throughout life&apos;s transitions
+                </p>
+              </div>
 
-                      {/* Content */}
-                      <div className="relative space-y-3">
-                        <h4 className="text-2xl font-semibold text-[color:var(--text-primary)] leading-tight">
-                          {service.category}
-                        </h4>
-                        
-                        <p className="text-sm text-[#75866D] uppercase tracking-[0.15em] font-semibold">
-                          {service.tagline}
-                        </p>
-                        
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-[#75866D] to-transparent rounded-full"></div>
-                        
-                        <p className="text-base text-[color:var(--text-secondary)] leading-relaxed pt-2">
-                          {service.description}
-                        </p>
-                      </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {serviceCategories.map((service, index) => {
+                  return (
+                    <motion.article
+                      key={service.category}
+                      className="group relative"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <div className="relative h-full rounded-2xl border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-8 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                        {/* Gradient background on hover */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-                      {/* Decorative corner element */}
-                      <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
+                        {/* Content */}
+                        <div className="relative space-y-3">
+                          <h4 className="text-2xl font-semibold text-[color:var(--text-primary)] leading-tight">
+                            {service.category}
+                          </h4>
+                          
+                          <p className="text-sm text-[#75866D] uppercase tracking-[0.15em] font-semibold">
+                            {service.tagline}
+                          </p>
+                          
+                          <div className="w-12 h-0.5 bg-gradient-to-r from-[#75866D] to-transparent rounded-full"></div>
+                          
+                          <p className="text-base text-[color:var(--text-secondary)] leading-relaxed pt-2">
+                            {service.description}
+                          </p>
+                        </div>
+
+                        {/* Decorative corner element */}
+                        <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                      </div>
+                    </motion.article>
+                  );
+                })}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
         

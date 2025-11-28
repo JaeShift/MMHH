@@ -87,9 +87,15 @@ export default function Insurance() {
 
   return (
     <section id="faq" className="relative py-20 sm:py-24 lg:py-32 bg-[#EBE4D6]">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-white rounded-[48px] overflow-hidden shadow-2xl">
-          <div className="relative z-10 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12">
+      {/* Organic decorative shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg className="absolute top-20 right-10 w-80 h-80 opacity-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#8B9D7F" d="M41.3,-71.5C51.8,-64.2,57.4,-50.2,62.8,-36.5C68.2,-22.8,73.4,-9.4,73.1,4.2C72.8,17.8,67,31.6,58.4,42.8C49.8,54,38.4,62.6,25.3,67.8C12.2,73,-2.6,74.8,-17.1,72.3C-31.6,69.8,-45.8,63,-56.8,52.4C-67.8,41.8,-75.6,27.4,-78.3,12.1C-81,-3.2,-78.6,-19.4,-71.8,-32.8C-65,-46.2,-53.8,-56.8,-41.3,-63.5C-28.8,-70.2,-14.4,-73,0.4,-73.7C15.2,-74.4,30.8,-78.8,41.3,-71.5Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+
+      <div className="container relative px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
             {/* Header */}
             <motion.div 
               className="text-center mb-16 sm:mb-20"
@@ -124,10 +130,10 @@ export default function Insurance() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true, amount: 0.1 }}
                 >
-                  <div className={`group relative bg-[#E8E1D3] rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                  <div className={`group relative bg-white rounded-2xl transition-all duration-300 overflow-hidden ${
                     openItem === index 
-                      ? 'border-[#75866D] shadow-xl' 
-                      : 'border-[#DDD6C9] shadow-md hover:shadow-lg hover:border-[#8B9D7F]/50'
+                      ? 'shadow-2xl border-l-4 border-l-[#75866D]' 
+                      : 'shadow-lg hover:shadow-xl border-l-4 border-l-transparent hover:border-l-[#8B9D7F]/50'
                   }`}>
                     {/* Side accent bar */}
                     <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${
@@ -202,7 +208,7 @@ export default function Insurance() {
               ))}
             </div>
 
-            {/* CTA Section */}
+            {/* CTA Section - Integrated style */}
             <motion.div
               className="mt-16 sm:mt-20 text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -210,25 +216,19 @@ export default function Insurance() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-[#75866D] to-[#8B9D7F] rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl max-w-3xl mx-auto relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
-                <div className="relative">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4">
-                    Still Have Questions?
-                  </h3>
-                  <p className="text-base sm:text-lg text-white/90 mb-6 max-w-xl mx-auto">
-                    I&apos;m here to help you understand your care options and answer any questions you may have
-                  </p>
-                  <Link
-                    href="/book"
-                    className="inline-block bg-white text-[#75866D] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#F5F1E8] transition-colors duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-black mb-3">
+                Still Have Questions?
+              </h3>
+              <p className="text-base sm:text-lg text-[color:var(--text-secondary)] mb-6 max-w-xl mx-auto">
+                I&apos;m here to help you understand your care options and answer any questions you may have
+              </p>
+              <Link
+                href="/book"
+                className="inline-block bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
+                Get in Touch
+              </Link>
             </motion.div>
-          </div>
         </div>
       </div>
     </section>
