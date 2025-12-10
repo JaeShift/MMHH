@@ -59,13 +59,13 @@ export default function AboutStephanie() {
               <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
               <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                We help women in midlife who feel dismissed, overwhelmed, or stuck reclaim their energy, balance, and confidence by addressing the root causes of their mental health and hormonal challenges.
+                I help women in midlife who feel dismissed, overwhelmed, or stuck reclaim their energy, balance, and confidence by addressing the root causes of their mental health and hormonal challenges.
               </p>
               <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
                 Instead of just masking symptoms, you receive integrative, personalized care—so you can finally feel like yourself again.
               </p>
               <p className="text-[color:var(--text-secondary)] text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                Our belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, we&apos;ll create a plan that supports your mind, body, and spirit.
+                My belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, I&apos;ll create a plan that supports your mind, body, and spirit.
               </p>
               <p className="text-[color:var(--text-primary)] text-lg sm:text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-6 leading-relaxed">
                 Now accepting patients across the state of Ohio.

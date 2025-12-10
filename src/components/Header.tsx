@@ -38,7 +38,7 @@ export default function Header() {
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={sectionHref("#services")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Care</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
-          <Link href={sectionHref("#testimonials")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Hear from Patients</Link>
+          <Link href={sectionHref("#testimonials")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Patient Experience</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={sectionHref("#faq")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
         </nav>
@@ -93,7 +93,7 @@ export default function Header() {
                 className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
-                Hear from Patients
+                Patient Experience
               </Link>
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 

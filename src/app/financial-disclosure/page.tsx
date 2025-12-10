@@ -41,10 +41,10 @@ export default function FinancialDisclosurePage() {
                 </h2>
                 <ul className="list-disc pl-6 space-y-3 mb-4">
                   <li>
-                    <strong>Current Credentialing Status:</strong> I understand that Modern Mental Health & Hormones is currently NOT IN-NETWORK with any health insurance plans, including (list specific plans you are applying to, e.g., Aetna, Cigna, Blue Cross Blue Shield, etc.).
+                    <strong>Current Credentialing Status:</strong> I understand that Modern Mental Health & Hormones is currently NOT IN-NETWORK with any health insurance plans, including Aetna, Anthem, BCBS, and Cigna.
                   </li>
                   <li>
-                    <strong>No Guarantee of Acceptance:</strong> I understand that the provider is currently applying for credentialing but there is no guarantee that this application will be accepted or when the process will be completed.
+                    <strong>No Guarantee of Acceptance:</strong> I understand that this practice has applied for credentialing.
                   </li>
                   <li>
                     <strong>No Direct Claim Submission:</strong> I understand and agree that the practice will not submit claims to my insurance company on my behalf for reimbursement.
@@ -68,7 +68,7 @@ export default function FinancialDisclosurePage() {
 
               <div className="mt-8 p-6 bg-slate-50 border border-slate-200 rounded-lg">
                 <p className="text-sm text-slate-600 mb-4">
-                  <strong>Questions?</strong> If you have any questions about fees, insurance, or billing, please contact us at:
+                  <strong>Questions?</strong> If you have any questions about fees, insurance, or billing, please contact me at:
                 </p>
                 <p className="text-sm text-slate-600">
                   Email: <a href="mailto:info@modernmhh.com" className="text-[color:var(--primary)] hover:underline">info@modernmhh.com</a>

@@ -43,7 +43,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ amount: 0.01 }}
           >
-            Hear from Patients
+            Patient Experience
           </motion.h2>
           <motion.p 
             className="text-lg text-medical-gray-600 max-w-3xl mx-auto leading-relaxed"

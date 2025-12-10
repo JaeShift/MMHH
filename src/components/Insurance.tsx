@@ -16,6 +16,10 @@ export default function Insurance() {
 
   const faqs: FAQ[] = [
     {
+      question: "How can I start care?",
+      answer: "You can schedule your first appointment through the Book Now button. During your first visit, I'll discuss your concerns, review your history, and create a treatment plan tailored to your mental health and hormonal balance."
+    },
+    {
       question: "What is Modern MHH?",
       answer: "Modern MHH is a women's mental health and hormone practice that provides thoughtful, evidence-based care for women navigating anxiety, depression, PMDD, postpartum mood changes, perimenopause, and menopause. The focus is on helping you feel balanced, clear, and like yourself again."
     },
@@ -44,19 +48,13 @@ export default function Insurance() {
       answer: (
         <div className="space-y-4">
           <p>
-            Modern MHH accepts insurance and private pay. If you&apos;re out-of-network, I can
-            provide a superbill to help you request reimbursement from your insurance
-            provider. You can also review our{" "}
-            <Link
-              href="/financial-disclosure"
-              className="underline underline-offset-4 text-[#8B9D7F] hover:text-[#6c8260]"
-            >
-              Financial Disclosure
-            </Link>
-            .
+            This practice is committed to providing high-quality, specialized care that integrates mental health and hormone balance. To maintain the highest standards of care and manage administrative overhead, I currently operate primarily on a self-pay/cash-pay model.
+          </p>
+          <p>
+            Modern Mental Health & Hormones is currently not in-network with any health insurance plans, including Aetna, Anthem, BCBS, and Cigna. This practice has applied for credentialing.
           </p>
           <div>
-            <p className="font-semibold">Appointment investment:</p>
+            <p className="font-semibold mb-2">Appointment investment:</p>
             <ul className="mt-2 space-y-2 text-sm sm:text-base">
               <li>
                 <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ US$350.00
@@ -72,12 +70,18 @@ export default function Insurance() {
               </li>
             </ul>
           </div>
+          <p>
+            For complete financial information, please review my{" "}
+            <Link
+              href="/financial-disclosure"
+              className="underline underline-offset-4 text-[#8B9D7F] hover:text-[#6c8260]"
+            >
+              Financial Disclosure
+            </Link>
+            .
+          </p>
         </div>
       )
-    },
-    {
-      question: "How can I start care?",
-      answer: "You can schedule your first appointment through the Book Now button. During your first visit, I'll discuss your concerns, review your history, and create a treatment plan tailored to your mental health and hormonal balance."
     }
   ];
 

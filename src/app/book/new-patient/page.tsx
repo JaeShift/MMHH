@@ -38,7 +38,7 @@ export default function NewPatientPage() {
                 New Patient Request
               </h1>
               <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] leading-relaxed">
-                Tell us how to reach you and we&apos;ll schedule your appointment
+                Tell me how to reach you and I&apos;ll schedule your appointment
               </p>
             </div>
 

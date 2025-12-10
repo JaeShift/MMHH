@@ -360,7 +360,7 @@ export default function NewPatientForm() {
                 className="mt-1 h-5 w-5 text-[#75866D] focus:ring-[#75866D] border-slate-300 rounded flex-shrink-0" 
               />
               <label htmlFor="practiceBetterConsent" className="text-sm text-slate-700 leading-relaxed">
-                <span className="font-medium">I agree</span> for this information to be shared with Practice Better, our secure practice management platform used for appointment scheduling and patient care coordination.
+                <span className="font-medium">I agree</span> for this information to be shared with Practice Better, my secure practice management platform used for appointment scheduling and patient care coordination.
               </label>
             </div>
           </div>

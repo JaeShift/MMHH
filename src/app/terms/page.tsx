@@ -24,7 +24,7 @@ export default function TermsPage() {
                 </p>
                 
                 <p className="text-base leading-relaxed">
-                  Welcome to the Modern Mental Health & Hormones Terms of Use Agreement. This document is designed to be clear and transparent about our relationship, expectations, and rules when you engage with my resources. Your use of The Platform constitutes your agreement to all terms, conditions, and notices contained herein.
+                  Welcome to the Modern Mental Health & Hormones Terms of Use Agreement. This document is designed to be clear and transparent about the relationship between us, expectations, and rules when you engage with my resources. Your use of The Platform constitutes your agreement to all terms, conditions, and notices contained herein.
                 </p>
 
                 <div className="mt-6 space-y-3 text-base">

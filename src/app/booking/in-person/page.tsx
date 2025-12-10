@@ -34,7 +34,7 @@ export default function InPersonBookingPage() {
           color: "#475569",
           marginBottom: "30px"
         }}>
-          Thank you for your interest in scheduling an in-person appointment. We will contact you within 1-2 business days to coordinate your visit.
+          Thank you for your interest in scheduling an in-person appointment. I will contact you within 1-2 business days to coordinate your visit.
         </p>
 
         <div style={{
@@ -49,7 +49,7 @@ export default function InPersonBookingPage() {
             margin: 0
           }}>
             <strong>Need immediate assistance?</strong><br />
-            Email us at <a href="mailto:info@modernmhh.com" style={{ color: "#75866D", textDecoration: "underline" }}>info@modernmhh.com</a>
+            Email me at <a href="mailto:info@modernmhh.com" style={{ color: "#75866D", textDecoration: "underline" }}>info@modernmhh.com</a>
           </p>
         </div>
 

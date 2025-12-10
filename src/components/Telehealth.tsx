@@ -28,14 +28,12 @@ export default function Telehealth() {
     {
       icon: Video,
       type: "Telehealth Visits",
-      description: "Secure, HIPAA-compliant virtual appointments from anywhere in Ohio",
-      features: ["Same quality of care", "Convenient scheduling", "Private & secure"]
+      features: ["Secure, HIPAA-compliant", "Convenient scheduling", "Anywhere in Ohio"]
     },
     {
       icon: MapPin,
       type: "In-Person Visits",
-      description: "Face-to-face consultations at our welcoming office location",
-      features: ["Comprehensive evaluation", "Personalized attention", "Comfortable environment"]
+      features: ["Face-to-face", "Comfortable", "Convenient location in Columbus"]
     }
   ];
 
@@ -136,11 +134,13 @@ export default function Telehealth() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-4">
-              Flexible Care Options
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-4 relative inline-block">
+              Flexible care options
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-[1px] bg-[#75866D]/30"></span>
             </h3>
             <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto">
-              Choose the appointment style that works best for you
+              Provide comprehensive evaluations and personalized care.<br />
+              Pick what works best for you.
             </p>
           </div>
 
@@ -163,10 +163,6 @@ export default function Telehealth() {
                     <h4 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3">
                       {type.type}
                     </h4>
-                    <p className="text-base text-[color:var(--text-secondary)] mb-6 leading-relaxed">
-                      {type.description}
-                    </p>
-
                     <ul className="space-y-3">
                       {type.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-3">

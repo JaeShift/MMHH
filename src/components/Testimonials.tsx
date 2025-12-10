@@ -73,7 +73,7 @@ export default function Testimonials() {
             Patient Stories
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6">
-            Hear from Patients
+            Patient Experience
           </h2>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>

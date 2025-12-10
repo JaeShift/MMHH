@@ -8,35 +8,35 @@ export default function FocusAreas() {
       icon: Brain,
       category: "Depression & Anxiety",
       tagline: "Reclaim Your Life",
-      description: "If daily worry, overwhelming lack of energy, and that constant \"down\" feeling follow you wherever you go, it's time for a new approach. Let's work together to help you reclaim your energy, calm, and joy through our integrated approach.",
+      description: "If daily worry, overwhelming lack of energy, and that constant \"down\" feeling follow you wherever you go, it's time for a new approach. I'll work with you to help you reclaim your energy, calm, and joy through my integrated approach.",
       gradient: "from-[#75866D] to-[#8B9D7F]"
     },
     {
       icon: Heart,
       category: "PMDD & Postpartum",
       tagline: "Restore Your Balance",
-      description: "If you experience cyclical or postpartum mood changes—the kind you know are far more severe than \"baby blues\" or typical PMS—it's a clear signal that your hormones need support. Let's work together to address the changes and restore your emotional balance.",
+      description: "If you experience cyclical or postpartum mood changes—the kind you know are far more severe than \"baby blues\" or typical PMS—it's a clear signal that your hormones need support. I'll work with you to address the changes and restore your emotional balance.",
       gradient: "from-[#8B9D7F] to-[#9FAE93]"
     },
     {
       icon: Sparkles,
       category: "Perimenopause & Menopause",
       tagline: "Reclaim Your Stability",
-      description: "If the intense anxiety, brain fog, \"down\" feeling or lack of energy are new or suddenly worsened during perimenopause or menopause, it's not just \"getting older\"—it's a significant hormonal shift affecting your brain. Let's work together to reclaim your stability.",
+      description: "If the intense anxiety, brain fog, \"down\" feeling or lack of energy are new or suddenly worsened during perimenopause or menopause, it's not just \"getting older\"—it's a significant hormonal shift affecting your brain. I'll work with you to reclaim your stability.",
       gradient: "from-[#9FAE93] to-[#75866D]"
     },
     {
       icon: Focus,
       category: "Brain Fog & Focus",
       tagline: "Restore Your Clarity",
-      description: "If inattention, mental slowness, and frustrating memory lapses are impacting your performance and confidence, it's time to investigate the underlying biology. Let's work together to restore your clarity.",
+      description: "If inattention, mental slowness, and frustrating memory lapses are impacting your performance and confidence, it's time to investigate the underlying biology. I'll work with you to restore your clarity.",
       gradient: "from-[#75866D] to-[#677560]"
     },
     {
       icon: Moon,
       category: "Sleep & Insomnia",
       tagline: "Regulate Your Sleep",
-      description: "I understand that addressing sleep requires more than just masking the symptoms with sleeping pills. We focus on finding and correcting the underlying mechanism that is disrupting your natural sleep cycle. Let's work together to address your insomnia and achieve deep, restorative rest.",
+      description: "I understand that addressing sleep requires more than just masking the symptoms with sleeping pills. I focus on finding and correcting the underlying mechanism that is disrupting your natural sleep cycle. I'll work with you to address your insomnia and achieve deep, restorative rest.",
       gradient: "from-[#677560] to-[#8B9D7F]"
     },
     {
