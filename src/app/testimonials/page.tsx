@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Testimonials from "../../components/Testimonials";
 
 export const metadata: Metadata = {
-  title: "Patient Experience & Testimonials | Modern MHH | Columbus, Ohio",
+  title: "Patient Experience & Testimonials | Modern MHH | Ohio",
   description: "Read testimonials from women who have received mental health and hormone care at Modern MHH. Real patient experiences and success stories.",
 };
 
@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

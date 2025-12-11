@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Telehealth from "../../components/Telehealth";
 
 export const metadata: Metadata = {
-  title: "Telehealth & In-Person Appointments | Modern MHH | Columbus, Ohio",
+  title: "Telehealth & In-Person Appointments | Modern MHH | Ohio",
   description: "Flexible care options with secure, HIPAA-compliant telehealth visits anywhere in Ohio or in-person appointments in Columbus. Convenient scheduling for your mental health and hormone care needs.",
 };
 
@@ -22,7 +22,7 @@ export default function TelehealthPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

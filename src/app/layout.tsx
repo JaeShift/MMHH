@@ -14,17 +14,17 @@ const crimsonPro = Crimson_Pro({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.modernmhh.com'),
-  title: "Modern Mental Health & Hormones | PMHNP for Women in Columbus, Ohio",
+  title: "Modern Mental Health & Hormones | PMHNP for Women in Ohio",
   description:
-    "One provider, complete care — no referrals. Mental health & hormone care in Columbus, Ohio with Stephanie Nichols, PMHNP-BC. Virtual and in-person appointments available.",
+    "One provider, complete care — no referrals. Mental health & hormone care serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio with Stephanie Nichols, PMHNP-BC. Virtual and in-person appointments available.",
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
   openGraph: {
-    title: "Modern Mental Health & Hormones | Columbus, Ohio",
-    description: "Mental health & hormone care for women in mid-life. Specialized care with Stephanie Nichols, PMHNP-BC in Columbus, Ohio.",
+    title: "Modern Mental Health & Hormones | Ohio",
+    description: "Mental health & hormone care for women in mid-life. Specialized care with Stephanie Nichols, PMHNP-BC serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio.",
     url: "https://www.modernmhh.com",
     siteName: "Modern Mental Health & Hormones",
     images: [
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Modern Mental Health & Hormones | Columbus, Ohio",
-    description: "Mental health & hormone care for women in Columbus, Ohio. Virtual and in-person appointments.",
+    title: "Modern Mental Health & Hormones | Ohio",
+    description: "Mental health & hormone care for women serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio. Virtual and in-person appointments.",
     images: ['/LOGO PNG.png'],
   },
 };

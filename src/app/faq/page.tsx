@@ -4,7 +4,7 @@ import Insurance from "../../components/Insurance";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Modern MHH | Mental Health & Hormone Care FAQ",
-  description: "Common questions about mental health and hormone care services, insurance, appointments, and treatment options at Modern MHH in Columbus, Ohio.",
+  description: "Common questions about mental health and hormone care services, insurance, appointments, and treatment options at Modern MHH serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio.",
 };
 
 export default function FAQPage() {
@@ -26,7 +26,7 @@ export default function FAQPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

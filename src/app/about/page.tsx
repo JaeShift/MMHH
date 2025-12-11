@@ -4,7 +4,7 @@ import AboutStephanie from "../../components/AboutStephanie";
 
 export const metadata: Metadata = {
   title: "About Your Provider | Stephanie Nichols, PMHNP-BC | Modern MHH",
-  description: "Meet Stephanie Nichols, PMHNP-BC, FNP-BC, a dual board-certified practitioner specializing in women's mental health and hormone care in Columbus, Ohio. Over 25 years of experience.",
+  description: "Meet Stephanie Nichols, PMHNP-BC, FNP-BC, a dual board-certified practitioner specializing in women's mental health and hormone care serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio. Over 25 years of experience.",
 };
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

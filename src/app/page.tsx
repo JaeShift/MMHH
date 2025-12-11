@@ -401,7 +401,7 @@ export default function Page() {
               info@modernmhh.com
             </a>
             <br />
-            Virtual and in-person appointments • Monday–Friday, 9am–5pm
+            Virtual and in-person appointments
           </div>
         </div>
       </section>
@@ -420,7 +420,7 @@ export default function Page() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             

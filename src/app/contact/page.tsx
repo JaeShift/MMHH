@@ -4,8 +4,8 @@ import Header from "../../components/Header";
 import ContactForm from "../../components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Modern MHH | Mental Health & Hormone Care | Columbus, Ohio",
-  description: "Contact Modern MHH for questions about mental health and hormone care services. Secure, HIPAA-compliant contact form. Serving Columbus, Ohio and all of Ohio via telehealth.",
+  title: "Contact Us | Modern MHH | Mental Health & Hormone Care | Ohio",
+  description: "Contact Modern MHH for questions about mental health and hormone care services. Secure, HIPAA-compliant contact form. Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio via telehealth.",
 };
 
 export default function ContactPage() {
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 info@modernmhh.com
               </a>
               <br />
-              Virtual and in-person appointments • Monday–Friday, 9am–5pm
+              Virtual and in-person appointments
             </div>
           </div>
         </section>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

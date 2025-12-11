@@ -4,7 +4,7 @@ import FocusAreas from "../../components/FocusAreas";
 
 export const metadata: Metadata = {
   title: "Services & Care Areas | Women's Mental Health & Hormone Therapy | Modern MHH",
-  description: "Comprehensive mental health and hormone care services for women. Specialized treatment for depression, anxiety, PMDD, perimenopause, menopause, and more in Columbus, Ohio.",
+  description: "Comprehensive mental health and hormone care services for women. Specialized treatment for depression, anxiety, PMDD, perimenopause, menopause, and more serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio.",
 };
 
 export default function ServicesPage() {
@@ -22,7 +22,7 @@ export default function ServicesPage() {
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Ohio
+                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">

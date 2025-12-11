@@ -146,7 +146,7 @@ export default function AboutStephanie() {
               transition={{ duration: 0.4 }}
               viewport={{ amount: 0.3, once: false }}
             >
-              Dual Board-Certified Practitioner specializing in Hormones & Women&apos;s Mental Health in Columbus, Ohio
+              Dual Board-Certified Practitioner specializing in Hormones & Women&apos;s Mental Health serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
             </motion.p>
 
             <motion.div 
