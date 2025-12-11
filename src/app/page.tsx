@@ -9,31 +9,6 @@ import ContactForm from "../components/ContactForm";
 export default function Page() {
   return (
     <>
-      {/* Development Notice Banner */}
-      <motion.div
-        className="text-white text-center py-3 px-4 border-b border-[#677560] fixed top-0 left-0 right-0 z-[60]"
-        style={{ backgroundColor: '#75866D' }}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-              <span className="font-semibold text-sm sm:text-base">Practice Opening Soon</span>
-            </div>
-            <div className="hidden sm:block w-px h-4 bg-white/30"></div>
-            <div className="text-sm sm:text-base">
-              <span className="font-medium">Finalizing Clinical Procedures</span>
-            </div>
-          </div>
-          <p className="text-xs sm:text-sm text-white/90 mt-1">
-            Appointment requests will be available shortly as I complete my opening preparations
-          </p>
-        </div>
-      </motion.div>
-
       {/* Header / Navigation */}
       <Header />
 
@@ -203,36 +178,56 @@ export default function Page() {
       <section className="relative py-8 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            className="max-w-4xl mx-auto text-center bg-white/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ 
+              duration: 0.7, 
+              ease: [0.34, 1.56, 0.64, 1],
+              scale: {
+                type: "spring",
+                stiffness: 200,
+                damping: 15
+              }
+            }}
           >
             <motion.p 
               className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               Now that you know a bit about me, let me share the{" "}
               <motion.span
                 className="text-[#75866D] font-medium"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 10
+                }}
               >
                 specific areas
               </motion.span>
               {" "}where I can support you on your{" "}
               <motion.span
                 className="text-[#75866D] font-medium"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 0.7,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 10
+                }}
               >
                 journey to wellness
               </motion.span>
@@ -462,35 +457,85 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FAQ PREVIEW */}
-      <section id="faq" className="relative py-24 md:py-32 lg:py-40 bg-[#FCF8F0] overflow-hidden">
+      {/* FAQ SECTION */}
+      <section id="faq" className="relative py-24 md:py-32 lg:py-40 bg-gradient-to-b from-[#FCF8F0] to-[#EBE4D6] overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-[#8B9D7F]/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#75866D]/5 rounded-full blur-3xl"></div>
+        </div>
+
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
           <motion.div
-            className="max-w-4xl mx-auto text-center"
+            className="text-center mb-16 md:mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Section Header */}
             <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-4 font-semibold">
-              Common Questions
+              Have Questions?
             </p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-6 leading-tight">
               Frequently Asked Questions
             </h2>
-            
-            {/* Divider */}
-            <div className="flex items-center justify-center gap-3 mb-10">
+            <div className="flex items-center justify-center gap-3 mb-8">
               <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
               <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
               <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
             </div>
-            
-            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Common questions about my services, insurance, appointments, and treatment options
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+              Find answers to common questions about my services, insurance, and appointments
             </p>
-            
+          </motion.div>
+
+          {/* FAQ Cards Grid */}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+            {[
+              {
+                question: "Do you accept insurance?",
+                answer: "I accept most major insurance plans and can provide documentation for out-of-network reimbursement."
+              },
+              {
+                question: "What is your cancellation policy?",
+                answer: "I require 24-hour notice for cancellations. Late cancellations may be subject to a fee."
+              },
+              {
+                question: "How long are appointments?",
+                answer: "Initial consultations are typically 60 minutes, with follow-up appointments lasting 30-45 minutes."
+              },
+              {
+                question: "Do you offer telehealth?",
+                answer: "Yes! I offer secure, HIPAA-compliant telehealth appointments throughout Ohio for your convenience."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-[#8B9D7F]/10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <h3 className="text-xl md:text-2xl font-medium text-black mb-4 leading-snug">
+                  {faq.question}
+                </h3>
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed font-light">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <motion.a
               href="/faq"
               className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
