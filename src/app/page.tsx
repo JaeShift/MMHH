@@ -176,15 +176,15 @@ export default function Page() {
               </p>
               
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight">
-                About Your Provider
+                About Me
               </h2>
               
               <div className="space-y-6 mb-10">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-                  Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women's mental health and hormone care.
+                  I'm Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women's mental health and hormone care.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed font-light">
-                  With extensive expertise in both psychiatric and family practice, Stephanie provides compassionate, evidence-based care tailored to your unique needs.
+                  With extensive expertise in both psychiatric and family practice, I provide compassionate, evidence-based care tailored to your unique needs.
                 </p>
               </div>
               
@@ -204,8 +204,25 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CONDITIONS WE TREAT - With Images */}
-      <section id="services" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
+      {/* TRANSITION - From About to Conditions */}
+      <section className="relative py-8 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
+              Now that you know a bit about me, let me share the specific areas where I can support you on your journey to wellness.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CONDITIONS I TREAT - With Images */}
+      <section id="services" className="relative pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -220,22 +237,22 @@ export default function Page() {
                 Comprehensive Care
               </p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-6 leading-tight">
-                Conditions We Treat
+                Conditions I Treat
               </h2>
               <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-                Specialized care for women's mental health and hormonal concerns
+                I specialize in women's mental health and hormonal concerns throughout life's transitions
               </p>
             </div>
             
             {/* Condition Cards with Images */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "Depression & Anxiety", image: "/nature.png" },
-                { title: "PMDD & Postpartum", image: "/nature.png" },
-                { title: "Perimenopause & Menopause", image: "/nature.png" },
-                { title: "Brain Fog & Focus", image: "/nature.png" },
-                { title: "Sleep & Insomnia", image: "/nature.png" },
-                { title: "Medication Management", image: "/nature.png" },
+                { title: "Depression & Anxiety", image: "/depression.jpg" },
+                { title: "Perimenopause & Menopause", image: "/menopause.jpg" },
+                { title: "PMDD & Postpartum", image: "/hormones.jpg" },
+                { title: "Brain Fog & Focus", image: "/brainfog.jpg" },
+                { title: "Medication Management", image: "/medication.jpg" },
+                { title: "Sleep & Insomnia", image: "/sleep.jpg" },
               ].map((condition, index) => {
                 return (
                   <motion.div
@@ -264,9 +281,12 @@ export default function Page() {
                       </h3>
                       <a
                         href="/services"
-                        className="inline-flex items-center text-[#75866D] text-base font-medium hover:text-[#677560] transition-all duration-300 underline underline-offset-4 decoration-2"
+                        className="inline-flex items-center text-[#75866D] text-base font-medium hover:text-[#677560] transition-all duration-300 underline underline-offset-4 decoration-2 group"
                       >
                         Learn More
+                        <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </a>
                     </div>
                   </motion.div>
@@ -278,7 +298,7 @@ export default function Page() {
       </section>
 
       {/* FLEXIBLE CARE OPTIONS - No Image */}
-      <section id="telehealth" className="relative py-24 md:py-32 lg:py-40 bg-[#FCF8F0] overflow-hidden">
+      <section id="telehealth" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-5xl mx-auto text-center"
@@ -309,7 +329,7 @@ export default function Page() {
                 </div>
                 <h3 className="text-2xl font-medium text-black mb-3">Telehealth Visits</h3>
                 <p className="text-lg text-gray-700 leading-relaxed font-light">
-                  Secure, HIPAA-compliant virtual appointments from the comfort of your home. Available anywhere in Ohio with convenient scheduling.
+                  I offer secure, HIPAA-compliant virtual appointments from the comfort of your home. Available anywhere in Ohio with convenient scheduling.
                 </p>
               </div>
               
@@ -322,7 +342,7 @@ export default function Page() {
                 </div>
                 <h3 className="text-2xl font-medium text-black mb-3">In-Person Visits</h3>
                 <p className="text-lg text-gray-700 leading-relaxed font-light">
-                  Face-to-face care in a comfortable, welcoming office environment. Convenient location in Columbus, Ohio.
+                  I also provide face-to-face care in a comfortable, welcoming office environment. Convenient location in Columbus, Ohio.
                 </p>
               </div>
             </div>
@@ -402,7 +422,7 @@ export default function Page() {
               </div>
               
               <p className="text-lg text-gray-700 leading-relaxed font-light mb-8">
-                Join the women who have found balance, clarity, and renewed well-being through comprehensive mental health and hormone care.
+                Join the women who have found balance, clarity, and renewed well-being through my comprehensive mental health and hormone care approach.
               </p>
               
               <motion.a
@@ -447,7 +467,7 @@ export default function Page() {
             </div>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Common questions about services, insurance, appointments, and treatment options
+              Common questions about my services, insurance, appointments, and treatment options
             </p>
             
             <motion.a
@@ -476,10 +496,10 @@ export default function Page() {
               More Questions?
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-6">
-              Use the secure form below to ask a question, request more information, or share what you need
+              Use the secure form below to ask me a question, request more information, or share what you need
             </p>
             <p className="text-lg text-gray-600 font-light">
-              Your message is secure & HIPAA-compliant. All appointments are in-person or virtual in Ohio
+              Your message is secure & HIPAA-compliant. I offer appointments in-person or virtual throughout Ohio
             </p>
           </div>
 
