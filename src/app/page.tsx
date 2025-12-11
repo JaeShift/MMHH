@@ -124,39 +124,56 @@ export default function Page() {
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#75866D]/10 to-transparent rounded-tr-3xl"></div>
-              
-              <div className="text-center">
-                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Comprehensive Care</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Your Care</h2>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
-                </div>
-                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Comprehensive mental health and hormone care services including depression, anxiety, PMDD, perimenopause, menopause, and more.
-                </p>
-                <motion.a
-                  href="/services"
-                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+            <div className="text-center mb-12">
+              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Comprehensive Care</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Care</h2>
+              <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+                Comprehensive mental health and hormone care services tailored to your unique needs.
+              </p>
+            </div>
+            
+            {/* Service Cards Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              {[
+                { title: "Depression & Anxiety", icon: "🧠", color: "from-[#75866D] to-[#8B9D7F]" },
+                { title: "PMDD & Postpartum", icon: "❤️", color: "from-[#8B9D7F] to-[#9FAE93]" },
+                { title: "Perimenopause & Menopause", icon: "✨", color: "from-[#9FAE93] to-[#75866D]" },
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  View All Services
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.a>
-              </div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                  <div className="relative z-10 text-center">
+                    <div className="text-4xl mb-3">{service.icon}</div>
+                    <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-2">{service.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <motion.a
+                href="/services"
+                className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View All Services
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -179,38 +196,80 @@ export default function Page() {
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#75866D]/5 to-[#8B9D7F]/5"></div>
-              
-              <div className="text-center relative z-10">
-                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Your Visit</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Flexible Care Options</h2>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+            <div className="text-center mb-12">
+              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Your Visit</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Flexible Care Options</h2>
+              <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+                Choose the appointment style that works best for you
+              </p>
+            </div>
+            
+            {/* Split Design: Telehealth vs In-Person */}
+            <div className="grid md:grid-cols-2 gap-8 mb-10">
+              <motion.div
+                className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-[#8B9D7F]/20 group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#75866D]/10 to-[#8B9D7F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#75866D] to-[#8B9D7F] rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3 text-center">Telehealth Visits</h3>
+                  <p className="text-base text-[color:var(--text-secondary)] text-center leading-relaxed">
+                    Secure, HIPAA-compliant, convenient scheduling, anywhere in Ohio
+                  </p>
                 </div>
-                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Secure, HIPAA-compliant telehealth visits anywhere in Ohio or convenient in-person appointments in Columbus.
-                </p>
-                <motion.a
-                  href="/telehealth"
-                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn About Appointment Options
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.a>
-              </div>
+              </motion.div>
+              
+              <motion.div
+                className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-[#8B9D7F]/20 group"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/10 to-[#9FAE93]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#8B9D7F] to-[#9FAE93] rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3 text-center">In-Person Visits</h3>
+                  <p className="text-base text-[color:var(--text-secondary)] text-center leading-relaxed">
+                    Face-to-face, comfortable, convenient location in Columbus
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+            
+            <div className="text-center">
+              <motion.a
+                href="/telehealth"
+                className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn About Appointment Options
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -233,39 +292,59 @@ export default function Page() {
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
-              
-              <div className="text-center">
-                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Patient Stories</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Patient Experience</h2>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
-                </div>
-                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Read testimonials from women who have received care at Modern MHH.
-                </p>
-                <motion.a
-                  href="/testimonials"
-                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Read Patient Stories
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.a>
+            <div className="text-center mb-12">
+              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Patient Stories</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Patient Experience</h2>
+            </div>
+            
+            {/* Testimonial Quote Card */}
+            <motion.div
+              className="relative bg-gradient-to-br from-[#75866D] via-[#8B9D7F] to-[#9FAE93] rounded-3xl p-10 md:p-16 shadow-2xl mb-10 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
               </div>
+              
+              <div className="relative z-10">
+                <div className="flex justify-center mb-6">
+                  <svg className="w-12 h-12 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-xl md:text-2xl text-white font-light italic mb-6 max-w-4xl mx-auto text-center leading-relaxed">
+                  &quot;Real patient experiences and success stories from women who have received care at Modern MHH.&quot;
+                </blockquote>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <div className="text-center">
+              <motion.a
+                href="/testimonials"
+                className="inline-flex items-center justify-center bg-white text-[#75866D] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#75866D] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-[#75866D]"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Read Patient Stories
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.a>
             </div>
           </motion.div>
         </div>
