@@ -59,12 +59,6 @@ export default function Page() {
       <section id="about" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-8 opacity-25 w-40 h-40 md:w-52 md:h-52 rotate-12">
-            <Image src="/nature.png" alt="" fill className="object-contain" />
-          </div>
-          <div className="absolute top-1/3 right-8 opacity-20 w-44 h-44 md:w-56 md:h-56 -rotate-12 scale-x-[-1]">
-            <Image src="/nature.png" alt="" fill className="object-contain" />
-          </div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
         </div>
         
@@ -133,7 +127,7 @@ export default function Page() {
             </div>
             
             {/* Service Cards Grid */}
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 { title: "Depression & Anxiety", icon: Brain, color: "#75866D" },
                 { title: "PMDD & Postpartum", icon: Heart, color: "#8B9D7F" },
@@ -146,36 +140,35 @@ export default function Page() {
                 return (
                   <motion.div
                     key={service.title}
-                    className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30"
+                    className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30 flex flex-col"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                    <div className="relative z-10 text-center">
+                    <div className="relative z-10 text-center flex flex-col flex-grow">
                       <div className="w-12 h-12 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
                         <IconComponent className="w-6 h-6 text-white" strokeWidth={2} />
                       </div>
-                      <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-2">{service.title}</h3>
+                      <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-4">{service.title}</h3>
+                      <div className="mt-auto pt-4">
+                        <motion.a
+                          href="/services"
+                          className="inline-flex items-center justify-center bg-[#75866D] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#677560] transition-all duration-300 shadow-md hover:shadow-lg"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          Learn More
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </motion.a>
+                      </div>
                     </div>
                   </motion.div>
                 );
               })}
-            </div>
-            
-            <div className="text-center">
-              <motion.a
-                href="/services"
-                className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -386,27 +379,6 @@ export default function Page() {
           <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] bg-[#75866D]/15 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[36rem] sm:h-[36rem] md:w-[48rem] md:h-[48rem] bg-stone-200/30 rounded-full blur-3xl"></div>
           
-          {/* Nature PNG botanical elements */}
-          <div className="absolute top-20 right-16 opacity-15 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rotate-45">
-            <Image src="/nature.png" alt="" fill className="object-contain" />
-          </div>
-          <div className="absolute bottom-32 left-12 opacity-15 w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 -rotate-12 scale-x-[-1]">
-            <Image src="/nature.png" alt="" fill className="object-contain" />
-          </div>
-          
-          {/* Custom SVG leaf accents */}
-          <div className="absolute top-1/3 left-8 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 opacity-15 rotate-12">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="36" ry="21" transform="rotate(-25 50 50)" fill="#8B9D7F"/>
-              <path d="M50 31 Q48 50 50 69" stroke="#75866D" strokeWidth="2"/>
-            </svg>
-          </div>
-          <div className="absolute bottom-1/4 right-16 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 opacity-15 -rotate-45">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="38" ry="22" transform="rotate(30 50 50)" fill="#8B9D7F"/>
-              <path d="M50 29 Q45 50 50 71" stroke="#75866D" strokeWidth="2.5"/>
-            </svg>
-          </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
