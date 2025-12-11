@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Brain, Heart, Sparkles, Focus, Moon, Pill } from "lucide-react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import FocusAreas from "../components/FocusAreas";
@@ -134,27 +135,33 @@ export default function Page() {
             {/* Service Cards Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {[
-                { title: "Depression & Anxiety" },
-                { title: "PMDD & Postpartum" },
-                { title: "Perimenopause & Menopause" },
-              ].map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-12 h-12 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <div className="w-6 h-6 bg-white rounded-full"></div>
+                { title: "Depression & Anxiety", icon: Brain, color: "#75866D" },
+                { title: "PMDD & Postpartum", icon: Heart, color: "#8B9D7F" },
+                { title: "Perimenopause & Menopause", icon: Sparkles, color: "#9FAE93" },
+                { title: "Brain Fog & Focus", icon: Focus, color: "#677560" },
+                { title: "Sleep & Insomnia", icon: Moon, color: "#75866D" },
+                { title: "Medication Management", icon: Pill, color: "#8B9D7F" },
+              ].map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <motion.div
+                    key={service.title}
+                    className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                    <div className="relative z-10 text-center">
+                      <div className="w-12 h-12 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <IconComponent className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                      <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-2">{service.title}</h3>
                     </div>
-                    <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-2">{service.title}</h3>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
             
             <div className="text-center">
@@ -164,7 +171,7 @@ export default function Page() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View All Services
+                Learn More
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -236,7 +243,7 @@ export default function Page() {
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+        </svg>
                   </div>
                   <h3 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3 text-center">In-Person Visits</h3>
                   <p className="text-base text-[color:var(--text-secondary)] text-center leading-relaxed">
@@ -244,8 +251,8 @@ export default function Page() {
                   </p>
                 </div>
               </motion.div>
-            </div>
-            
+      </div>
+
             <div className="text-center">
               <motion.a
                 href="/telehealth"
@@ -298,19 +305,9 @@ export default function Page() {
               </div>
               
               <div className="relative z-10">
-                <div className="flex justify-center mb-6">
-                  <svg className="w-12 h-12 text-white/80" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-xl md:text-2xl text-white font-light italic mb-6 max-w-4xl mx-auto text-center leading-relaxed">
-                  &quot;Real patient experiences and success stories from women who have received care at Modern MHH.&quot;
-                </blockquote>
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                  <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                </div>
+                <p className="text-xl md:text-2xl text-white font-light mb-6 max-w-4xl mx-auto text-center leading-relaxed">
+                  Real patient experiences and success stories from women who have received care at Modern MHH.
+                </p>
               </div>
             </motion.div>
             
@@ -337,8 +334,8 @@ export default function Page() {
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute top-20 right-10 w-80 h-80 opacity-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path fill="#8B9D7F" d="M41.3,-71.5C51.8,-64.2,57.4,-50.2,62.8,-36.5C68.2,-22.8,73.4,-9.4,73.1,4.2C72.8,17.8,67,31.6,58.4,42.8C49.8,54,38.4,62.6,25.3,67.8C12.2,73,-2.6,74.8,-17.1,72.3C-31.6,69.8,-45.8,63,-56.8,52.4C-67.8,41.8,-75.6,27.4,-78.3,12.1C-81,-3.2,-78.6,-19.4,-71.8,-32.8C-65,-46.2,-53.8,-56.8,-41.3,-63.5C-28.8,-70.2,-14.4,-73,0.4,-73.7C15.2,-74.4,30.8,-78.8,41.3,-71.5Z" transform="translate(100 100)" />
-          </svg>
-        </div>
+        </svg>
+      </div>
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
