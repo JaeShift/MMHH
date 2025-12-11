@@ -30,46 +30,29 @@ export default function Page() {
       </div>
 
       {/* ABOUT PREVIEW */}
-      <section id="about" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section id="about" className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
-              
-              <div className="text-center">
-                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Meet Your Provider</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Your Provider</h2>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
-                </div>
-                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+            <div className="bg-[#FCF8F0] rounded-2xl p-8 md:p-12 border border-[#E2D9CD]">
+              <div className="text-center max-w-3xl mx-auto">
+                <span className="badge mb-4">Meet Your Provider</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-6">Your Provider</h2>
+                <div className="w-16 h-1 bg-[#B5BDAC] mx-auto mb-8 rounded-full"></div>
+                <p className="text-lg text-[color:var(--text-secondary)] mb-8 leading-relaxed">
                   Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
                 </p>
-                <motion.a
-                  href="/about"
-                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <a href="/about" className="btn btn-primary">
                   Learn More About Your Provider
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </motion.a>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -77,25 +60,19 @@ export default function Page() {
       </section>
 
       {/* SERVICES PREVIEW */}
-      <section id="services" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-[600px] h-[600px] bg-[#75866D]/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section id="services" className="py-20 bg-[#F9F9F9]">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Comprehensive Care</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Care</h2>
-              <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+            <div className="text-center mb-16">
+              <span className="badge mb-4">Comprehensive Care</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-4">Your Care</h2>
+              <p className="text-lg text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
                 Comprehensive mental health and hormone care services tailored to your unique needs.
               </p>
             </div>
@@ -113,28 +90,23 @@ export default function Page() {
                 return (
                   <motion.div
                     key={service.title}
-                    className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#8B9D7F]/30 flex flex-col"
+                    className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-start"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
-                    <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                    <div className="relative z-10 text-center flex flex-col flex-grow">
-                      <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-4">{service.title}</h3>
-                      <div className="mt-auto pt-4">
-                        <motion.a
-                          href="/services"
-                          className="inline-flex items-center text-[#75866D] text-sm font-semibold hover:text-[#677560] transition-all duration-300 underline underline-offset-4"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          Learn More
-                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </motion.a>
-                      </div>
+                    <h3 className="text-xl font-bold text-[color:var(--text-primary)] mb-4">{service.title}</h3>
+                    <div className="mt-auto pt-4 w-full">
+                      <a
+                        href="/services"
+                        className="inline-flex items-center text-[#75866D] font-semibold hover:text-[#677560] transition-colors text-sm"
+                      >
+                        Learn More
+                        <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
                     </div>
                   </motion.div>
                 );
@@ -145,282 +117,169 @@ export default function Page() {
       </section>
 
       {/* TELEHEALTH PREVIEW */}
-      <section id="telehealth" className="relative py-20 md:py-32 bg-[#EBE4D6] overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-[#75866D]/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section id="telehealth" className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Your Visit</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Flexible Care Options</h2>
-              <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+            <div className="text-center mb-16">
+              <span className="badge mb-4">Your Visit</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-4">Flexible Care Options</h2>
+              <p className="text-lg text-[color:var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
                 Choose the appointment style that works best for you
               </p>
             </div>
             
-            {/* Split Design: Telehealth vs In-Person */}
-            <div className="grid md:grid-cols-2 gap-8 mb-10">
-              <motion.div
-                className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-[#8B9D7F]/20 group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ y: -8 }}
-              >
-                <div className="absolute inset-0 bg-[#75866D]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3 text-center">Telehealth Visits</h3>
-                  <p className="text-base text-[color:var(--text-secondary)] text-center leading-relaxed">
-                    Secure, HIPAA-compliant, convenient scheduling, anywhere in Ohio
-                  </p>
-                </div>
-              </motion.div>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="card p-8 hover:shadow-md transition-all">
+                <h3 className="text-2xl font-bold text-[color:var(--text-primary)] mb-4 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-full bg-[#EBF0E9] flex items-center justify-center text-[#75866D]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  </span>
+                  Telehealth Visits
+                </h3>
+                <ul className="space-y-3 text-[color:var(--text-secondary)] mb-6">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Secure, HIPAA-compliant video calls</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Convenient scheduling from home</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Available anywhere in Ohio</span>
+                  </li>
+                </ul>
+              </div>
               
-              <motion.div
-                className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-[#8B9D7F]/20 group"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ y: -8 }}
-              >
-                <div className="absolute inset-0 bg-[#8B9D7F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-[#8B9D7F] rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-[color:var(--text-primary)] mb-3 text-center">In-Person Visits</h3>
-                  <p className="text-base text-[color:var(--text-secondary)] text-center leading-relaxed">
-                    Face-to-face, comfortable, convenient location in Columbus
-                  </p>
-                </div>
-              </motion.div>
-      </div>
+              <div className="card p-8 hover:shadow-md transition-all">
+                <h3 className="text-2xl font-bold text-[color:var(--text-primary)] mb-4 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-full bg-[#EBF0E9] flex items-center justify-center text-[#75866D]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  </span>
+                  In-Person Visits
+                </h3>
+                <ul className="space-y-3 text-[color:var(--text-secondary)] mb-6">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Face-to-face appointments</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Comfortable, private office</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#75866D] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <span>Convenient location in Columbus</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
             <div className="text-center">
-              <motion.a
-                href="/telehealth"
-                className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn About Appointment Options
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.a>
+              <a href="/telehealth" className="btn btn-primary">
+                View Appointment Options
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* TESTIMONIALS PREVIEW */}
-      <section id="testimonials" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#75866D]/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section id="testimonials" className="py-20 bg-[#F9F9F9]">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Patient Stories</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Patient Experience</h2>
-            </div>
+            <span className="badge mb-4">Patient Stories</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-12">Patient Experience</h2>
             
-            {/* Testimonial Quote Card */}
-            <motion.div
-              className="relative bg-[#75866D] rounded-3xl p-10 md:p-16 shadow-2xl mb-10 overflow-hidden"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-                <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-              </div>
-              
-              <div className="relative z-10">
-                <p className="text-xl md:text-2xl text-white font-light mb-6 max-w-4xl mx-auto text-center leading-relaxed">
-                  Real patient experiences and success stories from women who have received care at Modern MHH.
-                </p>
-              </div>
-            </motion.div>
-            
-            <div className="text-center">
-              <motion.a
-                href="/testimonials"
-                className="inline-flex items-center justify-center bg-white text-[#75866D] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#75866D] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-[#75866D]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Read Patient Stories
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.a>
+            <div className="bg-white rounded-2xl p-10 md:p-12 shadow-sm border border-gray-100 relative">
+              <svg className="w-12 h-12 text-[#E2D9CD] absolute top-8 left-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <blockquote className="text-xl md:text-2xl text-[color:var(--text-primary)] font-medium leading-relaxed mb-6 relative z-10">
+                "Real patient experiences and success stories from women who have received care at Modern MHH."
+              </blockquote>
+              <a href="/testimonials" className="btn btn-ghost text-sm font-semibold">Read Patient Stories &rarr;</a>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ PREVIEW */}
-      <section id="faq" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <svg className="absolute top-20 right-10 w-80 h-80 opacity-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#8B9D7F" d="M41.3,-71.5C51.8,-64.2,57.4,-50.2,62.8,-36.5C68.2,-22.8,73.4,-9.4,73.1,4.2C72.8,17.8,67,31.6,58.4,42.8C49.8,54,38.4,62.6,25.3,67.8C12.2,73,-2.6,74.8,-17.1,72.3C-31.6,69.8,-45.8,63,-56.8,52.4C-67.8,41.8,-75.6,27.4,-78.3,12.1C-81,-3.2,-78.6,-19.4,-71.8,-32.8C-65,-46.2,-53.8,-56.8,-41.3,-63.5C-28.8,-70.2,-14.4,-73,0.4,-73.7C15.2,-74.4,30.8,-78.8,41.3,-71.5Z" transform="translate(100 100)" />
-        </svg>
-      </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section id="faq" className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-[#8B9D7F]/10 rounded-bl-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#75866D]/10 rounded-tr-3xl"></div>
-              
-              <div className="text-center">
-                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Common Questions</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Frequently Asked Questions</h2>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
-                </div>
-                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Common questions about services, insurance, appointments, and treatment options.
-                </p>
-                <motion.a
-                  href="/faq"
-                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View All FAQs
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </motion.a>
-              </div>
-            </div>
+            <span className="badge mb-4">Common Questions</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-8">
+              Find answers about insurance, appointments, and treatment options.
+            </p>
+            <a href="/faq" className="btn btn-primary">View All FAQs</a>
           </motion.div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="relative bg-[color:var(--surface)] py-12 sm:py-16 md:py-20 overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large circular gradients */}
-          <div className="absolute top-10 left-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#8B9D7F]/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] bg-[#75866D]/15 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[36rem] sm:h-[36rem] md:w-[48rem] md:h-[48rem] bg-stone-200/30 rounded-full blur-3xl"></div>
-          
-        </div>
+      <section id="contact" className="py-20 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="badge mb-4">Contact Me</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-primary)] mb-6">More Questions?</h2>
+              <p className="text-lg text-[color:var(--text-secondary)] mb-4">
+                Use the secure form below to ask a question or request information.
+              </p>
+              <p className="text-sm text-[color:var(--text-muted)]">
+                Secure &amp; HIPAA-compliant • Virtual and in-person appointments
+              </p>
+            </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-10">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[color:var(--text-primary)]">
-              More Questions?
-            </h2>
-            <p className="text-sm sm:text-base text-[color:var(--text-muted)] font-semibold uppercase tracking-[0.3em] mb-4 sm:mb-6">
-              Contact Me
-            </p>
-            <p className="text-lg sm:text-xl md:text-2xl text-[color:var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-              Use the secure form below to ask a question, request more information, or share what you need.
-            </p>
-            <p className="text-base sm:text-lg text-[color:var(--text-muted)] mt-4 max-w-2xl mx-auto">
-              Your message is secure &amp; HIPAA-compliant. All appointments are in-person or virtual in Ohio.
-            </p>
-          </div>
+            <div className="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-gray-200">
+              <ContactForm />
+            </div>
 
-          <ContactForm />
-
-          {/* Optional fallback info */}
-          <div className="max-w-2xl mx-auto text-center mt-8 text-sm text-[color:var(--text-muted)]">
-            Prefer email?{" "}
-            <a className="underline text-black hover:text-gray-700" href="mailto:info@modernmhh.com">
-              info@modernmhh.com
-            </a>
-            <br />
-            Virtual and in-person appointments
+            <div className="text-center mt-8 text-sm text-[color:var(--text-muted)]">
+              Prefer email? <a className="text-[#75866D] font-medium hover:underline" href="mailto:info@modernmhh.com">info@modernmhh.com</a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#C5B9AA] border-t border-[#B5A999] py-8">
-        <motion.div
-          className="container mx-auto px-6 lg:px-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-xs text-[color:var(--text-muted)]">
-              <p className="mb-1">
-                © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
-              </p>
-              <p className="text-[color:var(--text-secondary)]">
-                Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
-              </p>
+      <footer className="bg-white border-t border-gray-200 py-12">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-sm text-[color:var(--text-muted)] text-center md:text-left">
+              <p className="font-semibold text-[color:var(--text-primary)] mb-2">Modern Mental Health &amp; Hormones</p>
+              <p className="mb-1">© {new Date().getFullYear()} All rights reserved.</p>
+              <p>Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
-              <a 
-                href="/privacy" 
-                className="text-xs font-medium text-[color:var(--text-primary)] hover:text-[#75866D] transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a 
-                href="/terms" 
-                className="text-xs font-medium text-[color:var(--text-primary)] hover:text-[#75866D] transition-colors"
-              >
-                Terms of Use
-              </a>
-              <a 
-                href="/financial-disclosure" 
-                className="text-xs font-medium text-[color:var(--text-primary)] hover:text-[#75866D] transition-colors"
-              >
-                Financial Disclosure
-              </a>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="/privacy" className="text-sm text-[color:var(--text-muted)] hover:text-[#75866D] transition-colors">Privacy Policy</a>
+              <a href="/terms" className="text-sm text-[color:var(--text-muted)] hover:text-[#75866D] transition-colors">Terms of Use</a>
+              <a href="/financial-disclosure" className="text-sm text-[color:var(--text-muted)] hover:text-[#75866D] transition-colors">Financial Disclosure</a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </footer>
       </div>
     </>

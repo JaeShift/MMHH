@@ -51,7 +51,7 @@ export default function Header() {
           <Link href={navLinks.faq} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
         </nav>
 
-        <Link href="/book" className="hidden md:inline-flex rounded-full px-4 py-2 text-white text-sm font-medium transition-colors flex-shrink-0" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
+        <Link href="/book" className="hidden md:inline-flex rounded-lg px-6 py-2.5 text-white text-sm font-semibold transition-colors flex-shrink-0 shadow-sm" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
           Request Appointment
         </Link>
 
@@ -114,7 +114,7 @@ export default function Header() {
             </div>
             <Link 
               href="/book"
-              className="w-full inline-flex items-center justify-center rounded-xl px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg" 
+              className="w-full inline-flex items-center justify-center rounded-lg px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-[1.02] shadow-sm" 
               style={{ backgroundColor: '#75866D' }} 
               onClick={()=>setOpen(false)}
             >
