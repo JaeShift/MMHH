@@ -11,6 +11,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
   const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
+  
+  // Navigation links - use full pages for SEO
+  const navLinks = {
+    provider: isHome ? "#provider" : "/about",
+    services: isHome ? "#services" : "/services",
+    testimonials: isHome ? "#testimonials" : "/testimonials",
+    faq: isHome ? "#faq" : "/faq",
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,13 +42,13 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto" aria-label="Primary">
-          <Link href={sectionHref("#provider")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Provider</Link>
+          <Link href={navLinks.provider} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Provider</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
-          <Link href={sectionHref("#services")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Care</Link>
+          <Link href={navLinks.services} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Care</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
-          <Link href={sectionHref("#testimonials")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Patient Experience</Link>
+          <Link href={navLinks.testimonials} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Patient Experience</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
-          <Link href={sectionHref("#faq")} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
+          <Link href={navLinks.faq} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
         </nav>
 
         <Link href="/book" className="hidden md:inline-flex rounded-full px-4 py-2 text-white text-sm font-medium transition-colors flex-shrink-0" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
@@ -73,7 +81,7 @@ export default function Header() {
           <div className="container py-8 px-4 sm:px-6">
             <div className="flex flex-col gap-0 mb-6">
               <Link 
-                href={sectionHref("#provider")} 
+                href={navLinks.provider} 
                 className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
@@ -81,7 +89,7 @@ export default function Header() {
               </Link>
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
-                href={sectionHref("#services")} 
+                href={navLinks.services} 
                 className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
@@ -89,7 +97,7 @@ export default function Header() {
               </Link>
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
-                href={sectionHref("#testimonials")} 
+                href={navLinks.testimonials} 
                 className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
@@ -97,7 +105,7 @@ export default function Header() {
               </Link>
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
-                href={sectionHref("#faq")} 
+                href={navLinks.faq} 
                 className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >

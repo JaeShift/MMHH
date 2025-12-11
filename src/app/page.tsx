@@ -54,40 +54,78 @@ export default function Page() {
         </svg>
       </div>
 
-      {/* ABOUT PRACTICE + STEPHANIE (your component includes #about) */}
-      <AboutStephanie />
-
-      {/* CARE / SERVICES (your component uses id="services") */}
-      <FocusAreas />
-
-      {/* TELEHEALTH HOW-IT-WORKS */}
-      <Telehealth />
-
-      {/* Elegant transition from services to testimonials */}
-      <div className="relative h-20 overflow-hidden">
-        <svg className="absolute top-0 w-full h-20 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
-        </svg>
-      </div>
-
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="py-12 md:py-16 bg-[color:var(--surface)]">
+      {/* ABOUT PREVIEW */}
+      <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)]">
         <div className="container mx-auto px-6 lg:px-8">
-          <Testimonials />
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Provider</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
+              Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
+            </p>
+            <a href="/about" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
+              Learn More About Your Provider
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Subtle wave transition from testimonials to insurance */}
-      <div className="relative h-14 overflow-hidden bg-[color:var(--surface)]">
-        <svg className="absolute bottom-0 w-full h-14 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor"/>
-        </svg>
-      </div>
-
-      {/* FAQ AREA */}
-      <section id="faq" className="py-12 md:py-16 bg-[color:var(--surface-muted)]">
+      {/* SERVICES PREVIEW */}
+      <section id="services" className="py-16 md:py-24 bg-[color:var(--surface-muted)]">
         <div className="container mx-auto px-6 lg:px-8">
-          <Insurance />
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Care</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
+              Comprehensive mental health and hormone care services including depression, anxiety, PMDD, perimenopause, menopause, and more.
+            </p>
+            <a href="/services" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
+              View All Services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TELEHEALTH PREVIEW */}
+      <section id="telehealth" className="py-16 md:py-24 bg-[color:var(--surface)]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Flexible Care Options</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
+              Secure, HIPAA-compliant telehealth visits anywhere in Ohio or convenient in-person appointments in Columbus.
+            </p>
+            <a href="/telehealth" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
+              Learn About Appointment Options
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS PREVIEW */}
+      <section id="testimonials" className="py-16 md:py-24 bg-[color:var(--surface-muted)]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Patient Experience</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
+              Read testimonials from women who have received care at Modern MHH.
+            </p>
+            <a href="/testimonials" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
+              Read Patient Stories
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ PREVIEW */}
+      <section id="faq" className="py-16 md:py-24 bg-[color:var(--surface)]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
+              Common questions about services, insurance, appointments, and treatment options.
+            </p>
+            <a href="/faq" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
+              View All FAQs
+            </a>
+          </div>
         </div>
       </section>
 
