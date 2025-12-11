@@ -27,7 +27,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky ${isHome ? "top-[68px]" : "top-0"} z-50 w-full ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"} border-b border-[color:var(--neutral-200)]`}>
+    <header className={`sticky top-0 z-50 w-full ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"} border-b border-[color:var(--neutral-200)]`}>
       <div className="w-full mx-auto flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
         <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="flex items-center flex-shrink-0 mr-4">
           <Image 
