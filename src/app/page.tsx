@@ -14,31 +14,6 @@ import ContactForm from "../components/ContactForm";
 export default function Page() {
   return (
     <>
-      {/* Development Notice Banner */}
-      <motion.div
-        className="text-white text-center py-3 px-4 border-b border-[#677560] fixed top-0 left-0 right-0 z-[60]"
-        style={{ backgroundColor: '#75866D' }}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-              <span className="font-semibold text-sm sm:text-base">Practice Opening Soon</span>
-            </div>
-            <div className="hidden sm:block w-px h-4 bg-white/30"></div>
-            <div className="text-sm sm:text-base">
-              <span className="font-medium">Finalizing Clinical Procedures</span>
-            </div>
-          </div>
-          <p className="text-xs sm:text-sm text-white/90 mt-1">
-            Appointment requests will be available shortly as I complete my opening preparations
-          </p>
-        </div>
-      </motion.div>
-
       {/* Header / Navigation */}
       <Header />
 

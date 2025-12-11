@@ -7,26 +7,6 @@ import NewPatientForm from "../../../components/NewPatientForm";
 export default function NewPatientPage() {
   return (
     <>
-      <motion.div
-        className="text-white text-center py-3 px-4 border-b border-[#677560] fixed top-0 left-0 right-0 z-[60]"
-        style={{ backgroundColor: '#75866D' }}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-              <span className="font-semibold text-sm sm:text-base">Practice Opening Soon</span>
-            </div>
-          </div>
-          <p className="text-xs sm:text-sm text-white/90 mt-1">
-            Appointment requests will be available shortly as I complete my opening preparations
-          </p>
-        </div>
-      </motion.div>
-
       <Header />
       
       <main className="min-h-screen bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)] pt-32 pb-8 sm:pb-12 md:pb-16">
