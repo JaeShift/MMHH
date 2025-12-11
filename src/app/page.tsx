@@ -204,14 +204,40 @@ export default function Page() {
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
-              Now that you know a bit about me, let me share the specific areas where I can support you on your journey to wellness.
-            </p>
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Now that you know a bit about me, let me share the{" "}
+              <motion.span
+                className="text-[#75866D] font-medium"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                specific areas
+              </motion.span>
+              {" "}where I can support you on your{" "}
+              <motion.span
+                className="text-[#75866D] font-medium"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                journey to wellness
+              </motion.span>
+              .
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -376,7 +402,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <Image
-                src="/nature.png"
+                src="/reviews.jpg"
                 alt="Patient testimonials"
                 fill
                 className="object-cover"
