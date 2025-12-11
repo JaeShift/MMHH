@@ -48,10 +48,19 @@ export default function Insurance() {
       answer: (
         <div className="space-y-4">
           <p>
-            This practice is committed to providing high-quality, specialized care that integrates mental health and hormone balance. To maintain the highest standards of care and manage administrative overhead, I currently operate primarily on a self-pay/cash-pay model.
+            I am passionately committed to providing high-quality, specialized care that fully integrates Modern Mental Health and Hormones to your needs.
           </p>
           <p>
-            Modern Mental Health & Hormones is currently not in-network with any health insurance plans, including Aetna, Anthem, BCBS, and Cigna. This practice has applied for credentialing.
+            To ensure I can dedicate my resources to providing this specialized, high-touch model, my practice currently operates primarily on a self-pay/cash-pay model.
+          </p>
+          <p>
+            <strong>My Plan for You:</strong> I understand the importance of insurance coverage. I have officially applied for credentialing with major carriers (including Aetna, Anthem, BCBS, and Cigna) and intend to join these networks as soon as my applications are approved.
+          </p>
+          <p>
+            <strong>Current Status:</strong> Until I receive confirmation and my practice is fully in-network, we are out-of-network with all health insurance plans.
+          </p>
+          <p>
+            I am excited about the prospect of increasing accessibility soon, and I thank you for your patience as I navigate this administrative process!
           </p>
           <div>
             <p className="font-semibold mb-2">Appointment investment:</p>

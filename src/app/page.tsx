@@ -55,77 +55,275 @@ export default function Page() {
       </div>
 
       {/* ABOUT PREVIEW */}
-      <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)]">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Provider</h2>
-            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
-              Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
-            </p>
-            <a href="/about" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
-              Learn More About Your Provider
-            </a>
+      <section id="about" className="relative py-20 md:py-32 bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-8 opacity-25 w-40 h-40 md:w-52 md:h-52 rotate-12">
+            <Image src="/nature.png" alt="" fill className="object-contain" />
           </div>
+          <div className="absolute top-1/3 right-8 opacity-20 w-44 h-44 md:w-56 md:h-56 -rotate-12 scale-x-[-1]">
+            <Image src="/nature.png" alt="" fill className="object-contain" />
+          </div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
+              
+              <div className="text-center">
+                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Meet Your Provider</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Your Provider</h2>
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                </div>
+                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
+                </p>
+                <motion.a
+                  href="/about"
+                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More About Your Provider
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Elegant transition */}
+      <div className="relative h-20 overflow-hidden">
+        <svg className="absolute top-0 w-full h-20 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
+        </svg>
+      </div>
 
       {/* SERVICES PREVIEW */}
-      <section id="services" className="py-16 md:py-24 bg-[color:var(--surface-muted)]">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Your Care</h2>
-            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
-              Comprehensive mental health and hormone care services including depression, anxiety, PMDD, perimenopause, menopause, and more.
-            </p>
-            <a href="/services" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
-              View All Services
-            </a>
-          </div>
+      <section id="services" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-[600px] h-[600px] bg-[#75866D]/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#75866D]/10 to-transparent rounded-tr-3xl"></div>
+              
+              <div className="text-center">
+                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Comprehensive Care</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Your Care</h2>
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                </div>
+                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Comprehensive mental health and hormone care services including depression, anxiety, PMDD, perimenopause, menopause, and more.
+                </p>
+                <motion.a
+                  href="/services"
+                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View All Services
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Subtle wave transition */}
+      <div className="relative h-14 overflow-hidden bg-[color:var(--surface-muted)]">
+        <svg className="absolute bottom-0 w-full h-14 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor"/>
+        </svg>
+      </div>
 
       {/* TELEHEALTH PREVIEW */}
-      <section id="telehealth" className="py-16 md:py-24 bg-[color:var(--surface)]">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Flexible Care Options</h2>
-            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
-              Secure, HIPAA-compliant telehealth visits anywhere in Ohio or convenient in-person appointments in Columbus.
-            </p>
-            <a href="/telehealth" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
-              Learn About Appointment Options
-            </a>
-          </div>
+      <section id="telehealth" className="relative py-20 md:py-32 bg-[#EBE4D6] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-[#75866D]/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#75866D]/5 to-[#8B9D7F]/5"></div>
+              
+              <div className="text-center relative z-10">
+                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Your Visit</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Flexible Care Options</h2>
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                </div>
+                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Secure, HIPAA-compliant telehealth visits anywhere in Ohio or convenient in-person appointments in Columbus.
+                </p>
+                <motion.a
+                  href="/telehealth"
+                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn About Appointment Options
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Elegant transition */}
+      <div className="relative h-20 overflow-hidden bg-[#EBE4D6]">
+        <svg className="absolute top-0 w-full h-20 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
+        </svg>
+      </div>
 
       {/* TESTIMONIALS PREVIEW */}
-      <section id="testimonials" className="py-16 md:py-24 bg-[color:var(--surface-muted)]">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Patient Experience</h2>
-            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
-              Read testimonials from women who have received care at Modern MHH.
-            </p>
-            <a href="/testimonials" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
-              Read Patient Stories
-            </a>
-          </div>
+      <section id="testimonials" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#75866D]/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
+              
+              <div className="text-center">
+                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Patient Stories</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Patient Experience</h2>
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                </div>
+                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Read testimonials from women who have received care at Modern MHH.
+                </p>
+                <motion.a
+                  href="/testimonials"
+                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Read Patient Stories
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* Subtle wave transition */}
+      <div className="relative h-14 overflow-hidden bg-[color:var(--surface-muted)]">
+        <svg className="absolute bottom-0 w-full h-14 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor"/>
+        </svg>
+      </div>
+
       {/* FAQ PREVIEW */}
-      <section id="faq" className="py-16 md:py-24 bg-[color:var(--surface)]">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-[color:var(--text-secondary)] mb-6">
-              Common questions about services, insurance, appointments, and treatment options.
-            </p>
-            <a href="/faq" className="inline-block bg-[#75866D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#677560] transition-colors">
-              View All FAQs
-            </a>
-          </div>
+      <section id="faq" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg className="absolute top-20 right-10 w-80 h-80 opacity-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#8B9D7F" d="M41.3,-71.5C51.8,-64.2,57.4,-50.2,62.8,-36.5C68.2,-22.8,73.4,-9.4,73.1,4.2C72.8,17.8,67,31.6,58.4,42.8C49.8,54,38.4,62.6,25.3,67.8C12.2,73,-2.6,74.8,-17.1,72.3C-31.6,69.8,-45.8,63,-56.8,52.4C-67.8,41.8,-75.6,27.4,-78.3,12.1C-81,-3.2,-78.6,-19.4,-71.8,-32.8C-65,-46.2,-53.8,-56.8,-41.3,-63.5C-28.8,-70.2,-14.4,-73,0.4,-73.7C15.2,-74.4,30.8,-78.8,41.3,-71.5Z" transform="translate(100 100)" />
+          </svg>
+        </div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#75866D]/10 to-transparent rounded-tr-3xl"></div>
+              
+              <div className="text-center">
+                <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Common Questions</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Frequently Asked Questions</h2>
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                </div>
+                <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Common questions about services, insurance, appointments, and treatment options.
+                </p>
+                <motion.a
+                  href="/faq"
+                  className="inline-flex items-center justify-center bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View All FAQs
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
