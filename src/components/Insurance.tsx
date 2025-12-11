@@ -41,7 +41,7 @@ export default function Insurance() {
     },
     {
       question: "Do you offer telehealth?",
-      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across [state(s) where I&apos;m licensed]. You can receive care from home or anywhere you feel comfortable."
+      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across Ohio. You can receive care from home or anywhere you feel comfortable when receiving treatment via telehealth."
     },
     {
       question: "Do you take insurance?",
