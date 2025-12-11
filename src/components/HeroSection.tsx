@@ -18,7 +18,7 @@ export default function Hero() {
         />
         
         {/* Elegant gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-[#EBE4D6]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-[#EBE4D6]/60" />
         
         {/* Content Container - Centered */}
         <div className="absolute inset-0 flex items-center justify-center">

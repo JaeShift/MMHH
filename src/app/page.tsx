@@ -175,7 +175,7 @@ export default function Page() {
       </section>
 
       {/* TRANSITION - From About to Conditions */}
-      <section className="relative py-8 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]">
+      <section className="relative py-4 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             className="max-w-4xl mx-auto text-center bg-white/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg"
