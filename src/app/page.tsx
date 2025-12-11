@@ -55,7 +55,7 @@ export default function Page() {
       </div>
 
       {/* ABOUT PREVIEW */}
-      <section id="about" className="relative py-20 md:py-32 bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)] overflow-hidden">
+      <section id="about" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-8 opacity-25 w-40 h-40 md:w-52 md:h-52 rotate-12">
@@ -83,9 +83,9 @@ export default function Page() {
                 <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Meet Your Provider</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Your Provider</h2>
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
                   <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
                 </div>
                 <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
                   Meet Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
@@ -106,13 +106,6 @@ export default function Page() {
           </motion.div>
         </div>
       </section>
-
-      {/* Elegant transition */}
-      <div className="relative h-20 overflow-hidden">
-        <svg className="absolute top-0 w-full h-20 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
-        </svg>
-      </div>
 
       {/* SERVICES PREVIEW */}
       <section id="services" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
@@ -141,9 +134,9 @@ export default function Page() {
             {/* Service Cards Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {[
-                { title: "Depression & Anxiety", icon: "🧠", color: "from-[#75866D] to-[#8B9D7F]" },
-                { title: "PMDD & Postpartum", icon: "❤️", color: "from-[#8B9D7F] to-[#9FAE93]" },
-                { title: "Perimenopause & Menopause", icon: "✨", color: "from-[#9FAE93] to-[#75866D]" },
+                { title: "Depression & Anxiety" },
+                { title: "PMDD & Postpartum" },
+                { title: "Perimenopause & Menopause" },
               ].map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -153,9 +146,11 @@ export default function Page() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                  <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
                   <div className="relative z-10 text-center">
-                    <div className="text-4xl mb-3">{service.icon}</div>
+                    <div className="w-12 h-12 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
+                      <div className="w-6 h-6 bg-white rounded-full"></div>
+                    </div>
                     <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-2">{service.title}</h3>
                   </div>
                 </motion.div>
@@ -178,13 +173,6 @@ export default function Page() {
           </motion.div>
         </div>
       </section>
-
-      {/* Subtle wave transition */}
-      <div className="relative h-14 overflow-hidden bg-[color:var(--surface-muted)]">
-        <svg className="absolute bottom-0 w-full h-14 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor"/>
-        </svg>
-      </div>
 
       {/* TELEHEALTH PREVIEW */}
       <section id="telehealth" className="relative py-20 md:py-32 bg-[#EBE4D6] overflow-hidden">
@@ -220,9 +208,9 @@ export default function Page() {
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#75866D]/10 to-[#8B9D7F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#75866D]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#75866D] to-[#8B9D7F] rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
@@ -242,9 +230,9 @@ export default function Page() {
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8B9D7F]/10 to-[#9FAE93]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#8B9D7F]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#8B9D7F] to-[#9FAE93] rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 bg-[#8B9D7F] rounded-full flex items-center justify-center mb-4 mx-auto">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -275,13 +263,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Elegant transition */}
-      <div className="relative h-20 overflow-hidden bg-[#EBE4D6]">
-        <svg className="absolute top-0 w-full h-20 text-[color:var(--surface-muted)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
-        </svg>
-      </div>
-
       {/* TESTIMONIALS PREVIEW */}
       <section id="testimonials" className="relative py-20 md:py-32 bg-[color:var(--surface-muted)] overflow-hidden">
         {/* Background decorative elements */}
@@ -305,7 +286,7 @@ export default function Page() {
             
             {/* Testimonial Quote Card */}
             <motion.div
-              className="relative bg-gradient-to-br from-[#75866D] via-[#8B9D7F] to-[#9FAE93] rounded-3xl p-10 md:p-16 shadow-2xl mb-10 overflow-hidden"
+              className="relative bg-[#75866D] rounded-3xl p-10 md:p-16 shadow-2xl mb-10 overflow-hidden"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -350,13 +331,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Subtle wave transition */}
-      <div className="relative h-14 overflow-hidden bg-[color:var(--surface-muted)]">
-        <svg className="absolute bottom-0 w-full h-14 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" fill="currentColor"/>
-        </svg>
-      </div>
-
       {/* FAQ PREVIEW */}
       <section id="faq" className="relative py-20 md:py-32 bg-[color:var(--surface)] overflow-hidden">
         {/* Background decorative elements */}
@@ -375,16 +349,16 @@ export default function Page() {
             transition={{ duration: 0.6 }}
           >
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl px-8 py-12 md:px-12 md:py-16 shadow-xl border border-white/30 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#75866D]/10 to-transparent rounded-tr-3xl"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#8B9D7F]/10 rounded-bl-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#75866D]/10 rounded-tr-3xl"></div>
               
               <div className="text-center">
                 <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-[#75866D] mb-3 font-semibold">Common Questions</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-6">Frequently Asked Questions</h2>
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
                   <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
-                  <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+                  <div className="h-px w-12 sm:w-16 bg-[#8B9D7F]/30"></div>
                 </div>
                 <p className="text-lg sm:text-xl text-[color:var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">
                   Common questions about services, insurance, appointments, and treatment options.
@@ -406,20 +380,13 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Elegant wave transition to contact section */}
-      <div className="relative h-18 overflow-hidden bg-[color:var(--surface-muted)]">
-        <svg className="absolute bottom-0 w-full h-18 text-[color:var(--surface)]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"/>
-        </svg>
-      </div>
-
       {/* CONTACT */}
-      <section id="contact" className="relative bg-gradient-to-b from-[color:var(--surface)] to-[color:var(--surface-muted)] py-12 sm:py-16 md:py-20 overflow-hidden">
+      <section id="contact" className="relative bg-[color:var(--surface)] py-12 sm:py-16 md:py-20 overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large circular gradients */}
-          <div className="absolute top-10 left-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-br from-[#8B9D7F]/20 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] bg-gradient-to-tl from-[#75866D]/15 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-10 left-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#8B9D7F]/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] bg-[#75866D]/15 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[36rem] sm:h-[36rem] md:w-[48rem] md:h-[48rem] bg-stone-200/30 rounded-full blur-3xl"></div>
           
           {/* Nature PNG botanical elements */}
