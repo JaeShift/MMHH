@@ -28,7 +28,7 @@ export default function Hero() {
               </p>
 
               <div className="pt-4 sm:pt-6">
-                <a href="/book" className="inline-flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold text-white bg-[#75866D] px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-lg hover:bg-[#677560] transition-colors shadow-lg">
+                <a href="/book" className="inline-flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold text-white bg-[#75866D] px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full hover:bg-[#677560] transition-all duration-300 transform hover:scale-105 shadow-2xl">
                   Request Appointment
                 </a>
               </div>

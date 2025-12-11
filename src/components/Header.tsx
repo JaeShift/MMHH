@@ -10,6 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
   
   // Navigation links - use full pages for SEO
   const navLinks = {
@@ -27,7 +28,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 w-full ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"} border-b border-[color:var(--neutral-200)]`}>
+    <header className={`sticky ${isHome ? "top-[68px]" : "top-0"} z-50 w-full ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"} border-b border-[color:var(--neutral-200)]`}>
       <div className="w-full mx-auto flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
         <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="flex items-center flex-shrink-0 mr-4">
           <Image 
@@ -50,7 +51,7 @@ export default function Header() {
           <Link href={navLinks.faq} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
         </nav>
 
-        <Link href="/book" className="hidden md:inline-flex rounded-lg px-6 py-2.5 text-white text-sm font-semibold transition-colors flex-shrink-0 shadow-sm" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
+        <Link href="/book" className="hidden md:inline-flex rounded-full px-4 py-2 text-white text-sm font-medium transition-colors flex-shrink-0" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
           Request Appointment
         </Link>
 
@@ -113,7 +114,7 @@ export default function Header() {
             </div>
             <Link 
               href="/book"
-              className="w-full inline-flex items-center justify-center rounded-lg px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-[1.02] shadow-sm" 
+              className="w-full inline-flex items-center justify-center rounded-xl px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg" 
               style={{ backgroundColor: '#75866D' }} 
               onClick={()=>setOpen(false)}
             >
