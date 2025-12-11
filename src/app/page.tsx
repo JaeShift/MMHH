@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Brain, Heart, Sparkles, Focus, Moon, Pill } from "lucide-react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import FocusAreas from "../components/FocusAreas";
@@ -129,14 +128,13 @@ export default function Page() {
             {/* Service Cards Grid */}
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "Depression & Anxiety", icon: Brain, color: "#75866D" },
-                { title: "PMDD & Postpartum", icon: Heart, color: "#8B9D7F" },
-                { title: "Perimenopause & Menopause", icon: Sparkles, color: "#9FAE93" },
-                { title: "Brain Fog & Focus", icon: Focus, color: "#677560" },
-                { title: "Sleep & Insomnia", icon: Moon, color: "#75866D" },
-                { title: "Medication Management", icon: Pill, color: "#8B9D7F" },
+                { title: "Depression & Anxiety" },
+                { title: "PMDD & Postpartum" },
+                { title: "Perimenopause & Menopause" },
+                { title: "Brain Fog & Focus" },
+                { title: "Sleep & Insomnia" },
+                { title: "Medication Management" },
               ].map((service, index) => {
-                const IconComponent = service.icon;
                 return (
                   <motion.div
                     key={service.title}
@@ -148,14 +146,11 @@ export default function Page() {
                   >
                     <div className="absolute inset-0 bg-[#8B9D7F]/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
                     <div className="relative z-10 text-center flex flex-col flex-grow">
-                      <div className="w-12 h-12 bg-[#75866D] rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <IconComponent className="w-6 h-6 text-white" strokeWidth={2} />
-                      </div>
                       <h3 className="text-lg font-semibold text-[color:var(--text-primary)] mb-4">{service.title}</h3>
                       <div className="mt-auto pt-4">
                         <motion.a
                           href="/services"
-                          className="inline-flex items-center justify-center bg-[#75866D] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#677560] transition-all duration-300 shadow-md hover:shadow-lg"
+                          className="inline-flex items-center text-[#75866D] text-sm font-semibold hover:text-[#677560] transition-all duration-300 underline underline-offset-4"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
