@@ -66,11 +66,6 @@ export default function FocusAreas() {
     }
   ];
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
-
   return (
     <section id="services" className="pt-24 pb-20 sm:pt-32 sm:pb-24 md:pt-40 md:pb-32 bg-[#EBE4D6] relative overflow-hidden">
       {/* Sophisticated background elements */}
