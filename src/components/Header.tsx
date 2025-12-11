@@ -10,7 +10,6 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
-  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
   
   // Navigation links - use full pages for SEO
   const navLinks = {
