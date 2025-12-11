@@ -43,7 +43,7 @@ export default function Hero() {
 
               {/* Subtitle */}
               <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-light">
-                Specialized mental health and hormone care<br className="hidden sm:block" /> for women navigating life's transitions
+                Specialized mental health and hormone care<br className="hidden sm:block" /> for women navigating life&apos;s transitions
               </p>
 
               {/* CTA Button */}

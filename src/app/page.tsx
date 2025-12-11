@@ -4,11 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import FocusAreas from "../components/FocusAreas";
-import AboutStephanie from "../components/AboutStephanie";
-import Telehealth from "../components/Telehealth";
-import Testimonials from "../components/Testimonials";
-import Insurance from "../components/Insurance";
 import ContactForm from "../components/ContactForm";
 
 export default function Page() {
@@ -106,7 +101,7 @@ export default function Page() {
                 Instead of just masking symptoms, you receive integrative, personalized care—so you can finally feel like yourself again.
               </p>
               <p className="text-gray-700 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
-                My belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, I'll create a plan that supports your mind, body, and spirit.
+                My belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, I&apos;ll create a plan that supports your mind, body, and spirit.
               </p>
               <p className="text-black text-lg sm:text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-6 leading-relaxed">
                 Now accepting patients across the state of Ohio.
@@ -181,7 +176,7 @@ export default function Page() {
               
               <div className="space-y-6 mb-10">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-                  I'm Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women's mental health and hormone care.
+                  I&apos;m Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed font-light">
                   With extensive expertise in both psychiatric and family practice, I provide compassionate, evidence-based care tailored to your unique needs.
@@ -240,7 +235,7 @@ export default function Page() {
                 Conditions I Treat
               </h2>
               <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-                I specialize in women's mental health and hormonal concerns throughout life's transitions
+                I specialize in women&apos;s mental health and hormonal concerns throughout life&apos;s transitions
               </p>
             </div>
             
