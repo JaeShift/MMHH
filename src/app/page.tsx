@@ -106,8 +106,13 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Subtle curved divider */}
+      <div className="relative h-12 pointer-events-none bg-white">
+        <div className="absolute bottom-0 w-full h-24 bg-[#EBE4D6]" style={{ borderRadius: '100% 100% 0 0 / 80px 80px 0 0' }}></div>
+      </div>
+
       {/* ABOUT PREVIEW - Split Layout */}
-      <section id="about" className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20 bg-[#EBE4D6] overflow-hidden">
+      <section id="about" className="relative pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 bg-[#EBE4D6] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto"
@@ -175,10 +180,10 @@ export default function Page() {
       </section>
 
       {/* TRANSITION - From About to Conditions */}
-      <section className="relative pt-0 pb-8 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] overflow-hidden">
+      <section className="relative pt-0 pb-20 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] overflow-hidden">
         {/* Animated background glow */}
         <motion.div 
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-x-0 top-40 flex items-center justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -254,7 +259,7 @@ export default function Page() {
               >
                 Now that you know a bit about me, let me share the{" "}
                 <motion.span
-                  className="text-black font-light relative inline-block"
+                  className="text-gray-700 font-light relative inline-block"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -273,7 +278,7 @@ export default function Page() {
                 </motion.span>
                 {" "}where I can support you on your{" "}
                 <motion.span
-                  className="text-black font-light relative inline-block"
+                  className="text-gray-700 font-light relative inline-block"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -298,7 +303,7 @@ export default function Page() {
       </section>
 
       {/* CONDITIONS I TREAT - With Images */}
-      <section id="services" className="relative pt-20 pb-24 md:pt-28 md:pb-32 lg:pt-36 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
+      <section id="services" className="relative pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-6xl mx-auto"
