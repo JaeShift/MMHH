@@ -308,7 +308,7 @@ export default function Page() {
       </section>
 
       {/* CONDITIONS I TREAT - With Images */}
-      <section id="services" className="relative pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
+      <section id="services" className="relative pt-20 pb-24 md:pt-28 md:pb-32 lg:pt-36 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -383,8 +383,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FLEXIBLE CARE OPTIONS - No Image */}
-      <section id="telehealth" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
+      {/* FLEXIBLE CARE OPTIONS */}
+      <section id="telehealth" className="relative py-24 md:py-32 lg:py-40 bg-gradient-to-b from-[#EBE4D6] via-[#F5F1E8] to-[#FCF8F0] overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#75866D]/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-radial from-[#9FAE93]/5 to-transparent rounded-full"></div>
+        </div>
+
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-5xl mx-auto text-center"
@@ -401,36 +408,69 @@ export default function Page() {
               Flexible Care Options
             </h2>
             
+            {/* Decorative divider */}
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
+              <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+              <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
+            </div>
+            
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-12">
               Choose the appointment style that works best for you
             </p>
             
             {/* Two Options */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 bg-[#75866D] rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <motion.div 
+                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ y: -5 }}
+              >
+                {/* Decorative corner */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#75866D]/10 to-transparent rounded-bl-3xl"></div>
+                
+                {/* Icon with gradient background */}
+                <div className="relative w-20 h-20 bg-gradient-to-br from-[#75866D] to-[#677560] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-medium text-black mb-3">Telehealth Visits</h3>
+                
+                <h3 className="text-2xl font-medium text-black mb-4">Telehealth Visits</h3>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-[#75866D] to-transparent mx-auto mb-4"></div>
                 <p className="text-lg text-gray-700 leading-relaxed font-light">
                   I offer secure, HIPAA-compliant virtual appointments from the comfort of your home. Available anywhere in Ohio with convenient scheduling.
                 </p>
-              </div>
+              </motion.div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 bg-[#8B9D7F] rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <motion.div 
+                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ y: -5 }}
+              >
+                {/* Decorative corner */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
+                
+                {/* Icon with gradient background */}
+                <div className="relative w-20 h-20 bg-gradient-to-br from-[#8B9D7F] to-[#75866D] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-medium text-black mb-3">In-Person Visits</h3>
+                
+                <h3 className="text-2xl font-medium text-black mb-4">In-Person Visits</h3>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-[#8B9D7F] to-transparent mx-auto mb-4"></div>
                 <p className="text-lg text-gray-700 leading-relaxed font-light">
                   I also provide face-to-face care in a comfortable, welcoming office environment. Convenient location in Columbus, Ohio.
                 </p>
-              </div>
+              </motion.div>
             </div>
             
             <motion.a
