@@ -202,16 +202,6 @@ export default function Page() {
                 damping: 15
               }
             }}
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              y: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
           >
             {/* Decorative elements */}
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent"></div>
