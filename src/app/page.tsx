@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       {/* ABOUT PREVIEW - Split Layout */}
-      <section id="about" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
+      <section id="about" className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20 bg-[#EBE4D6] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto"
@@ -175,10 +175,21 @@ export default function Page() {
       </section>
 
       {/* TRANSITION - From About to Conditions */}
-      <section className="relative py-4 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="relative pt-0 pb-8 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] overflow-hidden">
+        {/* Animated background glow */}
+        <motion.div 
+          className="absolute inset-0 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="w-full max-w-4xl h-32 bg-gradient-radial from-[#75866D]/20 via-[#8B9D7F]/10 to-transparent blur-3xl"></div>
+        </motion.div>
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
-            className="max-w-4xl mx-auto text-center bg-white/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg"
+            className="max-w-4xl mx-auto text-center relative"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -191,48 +202,107 @@ export default function Page() {
                 damping: 15
               }
             }}
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
           >
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            {/* Decorative elements */}
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent"></div>
+            
+            <motion.div 
+              className="bg-white/60 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl border border-white/50 relative overflow-hidden"
+              animate={{
+                boxShadow: [
+                  '0 25px 50px -12px rgba(117, 134, 109, 0.25)',
+                  '0 25px 50px -12px rgba(117, 134, 109, 0.4)',
+                  '0 25px 50px -12px rgba(117, 134, 109, 0.25)'
+                ]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
             >
-              Now that you know a bit about me, let me share the{" "}
-              <motion.span
-                className="text-[#75866D] font-medium"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+              {/* Subtle corner accents */}
+              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#8B9D7F]/40 rounded-tl-2xl"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#8B9D7F]/40 rounded-br-2xl"></div>
+              
+              {/* Floating leaf decoration */}
+              <motion.div 
+                className="absolute top-2 right-2 w-12 h-12 opacity-15"
+                animate={{ 
+                  y: [0, -10, 0],
+                  rotate: [0, 5, 0]
+                }}
                 transition={{ 
-                  duration: 0.5, 
-                  delay: 0.5,
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 10
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
               >
-                specific areas
-              </motion.span>
-              {" "}where I can support you on your{" "}
-              <motion.span
-                className="text-[#75866D] font-medium"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="50" cy="50" rx="35" ry="20" transform="rotate(-30 50 50)" fill="#75866D"/>
+                  <path d="M50 30 Q48 50 50 70" stroke="#677560" strokeWidth="3"/>
+                </svg>
+              </motion.div>
+
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light relative z-10"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 0.7,
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 10
-                }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
-                journey to wellness
-              </motion.span>
-              .
-            </motion.p>
+                Now that you know a bit about me, let me share the{" "}
+                <motion.span
+                  className="text-[#75866D] font-light relative inline-block"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.5,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 10
+                  }}
+                  style={{
+                    textShadow: '0 2px 10px rgba(117, 134, 109, 0.2)'
+                  }}
+                >
+                  specific areas
+                </motion.span>
+                {" "}where I can support you on your{" "}
+                <motion.span
+                  className="text-[#75866D] font-light relative inline-block"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.7,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 10
+                  }}
+                  style={{
+                    textShadow: '0 2px 10px rgba(117, 134, 109, 0.2)'
+                  }}
+                >
+                  journey to wellness
+                </motion.span>
+                .
+              </motion.p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
