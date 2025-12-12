@@ -254,7 +254,7 @@ export default function Page() {
               >
                 Now that you know a bit about me, let me share the{" "}
                 <motion.span
-                  className="text-[#75866D] font-light relative inline-block"
+                  className="text-black font-light relative inline-block"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -273,7 +273,7 @@ export default function Page() {
                 </motion.span>
                 {" "}where I can support you on your{" "}
                 <motion.span
-                  className="text-[#75866D] font-light relative inline-block"
+                  className="text-black font-light relative inline-block"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -313,8 +313,13 @@ export default function Page() {
                 Comprehensive Care
               </p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-6 leading-tight">
-                Conditions I Treat
+                Areas of Care
               </h2>
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
+                <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
+              </div>
               <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
                 I specialize in women&apos;s mental health and hormonal concerns throughout life&apos;s transitions
               </p>
@@ -524,11 +529,6 @@ export default function Page() {
               
               {/* Testimonial Quote */}
               <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg mb-8">
-                <div className="mb-4">
-                  <svg className="w-10 h-10 text-[#75866D]/30" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                </div>
                 <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed italic mb-6">
                   Real patient experiences and success stories from women who have received care at Modern MHH
                 </p>
