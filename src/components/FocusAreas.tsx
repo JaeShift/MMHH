@@ -229,6 +229,7 @@ export default function FocusAreas() {
 
             {/* Specialty Services Section */}
             <motion.div
+              id="specialty-services"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

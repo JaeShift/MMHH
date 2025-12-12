@@ -90,7 +90,7 @@ export default function Page() {
                 viewport={{ amount: 0.1, once: true }}
               >
                 <motion.a
-                  href="/about"
+                  href="/about-me"
                   className="inline-flex items-center justify-center text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-[#75866D] hover:bg-[#677560]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -159,7 +159,7 @@ export default function Page() {
               </div>
               
               <motion.a
-                href="/about"
+                href="/about-me"
                 className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -296,7 +296,7 @@ export default function Page() {
                         {condition.title}
                       </h3>
                       <a
-                        href="/services"
+                        href="/services#specialty-services"
                         className="inline-flex items-center text-[#75866D] text-base font-medium hover:text-[#677560] transition-all duration-300 underline underline-offset-4 decoration-2 group"
                       >
                         Learn More

@@ -13,7 +13,7 @@ export default function Header() {
   
   // Navigation links - use full pages for SEO
   const navLinks = {
-    provider: isHome ? "#provider" : "/about",
+    provider: isHome ? "#provider" : "/about-me",
     services: isHome ? "#services" : "/services",
     testimonials: isHome ? "#testimonials" : "/testimonials",
     faq: isHome ? "#faq" : "/faq",
