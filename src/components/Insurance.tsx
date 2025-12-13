@@ -64,18 +64,15 @@ export default function Insurance() {
           </p>
           <div>
             <p className="font-semibold mb-2">Appointment investment:</p>
+            <div className="bg-[#8B9D7F]/10 border border-[#8B9D7F]/30 rounded-lg p-4 mb-3">
+              <p className="text-sm font-semibold text-[#75866D] mb-2">🎉 Opening Practice Discount</p>
+            </div>
             <ul className="mt-2 space-y-2 text-sm sm:text-base">
               <li>
-                <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ US$350.00
+                <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ <span className="line-through text-gray-400">US$350.00</span> <span className="font-bold text-[#75866D]">US$300.00</span>
               </li>
               <li>
-                <span className="font-semibold">Second Visit: Your Path</span> — 40 minutes @ US$200.00
-              </li>
-              <li>
-                <span className="font-semibold">Routine Visits: Optimization</span> — 30 minutes @ US$110.00
-              </li>
-              <li>
-                <span className="font-semibold">MMHH Express Visit</span> — 15 minutes @ US$50.00
+                <span className="font-semibold">Routine or Follow-up Visits</span> — 30 minutes @ <span className="line-through text-gray-400">US$175.00</span> <span className="font-bold text-[#75866D]">US$150.00</span>
               </li>
             </ul>
           </div>
