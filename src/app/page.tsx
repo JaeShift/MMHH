@@ -91,7 +91,7 @@ export default function Page() {
               >
                 <motion.a
                   href="/about-me"
-                  className="inline-flex items-center justify-center text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-[#75866D] hover:bg-[#677560]"
+                  className="inline-flex items-center justify-center text-white text-lg font-semibold px-8 py-4 transition-all duration-300 bg-[#75866D] hover:bg-[#677560]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -165,7 +165,7 @@ export default function Page() {
               
               <motion.a
                 href="/about-me"
-                className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -475,7 +475,7 @@ export default function Page() {
             
             <motion.a
               href="/telehealth"
-              className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -548,7 +548,7 @@ export default function Page() {
               
               <motion.a
                 href="/testimonials"
-                className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -643,7 +643,7 @@ export default function Page() {
           >
             <motion.a
               href="/faq"
-              className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

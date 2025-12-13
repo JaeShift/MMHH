@@ -55,7 +55,7 @@ export default function Hero() {
               >
                 <a 
                   href="/book" 
-                  className="inline-flex items-center justify-center text-base md:text-lg font-semibold text-white bg-[#75866D] px-10 md:px-14 py-4 md:py-5 rounded-full hover:bg-[#677560] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+                  className="inline-flex items-center justify-center text-base md:text-lg font-semibold text-white bg-[#75866D] px-10 md:px-14 py-4 md:py-5 hover:bg-[#677560] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Request Appointment
                 </a>
