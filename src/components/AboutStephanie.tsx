@@ -14,7 +14,7 @@ export default function AboutStephanie() {
         <div className="absolute top-1/2 left-8 w-16 h-16 bg-[color:var(--pistachio)]/10 rounded-full opacity-35 blur-lg"></div>
         
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-3xl shadow-xl border border-[color:var(--neutral-200)]" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
+          <div className="max-w-6xl mx-auto bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-10 shadow-xl border border-[color:var(--neutral-200)]" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
             <motion.h2 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-black leading-tight mb-3" 
               initial={{ opacity: 0, y: 15 }}
@@ -79,7 +79,7 @@ export default function AboutStephanie() {
               >
                 <motion.a
                   href="/about-me"
-                  className="inline-flex items-center justify-center text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-full transition-all duration-300"
+                  className="inline-flex items-center justify-center text-white text-base sm:text-lg font-semibold px-6 py-3 transition-all duration-300"
                   style={{ backgroundColor: '#75866D' }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -109,7 +109,7 @@ export default function AboutStephanie() {
                   alt="Stephanie Nichols" 
                   width={544}
                   height={672}
-                  className="rounded-2xl object-cover w-full h-auto shadow-lg"
+                  className="object-cover w-full h-auto shadow-lg"
                 />
                 <div className="mt-4 flex flex-row items-center justify-center gap-4">
                   <Image

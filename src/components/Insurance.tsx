@@ -64,7 +64,7 @@ export default function Insurance() {
           </p>
           <div>
             <p className="font-semibold mb-2">Appointment investment:</p>
-            <div className="bg-[#8B9D7F]/10 border border-[#8B9D7F]/30 rounded-lg p-4 mb-3">
+            <div className="bg-[#8B9D7F]/10 border border-[#8B9D7F]/30 p-4 mb-3">
               <p className="text-sm font-semibold text-[#75866D] mb-2">🎉 Opening Practice Discount</p>
             </div>
             <ul className="mt-2 space-y-2 text-sm sm:text-base">
@@ -140,7 +140,7 @@ export default function Insurance() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true, amount: 0.1 }}
                 >
-                  <div className={`group relative bg-white rounded-2xl transition-all duration-300 overflow-hidden ${
+                  <div className={`group relative bg-white transition-all duration-300 overflow-hidden ${
                     openItem === index 
                       ? 'shadow-2xl border-l-4 border-l-[#75866D]' 
                       : 'shadow-lg hover:shadow-xl border-l-4 border-l-transparent hover:border-l-[#8B9D7F]/50'
@@ -164,7 +164,7 @@ export default function Insurance() {
                         </div>
                         
                         <motion.div 
-                          className={`flex-shrink-0 p-2 rounded-full transition-colors duration-300 ${
+                          className={`flex-shrink-0 p-2 transition-colors duration-300 ${
                             openItem === index 
                               ? 'bg-[#75866D]' 
                               : 'bg-[color:var(--neutral-200)] group-hover:bg-[#8B9D7F]/20'
@@ -234,7 +234,7 @@ export default function Insurance() {
               </p>
               <Link
                 href="/book"
-                className="inline-block bg-[#75866D] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#677560] transition-colors duration-300 shadow-lg hover:shadow-xl"
+                className="inline-block bg-[#75866D] text-white px-8 py-4 font-semibold text-lg hover:bg-[#677560] transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
                 Get in Touch
               </Link>

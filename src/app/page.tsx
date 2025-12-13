@@ -59,7 +59,7 @@ export default function Page() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div
-              className="bg-white/50 backdrop-blur-sm rounded-3xl px-6 py-10 sm:px-8 sm:py-12 md:px-12 md:py-16 shadow-xl relative overflow-hidden border border-white/30"
+              className="bg-white/50 backdrop-blur-sm px-6 py-10 sm:px-8 sm:py-12 md:px-12 md:py-16 shadow-xl relative overflow-hidden border border-white/30"
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ amount: 0.15, once: true }}
@@ -67,8 +67,8 @@ export default function Page() {
               style={{ boxShadow: '0 10px 40px -10px rgba(117, 134, 109, 0.15)' }}
             >
               {/* Subtle decorative corner accents */}
-              <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50 rounded-tl-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50 rounded-br-3xl"></div>
+              <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50"></div>
               <p className="text-gray-700 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
                 I help women in midlife who feel dismissed, overwhelmed, or stuck reclaim their energy, balance, and confidence by addressing the root causes of their mental health and hormonal challenges.
               </p>
@@ -113,17 +113,11 @@ export default function Page() {
 
       {/* ABOUT PREVIEW - Split Layout */}
       <section id="about" className="relative pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 bg-[#EBE4D6] overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <motion.div
-            className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Image Side */}
+        <div className="relative z-10">
+          <div className="grid lg:grid-cols-2 gap-0 items-center max-w-full">
+            {/* Image Side - Full bleed to left edge */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -140,7 +134,7 @@ export default function Page() {
             
             {/* Text Side */}
             <motion.div
-              className="text-left lg:pl-8"
+              className="text-left px-6 lg:px-16 py-12"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -175,132 +169,14 @@ export default function Page() {
                 </svg>
               </motion.a>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* TRANSITION - From About to Conditions */}
-      <section className="relative pt-0 pb-20 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] overflow-hidden">
-        {/* Animated background glow */}
-        <motion.div 
-          className="absolute inset-x-0 top-40 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <div className="w-full max-w-4xl h-32 bg-gradient-radial from-[#75866D]/20 via-[#8B9D7F]/10 to-transparent blur-3xl"></div>
-        </motion.div>
-
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <motion.div
-            className="max-w-4xl mx-auto text-center relative"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ 
-              duration: 0.7, 
-              ease: [0.34, 1.56, 0.64, 1],
-              scale: {
-                type: "spring",
-                stiffness: 200,
-                damping: 15
-              }
-            }}
-          >
-            {/* Decorative elements */}
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent"></div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#8B9D7F] to-transparent"></div>
-            
-            <motion.div 
-              className="bg-white/60 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl border border-white/50 relative overflow-hidden"
-              animate={{
-                boxShadow: [
-                  '0 25px 50px -12px rgba(117, 134, 109, 0.25)',
-                  '0 25px 50px -12px rgba(117, 134, 109, 0.4)',
-                  '0 25px 50px -12px rgba(117, 134, 109, 0.25)'
-                ]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              {/* Subtle corner accents */}
-              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#8B9D7F]/40 rounded-tl-2xl"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#8B9D7F]/40 rounded-br-2xl"></div>
-              
-              {/* Floating leaf decoration */}
-              <motion.div 
-                className="absolute top-2 right-2 w-12 h-12 opacity-15"
-                animate={{ 
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ 
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="50" cy="50" rx="35" ry="20" transform="rotate(-30 50 50)" fill="#75866D"/>
-                  <path d="M50 30 Q48 50 50 70" stroke="#677560" strokeWidth="3"/>
-                </svg>
-              </motion.div>
-
-              <motion.p 
-                className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light relative z-10"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                Now that you know a bit about me, let me share the{" "}
-                <motion.span
-                  className="text-gray-700 font-light relative inline-block"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.5,
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 10
-                  }}
-                  style={{
-                    textShadow: '0 2px 10px rgba(117, 134, 109, 0.2)'
-                  }}
-                >
-                  specific areas
-                </motion.span>
-                {" "}where I can support you on your{" "}
-                <motion.span
-                  className="text-gray-700 font-light relative inline-block"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.7,
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 10
-                  }}
-                  style={{
-                    textShadow: '0 2px 10px rgba(117, 134, 109, 0.2)'
-                  }}
-                >
-                  journey to wellness
-                </motion.span>
-                .
-              </motion.p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Subtle curved divider - flipped (transition to Areas of Care) */}
+      <div className="relative h-12 pointer-events-none bg-[#FCF8F0]">
+        <div className="absolute top-0 w-full h-24 bg-[#EBE4D6]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
+      </div>
 
       {/* CONDITIONS I TREAT - With Images */}
       <section id="services" className="relative pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40 bg-[#FCF8F0] overflow-hidden">
@@ -343,7 +219,7 @@ export default function Page() {
                 return (
                   <motion.div
                     key={condition.title}
-                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+                    className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -422,7 +298,7 @@ export default function Page() {
             {/* Two Options */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <motion.div 
-                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
+                className="relative bg-white/80 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -430,7 +306,7 @@ export default function Page() {
                 whileHover={{ y: -5 }}
               >
                 {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#75866D]/10 to-transparent rounded-bl-3xl"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#75866D]/10 to-transparent"></div>
                 
                 {/* Icon with gradient background */}
                 <div className="relative w-20 h-20 bg-gradient-to-br from-[#75866D] to-[#677560] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
@@ -447,7 +323,7 @@ export default function Page() {
               </motion.div>
               
               <motion.div 
-                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
+                className="relative bg-white/80 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#8B9D7F]/10 overflow-hidden group"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -455,7 +331,7 @@ export default function Page() {
                 whileHover={{ y: -5 }}
               >
                 {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-3xl"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent"></div>
                 
                 {/* Icon with gradient background */}
                 <div className="relative w-20 h-20 bg-gradient-to-br from-[#8B9D7F] to-[#75866D] rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
@@ -500,7 +376,7 @@ export default function Page() {
           >
             {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -533,7 +409,7 @@ export default function Page() {
               </h2>
               
               {/* Testimonial Quote */}
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg mb-8">
+              <div className="bg-white p-8 md:p-10 shadow-lg mb-8">
                 <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed italic mb-6">
                   Real patient experiences and success stories from women who have received care at Modern MHH
                 </p>
@@ -617,7 +493,7 @@ export default function Page() {
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-[#8B9D7F]/10"
+                className="bg-white/80 backdrop-blur-sm p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-[#8B9D7F]/10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

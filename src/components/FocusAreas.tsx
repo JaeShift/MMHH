@@ -130,7 +130,7 @@ export default function FocusAreas() {
         {/* Unified Content Container */}
         <div className="max-w-[90rem] mx-auto">
           <motion.div
-            className="bg-white/50 backdrop-blur-sm rounded-[48px] shadow-2xl overflow-hidden border border-white/30 p-8 sm:p-10 md:p-12 lg:p-16"
+            className="bg-white/50 backdrop-blur-sm shadow-2xl overflow-hidden border border-white/30 p-8 sm:p-10 md:p-12 lg:p-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -164,14 +164,14 @@ export default function FocusAreas() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     {/* Pillar Card */}
-                    <div className="relative h-full rounded-2xl border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="relative h-full border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       {/* Number Badge */}
                       <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#75866D] to-[#8B9D7F] flex items-center justify-center shadow-lg">
                         <span className="text-white font-bold text-lg">{index + 1}</span>
                       </div>
 
                       {/* Decorative corner accent */}
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent rounded-bl-2xl"></div>
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#8B9D7F]/10 to-transparent"></div>
                       
                       <div className="relative space-y-4 pt-4">
                         <div>
@@ -259,7 +259,7 @@ export default function FocusAreas() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                      <div className="relative h-full rounded-2xl border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-8 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                      <div className="relative h-full border-2 border-[#8B9D7F]/20 bg-white/80 backdrop-blur-sm p-8 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                         {/* Gradient background on hover */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 

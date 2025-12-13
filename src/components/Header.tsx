@@ -81,7 +81,7 @@ export default function Header() {
             <div className="flex flex-col gap-0 mb-6">
               <Link 
                 href={navLinks.provider} 
-                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
+                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
                 Your Provider
@@ -89,7 +89,7 @@ export default function Header() {
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
                 href={navLinks.services} 
-                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
+                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
                 Your Care
@@ -97,7 +97,7 @@ export default function Header() {
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
                 href={navLinks.testimonials} 
-                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
+                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
                 Patient Experience
@@ -105,7 +105,7 @@ export default function Header() {
               <div className="h-px bg-gray-200 mx-4"></div>
               <Link 
                 href={navLinks.faq} 
-                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
+                className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200" 
                 onClick={()=>setOpen(false)}
               >
                 FAQ&apos;s
@@ -113,7 +113,7 @@ export default function Header() {
             </div>
             <Link 
               href="/book"
-              className="w-full inline-flex items-center justify-center rounded-xl px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg" 
+              className="w-full inline-flex items-center justify-center px-6 py-4 text-white text-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg" 
               style={{ backgroundColor: '#75866D' }} 
               onClick={()=>setOpen(false)}
             >

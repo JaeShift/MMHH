@@ -99,7 +99,7 @@ export default function Testimonials() {
               }}
               viewport={{ once: true }}
             >
-              <div className="relative bg-white rounded-3xl shadow-2xl transition-all duration-500 p-8 h-full hover:-translate-y-2 overflow-hidden border-l-4" style={{ borderLeftColor: i === 0 ? '#75866D' : i === 1 ? '#8B9D7F' : '#9FAE93' }}>
+              <div className="relative bg-white shadow-2xl transition-all duration-500 p-8 h-full hover:-translate-y-2 overflow-hidden border-l-4" style={{ borderLeftColor: i === 0 ? '#75866D' : i === 1 ? '#8B9D7F' : '#9FAE93' }}>
                 {/* Decorative gradient on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`}></div>
 
@@ -148,7 +148,7 @@ export default function Testimonials() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <div className="inline-flex p-3 rounded-xl bg-white shadow-lg mb-3 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                    <div className="inline-flex p-3 bg-white shadow-lg mb-3 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
                       <IconComponent className="w-6 h-6 text-[#75866D]" strokeWidth={2} />
                     </div>
                     <p className="font-semibold text-sm text-black mb-1">

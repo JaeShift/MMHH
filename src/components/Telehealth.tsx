@@ -40,7 +40,7 @@ export default function Telehealth() {
   return (
     <section id="telehealth" className="relative overflow-hidden py-20 sm:py-24 lg:py-32 bg-[#EBE4D6]">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-white/50 backdrop-blur-sm rounded-[48px] overflow-hidden shadow-2xl">
+        <div className="relative bg-white/50 backdrop-blur-sm overflow-hidden shadow-2xl">
           {/* Sophisticated background elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#8B9D7F]/10 rounded-full blur-3xl"></div>
@@ -111,7 +111,7 @@ export default function Telehealth() {
                     </div>
 
                     {/* Content card */}
-                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl border-2 border-[color:var(--neutral-200)] p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="bg-white/80 backdrop-blur-sm border-2 border-[color:var(--neutral-200)] p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <h3 className="font-semibold text-xl md:text-2xl text-[color:var(--text-primary)] mb-3 leading-tight">
                         {step.title}
                       </h3>
@@ -149,7 +149,7 @@ export default function Telehealth() {
               return (
                 <motion.div
                   key={type.type}
-                  className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-[color:var(--neutral-200)] p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                  className="group relative bg-white/80 backdrop-blur-sm border-2 border-[color:var(--neutral-200)] p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
                   initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}

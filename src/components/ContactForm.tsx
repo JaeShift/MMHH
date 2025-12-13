@@ -117,10 +117,10 @@ export default function ContactForm() {
       <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#8B9D7F]/10 rounded-full blur-2xl"></div>
       <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#75866D]/10 rounded-full blur-2xl"></div>
       
-      <div className="relative bg-gradient-to-br from-white/90 to-[color:var(--surface-elevated)]/80 backdrop-blur-sm border border-[color:var(--neutral-200)] rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-white/90 to-[color:var(--surface-elevated)]/80 backdrop-blur-sm border border-[color:var(--neutral-200)] shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
         {/* Decorative corner accents */}
-        <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 border-l-2 border-t-2 border-[#8B9D7F]/30 rounded-tl-2xl"></div>
-        <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 border-r-2 border-b-2 border-[#8B9D7F]/30 rounded-br-2xl"></div>
+        <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 border-l-2 border-t-2 border-[#8B9D7F]/30"></div>
+        <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 border-r-2 border-b-2 border-[#8B9D7F]/30"></div>
         
         {/* Nature-inspired decorative elements */}
         <div className="absolute top-4 right-4 w-16 h-16 opacity-10">
@@ -153,7 +153,7 @@ export default function ContactForm() {
           <input
             id="name" name="name" required
             autoComplete="name"
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
+            className="mt-1 w-full border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
             value={name} onChange={(e)=>setName(e.target.value)}
           />
         </div>
@@ -163,7 +163,7 @@ export default function ContactForm() {
           <input
             id="email" name="email" type="email" required
             autoComplete="email" inputMode="email"
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
+            className="mt-1 w-full border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
             value={email} onChange={(e)=>setEmail(e.target.value)}
           />
         </div>
@@ -175,7 +175,7 @@ export default function ContactForm() {
           <input
             id="phone" name="phone" type="tel"
             autoComplete="tel" inputMode="tel"
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
+            className="mt-1 w-full border border-slate-300 px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#75866D] focus:border-transparent"
             placeholder="(555) 555-5555"
             value={phone} onChange={(e)=>setPhone(e.target.value)}
           />
@@ -221,17 +221,17 @@ export default function ContactForm() {
 
       <button
         type="submit" disabled={!canSubmit}
-        className="w-full inline-flex items-center justify-center rounded-md bg-[#75866D] px-6 py-4 text-white font-medium hover:bg-[#677560] disabled:opacity-60 disabled:cursor-not-allowed transition-colors min-h-[48px] text-base">
+        className="w-full inline-flex items-center justify-center bg-[#75866D] px-6 py-4 text-white font-medium hover:bg-[#677560] disabled:opacity-60 disabled:cursor-not-allowed transition-colors min-h-[48px] text-base">
         {status === "loading" ? "Sending…" : "Send message"}
       </button>
 
       {status === "success" && (
-        <div className="p-5 bg-white border-2 border-[#8B9D7F] rounded-lg shadow-sm">
+        <div className="p-5 bg-white border-2 border-[#8B9D7F] shadow-sm">
           <p className="text-[#75866D] text-base font-medium">✓ Thank you! I received your message and will respond as soon as possible.</p>
         </div>
       )}
       {status === "error" && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+        <div className="p-4 bg-red-50 border border-red-200">
           <p className="text-red-800 text-sm">{error || "Something went wrong."} You can also email <a className="underline font-medium" href="mailto:stephanie@modernmhh.com">stephanie@modernmhh.com</a>.</p>
         </div>
       )}
