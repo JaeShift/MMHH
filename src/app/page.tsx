@@ -112,8 +112,8 @@ export default function Page() {
       </div>
 
       {/* ABOUT PREVIEW - Split Layout */}
-      <section id="about" className="relative pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 bg-[#EBE4D6] overflow-hidden">
-        <div className="relative z-10">
+      <section id="about" className="relative pt-0 pb-0 md:pt-0 md:pb-0 lg:pt-0 lg:pb-0 bg-[#EBE4D6] overflow-hidden">
+        <div className="relative z-10 py-8">
           <div className="grid lg:grid-cols-2 gap-0 items-center max-w-full">
             {/* Image Side - Full bleed to left edge */}
             <motion.div 
@@ -174,8 +174,8 @@ export default function Page() {
       </section>
 
       {/* Subtle curved divider - flipped (transition to Areas of Care) */}
-      <div className="relative h-12 pointer-events-none bg-[#FCF8F0]">
-        <div className="absolute top-0 w-full h-24 bg-[#EBE4D6]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
+      <div className="relative h-16 bg-[#FCF8F0] z-20">
+        <div className="absolute top-0 w-full h-32 bg-[#EBE4D6]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
       </div>
 
       {/* CONDITIONS I TREAT - With Images */}
@@ -189,7 +189,7 @@ export default function Page() {
             transition={{ duration: 0.6 }}
           >
             {/* Section Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 pt-8">
               <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-4 font-semibold">
                 Comprehensive Care
               </p>
@@ -401,7 +401,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-4 font-semibold">
-                Patient Stories
+                Hear from Patients
               </p>
               
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight">
@@ -428,7 +428,7 @@ export default function Page() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Read Patient Stories
+                Read Hear from Patients
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -534,6 +534,17 @@ export default function Page() {
 
       {/* CONTACT */}
       <section id="contact" className="relative bg-[#EBE4D6] py-24 md:py-32 lg:py-40 overflow-hidden">
+        {/* Decorative leaf PNG elements */}
+        <div className="absolute top-20 right-16 opacity-20 w-32 h-32 md:w-40 md:h-40 rotate-12">
+          <Image src="/nature.png" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-32 left-12 opacity-15 w-36 h-36 md:w-44 md:h-44 -rotate-12 scale-x-[-1]">
+          <Image src="/nature.png" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute top-1/2 right-8 opacity-10 w-28 h-28 md:w-32 md:h-32 rotate-45">
+          <Image src="/nature.png" alt="" fill className="object-contain" />
+        </div>
+        
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
             <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-4 font-semibold">
@@ -573,7 +584,7 @@ export default function Page() {
           transition={{ duration: 0.4 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-xs text-[color:var(--text-muted)]">
+            <div className="text-[9px] text-[color:var(--text-muted)]">
               <p className="mb-1">
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
