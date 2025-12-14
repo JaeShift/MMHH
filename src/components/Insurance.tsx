@@ -78,7 +78,7 @@ export default function Insurance() {
                 <span className="font-semibold">Routine or Follow-up Visits</span> — 30 minutes @ <span className="line-through text-gray-400">$175.00</span> <span className="font-bold text-[#75866D]"><sup className="text-sm">*</sup>$150.00</span>
               </li>
             </ul>
-            <p className="text-xs text-gray-600 mt-3 italic">* All pricing in USD</p>
+            <p className="text-xs text-gray-600 mt-3 italic">* Opening Practice Discount pricing. All amounts in USD.</p>
           </div>
           <p>
             For complete financial information, please review my{" "}
