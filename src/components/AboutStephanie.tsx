@@ -14,13 +14,14 @@ export default function AboutStephanie() {
         <div className="absolute top-1/2 left-8 w-16 h-16 bg-[color:var(--pistachio)]/10 rounded-full opacity-35 blur-lg"></div>
         
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-10 shadow-xl border border-[color:var(--neutral-200)]" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
+          <div className="max-w-6xl mx-auto bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-10 shadow-xl border border-[color:var(--neutral-200)]" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1)' }}>
             <motion.h2 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-black leading-tight mb-3" 
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ amount: 0.3, once: false }}
+              style={{ textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.15)' }}
             >
               Meet Your Provider
             </motion.h2>
@@ -30,6 +31,7 @@ export default function AboutStephanie() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ amount: 0.3, once: false }}
+              style={{ textShadow: '1px 1px 3px rgba(255, 255, 255, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.1)' }}
             >
               Stephanie Nichols, PMHNP-BC, FNP-BC
             </motion.p>
@@ -60,13 +62,13 @@ export default function AboutStephanie() {
               >
               <p 
                 className="text-base sm:text-lg text-black" 
-                style={{ lineHeight: '1.7' }}
+                style={{ lineHeight: '1.7', textShadow: '0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15)' }}
               >
                 Hi, I&apos;m Stephanie Nichols, MSN, APRN, PMHNP-BC, FNP-BC. As a psychiatric nurse practitioner I believe that mental health and hormonal health are deeply connected—and that your care should be as unique as you are.
               </p>
               <p 
                 className="text-base sm:text-lg text-black" 
-                style={{ lineHeight: '1.7' }}
+                style={{ lineHeight: '1.7', textShadow: '0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15)' }}
               >
                 With over 25 years of experience in internal medicine, neurology, and psychiatry, I&apos;ve seen how life&apos;s transitions and challenges can impact both the mind and body. My journey into mental health care was inspired by a desire to provide compassionate, personalized care that addresses the root causes of emotional and physical struggles. I combine traditional medicine with integrative approaches to help women feel empowered, balanced, and truly well.
               </p>
@@ -110,7 +112,7 @@ export default function AboutStephanie() {
                   width={544}
                   height={672}
                   className="object-cover w-full h-auto shadow-lg rounded-sm"
-                  style={{ objectPosition: 'center top' }}
+                  style={{ objectPosition: 'center top', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)' }}
                 />
                 <div className="mt-4 flex flex-row items-center justify-center gap-4">
                   <Image

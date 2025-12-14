@@ -145,7 +145,7 @@ export default function Page() {
                 Meet Your Provider
               </p>
               
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight" style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)' }}>
                 About Me
               </h2>
               

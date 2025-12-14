@@ -30,9 +30,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Main Heading */}
-              <h1 className="font-body font-normal leading-[1.15] text-white tracking-normal not-italic">
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Modern Mental Health</span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 font-light">& Hormones</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.1] text-white tracking-normal not-italic" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)' }}>
+                Modern Mental Health<br />& Hormones
               </h1>
 
               {/* Divider */}
