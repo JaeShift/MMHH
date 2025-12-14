@@ -44,7 +44,7 @@ export default function AboutStephanie() {
             </motion.p>
 
             <motion.div 
-              className="grid gap-3 md:gap-4 lg:gap-6 md:grid-cols-[1fr_1.2fr] items-start"
+              className="grid gap-3 md:gap-4 lg:gap-6 md:grid-cols-2 items-start"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
@@ -102,14 +102,14 @@ export default function AboutStephanie() {
             </motion.div>
             
             {/* Right column — image and badges */}
-            <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl">
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-sm md:max-w-md">
                 <Image
                   src="/stephanie-headshot.jpg" 
                   alt="Stephanie Nichols" 
                   width={544}
                   height={672}
-                  className="object-cover w-full h-auto shadow-lg"
+                  className="object-cover w-full h-auto shadow-lg rounded-sm"
                   style={{ objectPosition: 'center top' }}
                 />
                 <div className="mt-4 flex flex-row items-center justify-center gap-4">

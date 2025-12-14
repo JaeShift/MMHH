@@ -69,13 +69,13 @@ export default function Page() {
               {/* Subtle decorative corner accents */}
               <div className="absolute top-0 left-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-[#8B9D7F]/50"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-[#8B9D7F]/50"></div>
-              <p className="text-gray-700 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
+              <p className="text-black text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
                 I help women in midlife who feel dismissed, overwhelmed, or stuck reclaim their energy, balance, and confidence by addressing the root causes of their mental health and hormonal challenges.
               </p>
-              <p className="text-gray-700 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
+              <p className="text-black text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
                 Instead of just masking symptoms, you receive integrative, personalized care—so you can finally feel like yourself again.
               </p>
-              <p className="text-gray-700 text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
+              <p className="text-black text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-6 leading-relaxed">
                 My belief is that your mental health and hormonal health are deeply connected, and your care should reflect that. Together, I&apos;ll create a plan that supports your mind, body, and spirit.
               </p>
               <p className="text-black text-lg sm:text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-6 leading-relaxed">
@@ -114,10 +114,11 @@ export default function Page() {
       {/* ABOUT PREVIEW - Split Layout */}
       <section id="about" className="relative pt-0 pb-0 md:pt-0 md:pb-0 lg:pt-0 lg:pb-0 bg-[#EBE4D6] overflow-hidden">
         <div className="relative z-10 py-8">
-          <div className="grid lg:grid-cols-2 gap-0 items-center max-w-full">
-            {/* Image Side - Full bleed to left edge */}
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+            {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-tr-lg rounded-br-lg"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-sm"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -149,10 +150,10 @@ export default function Page() {
               </h2>
               
               <div className="space-y-6 mb-10">
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
+                <p className="text-lg md:text-xl text-black leading-relaxed font-light">
                   I&apos;m Stephanie Nichols, PMHNP-BC, FNP-BC — a dual board-certified practitioner with over 25 years of experience specializing in women&apos;s mental health and hormone care.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed font-light">
+                <p className="text-lg text-black leading-relaxed font-light">
                   With extensive expertise in both psychiatric and family practice, I provide compassionate, evidence-based care tailored to your unique needs.
                 </p>
               </div>
@@ -169,6 +170,7 @@ export default function Page() {
                 </svg>
               </motion.a>
             </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -201,7 +203,7 @@ export default function Page() {
                 <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
                 <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
               </div>
-              <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+              <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed font-light">
                 I specialize in women&apos;s mental health and hormonal concerns throughout life&apos;s transitions.
               </p>
             </div>
@@ -291,7 +293,7 @@ export default function Page() {
               <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
             </div>
             
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-12">
+            <p className="text-xl md:text-2xl text-black leading-relaxed font-light mb-12">
               Choose the appointment style that works best for you.
             </p>
             
@@ -317,7 +319,7 @@ export default function Page() {
                 
                 <h3 className="text-2xl font-medium text-black mb-4">Telehealth Visits</h3>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-[#75866D] to-transparent mx-auto mb-4"></div>
-                <p className="text-lg text-gray-700 leading-relaxed font-light">
+                <p className="text-lg text-black leading-relaxed font-light">
                   I offer secure, HIPAA-compliant virtual appointments from the comfort of your home. Available anywhere in Ohio with convenient scheduling.
                 </p>
               </motion.div>
@@ -343,7 +345,7 @@ export default function Page() {
                 
                 <h3 className="text-2xl font-medium text-black mb-4">In-Person Visits</h3>
                 <div className="w-12 h-0.5 bg-gradient-to-r from-[#8B9D7F] to-transparent mx-auto mb-4"></div>
-                <p className="text-lg text-gray-700 leading-relaxed font-light">
+                <p className="text-lg text-black leading-relaxed font-light">
                   I also provide face-to-face care in a comfortable, welcoming office environment. Convenient location in Columbus, Ohio.
                 </p>
               </motion.div>
@@ -410,15 +412,15 @@ export default function Page() {
               
               {/* Testimonial Quote */}
               <div className="bg-white p-8 md:p-10 shadow-lg mb-8">
-                <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed italic mb-6">
+                <p className="text-xl md:text-2xl text-black font-light leading-relaxed italic mb-6">
                   Real patient experiences and success stories from women who have received care at Modern MHH
                 </p>
-                <p className="text-base text-gray-600 font-medium">
+                <p className="text-base text-black font-medium">
                   — Patient Testimonials
                 </p>
               </div>
               
-              <p className="text-lg text-gray-700 leading-relaxed font-light mb-8">
+              <p className="text-lg text-black leading-relaxed font-light mb-8">
                 Join the women who have found balance, clarity, and renewed well-being through my comprehensive mental health and hormone care approach.
               </p>
               
@@ -466,7 +468,7 @@ export default function Page() {
               <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
               <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
             </div>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed font-light">
               Find answers to common questions about my services, insurance, and appointments.
             </p>
           </motion.div>
@@ -502,7 +504,7 @@ export default function Page() {
                 <h3 className="text-xl md:text-2xl font-medium text-black mb-4 leading-snug">
                   {faq.question}
                 </h3>
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed font-light">
+                <p className="text-base md:text-lg text-black leading-relaxed font-light">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -553,10 +555,10 @@ export default function Page() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight">
               More Questions?
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-6">
+            <p className="text-xl md:text-2xl text-black leading-relaxed font-light mb-6">
               Use the secure form below to ask me a question, request more information, or share what you need
             </p>
-            <p className="text-lg text-gray-600 font-light">
+            <p className="text-lg text-black font-light">
               Your message is secure & HIPAA-compliant. I offer appointments in-person or virtual throughout Ohio
             </p>
           </div>
@@ -564,7 +566,7 @@ export default function Page() {
           <ContactForm />
 
           {/* Optional fallback info */}
-          <div className="max-w-2xl mx-auto text-center mt-10 text-base text-gray-600">
+          <div className="max-w-2xl mx-auto text-center mt-10 text-base text-black">
             Prefer email?{" "}
             <a className="underline text-[#75866D] hover:text-[#677560] font-medium" href="mailto:info@modernmhh.com">
               info@modernmhh.com
