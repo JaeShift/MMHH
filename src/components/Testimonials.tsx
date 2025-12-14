@@ -5,21 +5,81 @@ import { Award, Shield, MapPin, FileCheck } from "lucide-react";
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "My care was prompt, kind, thoughtful and compassionate. Time was given for questions to be asked and advice was given in a concise and constructive manner. Your care is greatly appreciated.",
-      author: "Connie",
-      condition: "Thoughtful & Compassionate Care",
-      gradient: "from-[#75866D] to-[#8B9D7F]"
-    },
-    {
       quote: "Stephanie is a rock star in being able to make an accurate diagnosis. I cannot recommend her enough.",
-      author: "Jan",
+      author: "Jan S.",
       condition: "Accurate Diagnosis",
       gradient: "from-[#8B9D7F] to-[#9FAE93]"
     },
     {
+      quote: "Stephanie is very concerned about her patients. She will sit down with me and ask questions about what is going on. She then listens really listens to what I say. She then checks me over and let's me know what she thinks. She then recommends what needs to be done. In other words, Stephanie takes time with you and is very thorough in setting up a treatment plan. Stephanie treats me with respect and makes me feel like I'm important. I would highly recommend Stephanie Nichols, CNP to both family and friends.",
+      author: "Carla G.",
+      condition: "Respectful & Thorough",
+      gradient: "from-[#75866D] to-[#8B9D7F]"
+    },
+    {
+      quote: "Stephanie is a great listener. Very empathic. Always helpful. Focused on providing best outcome for the patient.",
+      author: "Telehealth Patient",
+      condition: "Telehealth Care",
+      gradient: "from-[#75866D] to-[#8B9D7F]"
+    },
+    {
+      quote: "I've been seeing Stephanie for YEARS! She gets me and my crazy life. She meets me where I am. She truly cares about my health, my family, my well being. She's not my NP she's a life long friend!!",
+      author: "Beth H.",
+      condition: "Long-term Patient Relationship",
+      gradient: "from-[#9FAE93] to-[#75866D]"
+    },
+    {
+      quote: "Stephanie Nichols is very personable. She takes her time to listen to your concerns. And she explains in details what's going on.",
+      author: "Kim W.",
+      condition: "Attentive Care",
+      gradient: "from-[#75866D] to-[#8B9D7F]"
+    },
+    {
+      quote: "My care was prompt, kind, thoughtful and compassionate. Time was given for questions to be asked and advice was given in a concise and constructive manner. Your care is greatly appreciated.",
+      author: "Connie M.",
+      condition: "Thoughtful & Compassionate Care",
+      gradient: "from-[#75866D] to-[#8B9D7F]"
+    },
+    {
       quote: "I've always had such great personalized care here!! So grateful!",
-      author: "Gina",
+      author: "Gina L.",
       condition: "Personalized Care",
+      gradient: "from-[#9FAE93] to-[#75866D]"
+    },
+    {
+      quote: "Stephanie was thorough and efficient. She is knowledgeable, answered my questions, offered solutions and discussed follow up. This office always makes it easy to schedule appointments and the staff is friendly and welcoming.",
+      author: "Judy M.",
+      condition: "Thorough & Efficient",
+      gradient: "from-[#8B9D7F] to-[#9FAE93]"
+    },
+    {
+      quote: "Stephanie Nichols cnp is very thorough and I feel cares about my well being.",
+      author: "Connie R.",
+      condition: "Caring Provider",
+      gradient: "from-[#75866D] to-[#8B9D7F]"
+    },
+    {
+      quote: "I've been seeing Stephanie for many years and have referred immediate family members and friends to her. She is knowledgeable and a consummate professional. Stephanie is patient, kind and takes as much time as necessary to answer questions and explain things in understandable terms. I feel fortunate to have found her after my former doctor retired! Excellent CNP",
+      author: "Verified Patient",
+      condition: "Long-term Care",
+      gradient: "from-[#8B9D7F] to-[#9FAE93]"
+    },
+    {
+      quote: "Stephanie was very pleasant, knowledgeable, and thorough during my visit.",
+      author: "Gerniecca G.",
+      condition: "Professional Care",
+      gradient: "from-[#9FAE93] to-[#75866D]"
+    },
+    {
+      quote: "Stephanie Nichols, CNP often 'keeps my boat afloat' and today was no exception! No matter my complaint, she always takes time to listen and offers 'spot on' solutions while letting me make the final call on any treatment. She is one special lady!",
+      author: "Bonnie M.",
+      condition: "Supportive Care",
+      gradient: "from-[#8B9D7F] to-[#9FAE93]"
+    },
+    {
+      quote: "She listens and asks questions. She remembers me as a person. Caring, knowledgeable CNP",
+      author: "Verified Patient",
+      condition: "Personal Connection",
       gradient: "from-[#9FAE93] to-[#75866D]"
     },
   ];
@@ -86,20 +146,20 @@ export default function Testimonials() {
         </motion.div>
         
         {/* Testimonial Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20 sm:mb-24">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 lg:gap-8 mb-20 sm:mb-24 space-y-6 lg:space-y-8">
           {testimonials.map((testimonial, i) => (
             <motion.div 
               key={i} 
-              className="group relative"
+              className="group relative break-inside-avoid mb-6 lg:mb-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ 
                 duration: 0.5, 
-                delay: i * 0.15,
+                delay: i * 0.1,
               }}
               viewport={{ once: true }}
             >
-              <div className="relative bg-white shadow-2xl transition-all duration-500 p-8 h-full hover:-translate-y-2 overflow-hidden border-l-4" style={{ borderLeftColor: i === 0 ? '#75866D' : i === 1 ? '#8B9D7F' : '#9FAE93' }}>
+              <div className="relative bg-white shadow-2xl transition-all duration-500 p-8 hover:-translate-y-2 overflow-hidden border-l-4" style={{ borderLeftColor: i % 3 === 0 ? '#75866D' : i % 3 === 1 ? '#8B9D7F' : '#9FAE93' }}>
                 {/* Decorative gradient on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`}></div>
 

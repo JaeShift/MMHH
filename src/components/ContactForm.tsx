@@ -142,7 +142,7 @@ export default function ContactForm() {
               Send Me a Message
             </h3>
             <p className="text-[color:var(--text-muted)] text-sm sm:text-base">
-              Share what&apos;s on your mind — I will respond within 24 hours
+              Share what&apos;s on your mind — I will respond as soon as possible.
             </p>
           </div>
         <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">

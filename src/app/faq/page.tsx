@@ -21,7 +21,7 @@ export default function FAQPage() {
       <footer className="bg-[#C5B9AA] border-t border-[#B5A999] py-8">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-xs text-[color:var(--text-muted)]">
+            <div className="text-xs text-[color:var(--text-muted)] scale-75 origin-left">
               <p className="mb-1">
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>

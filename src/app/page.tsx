@@ -128,7 +128,7 @@ export default function Page() {
                 alt="Stephanie Nichols, PMHNP-BC, FNP-BC"
                 fill
                 className="object-cover"
-                style={{ objectPosition: 'center 60%' }}
+                style={{ objectPosition: 'center 35%' }}
               />
             </motion.div>
             
@@ -475,20 +475,20 @@ export default function Page() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
             {[
               {
-                question: "Do you accept insurance?",
-                answer: "Currently my practice is out-of-network and operates primarily on self-pay. I have officially applied for credentialing with major carriers (including Aetna, Anthem, BCBS, and Cigna) and intend to join these networks as soon as possible."
-              },
-              {
-                question: "What is your cancellation policy?",
-                answer: "I require 24-hour notice for cancellations. Late cancellations may be subject to a fee."
-              },
-              {
                 question: "How long are appointments?",
                 answer: "Initial consultations are typically 60 minutes, with follow-up appointments lasting 30-45 minutes."
               },
               {
                 question: "Do you offer telehealth?",
                 answer: "Yes! I offer secure, HIPAA-compliant telehealth appointments throughout Ohio for your convenience."
+              },
+              {
+                question: "What services do you provide?",
+                answer: "I offer comprehensive psychiatric evaluations, medication management, and hormone-informed care. Treatment plans are personalized and may include lifestyle support and lab testing when appropriate."
+              },
+              {
+                question: "Who do you see?",
+                answer: "I work with adult women (18+) experiencing emotional or physical symptoms such as hormonal shifts, anxiety, irritability, mood swings, brain fog, low motivation, or fatigue."
               }
             ].map((faq, index) => (
               <motion.div
@@ -584,7 +584,7 @@ export default function Page() {
           transition={{ duration: 0.4 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-xs text-[color:var(--text-muted)]">
+            <div className="text-xs text-[color:var(--text-muted)] scale-75 origin-left">
               <p className="mb-1">
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>

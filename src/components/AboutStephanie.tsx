@@ -110,6 +110,7 @@ export default function AboutStephanie() {
                   width={544}
                   height={672}
                   className="object-cover w-full h-auto shadow-lg"
+                  style={{ objectPosition: 'center top' }}
                 />
                 <div className="mt-4 flex flex-row items-center justify-center gap-4">
                   <Image

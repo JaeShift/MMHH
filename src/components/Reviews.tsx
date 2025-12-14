@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "I’ve always had such great personalized care here!! So grateful!",
+      quote: "I've always had such great personalized care here!! So grateful!",
       author: "Gina",
       condition: "Personalized Care",
       rating: 5,
@@ -23,6 +23,83 @@ export default function Testimonials() {
       condition: "Thoughtful & Compassionate Care",
       rating: 5,
       color: "success-green"
+    },
+    {
+      quote: "Stephanie Nichols is very personable. She takes her time to listen to your concerns. And she explains in details what's going on.",
+      author: "Kim Williams",
+      condition: "Attentive Care",
+      rating: 5,
+      color: "medical-blue"
+    },
+    {
+      quote: "Stephanie was thorough and efficient. She is knowledgeable, answered my questions, offered solutions and discussed follow up. This office always makes it easy to schedule appointments and the staff is friendly and welcoming.",
+      author: "Judy Midkiff",
+      condition: "Thorough & Efficient",
+      rating: 5,
+      color: "healthcare-teal"
+    },
+    {
+      quote: "Stephanie was very pleasant, knowledgeable, and thorough during my visit.",
+      author: "Gerniecca Gordon",
+      condition: "Professional Care",
+      rating: 5,
+      color: "success-green"
+    },
+    {
+      quote: "Stephanie Nichols cnp is very thorough and I feel cares about my well being.",
+      author: "Connie Redman",
+      condition: "Caring Provider",
+      rating: 5,
+      color: "medical-blue"
+    },
+    {
+      quote: "Stephanie Nichols, CNP often 'keeps my boat afloat' and today was no exception! No matter my complaint, she always takes time to listen and offers 'spot on' solutions while letting me make the final call on any treatment. She is one special lady!",
+      author: "Bonnie Morgan",
+      condition: "Supportive Care",
+      rating: 5,
+      color: "healthcare-teal"
+    },
+    {
+      quote: "I've been seeing Stephanie for YEARS! She gets me and my crazy life. She meets me where I am. She truly cares about my health, my family, my well being. She's not my NP she's a life long friend!!",
+      author: "Beth Howes",
+      condition: "Long-term Patient Relationship",
+      rating: 5,
+      color: "success-green"
+    },
+    {
+      quote: "Stephanie is very concerned about her patients. She will sit down with me and ask questions about what is going on. She then listens really listens to what I say. She then checks me over and let's me know what she thinks. She then recommends what needs to be done. In other words, Stephanie takes time with you and is very thorough in setting up a treatment plan. Stephanie treats me with respect and makes me feel like I'm important. I would highly recommend Stephanie Nichols, CNP to both family and friends.",
+      author: "Carla Graves",
+      condition: "Respectful & Thorough",
+      rating: 5,
+      color: "medical-blue"
+    },
+    {
+      quote: "I've been seeing Stephanie for many years and have referred immediate family members and friends to her. She is knowledgeable and a consummate professional. Stephanie is patient, kind and takes as much time as necessary to answer questions and explain things in understandable terms. I feel fortunate to have found her after my former doctor retired! Excellent CNP",
+      author: "Verified Patient",
+      condition: "Long-term Care",
+      rating: 5,
+      color: "healthcare-teal"
+    },
+    {
+      quote: "She listens and asks questions. She remembers me as a person. Caring, knowledgeable CNP",
+      author: "Verified Patient",
+      condition: "Personal Connection",
+      rating: 5,
+      color: "success-green"
+    },
+    {
+      quote: "She listens. She offers flexible ideas. She doesn't rush you. Great!",
+      author: "Verified Patient",
+      condition: "Patient-Centered Care",
+      rating: 5,
+      color: "medical-blue"
+    },
+    {
+      quote: "Stephanie is a great listener. Very empathic. Always helpful. Focused on providing best outcome for the patient.",
+      author: "Telehealth Patient",
+      condition: "Telehealth Care",
+      rating: 5,
+      color: "healthcare-teal"
     },
   ];
 
