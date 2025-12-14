@@ -117,7 +117,7 @@ export default function Page() {
           <div className="grid lg:grid-cols-2 gap-0 items-center max-w-full">
             {/* Image Side - Full bleed to left edge */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-tr-lg rounded-br-lg"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -128,7 +128,7 @@ export default function Page() {
                 alt="Stephanie Nichols, PMHNP-BC, FNP-BC"
                 fill
                 className="object-cover"
-                style={{ objectPosition: 'center' }}
+                style={{ objectPosition: 'center 60%' }}
               />
             </motion.div>
             
@@ -202,7 +202,7 @@ export default function Page() {
                 <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
               </div>
               <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-                I specialize in women&apos;s mental health and hormonal concerns throughout life&apos;s transitions
+                I specialize in women&apos;s mental health and hormonal concerns throughout life&apos;s transitions.
               </p>
             </div>
             
@@ -292,7 +292,7 @@ export default function Page() {
             </div>
             
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light mb-12">
-              Choose the appointment style that works best for you
+              Choose the appointment style that works best for you.
             </p>
             
             {/* Two Options */}
@@ -428,7 +428,7 @@ export default function Page() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Read Hear from Patients
+                Read more from Patients
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -467,7 +467,7 @@ export default function Page() {
               <div className="h-px w-20 bg-[#8B9D7F]/30"></div>
             </div>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
-              Find answers to common questions about my services, insurance, and appointments
+              Find answers to common questions about my services, insurance, and appointments.
             </p>
           </motion.div>
 
@@ -476,7 +476,7 @@ export default function Page() {
             {[
               {
                 question: "Do you accept insurance?",
-                answer: "I accept most major insurance plans and can provide documentation for out-of-network reimbursement."
+                answer: "Currently my practice is out-of-network and operates primarily on self-pay. I have officially applied for credentialing with major carriers (including Aetna, Anthem, BCBS, and Cigna) and intend to join these networks as soon as possible."
               },
               {
                 question: "What is your cancellation policy?",
@@ -584,7 +584,7 @@ export default function Page() {
           transition={{ duration: 0.4 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-[9px] text-[color:var(--text-muted)]">
+            <div className="text-xs text-[color:var(--text-muted)]">
               <p className="mb-1">
                 © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>

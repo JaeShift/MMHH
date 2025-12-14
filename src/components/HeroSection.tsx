@@ -30,7 +30,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.1] text-white tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.1] text-white tracking-tight not-italic">
                 Modern Mental Health<br />& Hormones
               </h1>
 
@@ -43,7 +43,7 @@ export default function Hero() {
 
               {/* Subtitle */}
               <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-light">
-                Specialized mental health and hormone care<br className="hidden sm:block" /> for women navigating life&apos;s transitions
+                Specialized mental health and hormone care<br className="hidden sm:block" /> for women navigating life&apos;s transitions.
               </p>
 
               {/* CTA Button */}

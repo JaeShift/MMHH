@@ -31,7 +31,7 @@ export default function Header() {
       <div className="w-full mx-auto flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
         <Link href="/#home" aria-label="Modern Mental Health & Hormones home" className="flex items-center flex-shrink-0 mr-4">
           <Image 
-            src="/fulllogo_transparent_nobuffer (1).png" 
+            src="/UPDATEDlogo&TEXT.png" 
             alt="Modern Mental Health & Hormones Logo" 
             width={300} 
             height={80}
