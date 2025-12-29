@@ -77,17 +77,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "MedicalOrganization",
-              "name": "Modern Mental Health & Hormones",
-              "url": "https://www.modernmhh.com",
-              "telemedicinePhone": "Replace with your number",
-              "areaServed": "US-OH",
-              "medicalSpecialty": ["MentalHealth", "Women'sHealth"],
-              "founder": {
-                "@type": "Person",
-                "name": "Stephanie Nichols, PMHNP-BC"
-              },
-              "sameAs": []
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.modernmhh.com/#website",
+                  "url": "https://www.modernmhh.com/",
+                  "name": "Modern Mental Health & Hormones",
+                  "alternateName": ["Modern MHH", "ModernMHH"],
+                  "publisher": { "@id": "https://www.modernmhh.com/#organization" },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://www.modernmhh.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                },
+                {
+                  "@type": "MedicalOrganization",
+                  "@id": "https://www.modernmhh.com/#organization",
+                  "name": "Modern Mental Health & Hormones",
+                  "url": "https://www.modernmhh.com/",
+                  "logo": "https://www.modernmhh.com/LOGO%20PNG.png",
+                  "telemedicinePhone": "Replace with your number",
+                  "areaServed": "US-OH",
+                  "medicalSpecialty": ["MentalHealth", "Women'sHealth"],
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Stephanie Nichols, PMHNP-BC"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/profile.php?id=61584364929024",
+                    "https://www.instagram.com/modernmhh/"
+                  ]
+                }
+              ]
             })
           }}
         />
