@@ -6,6 +6,10 @@ export interface Service {
   expect: string[];
   approaches: string[];
   closing: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
   seo: {
     title: string;
     description: string;
@@ -21,9 +25,10 @@ export const services: Service[] = [
   {
     slug: 'anxiety-depression',
     title: 'Anxiety & Depression Treatment',
-    subtitle: 'Comprehensive mental health care that addresses the unique challenges women face during life transitions',
+    subtitle: 'Warm, evidence-based care for women in Ohio—telehealth statewide and in-person visits in Columbus',
     intro: [
-      'Anxiety and depression can disrupt work, relationships, and daily life—especially when hormonal changes can intensify symptoms. I provide care that helps you feel heard, understood, and supported while I find a plan that restores stability, energy, and peace of mind.'
+      'Anxiety and depression can make everything feel harder—work, relationships, sleep, and even simple daily tasks. You deserve care that takes your symptoms seriously and treats you like a whole person, not a checklist.',
+      'I provide thoughtful, evidence-based treatment for women across Ohio, with telehealth appointments statewide and in-person visits in Columbus. Together, we’ll clarify what’s driving your symptoms and build a plan that helps you feel steadier, clearer, and more like yourself again.'
     ],
     expect: [
       'Comprehensive evaluation of symptoms, history, and relevant hormone factors',
@@ -37,11 +42,37 @@ export const services: Service[] = [
       'Practical lifestyle strategies to support recovery and resilience',
       'Coordination with therapy or other clinicians when helpful'
     ],
-    closing: 'Appointments are available via telehealth across Ohio, so you can access care from home.',
+    faqs: [
+      {
+        question: 'Do you offer telehealth appointments across Ohio?',
+        answer: 'Yes. Telehealth is available statewide in Ohio, and in-person visits are also available in Columbus.'
+      },
+      {
+        question: 'What happens during the first appointment?',
+        answer: 'We’ll review your symptoms, history, and goals, and talk through options so you understand what we’re doing and why. You’ll leave with a clear next step.'
+      },
+      {
+        question: 'Do you prescribe medication for anxiety and depression?',
+        answer: 'When appropriate, yes. We’ll discuss benefits, side effects, and your preferences, and use the safest effective approach.'
+      },
+      {
+        question: 'Can hormones affect anxiety, depression, and brain fog?',
+        answer: 'They can. Hormonal changes can influence mood, sleep, and focus. We’ll consider those patterns as part of your plan.'
+      },
+      {
+        question: 'How often are follow-up visits?',
+        answer: 'It depends on your needs and what we’re working on. We’ll decide together based on symptom severity, medication changes (if any), and your schedule.'
+      },
+      {
+        question: 'Can you coordinate with my therapist or other providers?',
+        answer: 'Yes—when helpful and with your consent, I’m happy to coordinate with your therapist, primary care, or OB/GYN so your care feels cohesive.'
+      }
+    ],
+    closing: 'If you’re ready for support, you don’t have to do this alone. Appointments are available via telehealth anywhere in Ohio, plus in-person visits in Columbus.',
     seo: {
-      title: 'Anxiety & Depression Treatment for Women | Modern Mental Health & Hormones',
-      description: 'Expert anxiety and depression treatment for women in Ohio. Specialized care addressing hormonal influences on mood. Telehealth appointments available.',
-      keywords: ['anxiety treatment', 'depression treatment', 'women mental health', 'hormonal anxiety', 'perimenopause depression', 'telehealth therapy Ohio']
+      title: 'Anxiety & Depression Treatment for Women in Ohio | Modern Mental Health & Hormones',
+      description: 'Warm, evidence-based anxiety and depression treatment for women in Ohio. Telehealth statewide and in-person visits in Columbus.',
+      keywords: ['anxiety treatment Ohio', 'depression treatment Ohio', 'women mental health Ohio', 'PMHNP Ohio', 'telehealth mental health Ohio', 'Columbus PMHNP']
     }
   },
   {
@@ -125,9 +156,10 @@ export const services: Service[] = [
   {
     slug: 'perimenopause-menopause',
     title: 'Perimenopause & Menopause Care',
-    subtitle: 'Expert guidance through hormonal transitions with personalized treatment for physical and emotional symptoms',
+    subtitle: 'Supportive menopause and perimenopause care for women in Ohio—telehealth statewide and in-person visits in Columbus',
     intro: [
-      'Hot flashes, mood shifts, brain fog, and sleep changes don\'t have to define this stage of life. As a NAMS-certified menopause practitioner, I provide evidence-based care that restores comfort, clarity, and balance.'
+      'Perimenopause and menopause can affect how you feel in your body and in your mind—sleep, mood, energy, focus, and confidence. If you feel dismissed or told “it’s just stress,” you’re not alone.',
+      'As a NAMS-certified menopause practitioner, I provide evidence-based care to help you feel supported and informed. Telehealth is available statewide in Ohio, with in-person visits in Columbus.'
     ],
     expect: [
       'Review of symptom patterns, history, goals, and safety considerations',
@@ -141,19 +173,42 @@ export const services: Service[] = [
       'Lifestyle strategies and supplement guidance supported by evidence',
       'Attention to mental health and cognitive changes during transition'
     ],
-    closing: 'Telehealth visits available statewide in Ohio.',
+    faqs: [
+      {
+        question: 'How do I know if this is perimenopause?',
+        answer: 'Perimenopause often includes changes in cycles plus symptoms like hot flashes, sleep disruption, mood changes, brain fog, and fatigue. We’ll review your pattern and history to clarify what fits.'
+      },
+      {
+        question: 'Do you offer menopause care statewide in Ohio?',
+        answer: 'Yes. Telehealth is available anywhere in Ohio, and in-person visits are available in Columbus.'
+      },
+      {
+        question: 'Is hormone therapy (HRT) my only option?',
+        answer: 'No. We can discuss hormonal and non-hormonal options, depending on your symptoms, preferences, and safety considerations.'
+      },
+      {
+        question: 'Can menopause affect anxiety, depression, or sleep?',
+        answer: 'Yes—hormonal shifts can affect sleep and mood. We’ll address both physical symptoms and mental well-being in your plan.'
+      },
+      {
+        question: 'What should I bring to my visit?',
+        answer: 'A list of current medications/supplements and a quick timeline of symptoms (what started when, and what makes it better or worse) is very helpful.'
+      }
+    ],
+    closing: 'You don’t have to “push through” and hope it passes. Care is available via telehealth across Ohio, plus in-person visits in Columbus.',
     seo: {
-      title: 'Perimenopause & Menopause Treatment | NAMS Certified Practitioner Ohio',
-      description: 'Expert menopause care from NAMS-certified practitioner. Comprehensive treatment for perimenopause and menopause symptoms. Telehealth available in Ohio.',
-      keywords: ['menopause treatment', 'perimenopause symptoms', 'hormone replacement therapy', 'menopause specialist', 'NAMS certified', 'hot flashes treatment']
+      title: 'Perimenopause & Menopause Care in Ohio | NAMS-Certified Practitioner | Modern MHH',
+      description: 'Supportive, evidence-based perimenopause and menopause care in Ohio. Telehealth statewide and in-person visits in Columbus.',
+      keywords: ['menopause care Ohio', 'perimenopause Ohio', 'menopause specialist Ohio', 'NAMS certified menopause practitioner Ohio', 'hot flashes treatment Ohio', 'menopause anxiety Ohio']
     }
   },
   {
     slug: 'hormone-therapy-hrt',
     title: 'Individualized Hormone Therapy (HRT)',
-    subtitle: 'Personalized hormone replacement therapy designed to restore balance and improve quality of life',
+    subtitle: 'Personalized hormone therapy for women in Ohio—telehealth statewide and in-person visits in Columbus',
     intro: [
-      'Hormonal shifts can be confusing—and deeply felt. I provide individualized hormone therapy options, alongside non-hormonal strategies, to stabilize mood, improve energy, and enhance quality of life.'
+      'Hormonal shifts can be confusing—and deeply felt. If you’re dealing with hot flashes, poor sleep, mood changes, brain fog, or feeling unlike yourself, you deserve clear answers and a plan that respects your body and your goals.',
+      'I offer individualized hormone therapy options (when appropriate), alongside non-hormonal strategies. Telehealth is available statewide in Ohio, with in-person visits in Columbus.'
     ],
     expect: [
       'Thorough review of symptoms, history, preferences, and safety',
@@ -167,11 +222,33 @@ export const services: Service[] = [
       'Non-hormonal alternatives when HRT isn\'t the best fit',
       'Coordination with your other providers when helpful'
     ],
-    closing: 'Telehealth for patients across Ohio.',
+    faqs: [
+      {
+        question: 'Do you offer hormone therapy (HRT) in Ohio?',
+        answer: 'Yes. Telehealth is available statewide in Ohio, and in-person visits are available in Columbus.'
+      },
+      {
+        question: 'How do you decide if HRT is a good fit for me?',
+        answer: 'We’ll review your symptoms, medical history, goals, and safety considerations. If HRT isn’t a fit, we’ll discuss non-hormonal options.'
+      },
+      {
+        question: 'What symptoms can HRT help with?',
+        answer: 'Many people seek HRT for vasomotor symptoms (like hot flashes), sleep disruption, and quality-of-life concerns during perimenopause/menopause. We’ll focus on what’s most disruptive for you.'
+      },
+      {
+        question: 'Do you offer bioidentical hormones?',
+        answer: 'When appropriate, we can discuss options and what “bioidentical” means in practice, including benefits, limitations, and safety.'
+      },
+      {
+        question: 'Do you offer non-hormonal options too?',
+        answer: 'Yes. Depending on your symptoms and history, we can consider non-hormonal medications and supportive lifestyle strategies.'
+      }
+    ],
+    closing: 'If you want a careful, personalized approach, I’m here to help. Appointments are available via telehealth across Ohio, plus in-person visits in Columbus.',
     seo: {
-      title: 'Hormone Replacement Therapy (HRT) | Individualized Treatment Ohio',
-      description: 'Personalized hormone replacement therapy for women. Expert HRT evaluation and treatment. Bioidentical and traditional options. Telehealth in Ohio.',
-      keywords: ['hormone replacement therapy', 'HRT treatment', 'bioidentical hormones', 'hormone therapy', 'menopause hormones', 'hormone specialist Ohio']
+      title: 'Hormone Therapy (HRT) for Women in Ohio | Modern Mental Health & Hormones',
+      description: 'Personalized hormone therapy (HRT) for women in Ohio. Telehealth statewide and in-person visits in Columbus.',
+      keywords: ['hormone therapy Ohio', 'HRT Ohio', 'hormone replacement therapy Ohio', 'bioidentical hormones Ohio', 'menopause hormone therapy Ohio', 'Columbus hormone therapy']
     }
   },
   {

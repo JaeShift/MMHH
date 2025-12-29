@@ -110,6 +110,27 @@ export default async function ServicePage({ params }: PageProps) {
             </p>
           </section>
 
+          {/* FAQs (only when provided) */}
+          {service.faqs?.length ? (
+            <section className="mb-12">
+              <h2 className="font-heading italic text-2xl md:text-3xl font-semibold text-neutral-900 mb-6" style={{fontFamily: 'var(--font-serif)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {service.faqs.map((faq, index) => (
+                  <details key={index} className="bg-stone-50 border border-stone-200 rounded-lg p-5">
+                    <summary className="cursor-pointer font-body text-lg font-semibold text-neutral-900">
+                      {faq.question}
+                    </summary>
+                    <p className="mt-3 font-body text-lg text-neutral-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           {/* Call-to-Action Box */}
           <section className="bg-stone-50 rounded-lg p-8 md:p-12 border border-stone-200 shadow-sm">
             <div className="text-center">
@@ -119,15 +140,23 @@ export default async function ServicePage({ params }: PageProps) {
               <p className="font-body text-lg text-neutral-700 leading-relaxed mb-8">
                 Take the first step toward feeling like yourself again. Schedule your consultation today.
               </p>
-              <a 
-                href="mailto:appointments@modernmhh.com?subject=Appointment Request - {service.title}"
-                className="inline-flex items-center justify-center bg-[#3b4340] text-white font-body font-semibold px-8 py-4 rounded-lg hover:bg-[#2a302d] transition-colors duration-200 text-lg"
-              >
-                Request Appointment
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href="/book"
+                  className="inline-flex items-center justify-center bg-[#3b4340] text-white font-body font-semibold px-8 py-4 rounded-lg hover:bg-[#2a302d] transition-colors duration-200 text-lg"
+                >
+                  Request Appointment
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+                <Link
+                  href="/telehealth"
+                  className="inline-flex items-center justify-center border border-[#3b4340] text-[#3b4340] font-body font-semibold px-8 py-4 rounded-lg hover:bg-white transition-colors duration-200 text-lg"
+                >
+                  Telehealth & In‑Person Options
+                </Link>
+              </div>
             </div>
           </section>
         </div>
