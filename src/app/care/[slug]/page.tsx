@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: service.seo.title,
     description: service.seo.description,
     keywords: service.seo.keywords,
+    alternates: { canonical: `/care/${service.slug}` },
   };
 }
 

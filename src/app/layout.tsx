@@ -38,7 +38,8 @@ export const metadata: Metadata = {
     siteName: "Modern Mental Health & Hormones",
     images: [
       {
-        url: '/LOGO PNG.png',
+        // Avoid spaces in URLs (can break previews/crawlers)
+        url: '/LOGO%20PNG.png',
         width: 1200,
         height: 1200,
         alt: 'Modern Mental Health & Hormones Logo',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Modern Mental Health & Hormones | Ohio",
     description: "Mental health & hormone care for women serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio. Virtual and in-person appointments.",
-    images: ['/LOGO PNG.png'],
+    images: ['/LOGO%20PNG.png'],
   },
 };
 
@@ -97,7 +98,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "name": "Modern Mental Health & Hormones",
                   "url": "https://www.modernmhh.com/",
                   "logo": "https://www.modernmhh.com/LOGO%20PNG.png",
-                  "telemedicinePhone": "Replace with your number",
                   "areaServed": "US-OH",
                   "medicalSpecialty": ["MentalHealth", "Women'sHealth"],
                   "founder": {

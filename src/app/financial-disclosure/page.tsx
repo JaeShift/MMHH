@@ -1,6 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Header from "../../components/Header";
+
+export const metadata: Metadata = {
+  title: "Financial Disclosure | Modern Mental Health & Hormones",
+  description:
+    "Read the financial disclosure and consent for self-pay services at Modern Mental Health & Hormones, including policies, fees, and billing information.",
+  alternates: { canonical: "/financial-disclosure" },
+};
 
 export default function FinancialDisclosurePage() {
   return (

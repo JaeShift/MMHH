@@ -1,6 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Header from "../../components/Header";
+
+export const metadata: Metadata = {
+  title: "Terms of Use | Modern Mental Health & Hormones",
+  description:
+    "Review the Modern Mental Health & Hormones terms of use and agreement for accessing the website, content, and services.",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   return (

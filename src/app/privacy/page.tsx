@@ -1,6 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Header from "../../components/Header";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Modern Mental Health & Hormones",
+  description:
+    "Read the Modern Mental Health & Hormones privacy policy and confidentiality promise, including how information is collected, used, and protected.",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (
