@@ -1,0 +1,25 @@
+{
+  "name": "Modern Mental Health & Hormones",
+  "short_name": "Modern MHH",
+  "description": "Mental health & hormone care for women in Ohio",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#75866D",
+  "background_color": "#FCF8F0",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
+

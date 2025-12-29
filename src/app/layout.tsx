@@ -18,9 +18,18 @@ export const metadata: Metadata = {
   description:
     "One provider, complete care — no referrals. Mental health & hormone care serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio with Stephanie Nichols, PMHNP-BC. Virtual and in-person appointments available.",
   icons: {
-    icon: '/favicon.png',
+    icon: [
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
+    ],
     shortcut: '/favicon.png',
     apple: '/favicon.png',
+    other: [
+      {
+        rel: 'apple-touch-icon',
+        url: '/favicon.png',
+      },
+    ],
   },
   openGraph: {
     title: "Modern Mental Health & Hormones | Ohio",
@@ -56,6 +65,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // Switch to Palette B by adding: className="theme-b"
     <html lang="en" className={`${inter.variable} ${crimsonText.variable} ${crimsonPro.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/jqn6aqv.css" />
         <script
