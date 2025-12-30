@@ -3,8 +3,10 @@ import Header from "../../components/Header";
 import FocusAreas from "../../components/FocusAreas";
 
 export const metadata: Metadata = {
-  title: "Services & Care Areas | Women's Mental Health & Hormone Therapy | Modern MHH",
-  description: "Comprehensive mental health and hormone care services for women. Specialized treatment for depression, anxiety, PMDD, perimenopause, menopause, and more serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio.",
+  title: "Services & Care Areas in Ohio | Women's Mental Health & Hormone Care | Modern MHH",
+  description:
+    "Explore mental health and hormone care services for women across Ohio. Telehealth appointments statewide and in-person visits available in Columbus.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

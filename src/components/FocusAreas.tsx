@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Brain, Heart, Sparkles, Moon, Focus, Pill } from "lucide-react";
 
@@ -112,7 +113,8 @@ export default function FocusAreas() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <a href="#telehealth" className="text-[#75866D] hover:text-[#8B9D7F] underline decoration-[#8B9D7F]/30 underline-offset-4 hover:decoration-[#8B9D7F] transition-all duration-300 font-medium">Telehealth</a> and in-person appointments available, servicing all areas across Ohio
+              <a href="#telehealth" className="text-[#75866D] hover:text-[#8B9D7F] underline decoration-[#8B9D7F]/30 underline-offset-4 hover:decoration-[#8B9D7F] transition-all duration-300 font-medium">Telehealth</a>{" "}
+              appointments are available statewide in Ohio, and in-person visits are also available in Columbus.
             </motion.p>
 
             <motion.p 
@@ -124,6 +126,73 @@ export default function FocusAreas() {
             >
               Your plan may include therapy strategies, medication when helpful, and hormone care as needed — all delivered by one provider
             </motion.p>
+
+            {/* SEO / Hub Links: priority care pages */}
+            <motion.div
+              className="mt-10 sm:mt-12"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            >
+              <div className="max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+                  <Link
+                    href="/care/anxiety-depression"
+                    className="group bg-white/80 backdrop-blur-sm border border-white/40 shadow-md hover:shadow-xl transition-all duration-300 p-6 text-left"
+                  >
+                    <p className="text-xs uppercase tracking-[0.25em] text-[#75866D] font-semibold mb-2">
+                      Mental Health
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-black mb-2 group-hover:text-[#75866D] transition-colors">
+                      Anxiety &amp; Depression
+                    </h3>
+                    <p className="text-sm sm:text-base text-[color:var(--text-secondary)] leading-relaxed">
+                      Supportive, evidence-based care to help you feel steadier and more like yourself again.
+                    </p>
+                    <span className="mt-4 inline-flex items-center text-[#75866D] font-semibold underline underline-offset-4 decoration-[#8B9D7F]/40 group-hover:decoration-[#8B9D7F]">
+                      Learn more
+                    </span>
+                  </Link>
+
+                  <Link
+                    href="/care/perimenopause-menopause"
+                    className="group bg-white/80 backdrop-blur-sm border border-white/40 shadow-md hover:shadow-xl transition-all duration-300 p-6 text-left"
+                  >
+                    <p className="text-xs uppercase tracking-[0.25em] text-[#75866D] font-semibold mb-2">
+                      Women’s Hormones
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-black mb-2 group-hover:text-[#75866D] transition-colors">
+                      Perimenopause &amp; Menopause
+                    </h3>
+                    <p className="text-sm sm:text-base text-[color:var(--text-secondary)] leading-relaxed">
+                      Calm, clear guidance through this transition—symptoms, options, and next steps.
+                    </p>
+                    <span className="mt-4 inline-flex items-center text-[#75866D] font-semibold underline underline-offset-4 decoration-[#8B9D7F]/40 group-hover:decoration-[#8B9D7F]">
+                      Learn more
+                    </span>
+                  </Link>
+
+                  <Link
+                    href="/care/hormone-therapy-hrt"
+                    className="group bg-white/80 backdrop-blur-sm border border-white/40 shadow-md hover:shadow-xl transition-all duration-300 p-6 text-left"
+                  >
+                    <p className="text-xs uppercase tracking-[0.25em] text-[#75866D] font-semibold mb-2">
+                      Hormone Therapy
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-black mb-2 group-hover:text-[#75866D] transition-colors">
+                      Individualized HRT
+                    </h3>
+                    <p className="text-sm sm:text-base text-[color:var(--text-secondary)] leading-relaxed">
+                      Personalized hormone care (when appropriate), plus non-hormonal options and support.
+                    </p>
+                    <span className="mt-4 inline-flex items-center text-[#75866D] font-semibold underline underline-offset-4 decoration-[#8B9D7F]/40 group-hover:decoration-[#8B9D7F]">
+                      Learn more
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 
