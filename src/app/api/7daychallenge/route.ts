@@ -253,8 +253,12 @@ Modern Mental Health & Hormones`;
 
     // Send to Zapier webhook (only if configured)
     const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL?.trim();
+    let webhookAttempted = false;
+    let webhookOk: boolean | null = null;
+    let webhookStatus: number | null = null;
     if (zapierWebhookUrl) {
       try {
+        webhookAttempted = true;
         // Don't log the full webhook URL (it is a secret)
         console.log("Sending to Zapier webhook (configured: true)");
         console.log("Zapier payload:", JSON.stringify({ email: safeEmail }));
@@ -280,16 +284,21 @@ Modern Mental Health & Hormones`;
         const responseText = await webhookResponse.text();
         console.log("Zapier webhook response status:", webhookResponse.status);
         console.log("Zapier webhook response:", responseText);
+        webhookStatus = webhookResponse.status;
         
         if (!webhookResponse.ok) {
           console.error("Zapier webhook returned error status:", webhookResponse.status);
           console.error("Zapier error response:", responseText);
+          webhookOk = false;
         } else {
           console.log("Zapier webhook call successful");
+          webhookOk = true;
         }
       } catch (webhookError) {
         // Log but don't fail the request if webhook fails
         console.error('Zapier webhook error:', webhookError);
+        webhookAttempted = true;
+        webhookOk = false;
         if (webhookError instanceof Error) {
           console.error('Error name:', webhookError.name);
           console.error('Error message:', webhookError.message);
@@ -308,6 +317,12 @@ Modern Mental Health & Hormones`;
       ok: true, 
       email: safeEmail,
       signupDate: new Date().toISOString(),
+      zapier: {
+        configured: Boolean(process.env.ZAPIER_WEBHOOK_URL),
+        attempted: webhookAttempted,
+        ok: webhookOk,
+        status: webhookStatus,
+      },
     }), { 
       status: 200, 
       headers: { 
