@@ -200,8 +200,8 @@ Modern Mental Health & Hormones`;
                     </a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.instagram.com/modernmhh/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); text-align: center; line-height: 40px; text-decoration: none; border: 0; outline: none;">
-                      <img src="${instagramIconUrl}" alt="Instagram" width="20" height="20" style="display: block; border: 0; outline: none; text-decoration: none; margin: 10px auto; width: 20px; height: 20px;" />
+                    <a href="https://www.instagram.com/modernmhh/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; border: 1px solid #e7dfd2; text-align: center; text-decoration: none; outline: none;">
+                      <img src="${instagramIconUrl}" alt="Instagram" width="22" height="22" style="display: block; border: 0; outline: none; text-decoration: none; margin: 9px auto; width: 22px; height: 22px;" />
                     </a>
                   </td>
                 </tr>
