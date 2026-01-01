@@ -1,7 +1,5 @@
 import type { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
-import path from "path";
-import { readFile } from "fs/promises";
 
 const ORIGINS = new Set([
   "https://www.modernmhh.com",
@@ -94,14 +92,16 @@ export async function POST(req: NextRequest) {
     const clinicFrom = `Modern Mental Health & Hormones <info@modernmhh.com>`;
     const safeEmail = sanitizeHeader(email);
 
-    // Get base URL for PDF download (use environment variable or default to production)
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (origin || 'https://www.modernmhh.com').replace(/\/$/, '');
+    // Get base URL for PDF download - always use production URL for emails (not localhost)
+    // This ensures email links work even when testing locally
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.modernmhh.com';
+    const cleanBaseUrl = baseUrl.replace(/\/$/, '');
     // PDF download URL - use the download API endpoint
-    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${baseUrl}/api/download-workbook`;
+    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${cleanBaseUrl}/api/download-workbook`;
     
-    // Paths to images for inline attachment
-    const logoPath = path.join(process.cwd(), 'public', 'LOGO PNG.png');
-    const challengeImagePath = path.join(process.cwd(), 'public', '7day.jpg');
+    // Use public URLs for images instead of inline attachments (more reliable with Gmail)
+    const logoUrl = `${cleanBaseUrl}/LOGO%20PNG.png`;
+    const challengeImageUrl = `${cleanBaseUrl}/7day.jpg`;
 
     // Send welcome email immediately
     const welcomeSubject = "Welcome to Your 7 Day Wellness Challenge!";
@@ -109,7 +109,8 @@ export async function POST(req: NextRequest) {
 
 I am so excited you decided to jump into this challenge and create habits that serve your overall well-being. I hope you see amazing progress and positive changes that you'll find valuable along the way.
 
-Click here to download your guide: ${pdfDownloadUrl}
+Click the link below to download your free workbook guide:
+${pdfDownloadUrl}
 
 You'll receive one email each day for the next 7 days with guidance and tips to help you build these healthy micro-habits.
 
@@ -147,7 +148,7 @@ Modern Mental Health & Hormones`;
           <!-- Logo -->
           <tr>
             <td align="center" style="padding: 40px 20px 20px 20px;">
-              <img src="cid:logo" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; max-width: 120px; height: auto;" />
+              <img src="${logoUrl}" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; max-width: 120px; height: auto;" />
             </td>
           </tr>
           
@@ -172,7 +173,7 @@ Modern Mental Health & Hormones`;
           <!-- Challenge Image -->
           <tr>
             <td align="center" style="padding: 0 20px 30px 20px;">
-              <img src="cid:challenge" alt="7 Day Wellness Challenge" width="500" height="auto" style="display: block; max-width: 500px; width: 100%; height: auto; border-radius: 50%; object-fit: cover;" />
+              <img src="${challengeImageUrl}" alt="7 Day Wellness Challenge" width="500" height="auto" style="display: block; max-width: 500px; width: 100%; height: auto; border-radius: 50%; object-fit: cover;" />
             </td>
           </tr>
           
@@ -221,14 +222,8 @@ Modern Mental Health & Hormones`;
 </html>
     `;
 
-    // Send welcome email with PDF attachment
-    // The PDF should be placed at: public/7-Day-Challenge-Workbook.pdf
-    // Or set CHALLENGE_PDF_PATH environment variable to specify a different path
-    const pdfPath = process.env.CHALLENGE_PDF_PATH 
-      ? process.env.CHALLENGE_PDF_PATH 
-      : path.join(process.cwd(), 'public', '7-Day-Challenge-Workbook.pdf');
-    
-    // Prepare email with attachments (PDF and inline images)
+    // Send welcome email (images use public URLs, no attachments needed)
+    // PDF is not attached - users download via the link in the email
     const emailOptions: {
       to: string;
       from: string;
@@ -236,7 +231,6 @@ Modern Mental Health & Hormones`;
       subject: string;
       text: string;
       html: string;
-      attachments?: Array<any>;
     } = {
       to: safeEmail,
       from: clinicFrom,
@@ -244,55 +238,14 @@ Modern Mental Health & Hormones`;
       subject: welcomeSubject,
       text: welcomeText,
       html: welcomeHtml,
-      attachments: [],
     };
-
-    // Add inline images (CID attachments) so Gmail doesn't block them
-    try {
-      // Logo as inline attachment
-      try {
-        const logoData = await readFile(logoPath);
-        emailOptions.attachments!.push({
-          filename: 'logo.png',
-          content: logoData,
-          cid: 'logo', // Content-ID for referencing in HTML
-        });
-      } catch (err) {
-        console.warn('Could not attach logo image:', err);
-      }
-
-      // Challenge image as inline attachment
-      try {
-        const challengeData = await readFile(challengeImagePath);
-        emailOptions.attachments!.push({
-          filename: '7day.jpg',
-          content: challengeData,
-          cid: 'challenge', // Content-ID for referencing in HTML
-        });
-      } catch (err) {
-        console.warn('Could not attach challenge image:', err);
-      }
-
-      // Add PDF as regular attachment
-      emailOptions.attachments!.push({
-        filename: '7-Day-Challenge-Workbook.pdf',
-        path: pdfPath,
-      });
-    } catch (err) {
-      console.warn('Error preparing attachments:', err);
-    }
     
+    // Send email
     try {
       await transporter.sendMail(emailOptions);
     } catch (mailError) {
-      // If email fails due to attachment, try without attachment
-      if (emailOptions.attachments) {
-        console.warn('Email send failed with attachment, retrying without attachment...');
-        delete emailOptions.attachments;
-        await transporter.sendMail(emailOptions);
-      } else {
-        throw mailError;
-      }
+      console.error('Failed to send email:', mailError);
+      throw mailError;
     }
 
     // Send to Zapier webhook (only if configured)
