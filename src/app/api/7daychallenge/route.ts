@@ -254,16 +254,28 @@ Modern Mental Health & Hormones`;
     const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
     if (zapierWebhookUrl) {
       try {
-        await fetch(zapierWebhookUrl, {
+        console.log('Sending to Zapier webhook:', zapierWebhookUrl.substring(0, 50) + '...');
+        const webhookResponse = await fetch(zapierWebhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: safeEmail,
           }),
         });
+        
+        if (!webhookResponse.ok) {
+          const errorText = await webhookResponse.text();
+          console.error('Zapier webhook returned error status:', webhookResponse.status, errorText);
+        } else {
+          console.log('Zapier webhook call successful');
+        }
       } catch (webhookError) {
         // Log but don't fail the request if webhook fails
         console.error('Zapier webhook error:', webhookError);
+        if (webhookError instanceof Error) {
+          console.error('Error message:', webhookError.message);
+          console.error('Error stack:', webhookError.stack);
+        }
       }
     } else {
       console.warn('ZAPIER_WEBHOOK_URL not configured - skipping webhook call');
