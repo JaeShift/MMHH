@@ -96,8 +96,8 @@ export async function POST(req: NextRequest) {
     // This ensures email links work even when testing locally
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.modernmhh.com';
     const cleanBaseUrl = baseUrl.replace(/\/$/, '');
-    // PDF download URL - use the download API endpoint
-    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${cleanBaseUrl}/api/download-workbook`;
+    // PDF download URL - direct link to PDF in public folder
+    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${cleanBaseUrl}/7-Day-Challenge-Workbook.pdf`;
     
     // Use public URLs for images instead of inline attachments (more reliable with Gmail)
     const logoUrl = `${cleanBaseUrl}/LOGO%20PNG.png`;
@@ -130,7 +130,8 @@ Let's get started!
 — Stephanie Nichols, PMHNP-BC
 Modern Mental Health & Hormones`;
 
-    // Email-safe HTML template matching the design
+    // Email HTML - TABLE-BASED STRUCTURE WITH INLINE CSS ONLY (Gmail-compatible)
+    // This is EMAIL HTML, not website HTML - tables + inline styles only
     const welcomeHtml = `
 <!DOCTYPE html>
 <html lang="en">
@@ -139,23 +140,24 @@ Modern Mental Health & Hormones`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Your 7 Day Wellness Challenge!</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
-  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
+<body style="margin: 0; padding: 0; background-color: #f3efe6; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Outer wrapper table with background color -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f3efe6; width: 100%;">
     <tr>
-      <td align="center" style="padding: 40px 20px;">
-        <!-- Main Content Container -->
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #F5F1E8; border-radius: 8px; overflow: hidden;">
+      <td align="center" style="padding: 24px 20px;">
+        <!-- Inner centered container table (600px max, white background, rounded, bordered) -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 14px; border: 1px solid #e7dfd2;">
           <!-- Logo -->
           <tr>
-            <td align="center" style="padding: 40px 20px 20px 20px;">
-              <img src="${logoUrl}" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; max-width: 120px; height: auto;" />
+            <td align="center" style="padding: 40px 40px 24px 40px;">
+              <img src="${logoUrl}" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; border: 0; outline: none; text-decoration: none; max-width: 120px; width: 100%; height: auto;" />
             </td>
           </tr>
           
           <!-- Sub-heading -->
           <tr>
-            <td align="center" style="padding: 0 20px 8px 20px;">
-              <p style="margin: 0; font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; color: #6B5B4D; font-family: ui-sans-serif, system-ui, sans-serif;">
+            <td align="center" style="padding: 0 40px 12px 40px;">
+              <p style="margin: 0; font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; color: #6B5B4D; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.4;">
                 7 DAY HEALTH &amp; WELLNESS
               </p>
             </td>
@@ -163,24 +165,24 @@ Modern Mental Health & Hormones`;
           
           <!-- Main Title -->
           <tr>
-            <td align="center" style="padding: 0 20px 30px 20px;">
+            <td align="center" style="padding: 0 40px 32px 40px;">
               <h1 style="margin: 0; font-size: 32px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; color: #392E26; font-family: Georgia, 'Times New Roman', serif; line-height: 1.2;">
                 MICRO-HABIT CHALLENGE
               </h1>
             </td>
           </tr>
           
-          <!-- Challenge Image -->
+          <!-- Hero Image -->
           <tr>
-            <td align="center" style="padding: 0 20px 30px 20px;">
-              <img src="${challengeImageUrl}" alt="7 Day Wellness Challenge" width="500" height="auto" style="display: block; max-width: 500px; width: 100%; height: auto; border-radius: 50%; object-fit: cover;" />
+            <td align="center" style="padding: 0 40px 32px 40px;">
+              <img src="${challengeImageUrl}" alt="7 Day Wellness Challenge" width="520" height="auto" style="display: block; border: 0; outline: none; text-decoration: none; max-width: 520px; width: 100%; height: auto; border-radius: 8px;" />
             </td>
           </tr>
           
           <!-- CTA Button -->
           <tr>
-            <td align="center" style="padding: 0 20px 40px 20px;">
-              <a href="${pdfDownloadUrl}" style="display: inline-block; background-color: #8B7B6D; color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 6px; font-size: 16px; font-weight: 500; font-family: ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.5px;">
+            <td align="center" style="padding: 0 40px 40px 40px;">
+              <a href="${pdfDownloadUrl}" style="display: inline-block; background-color: #8B7B6D; color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 6px; font-size: 16px; font-weight: 500; font-family: ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.5px; border: 0; outline: none;">
                 Click Here to Download Your Guide
               </a>
             </td>
@@ -188,16 +190,16 @@ Modern Mental Health & Hormones`;
           
           <!-- Social Media Icons -->
           <tr>
-            <td align="center" style="padding: 0 20px 30px 20px;">
+            <td align="center" style="padding: 0 40px 32px 40px;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                 <tr>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.facebook.com/profile.php?id=61584364929024" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background-color: #1877F2; text-align: center; line-height: 40px; text-decoration: none;">
+                    <a href="https://www.facebook.com/profile.php?id=61584364929024" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background-color: #1877F2; text-align: center; line-height: 40px; text-decoration: none; border: 0; outline: none;">
                       <span style="color: #ffffff; font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;">f</span>
                     </a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.instagram.com/modernmhh/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background-color: #E4405F; text-align: center; line-height: 40px; text-decoration: none;">
+                    <a href="https://www.instagram.com/modernmhh/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background-color: #E4405F; text-align: center; line-height: 40px; text-decoration: none; border: 0; outline: none;">
                       <span style="color: #ffffff; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif;">IG</span>
                     </a>
                   </td>
@@ -208,8 +210,8 @@ Modern Mental Health & Hormones`;
           
           <!-- Footer Text -->
           <tr>
-            <td align="center" style="padding: 0 20px 30px 20px;">
-              <p style="margin: 0; font-size: 11px; color: #999999; font-family: ui-sans-serif, system-ui, sans-serif;">
+            <td align="center" style="padding: 0 40px 40px 40px;">
+              <p style="margin: 0; font-size: 11px; color: #999999; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.4;">
                 Copyright &copy; ${new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
             </td>
