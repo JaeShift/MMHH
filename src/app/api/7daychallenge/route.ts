@@ -102,6 +102,7 @@ export async function POST(req: NextRequest) {
     // Use public URLs for images instead of inline attachments (more reliable with Gmail)
     const logoUrl = `${cleanBaseUrl}/LOGO%20PNG.png`;
     const challengeImageUrl = `${cleanBaseUrl}/7day.jpg`;
+    const instagramIconUrl = `${cleanBaseUrl}/instagram.png`;
 
     // Send welcome email immediately
     const welcomeSubject = "Welcome to Your 7 Day Wellness Challenge!";
@@ -200,7 +201,7 @@ Modern Mental Health & Hormones`;
                   </td>
                   <td style="padding: 0 12px;">
                     <a href="https://www.instagram.com/modernmhh/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); text-align: center; line-height: 40px; text-decoration: none; border: 0; outline: none;">
-                      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E" alt="Instagram" width="20" height="20" style="display: block; border: 0; outline: none; text-decoration: none; margin: 10px auto; width: 20px; height: 20px;" />
+                      <img src="${instagramIconUrl}" alt="Instagram" width="20" height="20" style="display: block; border: 0; outline: none; text-decoration: none; margin: 10px auto; width: 20px; height: 20px;" />
                     </a>
                   </td>
                 </tr>
@@ -251,29 +252,56 @@ Modern Mental Health & Hormones`;
     }
 
     // Send to Zapier webhook (only if configured)
-    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
+    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL?.trim();
     if (zapierWebhookUrl) {
       try {
-        console.log('Sending to Zapier webhook:', zapierWebhookUrl.substring(0, 50) + '...');
+        console.log('Sending to Zapier webhook:', zapierWebhookUrl);
+        console.log('Payload:', JSON.stringify({ email: safeEmail }));
+        
+        // Create AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
         const webhookResponse = await fetch(zapierWebhookUrl, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({
             email: safeEmail,
           }),
+          signal: controller.signal,
         });
         
+        clearTimeout(timeoutId);
+        
+        const responseText = await webhookResponse.text();
+        console.log('Zapier webhook response status:', webhookResponse.status);
+        console.log('Zapier webhook response:', responseText);
+        
         if (!webhookResponse.ok) {
-          const errorText = await webhookResponse.text();
-          console.error('Zapier webhook returned error status:', webhookResponse.status, errorText);
+          console.error('Zapier webhook returned error status:', webhookResponse.status);
+          console.error('Error response:', responseText);
         } else {
           console.log('Zapier webhook call successful');
+          try {
+            const responseJson = JSON.parse(responseText);
+            console.log('Zapier response data:', responseJson);
+          } catch (e) {
+            // Response might not be JSON, that's okay
+            console.log('Zapier response is not JSON (this is normal)');
+          }
         }
       } catch (webhookError) {
         // Log but don't fail the request if webhook fails
         console.error('Zapier webhook error:', webhookError);
         if (webhookError instanceof Error) {
+          console.error('Error name:', webhookError.name);
           console.error('Error message:', webhookError.message);
+          if (webhookError.name === 'AbortError') {
+            console.error('Webhook request timed out after 10 seconds');
+          }
           console.error('Error stack:', webhookError.stack);
         }
       }
