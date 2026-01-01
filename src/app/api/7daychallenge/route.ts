@@ -255,8 +255,9 @@ Modern Mental Health & Hormones`;
     const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL?.trim();
     if (zapierWebhookUrl) {
       try {
-        console.log('Sending to Zapier webhook:', zapierWebhookUrl);
-        console.log('Payload:', JSON.stringify({ email: safeEmail }));
+        // Don't log the full webhook URL (it is a secret)
+        console.log("Sending to Zapier webhook (configured: true)");
+        console.log("Zapier payload:", JSON.stringify({ email: safeEmail }));
         
         // Create AbortController for timeout
         const controller = new AbortController();
@@ -277,21 +278,14 @@ Modern Mental Health & Hormones`;
         clearTimeout(timeoutId);
         
         const responseText = await webhookResponse.text();
-        console.log('Zapier webhook response status:', webhookResponse.status);
-        console.log('Zapier webhook response:', responseText);
+        console.log("Zapier webhook response status:", webhookResponse.status);
+        console.log("Zapier webhook response:", responseText);
         
         if (!webhookResponse.ok) {
-          console.error('Zapier webhook returned error status:', webhookResponse.status);
-          console.error('Error response:', responseText);
+          console.error("Zapier webhook returned error status:", webhookResponse.status);
+          console.error("Zapier error response:", responseText);
         } else {
-          console.log('Zapier webhook call successful');
-          try {
-            const responseJson = JSON.parse(responseText);
-            console.log('Zapier response data:', responseJson);
-          } catch (e) {
-            // Response might not be JSON, that's okay
-            console.log('Zapier response is not JSON (this is normal)');
-          }
+          console.log("Zapier webhook call successful");
         }
       } catch (webhookError) {
         // Log but don't fail the request if webhook fails
