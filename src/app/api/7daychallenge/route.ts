@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 import path from "path";
+import fs from "fs";
 
 const ORIGINS = new Set([
   "https://www.modernmhh.com",
@@ -235,7 +236,6 @@ Modern Mental Health & Hormones`;
     // Add PDF attachment if file exists
     // Make it optional so email sending doesn't fail if PDF is missing
     try {
-      const fs = require('fs');
       if (fs.existsSync(pdfPath)) {
         emailOptions.attachments = [
           {
