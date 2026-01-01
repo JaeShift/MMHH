@@ -265,7 +265,7 @@ export default function SevenDayChallengePage() {
             >
               {/* Full Image */}
               <Image 
-                src="/unblurimageai_7day.jpg" 
+                src="/7day.jpg" 
                 alt="7 Day Wellness Challenge" 
                 width={1200}
                 height={1200}
