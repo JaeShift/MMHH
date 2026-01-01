@@ -26,12 +26,13 @@ export default function SevenDayChallengePage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(data.error || `Server error: ${response.status}`);
       }
 
       setIsSuccess(true);
       setEmail("");
     } catch (err) {
+      console.error("Signup error:", err);
       setError(err instanceof Error ? err.message : "Failed to sign up. Please try again.");
     } finally {
       setIsSubmitting(false);

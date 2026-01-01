@@ -232,16 +232,20 @@ Modern Mental Health & Hormones`;
       html: welcomeHtml,
     };
 
-    // Add PDF attachment if file exists (or if path is explicitly set)
-    // Note: In production, you may want to use a file system check
-    // For now, we'll always try to attach it - if it fails, the email will still send
+    // Add PDF attachment if file exists
+    // Make it optional so email sending doesn't fail if PDF is missing
     try {
-      emailOptions.attachments = [
-        {
-          filename: '7-Day-Challenge-Workbook.pdf',
-          path: pdfPath,
-        }
-      ];
+      const fs = require('fs');
+      if (fs.existsSync(pdfPath)) {
+        emailOptions.attachments = [
+          {
+            filename: '7-Day-Challenge-Workbook.pdf',
+            path: pdfPath,
+          }
+        ];
+      } else {
+        console.warn('PDF file not found at:', pdfPath, '- sending email without attachment');
+      }
     } catch (err) {
       console.warn('Could not attach PDF, sending email without attachment:', err);
     }
@@ -272,7 +276,8 @@ Modern Mental Health & Hormones`;
   } catch (err) {
     console.error("7-Day Challenge API error:", err);
     const origin = req.headers.get("origin");
-    return new Response(JSON.stringify({ ok: false, error: "Failed to sign up." }), { 
+    const errorMessage = err instanceof Error ? err.message : "Failed to sign up.";
+    return new Response(JSON.stringify({ ok: false, error: errorMessage }), { 
       status: 500, 
       headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) } 
     });
