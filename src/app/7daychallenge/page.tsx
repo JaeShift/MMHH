@@ -23,7 +23,14 @@ export default function SevenDayChallengePage() {
         body: JSON.stringify({ email }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        const text = await response.text();
+        console.error("Failed to parse JSON response:", text);
+        throw new Error(`Server error (${response.status}): Invalid response format`);
+      }
 
       if (!response.ok) {
         throw new Error(data.error || `Server error: ${response.status}`);

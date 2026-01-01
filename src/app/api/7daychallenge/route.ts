@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 import path from "path";
-import fs from "fs";
+import { readFile } from "fs/promises";
 
 const ORIGINS = new Set([
   "https://www.modernmhh.com",
@@ -43,18 +43,30 @@ export async function POST(req: NextRequest) {
 
     // Basic origin restriction
     if (!origin || !ORIGINS.has(origin)) {
-      return new Response(JSON.stringify({ ok: false, error: "Origin not allowed" }), { status: 403, headers });
+      return new Response(JSON.stringify({ ok: false, error: "Origin not allowed" }), { 
+        status: 403, 
+        headers: { 'Content-Type': 'application/json', ...headers } 
+      });
     }
 
     // Field validation
     if (!email) {
-      return new Response(JSON.stringify({ ok: false, error: "Email is required" }), { status: 400, headers });
+      return new Response(JSON.stringify({ ok: false, error: "Email is required" }), { 
+        status: 400, 
+        headers: { 'Content-Type': 'application/json', ...headers } 
+      });
     }
     if (!isValidEmail(email)) {
-      return new Response(JSON.stringify({ ok: false, error: "Invalid email address" }), { status: 400, headers });
+      return new Response(JSON.stringify({ ok: false, error: "Invalid email address" }), { 
+        status: 400, 
+        headers: { 'Content-Type': 'application/json', ...headers } 
+      });
     }
     if (email.length > 200) {
-      return new Response(JSON.stringify({ ok: false, error: "Email too long" }), { status: 400, headers });
+      return new Response(JSON.stringify({ ok: false, error: "Email too long" }), { 
+        status: 400, 
+        headers: { 'Content-Type': 'application/json', ...headers } 
+      });
     }
 
     const {
@@ -82,13 +94,14 @@ export async function POST(req: NextRequest) {
     const clinicFrom = `Modern Mental Health & Hormones <info@modernmhh.com>`;
     const safeEmail = sanitizeHeader(email);
 
-    // Get base URL for images (use environment variable or default to production)
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.modernmhh.com';
-    const logoUrl = `${baseUrl}/LOGO%20PNG.png`;
-    const challengeImageUrl = `${baseUrl}/7day.jpg`;
-    // PDF download URL - either hosted publicly or use a download endpoint
-    // If PDF is in public folder, it will be accessible at this URL
-    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${baseUrl}/7-Day-Challenge-Workbook.pdf`;
+    // Get base URL for PDF download (use environment variable or default to production)
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (origin || 'https://www.modernmhh.com').replace(/\/$/, '');
+    // PDF download URL - use the download API endpoint
+    const pdfDownloadUrl = process.env.CHALLENGE_PDF_URL || `${baseUrl}/api/download-workbook`;
+    
+    // Paths to images for inline attachment
+    const logoPath = path.join(process.cwd(), 'public', 'LOGO PNG.png');
+    const challengeImagePath = path.join(process.cwd(), 'public', '7day.jpg');
 
     // Send welcome email immediately
     const welcomeSubject = "Welcome to Your 7 Day Wellness Challenge!";
@@ -134,7 +147,7 @@ Modern Mental Health & Hormones`;
           <!-- Logo -->
           <tr>
             <td align="center" style="padding: 40px 20px 20px 20px;">
-              <img src="${logoUrl}" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; max-width: 120px; height: auto;" />
+              <img src="cid:logo" alt="Modern Mental Health & Hormones" width="120" height="auto" style="display: block; max-width: 120px; height: auto;" />
             </td>
           </tr>
           
@@ -159,7 +172,7 @@ Modern Mental Health & Hormones`;
           <!-- Challenge Image -->
           <tr>
             <td align="center" style="padding: 0 20px 30px 20px;">
-              <img src="${challengeImageUrl}" alt="7 Day Wellness Challenge" width="500" height="auto" style="display: block; max-width: 500px; width: 100%; height: auto; border-radius: 50%; object-fit: cover;" />
+              <img src="cid:challenge" alt="7 Day Wellness Challenge" width="500" height="auto" style="display: block; max-width: 500px; width: 100%; height: auto; border-radius: 50%; object-fit: cover;" />
             </td>
           </tr>
           
@@ -215,7 +228,7 @@ Modern Mental Health & Hormones`;
       ? process.env.CHALLENGE_PDF_PATH 
       : path.join(process.cwd(), 'public', '7-Day-Challenge-Workbook.pdf');
     
-    // Prepare email with optional PDF attachment
+    // Prepare email with attachments (PDF and inline images)
     const emailOptions: {
       to: string;
       from: string;
@@ -223,7 +236,7 @@ Modern Mental Health & Hormones`;
       subject: string;
       text: string;
       html: string;
-      attachments?: Array<{ filename: string; path: string }>;
+      attachments?: Array<any>;
     } = {
       to: safeEmail,
       from: clinicFrom,
@@ -231,40 +244,74 @@ Modern Mental Health & Hormones`;
       subject: welcomeSubject,
       text: welcomeText,
       html: welcomeHtml,
+      attachments: [],
     };
 
-    // Add PDF attachment if file exists
-    // Make it optional so email sending doesn't fail if PDF is missing
+    // Add inline images (CID attachments) so Gmail doesn't block them
     try {
-      if (fs.existsSync(pdfPath)) {
-        emailOptions.attachments = [
-          {
-            filename: '7-Day-Challenge-Workbook.pdf',
-            path: pdfPath,
-          }
-        ];
-      } else {
-        console.warn('PDF file not found at:', pdfPath, '- sending email without attachment');
+      // Logo as inline attachment
+      try {
+        const logoData = await readFile(logoPath);
+        emailOptions.attachments!.push({
+          filename: 'logo.png',
+          content: logoData,
+          cid: 'logo', // Content-ID for referencing in HTML
+        });
+      } catch (err) {
+        console.warn('Could not attach logo image:', err);
       }
+
+      // Challenge image as inline attachment
+      try {
+        const challengeData = await readFile(challengeImagePath);
+        emailOptions.attachments!.push({
+          filename: '7day.jpg',
+          content: challengeData,
+          cid: 'challenge', // Content-ID for referencing in HTML
+        });
+      } catch (err) {
+        console.warn('Could not attach challenge image:', err);
+      }
+
+      // Add PDF as regular attachment
+      emailOptions.attachments!.push({
+        filename: '7-Day-Challenge-Workbook.pdf',
+        path: pdfPath,
+      });
     } catch (err) {
-      console.warn('Could not attach PDF, sending email without attachment:', err);
+      console.warn('Error preparing attachments:', err);
     }
     
-    await transporter.sendMail(emailOptions);
-
-    // Send to Zapier webhook
-    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/25456693/uwhshso/';
     try {
-      await fetch(zapierWebhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: safeEmail,
-        }),
-      });
-    } catch (webhookError) {
-      // Log but don't fail the request if webhook fails
-      console.error('Zapier webhook error:', webhookError);
+      await transporter.sendMail(emailOptions);
+    } catch (mailError) {
+      // If email fails due to attachment, try without attachment
+      if (emailOptions.attachments) {
+        console.warn('Email send failed with attachment, retrying without attachment...');
+        delete emailOptions.attachments;
+        await transporter.sendMail(emailOptions);
+      } else {
+        throw mailError;
+      }
+    }
+
+    // Send to Zapier webhook (only if configured)
+    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
+    if (zapierWebhookUrl) {
+      try {
+        await fetch(zapierWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: safeEmail,
+          }),
+        });
+      } catch (webhookError) {
+        // Log but don't fail the request if webhook fails
+        console.error('Zapier webhook error:', webhookError);
+      }
+    } else {
+      console.warn('ZAPIER_WEBHOOK_URL not configured - skipping webhook call');
     }
 
     // Return success response
@@ -272,7 +319,13 @@ Modern Mental Health & Hormones`;
       ok: true, 
       email: safeEmail,
       signupDate: new Date().toISOString(),
-    }), { status: 200, headers });
+    }), { 
+      status: 200, 
+      headers: { 
+        'Content-Type': 'application/json', 
+        ...headers 
+      } 
+    });
   } catch (err) {
     console.error("7-Day Challenge API error:", err);
     const origin = req.headers.get("origin");

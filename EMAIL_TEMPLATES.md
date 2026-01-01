@@ -261,3 +261,4 @@ Modern Mental Health & Hormones
 4. **Database:** You may want to store signups in a database (like Supabase, PlanetScale, or MongoDB) to track who has received which emails
 
 
+
