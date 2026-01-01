@@ -248,23 +248,19 @@ Modern Mental Health & Hormones`;
     
     await transporter.sendMail(emailOptions);
 
-    // Send to Zapier webhook if configured
-    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
-    if (zapierWebhookUrl) {
-      try {
-        await fetch(zapierWebhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: safeEmail,
-            signupDate: new Date().toISOString(),
-            source: '7-day-challenge',
-          }),
-        });
-      } catch (webhookError) {
-        // Log but don't fail the request if webhook fails
-        console.error('Zapier webhook error:', webhookError);
-      }
+    // Send to Zapier webhook
+    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/25456693/uwhshso/';
+    try {
+      await fetch(zapierWebhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: safeEmail,
+        }),
+      });
+    } catch (webhookError) {
+      // Log but don't fail the request if webhook fails
+      console.error('Zapier webhook error:', webhookError);
     }
 
     // Return success response

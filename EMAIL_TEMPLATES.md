@@ -260,3 +260,4 @@ Modern Mental Health & Hormones
 3. **Email Service:** Consider using a service like Resend, SendGrid, or Mailgun for better deliverability and scheduling
 4. **Database:** You may want to store signups in a database (like Supabase, PlanetScale, or MongoDB) to track who has received which emails
 
+
