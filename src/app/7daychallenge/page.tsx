@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function SevenDayChallengePage() {
   const [email, setEmail] = useState("");
@@ -9,7 +11,7 @@ export default function SevenDayChallengePage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent, formLocation?: string) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError("");
@@ -56,20 +58,20 @@ export default function SevenDayChallengePage() {
                 transition={{ duration: 0.6 }}
                 className="flex justify-center lg:justify-start mb-4 sm:mb-6"
               >
-                <a 
+                <Link 
                   href="/" 
                   className="transition-opacity hover:opacity-80"
                   aria-label="Modern Mental Health & Hormones Home"
                 >
-                  <img 
-                    src="/LOGO%20PNG.png" 
+                  <Image 
+                    src="/LOGO PNG.png" 
                     alt="Modern Mental Health & Hormones" 
                     width={140} 
                     height={140}
                     className="object-contain"
                     style={{ maxWidth: '120px', height: 'auto' }}
                   />
-                </a>
+                </Link>
               </motion.div>
 
               <div className="space-y-4 sm:space-y-6">
@@ -114,7 +116,7 @@ export default function SevenDayChallengePage() {
                   }}
                 >
                   <form
-                    onSubmit={(e) => handleSubmit(e, 'hero')}
+                    onSubmit={handleSubmit}
                     className="space-y-4"
                   >
                     <input
@@ -255,9 +257,11 @@ export default function SevenDayChallengePage() {
               }}
             >
               {/* Full Image */}
-              <img 
+              <Image 
                 src="/7day.jpg" 
                 alt="7 Day Wellness Challenge" 
+                width={600}
+                height={600}
                 className="w-full h-full object-contain"
                 style={{ display: 'block' }}
               />

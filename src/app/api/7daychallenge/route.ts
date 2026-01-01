@@ -61,7 +61,6 @@ export async function POST(req: NextRequest) {
       SMTP_PORT,
       SMTP_USER,
       SMTP_PASS,
-      MAIL_FROM,
     } = process.env as Record<string, string | undefined>;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
@@ -216,7 +215,15 @@ Modern Mental Health & Hormones`;
       : path.join(process.cwd(), 'public', '7-Day-Challenge-Workbook.pdf');
     
     // Prepare email with optional PDF attachment
-    const emailOptions: any = {
+    const emailOptions: {
+      to: string;
+      from: string;
+      replyTo: string;
+      subject: string;
+      text: string;
+      html: string;
+      attachments?: Array<{ filename: string; path: string }>;
+    } = {
       to: safeEmail,
       from: clinicFrom,
       replyTo: 'info@modernmhh.com',
