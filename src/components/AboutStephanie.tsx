@@ -45,20 +45,16 @@ export default function AboutStephanie() {
               Dual Board-Certified Practitioner specializing in Hormones & Women&apos;s Mental Health serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio
             </motion.p>
 
-            <motion.div 
+            <div 
               className="grid gap-3 md:gap-4 lg:gap-6 md:grid-cols-2 items-start"
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ amount: 0.2, once: false }}
             >
               {/* Left column — text */}
               <motion.div 
                 className="space-y-4 md:pr-4"
-                initial={{ opacity: 0, x: 0 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4 }}
-                viewport={{ amount: 0.2, once: false }}
+                transition={{ duration: 0.5 }}
+                viewport={{ amount: 0.2, once: true }}
               >
               <p 
                 className="text-base sm:text-lg text-black" 
@@ -104,7 +100,13 @@ export default function AboutStephanie() {
             </motion.div>
             
             {/* Right column — image and badges */}
-            <div className="flex justify-center">
+            <motion.div 
+              className="flex justify-center"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ amount: 0.2, once: true }}
+            >
               <div className="relative w-full max-w-sm md:max-w-md">
                 <Image
                   src="/stephanie-headshot.jpg" 
@@ -112,7 +114,9 @@ export default function AboutStephanie() {
                   width={544}
                   height={672}
                   className="object-cover w-full h-auto shadow-lg rounded-sm"
-                  style={{ objectPosition: 'center top', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)' }}
+                  style={{ objectPosition: 'center top', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)', opacity: 1 }}
+                  loading="eager"
+                  quality={90}
                 />
                 <div className="mt-4 flex flex-row items-center justify-center gap-4">
                   <Image
@@ -131,8 +135,8 @@ export default function AboutStephanie() {
                   />
                 </div>
               </div>
-            </div>
             </motion.div>
+            </div>
           </div>
         </div>
       </section>

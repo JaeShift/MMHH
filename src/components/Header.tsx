@@ -100,38 +100,38 @@ export default function Header() {
 
             {/* Panel */}
             <motion.div
-              className="md:hidden relative z-50 border-t border-[color:var(--neutral-200)] bg-[color:var(--surface)] shadow-2xl"
-              initial={{ opacity: 0, y: -10 }}
+              className="md:hidden relative z-50 border-t border-gray-200 bg-white shadow-2xl"
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="px-4 sm:px-6 py-4 pb-[max(16px,env(safe-area-inset-bottom))] max-h-[calc(100vh-5rem)] overflow-y-auto">
-                <div className="flex flex-col gap-2 mb-4">
+              <div className="px-4 py-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
+                <div className="flex flex-col gap-0 mb-6">
                   <Link
                     href={navLinks.provider}
-                    className="text-base font-semibold text-[color:var(--text-primary)] px-4 py-3 rounded-xl hover:bg-black/5 transition-colors"
+                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     Your Provider
                   </Link>
                   <Link
                     href={navLinks.services}
-                    className="text-base font-semibold text-[color:var(--text-primary)] px-4 py-3 rounded-xl hover:bg-black/5 transition-colors"
+                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     Your Care
                   </Link>
                   <Link
                     href={navLinks.testimonials}
-                    className="text-base font-semibold text-[color:var(--text-primary)] px-4 py-3 rounded-xl hover:bg-black/5 transition-colors"
+                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     Patient Experience
                   </Link>
                   <Link
                     href={navLinks.faq}
-                    className="text-base font-semibold text-[color:var(--text-primary)] px-4 py-3 rounded-xl hover:bg-black/5 transition-colors"
+                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     FAQ&apos;s
@@ -140,9 +140,11 @@ export default function Header() {
 
                 <Link
                   href="/book"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 text-white text-base font-semibold rounded-xl shadow-lg active:scale-[0.99] transition"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 text-white text-lg font-semibold rounded-md shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
                   style={{ backgroundColor: "#75866D" }}
                   onClick={() => setOpen(false)}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}
                 >
                   Request Appointment
                 </Link>

@@ -119,7 +119,7 @@ export default function Page() {
             <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
             {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-sm"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-sm bg-gray-100"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -129,8 +129,12 @@ export default function Page() {
                 src="/stephanie-headshot.jpg"
                 alt="Stephanie Nichols, PMHNP-BC, FNP-BC"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
-                style={{ objectPosition: 'center 35%' }}
+                style={{ objectPosition: 'center 35%', opacity: 1 }}
+                loading="eager"
+                quality={90}
+                priority
               />
             </motion.div>
             
@@ -235,12 +239,16 @@ export default function Page() {
                     transition={{ duration: 0.5, delay: index * 0.08 }}
                   >
                     {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden bg-gray-100">
                       <Image
                         src={condition.image}
                         alt={condition.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{ opacity: 1 }}
+                        loading="eager"
+                        quality={90}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#75866D]/60 to-transparent"></div>
                     </div>
@@ -397,7 +405,7 @@ export default function Page() {
           >
             {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl bg-gray-100"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -407,8 +415,11 @@ export default function Page() {
                 src="/reviews.jpg"
                 alt="Patient testimonials"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
-                style={{ objectPosition: 'center' }}
+                style={{ objectPosition: 'center', opacity: 1 }}
+                loading="eager"
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#75866D]/40 to-transparent"></div>
             </motion.div>
