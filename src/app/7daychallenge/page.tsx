@@ -26,7 +26,7 @@ export default function SevenDayChallengePage() {
       let data;
       try {
         data = await response.json();
-      } catch (jsonError) {
+      } catch {
         const text = await response.text();
         console.error("Failed to parse JSON response:", text);
         throw new Error(`Server error (${response.status}): Invalid response format`);

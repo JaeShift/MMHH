@@ -117,12 +117,7 @@ export default function FocusAreas() {
             </p>
 
             {/* SEO / Hub Links: priority care pages */}
-            <motion.div
-              className="mt-10 sm:mt-12"
-              // Keep these static within the hero entrance to avoid stacked motion.
-              initial={false}
-              animate={false}
-            >
+            <div className="mt-10 sm:mt-12">
               <div className="max-w-5xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
                   <Link
@@ -180,7 +175,7 @@ export default function FocusAreas() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 

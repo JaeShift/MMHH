@@ -1,9 +1,8 @@
-import type { NextRequest } from "next/server";
 import { readFile } from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     // Path to the PDF file
     const pdfPath = process.env.CHALLENGE_PDF_PATH 
