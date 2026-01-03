@@ -81,18 +81,15 @@ export default function FocusAreas() {
         {/* Hero Header */}
         <motion.div
           className="relative max-w-5xl mx-auto mb-16 sm:mb-20 md:mb-24"
-          initial={{ opacity: 0, y: 30 }}
+          // Avoid “double” motion on mobile: this wrapper sets the entrance,
+          // inner elements don’t independently re-animate.
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="text-center space-y-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div>
               <p className="uppercase tracking-[0.4em] text-xs sm:text-sm text-[#75866D] font-semibold mb-4">
                 Comprehensive Services
               </p>
@@ -104,36 +101,27 @@ export default function FocusAreas() {
                 <div className="w-2 h-2 rounded-full bg-[#8B9D7F]"></div>
                 <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#8B9D7F]"></div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.p 
+            <p 
               className="text-lg sm:text-xl md:text-2xl text-[color:var(--text-secondary)] leading-relaxed max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
             >
               <a href="#telehealth" className="text-[#75866D] hover:text-[#8B9D7F] underline decoration-[#8B9D7F]/30 underline-offset-4 hover:decoration-[#8B9D7F] transition-all duration-300 font-medium">Telehealth</a>{" "}
               appointments are available statewide in Ohio, and in-person visits are also available in Columbus.
-            </motion.p>
+            </p>
 
-            <motion.p 
+            <p 
               className="text-base sm:text-lg text-[color:var(--text-muted)] leading-relaxed max-w-2xl mx-auto italic"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
             >
               Your plan may include therapy strategies, medication when helpful, and hormone care as needed — all delivered by one provider
-            </motion.p>
+            </p>
 
             {/* SEO / Hub Links: priority care pages */}
             <motion.div
               className="mt-10 sm:mt-12"
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+              // Keep these static within the hero entrance to avoid stacked motion.
+              initial={false}
+              animate={false}
             >
               <div className="max-w-5xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-4 sm:gap-6">

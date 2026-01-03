@@ -2,6 +2,7 @@
 
 import Header from "../../../components/Header";
 import NewPatientForm from "../../../components/NewPatientForm";
+import Link from "next/link";
 
 export default function NewPatientPage() {
   return (
@@ -26,15 +27,15 @@ export default function NewPatientPage() {
 
             {/* Back Link */}
             <div className="text-center mt-8">
-              <a 
-                href="/book" 
+              <Link
+                href="/book"
                 className="inline-flex items-center gap-2 text-[#75866D] font-semibold hover:underline"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 <span>Back to Booking Options</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

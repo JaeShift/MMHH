@@ -240,9 +240,9 @@ export default function NewPatientForm() {
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {APPOINTMENT_REASONS.map((reason) => (
-                    <label 
+                    <label
                       key={reason}
-                      className="relative flex items-center cursor-pointer bg-white border-2 border-slate-200 rounded-lg px-4 py-3 hover:border-[#75866D]/50 hover:bg-slate-50 transition-all has-[:checked]:border-[#75866D] has-[:checked]:bg-[#75866D]/5 has-[:checked]:shadow-sm"
+                      className="relative cursor-pointer"
                     >
                       <input
                         type="radio"
@@ -250,12 +250,21 @@ export default function NewPatientForm() {
                         value={reason}
                         checked={appointmentReason === reason}
                         onChange={(e) => setAppointmentReason(e.target.value)}
-                        className="h-4 w-4 text-[#75866D] focus:ring-[#75866D] border-slate-300 flex-shrink-0"
+                        className="sr-only peer"
                         required
                       />
-                      <span className="ml-3 text-sm font-medium text-slate-900">
-                        {reason}
-                      </span>
+                      <div className="flex items-start gap-3 bg-white border-2 border-slate-200 rounded-xl px-4 py-4 hover:border-[#75866D]/50 hover:bg-slate-50 transition-colors peer-checked:border-[#75866D] peer-checked:bg-[#75866D]/5 peer-checked:shadow-sm">
+                        <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 border-slate-300 bg-white peer-checked:border-[#75866D] peer-checked:bg-[#75866D] transition-colors">
+                          <svg className="w-5 h-5 text-white opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-sm font-semibold text-slate-900 leading-snug">
+                            {reason}
+                          </div>
+                        </div>
+                      </div>
                     </label>
                   ))}
                 </div>

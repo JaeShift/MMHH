@@ -191,8 +191,9 @@ export default function Page() {
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            // Avoid “double” motion: children cards animate in, this wrapper just fades in.
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
