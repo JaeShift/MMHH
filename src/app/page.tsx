@@ -119,11 +119,12 @@ export default function Page() {
             <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
             {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl rounded-sm bg-gray-100"
-              initial={{ opacity: 0, x: -30 }}
+              className="relative w-full overflow-hidden shadow-2xl rounded-sm bg-gray-200"
+              style={{ aspectRatio: '4/5', minHeight: '400px' }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
                 src="/stephanie-headshot.jpg"
@@ -132,9 +133,8 @@ export default function Page() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 style={{ objectPosition: 'center 35%', opacity: 1 }}
-                loading="eager"
-                quality={90}
                 priority
+                quality={85}
               />
             </motion.div>
             
@@ -233,13 +233,13 @@ export default function Page() {
                   <motion.div
                     key={condition.title}
                     className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                   >
                     {/* Image */}
-                    <div className="relative h-48 overflow-hidden bg-gray-100">
+                    <div className="relative w-full bg-gray-200" style={{ aspectRatio: '16/9', minHeight: '192px' }}>
                       <Image
                         src={condition.image}
                         alt={condition.title}
@@ -247,8 +247,8 @@ export default function Page() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         style={{ opacity: 1 }}
-                        loading="eager"
-                        quality={90}
+                        priority={index < 3}
+                        quality={85}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#75866D]/60 to-transparent"></div>
                     </div>
@@ -405,11 +405,12 @@ export default function Page() {
           >
             {/* Image Side */}
             <motion.div 
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl bg-gray-100"
-              initial={{ opacity: 0, x: -30 }}
+              className="relative w-full overflow-hidden shadow-2xl bg-gray-200"
+              style={{ aspectRatio: '4/5', minHeight: '400px' }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
                 src="/reviews.jpg"
@@ -418,8 +419,7 @@ export default function Page() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 style={{ objectPosition: 'center', opacity: 1 }}
-                loading="eager"
-                quality={90}
+                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#75866D]/40 to-transparent"></div>
             </motion.div>
