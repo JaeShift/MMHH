@@ -230,13 +230,9 @@ export default function Page() {
                 { title: "Sleep & Insomnia", image: "/sleep.jpg" },
               ].map((condition, index) => {
                 return (
-                  <motion.div
+                  <div
                     key={condition.title}
-                    className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+                    className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                   >
                     {/* Image */}
                     <div className="relative w-full bg-gray-200" style={{ aspectRatio: '16/9', minHeight: '192px' }}>
@@ -268,7 +264,7 @@ export default function Page() {
                         </svg>
                       </a>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
