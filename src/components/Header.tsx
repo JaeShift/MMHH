@@ -100,54 +100,73 @@ export default function Header() {
 
             {/* Panel */}
             <motion.div
-              className="md:hidden relative z-50 border-t border-gray-200 bg-white shadow-2xl"
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden fixed top-[5rem] left-0 right-0 bottom-0 z-50 bg-gradient-to-b from-white to-[#F9F7F4]"
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="px-4 py-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-                <div className="flex flex-col gap-0 mb-6">
-                  <Link
-                    href={navLinks.provider}
-                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
-                    onClick={() => setOpen(false)}
-                  >
-                    Your Provider
-                  </Link>
-                  <Link
-                    href={navLinks.services}
-                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
-                    onClick={() => setOpen(false)}
-                  >
-                    Your Care
-                  </Link>
-                  <Link
-                    href={navLinks.testimonials}
-                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
-                    onClick={() => setOpen(false)}
-                  >
-                    Patient Experience
-                  </Link>
-                  <Link
-                    href={navLinks.faq}
-                    className="text-lg font-medium text-gray-800 hover:text-[#75866D] py-3 px-4 hover:bg-gray-50 transition-all duration-200 border-b border-gray-100"
-                    onClick={() => setOpen(false)}
-                  >
-                    FAQ&apos;s
-                  </Link>
-                </div>
+              <div className="px-6 py-8 h-full flex flex-col">
+                {/* Navigation Links */}
+                <nav className="flex flex-col gap-2 mb-8">
+                  {[
+                    { href: navLinks.provider, label: "Your Provider" },
+                    { href: navLinks.services, label: "Your Care" },
+                    { href: navLinks.testimonials, label: "Patient Experience" },
+                    { href: navLinks.faq, label: "FAQ's" }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.3 }}
+                    >
+                      <Link
+                        href={item.href}
+                        className="group relative flex items-center justify-between px-5 py-4 text-lg font-medium text-gray-800 bg-white rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="group-hover:text-[#75866D] transition-colors duration-200">
+                          {item.label}
+                        </span>
+                        <svg 
+                          className="w-5 h-5 text-gray-400 group-hover:text-[#75866D] group-hover:translate-x-1 transition-all duration-200" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
 
-                <Link
-                  href="/book"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 text-white text-lg font-semibold rounded-md shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-200"
-                  style={{ backgroundColor: "#75866D" }}
-                  onClick={() => setOpen(false)}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}
+                {/* CTA Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
+                  className="mt-auto"
                 >
-                  Request Appointment
-                </Link>
+                  <Link
+                    href="/book"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-5 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl active:scale-[0.97] transition-all duration-200"
+                    style={{ backgroundColor: "#75866D" }}
+                    onClick={() => setOpen(false)}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Request Appointment
+                  </Link>
+                  
+                  <p className="text-center text-sm text-gray-500 mt-4">
+                    Taking new patients • Telehealth available
+                  </p>
+                </motion.div>
               </div>
             </motion.div>
           </>
