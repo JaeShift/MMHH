@@ -70,9 +70,26 @@ export default function Header() {
           onClick={() => setOpen(v => !v)}
         >
           <span className="sr-only">Menu</span>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 6h18M3 12h18M3 18h18"/>
-          </svg>
+          <div className="w-6 h-5 relative flex flex-col justify-between">
+            {/* Top line */}
+            <motion.span
+              className="w-full h-0.5 bg-current origin-center"
+              animate={open ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            />
+            {/* Middle line */}
+            <motion.span
+              className="w-full h-0.5 bg-current"
+              animate={open ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+            />
+            {/* Bottom line */}
+            <motion.span
+              className="w-full h-0.5 bg-current origin-center"
+              animate={open ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </div>
         </button>
       </div>
 
