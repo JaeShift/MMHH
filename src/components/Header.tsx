@@ -92,13 +92,13 @@ export default function Header() {
 
             {/* Panel */}
             <motion.div
-              className="md:hidden fixed top-[5rem] left-0 right-0 bottom-0 z-50 bg-gradient-to-b from-white via-white to-[#F9F7F4] shadow-2xl"
+              className="md:hidden absolute top-full left-0 right-0 z-50 bg-gradient-to-b from-white via-white to-[#F9F7F4] shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto"
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="px-6 py-8 h-full flex flex-col overflow-y-auto">
+              <div className="px-6 py-8 flex flex-col min-h-[calc(100vh-5rem)]">
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-2 mb-8">
                   {[
