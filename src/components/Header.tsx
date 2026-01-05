@@ -31,15 +31,7 @@ export default function Header() {
     setOpen(false);
   }, [pathname]);
 
-  // Prevent background scroll when mobile menu is open
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [open]);
+  // Allow scrolling when menu is open (removed scroll lock)
 
   return (
     <header className={`sticky top-0 z-50 w-full ${scrolled ? "navbar-blur" : "bg-[color:var(--surface)]"} border-b border-[color:var(--neutral-200)]`}>
@@ -87,11 +79,11 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
+            {/* Backdrop - darker for better contrast */}
             <motion.button
               type="button"
               aria-label="Close menu"
-              className="fixed inset-0 z-40 bg-black/20"
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -100,13 +92,13 @@ export default function Header() {
 
             {/* Panel */}
             <motion.div
-              className="md:hidden fixed top-[5rem] left-0 right-0 bottom-0 z-50 bg-gradient-to-b from-white to-[#F9F7F4]"
+              className="md:hidden fixed top-[5rem] left-0 right-0 bottom-0 z-50 bg-gradient-to-b from-white via-white to-[#F9F7F4] shadow-2xl"
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="px-6 py-8 h-full flex flex-col">
+              <div className="px-6 py-8 h-full flex flex-col overflow-y-auto">
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-2 mb-8">
                   {[
