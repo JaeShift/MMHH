@@ -511,6 +511,10 @@ export default function Page() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
             {[
               {
+                question: "Do you accept insurance?",
+                answer: "I provide superbills for reimbursement and accept HSA/FSA. I'll post updates about in-network plans as I onboard. Transparent self-pay pricing is available."
+              },
+              {
                 question: "How long are appointments?",
                 answer: "Initial consultations are typically 60 minutes, with follow-up appointments lasting 30-45 minutes."
               },
