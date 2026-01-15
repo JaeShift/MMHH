@@ -17,34 +17,6 @@ export default function Insurance() {
 
   const faqs: FAQ[] = [
     {
-      question: "How can I start care?",
-      answer: "You can schedule your first appointment through the Book Now button. During your first visit, I'll discuss your concerns, review your history, and create a treatment plan tailored to your mental health and hormonal balance."
-    },
-    {
-      question: "What is Modern MHH?",
-      answer: "Modern MHH is a women's mental health and hormone practice that provides thoughtful, evidence-based care for women navigating anxiety, depression, PMDD, postpartum mood changes, perimenopause, and menopause. The focus is on helping you feel balanced, clear, and like yourself again."
-    },
-    {
-      question: "Who do you see?",
-      answer: "I work with adult women (18+) experiencing emotional or physical symptoms related to hormonal shifts — including anxiety, irritability, mood swings, brain fog, low motivation, or fatigue. Many of my patients are navigating life transitions such as postpartum recovery, perimenopause, or menopause."
-    },
-    {
-      question: "What services do you provide?",
-      answer: "I offer comprehensive psychiatric evaluations, medication management, and hormone-informed care. Treatment plans may include lifestyle support, lab testing when appropriate, and coordination with your other healthcare providers for a fully integrated approach."
-    },
-    {
-      question: "Do you prescribe medications or hormones?",
-      answer: "Yes. As a Psychiatric Mental Health Nurse Practitioner (PMHNP) and Family Nurse Practitioner (FNP), I can prescribe psychiatric medications and select hormonal therapies. My goal is always to use the safest, most effective, and lowest necessary doses — customized to your body and your goals."
-    },
-    {
-      question: "How do hormones impact mental health?",
-      answer: "Hormones play a major role in mood regulation, energy, and focus. Shifts in estrogen, progesterone, and other hormones can affect neurotransmitters like serotonin and dopamine, leading to mood changes. Understanding your hormone patterns allows for more targeted, effective treatment."
-    },
-    {
-      question: "Do you offer telehealth?",
-      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across Ohio. You can receive care from home or anywhere you feel comfortable when receiving treatment via telehealth."
-    },
-    {
       question: "Do you take insurance?",
       answer: (
         <div className="space-y-4">
@@ -73,7 +45,7 @@ export default function Insurance() {
             <div className="flex flex-col items-center text-center space-y-2">
               <div className="relative w-full h-20 flex items-center justify-center">
                 <Image
-                  src="/png-transparent-unitedhealthcare-hd-logo.png"
+                  src="/unitedhealthcare.webp"
                   alt="United Healthcare / Optum"
                   width={160}
                   height={60}
@@ -105,10 +77,10 @@ export default function Insurance() {
             <p className="font-semibold mb-2">For out-of-network or self-pay patients:</p>
             <ul className="mt-2 space-y-2 text-sm sm:text-base">
               <li>
-                <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ <span className="font-bold text-[#75866D]">$300.00</span>
+                <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ <span className="font-bold text-black">$300.00</span>
               </li>
               <li>
-                <span className="font-semibold">Routine or Follow-up Visits</span> — 30 minutes @ <span className="font-bold text-[#75866D]">$150.00</span>
+                <span className="font-semibold">Routine or Follow-up Visits</span> — 30 minutes @ <span className="font-bold text-black">$150.00</span>
               </li>
             </ul>
             <p className="text-xs text-gray-600 mt-3 italic">All amounts in USD.</p>
@@ -125,6 +97,34 @@ export default function Insurance() {
           </p>
         </div>
       )
+    },
+    {
+      question: "How can I start care?",
+      answer: "You can schedule your first appointment through the Book Now button. During your first visit, I'll discuss your concerns, review your history, and create a treatment plan tailored to your mental health and hormonal balance."
+    },
+    {
+      question: "What is Modern MHH?",
+      answer: "Modern MHH is a women's mental health and hormone practice that provides thoughtful, evidence-based care for women navigating anxiety, depression, PMDD, postpartum mood changes, perimenopause, and menopause. The focus is on helping you feel balanced, clear, and like yourself again."
+    },
+    {
+      question: "Who do you see?",
+      answer: "I work with adult women (18+) experiencing emotional or physical symptoms related to hormonal shifts — including anxiety, irritability, mood swings, brain fog, low motivation, or fatigue. Many of my patients are navigating life transitions such as postpartum recovery, perimenopause, or menopause."
+    },
+    {
+      question: "What services do you provide?",
+      answer: "I offer comprehensive psychiatric evaluations, medication management, and hormone-informed care. Treatment plans may include lifestyle support, lab testing when appropriate, and coordination with your other healthcare providers for a fully integrated approach."
+    },
+    {
+      question: "Do you prescribe medications or hormones?",
+      answer: "Yes. As a Psychiatric Mental Health Nurse Practitioner (PMHNP) and Family Nurse Practitioner (FNP), I can prescribe psychiatric medications and select hormonal therapies. My goal is always to use the safest, most effective, and lowest necessary doses — customized to your body and your goals."
+    },
+    {
+      question: "How do hormones impact mental health?",
+      answer: "Hormones play a major role in mood regulation, energy, and focus. Shifts in estrogen, progesterone, and other hormones can affect neurotransmitters like serotonin and dopamine, leading to mood changes. Understanding your hormone patterns allows for more targeted, effective treatment."
+    },
+    {
+      question: "Do you offer telehealth?",
+      answer: "Yes, I offer secure, HIPAA-compliant virtual visits for women across Ohio. You can receive care from home or anywhere you feel comfortable when receiving treatment via telehealth."
     }
   ];
 

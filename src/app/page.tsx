@@ -512,7 +512,59 @@ export default function Page() {
             {[
               {
                 question: "Do you accept insurance?",
-                answer: "Yes! I am now in-network with Cigna - Evernorth, United Healthcare / Optum, and Medical Mutual - Supermed. I also provide superbills for out-of-network reimbursement and accept HSA/FSA payments."
+                answer: (
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-black leading-relaxed font-light">
+                      Yes! I am now in-network with the following insurance providers:
+                    </p>
+                    
+                    {/* Insurance Logos */}
+                    <div className="grid grid-cols-3 gap-4 my-4">
+                      <div className="flex flex-col items-center text-center space-y-2">
+                        <div className="relative w-full h-16 flex items-center justify-center">
+                          <Image
+                            src="/cigna-logo-wallpaper-e1474921230453.webp"
+                            alt="Cigna - Evernorth"
+                            width={120}
+                            height={45}
+                            className="object-contain"
+                          />
+                        </div>
+                        <p className="text-xs font-medium text-black">Cigna - Evernorth</p>
+                      </div>
+                      
+                      <div className="flex flex-col items-center text-center space-y-2">
+                        <div className="relative w-full h-16 flex items-center justify-center">
+                          <Image
+                            src="/unitedhealthcare.webp"
+                            alt="United Healthcare / Optum"
+                            width={120}
+                            height={45}
+                            className="object-contain"
+                          />
+                        </div>
+                        <p className="text-xs font-medium text-black">United Healthcare / Optum</p>
+                      </div>
+                      
+                      <div className="flex flex-col items-center text-center space-y-2">
+                        <div className="relative w-full h-16 flex items-center justify-center">
+                          <Image
+                            src="/MedicalMutual.webp"
+                            alt="Medical Mutual - Supermed"
+                            width={120}
+                            height={45}
+                            className="object-contain"
+                          />
+                        </div>
+                        <p className="text-xs font-medium text-black">Medical Mutual - Supermed</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-base md:text-lg text-black leading-relaxed font-light">
+                      I also provide superbills for out-of-network reimbursement and accept HSA/FSA payments.
+                    </p>
+                  </div>
+                )
               },
               {
                 question: "How long are appointments?",
@@ -538,9 +590,9 @@ export default function Page() {
                 <h3 className="text-xl md:text-2xl font-medium text-black mb-4 leading-snug">
                   {faq.question}
                 </h3>
-                <p className="text-base md:text-lg text-black leading-relaxed font-light">
+                <div className="text-base md:text-lg text-black leading-relaxed font-light">
                   {faq.answer}
-                </p>
+                </div>
               </motion.div>
             ))}
           </div>
