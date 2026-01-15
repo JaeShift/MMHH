@@ -605,6 +605,11 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Divider between FAQ and Contact */}
+      <div className="relative h-16 bg-[#EBE4D6] z-20">
+        <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
+      </div>
+
       {/* CONTACT */}
       <section id="contact" className="relative bg-[#EBE4D6] py-24 md:py-32 lg:py-40 overflow-hidden">
         {/* Decorative leaf PNG elements */}
