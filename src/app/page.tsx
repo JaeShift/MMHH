@@ -567,14 +567,6 @@ export default function Page() {
                 )
               },
               {
-                question: "How long are appointments?",
-                answer: "Initial consultations are typically 60 minutes, with follow-up appointments lasting 30-45 minutes."
-              },
-              {
-                question: "Do you offer telehealth?",
-                answer: "Yes! I offer secure, HIPAA-compliant telehealth appointments throughout Ohio for your convenience."
-              },
-              {
                 question: "What services do you provide?",
                 answer: "I offer comprehensive psychiatric evaluations, medication management, and hormone-informed care. Treatment plans are personalized and may include lifestyle support and lab testing when appropriate."
               }
