@@ -24,7 +24,7 @@ export default function Insurance() {
             I am passionately committed to providing high-quality, specialized care that fully integrates Modern Mental Health and Hormones to your needs.
           </p>
           <p>
-            <strong>Great news!</strong> I am now in-network with the following insurance providers:
+            Great news! I am now in-network with the following insurance providers:
           </p>
           
           {/* Insurance Logos */}
