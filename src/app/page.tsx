@@ -525,10 +525,6 @@ export default function Page() {
               {
                 question: "What services do you provide?",
                 answer: "I offer comprehensive psychiatric evaluations, medication management, and hormone-informed care. Treatment plans are personalized and may include lifestyle support and lab testing when appropriate."
-              },
-              {
-                question: "Who do you see?",
-                answer: "I work with adult women (18+) experiencing emotional or physical symptoms such as hormonal shifts, anxiety, irritability, mood swings, brain fog, low motivation, or fatigue."
               }
             ].map((faq, index) => (
               <motion.div
