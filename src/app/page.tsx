@@ -607,7 +607,7 @@ export default function Page() {
 
       {/* Divider between FAQ and Contact */}
       <div className="relative h-16 bg-[#EBE4D6] z-20">
-        <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-[#EBE4D6] to-[#E8E2D8]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
+        <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-[#EBE4D6] to-[#F5F0E8]" style={{ borderRadius: '0 0 100% 100% / 0 0 80px 80px' }}></div>
       </div>
 
       {/* CONTACT */}
