@@ -52,19 +52,57 @@ export default function Insurance() {
             I am passionately committed to providing high-quality, specialized care that fully integrates Modern Mental Health and Hormones to your needs.
           </p>
           <p>
-            To ensure I can dedicate my resources to providing this specialized, high-touch model, my practice currently operates primarily on a self-pay/cash-pay model.
+            <strong>Great news!</strong> I am now in-network with the following insurance providers:
           </p>
+          
+          {/* Insurance Logos */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 items-center justify-items-center">
+            <div className="flex flex-col items-center text-center space-y-2">
+              <div className="relative w-full h-20 flex items-center justify-center">
+                <Image
+                  src="/cigna-logo-wallpaper-e1474921230453.webp"
+                  alt="Cigna - Evernorth"
+                  width={160}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-black">Cigna - Evernorth</p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center space-y-2">
+              <div className="relative w-full h-20 flex items-center justify-center">
+                <Image
+                  src="/png-transparent-unitedhealthcare-hd-logo.png"
+                  alt="United Healthcare / Optum"
+                  width={160}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-black">United Healthcare / Optum</p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center space-y-2">
+              <div className="relative w-full h-20 flex items-center justify-center">
+                <Image
+                  src="/MedicalMutual.webp"
+                  alt="Medical Mutual - Supermed"
+                  width={160}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-black">Medical Mutual - Supermed</p>
+            </div>
+          </div>
+          
           <p>
-            <strong>My Plan for You:</strong> I understand the importance of insurance coverage. I have officially applied for credentialing with major carriers (including Aetna, Anthem, BCBS, and Cigna) and intend to join these networks as soon as my applications are approved.
+            I provide superbills for reimbursement if you have a different insurance provider, and I also accept HSA/FSA payments.
           </p>
-          <p>
-            <strong>Current Status:</strong> Until I receive confirmation and my practice is fully in-network, we are out-of-network with all health insurance plans.
-          </p>
-          <p>
-            I am excited about the prospect of increasing accessibility soon, and I thank you for your patience as I navigate this administrative process!
-          </p>
+          
           <div>
-            <p className="font-semibold mb-2">Appointment investment:</p>
+            <p className="font-semibold mb-2">For out-of-network or self-pay patients:</p>
             <ul className="mt-2 space-y-2 text-sm sm:text-base">
               <li>
                 <span className="font-semibold">Initial Evaluation: Being Seen</span> — 1 hour @ <span className="font-bold text-[#75866D]">$300.00</span>

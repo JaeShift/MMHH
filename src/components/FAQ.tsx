@@ -1,6 +1,6 @@
 export default function FAQ() {
     const faqs = [
-      { q: "Do you accept insurance?", a: "I provide superbills for reimbursement and accept HSA/FSA. I'll post updates about in-network plans as I onboard. Transparent self-pay pricing is available." },
+      { q: "Do you accept insurance?", a: "Yes! I am now in-network with Cigna - Evernorth, United Healthcare / Optum, and Medical Mutual - Supermed. I also provide superbills for out-of-network reimbursement and accept HSA/FSA payments." },
       { q: "Are visits virtual or in person?", a: "I offer both virtual and in-person appointments. In-person visits are available in Columbus, and telehealth is available throughout Ohio, including Cleveland, Cincinnati, Toledo, Akron, and Dayton." },
       { q: "When are you accepting patients?", a: "I'm opening my schedule in mid-November. Join the waitlist to be notified first." },
       { q: "What conditions do you treat?", a: "Anxiety, depression, ADHD, PMDD, perimenopause symptoms, sleep issues, and more—using medication, psychotherapy-informed strategies, and lifestyle care." }

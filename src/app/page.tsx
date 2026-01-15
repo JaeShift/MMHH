@@ -512,7 +512,7 @@ export default function Page() {
             {[
               {
                 question: "Do you accept insurance?",
-                answer: "I provide superbills for reimbursement and accept HSA/FSA. I'll post updates about in-network plans as I onboard. Transparent self-pay pricing is available."
+                answer: "Yes! I am now in-network with Cigna - Evernorth, United Healthcare / Optum, and Medical Mutual - Supermed. I also provide superbills for out-of-network reimbursement and accept HSA/FSA payments."
               },
               {
                 question: "How long are appointments?",
