@@ -520,7 +520,7 @@ export default function Page() {
                     
                     {/* Insurance Logos */}
                     <div className="grid grid-cols-3 gap-4 my-4">
-                      <div className="flex flex-col items-center text-center space-y-2">
+                      <div className="flex items-center justify-center">
                         <div className="relative w-full h-16 flex items-center justify-center">
                           <Image
                             src="/cigna-logo-wallpaper-e1474921230453.webp"
@@ -530,10 +530,9 @@ export default function Page() {
                             className="object-contain"
                           />
                         </div>
-                        <p className="text-xs font-medium text-black">Cigna - Evernorth</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center space-y-2">
+                      <div className="flex items-center justify-center">
                         <div className="relative w-full h-16 flex items-center justify-center">
                           <Image
                             src="/unitedhealthcare.webp"
@@ -543,10 +542,9 @@ export default function Page() {
                             className="object-contain"
                           />
                         </div>
-                        <p className="text-xs font-medium text-black">United Healthcare / Optum</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center space-y-2">
+                      <div className="flex items-center justify-center">
                         <div className="relative w-full h-16 flex items-center justify-center">
                           <Image
                             src="/MedicalMutual.webp"
@@ -556,13 +554,8 @@ export default function Page() {
                             className="object-contain"
                           />
                         </div>
-                        <p className="text-xs font-medium text-black">Medical Mutual - Supermed</p>
                       </div>
                     </div>
-                    
-                    <p className="text-base md:text-lg text-black leading-relaxed font-light">
-                      I also provide superbills for out-of-network reimbursement and accept HSA/FSA payments.
-                    </p>
                   </div>
                 )
               },
