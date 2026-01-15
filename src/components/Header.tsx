@@ -48,9 +48,9 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto" aria-label="Primary">
-          <Link href={navLinks.provider} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Provider</Link>
-          <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={navLinks.services} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Care</Link>
+          <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
+          <Link href={navLinks.provider} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Provider</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={navLinks.testimonials} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Patient Experience</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
@@ -119,8 +119,8 @@ export default function Header() {
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-2 mb-8">
                   {[
-                    { href: navLinks.provider, label: "Your Provider" },
                     { href: navLinks.services, label: "Your Care" },
+                    { href: navLinks.provider, label: "Your Provider" },
                     { href: navLinks.testimonials, label: "Patient Experience" },
                     { href: navLinks.faq, label: "FAQ's" }
                   ].map((item, index) => (
