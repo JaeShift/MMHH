@@ -198,7 +198,7 @@ export default function SpengaLandingPageV2() {
                 "Mood shifts hit harder than they should.",
                 "PMS/anxiety/brain fog feels constant.",
                 "Sleep is chaotic (even when you're tired).",
-                "You've been told you're "fine."",
+                "You've been told you're \"fine.\"",
                 "You want a plan that connects the dots.",
               ].map((text) => (
                 <div key={text} className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
