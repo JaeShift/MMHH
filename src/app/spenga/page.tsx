@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
-export default function SpengaLandingPage() {
+export default function SpengaLandingPageV2() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -47,7 +48,7 @@ export default function SpengaLandingPage() {
       }
 
       setStatus("success");
-      setMessage("You're in! Check your inbox soon 💚");
+      setMessage("You're in. See you in your inbox 💪");
       setFirstName("");
       setEmail("");
     } catch {
@@ -57,109 +58,121 @@ export default function SpengaLandingPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#111]">
+    <main className="min-h-screen bg-[#070A0E] text-white">
       {/* Top bar */}
-      <header className="sticky top-0 z-30 bg-[#0F6B47] text-white">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#070A0E]/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-full bg-white/15 ring-1 ring-white/20" />
+            <div className="h-9 w-9 rounded-full bg-white/10 ring-1 ring-white/15" />
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-wide">Modern Mental Health & Hormones</div>
-              <div className="text-xs opacity-85">Partnering with SPENGA Easton</div>
+              <div className="text-xs text-white/60">SPENGA Easton QR signup</div>
             </div>
           </div>
+
           <a
             href="#signup"
-            className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0F6B47] hover:bg-white/90"
+            className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#070A0E] hover:bg-white/90"
           >
             Join Newsletter
           </a>
         </div>
       </header>
 
-      {/* Hero */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 lg:grid-cols-12 lg:py-20">
-          {/* Left: copy */}
-          <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#0F6B47]/10 px-3 py-1 text-xs font-semibold text-[#0F6B47] ring-1 ring-[#0F6B47]/15">
-              SPENGA Easton Town Center (QR sign-up)
-            </div>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/spenga.webp"
+            alt="SPENGA class"
+            fill
+            priority
+            className="object-cover object-center opacity-90"
+          />
+          {/* Overlays for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070A0E]/95 via-[#070A0E]/65 to-[#070A0E]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070A0E]/85 via-transparent to-[#070A0E]/40" />
+        </div>
 
-            <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Strong Body. <span className="text-[#0F6B47]">Balanced Mind.</span> Aligned Hormones.
-            </h1>
+        <div className="relative mx-auto max-w-6xl px-6 py-16 sm:py-24">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+            {/* Left content */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/90 ring-1 ring-white/15">
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+                Exclusively for SPENGA Easton members
+              </div>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-black/70 sm:text-lg">
-              Women's mental health + hormone-focused care from a PMHNP. Weekly insights on mood, cycle shifts,
-              stress, burnout, and practical steps that actually make sense.
-            </p>
+              <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+                Train your body.
+                <span className="block text-white/90">Support your mind.</span>
+                <span className="block text-emerald-300">Balance your hormones.</span>
+              </h1>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#signup"
-                className="inline-flex items-center justify-center rounded-full bg-[#0F6B47] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b5a3c]"
-              >
-                Join the Women&apos;s Wellness Newsletter
-              </a>
-              <p className="text-sm text-black/60">
-                Free. Weekly. Zero spam. Just real education.
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+                PMHNP-led women&apos;s wellness education—connecting mood, stress, cycle shifts, burnout,
+                and hormone-related symptoms with practical steps you can actually use.
               </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href="#signup"
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#070A0E] hover:bg-emerald-300"
+                >
+                  Join the Weekly Newsletter
+                </a>
+                <p className="text-sm text-white/65">
+                  Quick reads. Once a week. No spam. No chaos.
+                </p>
+              </div>
+
+              {/* Social proof chips */}
+              <div className="mt-10 flex flex-wrap gap-3 text-xs text-white/70">
+                <span className="rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/10">PMHNP-led</span>
+                <span className="rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/10">Women&apos;s mental health</span>
+                <span className="rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/10">Hormone-informed</span>
+                <span className="rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/10">Ohio + virtual</span>
+              </div>
             </div>
 
-            {/* Little trust chips */}
-            <div className="mt-10 flex flex-wrap gap-3 text-xs text-black/70">
-              <span className="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">PMHNP-led</span>
-              <span className="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">Women&apos;s wellness</span>
-              <span className="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">Mind + hormones</span>
-              <span className="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">Ohio + virtual</span>
-            </div>
-          </div>
-
-          {/* Right: faux phone card like the Wix template */}
-          <div className="lg:col-span-6">
-            <div className="relative mx-auto max-w-md">
-              <div className="absolute -inset-6 rounded-[2.5rem] bg-[#0F6B47]/10 blur-2xl" />
-              <div className="relative rounded-[2.25rem] bg-white p-6 shadow-xl ring-1 ring-black/5">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-semibold">Weekly Wellness</div>
-                  <div className="text-xs text-black/50">Modern MHH</div>
-                </div>
-
-                <div className="mt-5 rounded-2xl bg-[#FAF7F2] p-5 ring-1 ring-black/5">
-                  <div className="text-xs font-semibold text-[#0F6B47]">This week&apos;s topics</div>
-                  <ul className="mt-3 space-y-2 text-sm text-black/75">
-                    <li>• PMS vs PMDD: what&apos;s normal (and what isn&apos;t)</li>
-                    <li>• Anxiety + hormones: why it spikes &quot;randomly&quot;</li>
-                    <li>• Burnout or imbalance? how to tell</li>
-                    <li>• Cycle syncing basics (no woo-woo)</li>
-                  </ul>
-                </div>
-
-                <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs">
-                  <div className="rounded-xl bg-white p-3 ring-1 ring-black/5">
-                    <div className="font-semibold">5 min</div>
-                    <div className="text-black/50">read</div>
+            {/* Right CTA card */}
+            <div className="lg:col-span-5">
+              <div className="rounded-3xl bg-[#0B1018]/85 p-6 shadow-2xl ring-1 ring-white/10 backdrop-blur">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <div className="text-sm font-semibold">This week&apos;s focus</div>
+                    <div className="mt-1 text-xs text-white/60">Performance wellness, not fluff</div>
                   </div>
-                  <div className="rounded-xl bg-white p-3 ring-1 ring-black/5">
-                    <div className="font-semibold">1x</div>
-                    <div className="text-black/50">weekly</div>
-                  </div>
-                  <div className="rounded-xl bg-white p-3 ring-1 ring-black/5">
-                    <div className="font-semibold">0</div>
-                    <div className="text-black/50">spam</div>
+                  <div className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 ring-1 ring-white/10">
+                    5 min read
                   </div>
                 </div>
+
+                <ul className="mt-5 space-y-3 text-sm text-white/80">
+                  <li className="flex gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-300" />
+                    PMS vs PMDD: what&apos;s normal vs what needs support
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-300" />
+                    Anxiety + hormones: why it spikes &quot;randomly&quot;
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-300" />
+                    Burnout vs imbalance: how to tell the difference
+                  </li>
+                </ul>
 
                 <a
                   href="#signup"
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#0F6B47] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b5a3c]"
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#070A0E] hover:bg-white/90"
                 >
-                  Join from SPENGA
+                  Get the next email
                 </a>
 
-                <p className="mt-3 text-center text-xs text-black/50">
-                  Created exclusively for SPENGA Easton members.
+                <p className="mt-3 text-center text-xs text-white/55">
+                  Created for SPENGA Easton Town Center • QR signups only
                 </p>
               </div>
             </div>
@@ -167,29 +180,29 @@ export default function SpengaLandingPage() {
         </div>
       </section>
 
-      {/* Who this is for */}
+      {/* Mid section: tight + punchy */}
       <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <h2 className="text-3xl font-semibold tracking-tight">If this sounds familiar…</h2>
-            <p className="mt-4 text-black/70">
-              You&apos;re doing &quot;all the right things,&quot; but your mind and body are not cooperating.
-              You&apos;re not broken — you&apos;re just not getting the full picture.
+            <h2 className="text-3xl font-semibold tracking-tight">You shouldn&apos;t have to guess.</h2>
+            <p className="mt-4 text-white/70 leading-relaxed">
+              If you&apos;re doing the workouts and still feeling off—low energy, mood swings,
+              brain fog, irritability, sleep issues—there&apos;s usually more going on than &quot;just stress.&quot;
             </p>
           </div>
 
           <div className="lg:col-span-7">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
-                "You crush workouts but still feel exhausted.",
-                "Mood shifts feel bigger than they should.",
-                "PMS, anxiety, or brain fog feels \"normal.\"",
-                "You're tired of being told your labs are \"fine.\"",
-                "Burnout is starting to feel like your personality.",
-                "You want answers that actually connect the dots.",
+                "You're active but still exhausted.",
+                "Mood shifts hit harder than they should.",
+                "PMS/anxiety/brain fog feels constant.",
+                "Sleep is chaotic (even when you're tired).",
+                "You've been told you're "fine."",
+                "You want a plan that connects the dots.",
               ].map((text) => (
-                <div key={text} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
-                  <div className="text-sm font-semibold">{text}</div>
+                <div key={text} className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                  <div className="text-sm font-semibold text-white">{text}</div>
                 </div>
               ))}
             </div>
@@ -197,127 +210,93 @@ export default function SpengaLandingPage() {
         </div>
       </section>
 
-      {/* About */}
-      <section className="bg-white/60">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <h2 className="text-3xl font-semibold tracking-tight">Hi, I&apos;m a PMHNP focused on women&apos;s wellness.</h2>
-              <p className="mt-4 text-black/70 leading-relaxed">
-                I specialize in women&apos;s mental health and hormone-informed support — including anxiety, mood changes,
-                burnout, cycle shifts, postpartum transitions, and the &quot;why do I feel like this?&quot; phase.
-              </p>
-              <p className="mt-4 text-black/70 leading-relaxed">
-                My approach is personalized, evidence-based, and built around the reality that mental health and hormones
-                are deeply connected (even when the internet insists it&apos;s &quot;just stress&quot;).
-              </p>
-              <div className="mt-6 text-sm text-black/60">
-                <div className="font-semibold text-black/80">Modern Mental Health & Hormones</div>
-                <div>Serving women in Ohio + virtually</div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-[#FAF7F2] p-6 ring-1 ring-black/5">
-                <h3 className="text-lg font-semibold">What you&apos;ll get each week</h3>
-                <ul className="mt-4 space-y-3 text-sm text-black/75">
-                  <li>• Hormones + anxiety/depression connections</li>
-                  <li>• PMS vs PMDD (and what to do)</li>
-                  <li>• Burnout vs imbalance signals</li>
-                  <li>• Cycle syncing basics (no fluff)</li>
-                  <li>• Practical tools you can actually use</li>
-                </ul>
-                <p className="mt-4 text-xs text-black/50">
-                  Think of it as your weekly mental reset — minus the toxic positivity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Signup */}
-      <section id="signup" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-3xl bg-[#F3E2E6] p-8 ring-1 ring-black/5 sm:p-12">
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <h2 className="text-3xl font-semibold tracking-tight">Ready to feel more like yourself again?</h2>
-              <p className="mt-4 text-black/70">
-                Join the Women&apos;s Wellness Newsletter — created for SPENGA Easton members scanning QR codes in-studio.
-              </p>
-              <p className="mt-4 text-sm text-black/60">
-                No spam. No weird chains. No &quot;buy my greens powder&quot; energy.
-              </p>
-            </div>
+      <section id="signup" className="border-t border-white/10 bg-[#06080C]">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-12 lg:items-start">
+          <div className="lg:col-span-5">
+            <h2 className="text-3xl font-semibold tracking-tight">Join the weekly drop.</h2>
+            <p className="mt-4 text-white/70 leading-relaxed">
+              Simple, science-backed women&apos;s wellness guidance—written by a PMHNP.
+              One email per week. Unsubscribe anytime.
+            </p>
 
-            <div className="lg:col-span-6">
-              <form onSubmit={onSubmit} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
-                <label className="block text-sm font-semibold">First name (optional)</label>
-                <input
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#0F6B47]"
-                  placeholder="Rylee"
-                  autoComplete="given-name"
-                />
-
-                <label className="mt-5 block text-sm font-semibold">Email</label>
-                <input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#0F6B47]"
-                  placeholder="you@example.com"
-                  autoComplete="email"
-                  inputMode="email"
-                  required
-                />
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#0F6B47] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b5a3c] disabled:opacity-60"
-                >
-                  {status === "loading" ? "Submitting…" : "Send Me Weekly Wellness"}
-                </button>
-
-                <p className="mt-3 text-center text-xs text-black/50">
-                  By signing up, you agree to receive a weekly email. Unsubscribe anytime.
-                </p>
-
-                {message ? (
-                  <div
-                    className={`mt-4 rounded-xl px-4 py-3 text-sm ${
-                      status === "success"
-                        ? "bg-[#0F6B47]/10 text-[#0F6B47]"
-                        : "bg-red-50 text-red-700"
-                    }`}
-                  >
-                    {message}
-                  </div>
-                ) : null}
-              </form>
+            <div className="mt-6 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+              <div className="text-sm font-semibold">What you&apos;ll get</div>
+              <ul className="mt-3 space-y-2 text-sm text-white/75">
+                <li>• Mood + hormones connections (without doom)</li>
+                <li>• Cycle shifts, burnout, anxiety, sleep support</li>
+                <li>• Practical tools you can use immediately</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        {/* Partnership */}
-        <div className="mt-10 text-center text-sm text-black/55">
-          In partnership with <span className="font-semibold text-black/70">SPENGA Easton</span> • Easton Town Center, Ohio
+          <div className="lg:col-span-7">
+            <form
+              onSubmit={onSubmit}
+              className="rounded-3xl bg-white p-7 text-[#070A0E] shadow-2xl ring-1 ring-black/5"
+            >
+              <div className="text-sm font-semibold">SPENGA Easton Newsletter Signup</div>
+              <div className="mt-1 text-xs text-black/60">
+                This page is for QR signups from SPENGA Easton Town Center.
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="text-xs font-semibold text-black/70">First name (optional)</label>
+                  <input
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-400"
+                    placeholder="Rylee"
+                    autoComplete="given-name"
+                  />
+                </div>
+
+                <div className="sm:col-span-1">
+                  <label className="text-xs font-semibold text-black/70">Email</label>
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-400"
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                    inputMode="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#070A0E] hover:bg-emerald-300 disabled:opacity-60"
+              >
+                {status === "loading" ? "Submitting…" : "Join Newsletter"}
+              </button>
+
+              {message ? (
+                <div
+                  className={`mt-4 rounded-xl px-4 py-3 text-sm ${
+                    status === "success" ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"
+                  }`}
+                >
+                  {message}
+                </div>
+              ) : null}
+
+              <p className="mt-4 text-center text-xs text-black/50">
+                Unsubscribe anytime. This is educational content and not medical advice.
+              </p>
+            </form>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-black/5 bg-white/60">
-        <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-black/55">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>© {new Date().getFullYear()} Modern Mental Health & Hormones</div>
-            <div className="text-xs">
-              This page is intended for newsletter signup only and does not constitute medical advice.
-            </div>
-          </div>
+      <footer className="border-t border-white/10 bg-[#070A0E]">
+        <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-white/55">
+          © {new Date().getFullYear()} Modern Mental Health & Hormones • Partnering with SPENGA Easton
         </div>
       </footer>
     </main>
   );
 }
-
