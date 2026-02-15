@@ -28,7 +28,7 @@ function isRateLimited(key: string, maxRequests: number, windowMs: number): bool
   return false;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Rate limiting for API routes

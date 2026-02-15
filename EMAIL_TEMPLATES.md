@@ -257,7 +257,7 @@ Modern Mental Health & Hormones
      - Triggers on new signup
      - Adds to your lead book/CRM
      - Sends the 7-day email sequence (one per day)
-3. **Email Service:** Consider using a service like Resend, SendGrid, or Mailgun for better deliverability and scheduling
+3. **Email Service:** Consider using SMTP (your current Gmail setup), Resend, or Mailgun for better deliverability and scheduling
 4. **Database:** You may want to store signups in a database (like Supabase, PlanetScale, or MongoDB) to track who has received which emails
 
 

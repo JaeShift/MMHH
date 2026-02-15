@@ -1,0 +1,12 @@
+# Rules
+- Follow the MVP file structure for simplicity (organizing code in a flat or minimal way, such as a single app.py for the main application logic, with optional separate files for config.py (environment and settings), utils.py (shared helpers), and services/ folder if logic grows, but avoid unnecessary subfolders to keep it minimal; e.g., put routes, WebSocket handlers, and core functions directly in app.py unless they become complex).
+- Analyze the entire file structure that is currently implemented into the project (e.g., check if utils.py already has a function like validate_phone before adding new ones).
+- Ensure that you follow naming conventions that are currently implemented in the project (e.g., PascalCase for classes like PhoneValidator, snake_case for functions like validate_phone, and use consistent exports like from .services import * if modular).
+- Follow and mimic current function style and naming (e.g., use async def execute(data) in services or handlers, with try/except for errors, and return dicts like {'success': True, 'data': value} in endpoints).
+- Analyze the entire code base to ensure you're not writing duplicate code/functions (e.g., if validate_phone exists in utils.py, reuse it instead of creating a new one).
+- Ensure that you write reusable modules and separate them into files via the MVP file structure (e.g., put shared helpers like logging setup in utils.py, not inline; use Flask blueprints if routes grow beyond MVP simplicity).
+- Ensure all code that is written or provided is in a reusable format and utilizes the current functions within the codebase to prevent duplicate code (e.g., call existing make_call in app.py for initiations instead of new logic).
+- Use the DRY (do not repeat yourself) programming method to prevent duplicated code (e.g., if a validation like phone regex exists in utils.py, import and reuse it; factor common logic into utils.py if cross-endpoint).
+- Always use Flask routes for API endpoints and WebSocket handlers for realtime. Handle data mutations (e.g., calls, streams) in dedicated functions. Ensure you create a helper function for common tasks like env loading to prevent inline repetition. (e.g., initiate calls via routes like /call in app.py, with logging for errors).
+- Only run Flask server or tests when you are doing major changes to the code. If it's a simple change like logging, do not restart the server unnecessarily.
+- Test code mentally
