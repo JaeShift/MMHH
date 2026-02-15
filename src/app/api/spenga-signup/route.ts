@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { execute as subscribeToNewsletter } from "@/domains/newsletter/use-cases/SubscribeToNewsletter";
 
 export const dynamic = 'force-dynamic';
 
@@ -22,6 +23,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Valid email is required' },
         { status: 400 }
+      );
+    }
+
+    const dbResult = await subscribeToNewsletter({
+      firstName: firstName || "",
+      email,
+      source: source || "SPENGA Easton QR",
+    });
+
+    if (!dbResult.success) {
+      return NextResponse.json(
+        { error: 'Failed to save newsletter signup.' },
+        { status: 500 }
       );
     }
 

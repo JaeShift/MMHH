@@ -86,7 +86,6 @@ NEXT_PUBLIC_SITE_URL=https://www.modernmhh.com
 
 Use an email service like:
 - **Resend** (recommended for Next.js)
-- **SendGrid**
 - **Mailgun**
 
 These services have built-in email scheduling and automation features.

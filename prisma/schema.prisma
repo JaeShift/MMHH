@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           String           @id @default(cuid())
+  email        String           @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime         @default(now())
+  broadcasts   EmailBroadcast[]
+  giveaways    Giveaway[]
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  firstName String?
+  email     String   @unique
+  source    String   @default("SPENGA Easton QR")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EmailBroadcast {
+  id             String   @id @default(cuid())
+  subject        String
+  bodyText       String   @db.Text
+  recipientCount Int      @default(0)
+  sentAt         DateTime?
+  broadcastType  String   @default("IMMEDIATE")
+  status         String   @default("SENT")
+  isActive       Boolean  @default(true)
+  timezone       String?
+  weeklyDayOfWeek Int?
+  weeklyTime     String?
+  nextRunAt      DateTime?
+  lastRunAt      DateTime?
+  lastRunStatus  String?
+  lastError      String?  @db.Text
+  adminId        String
+  admin          Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+}
+
+model Giveaway {
+  id            String          @id @default(cuid())
+  title         String
+  description   String?         @db.Text
+  slug          String          @unique
+  isActive      Boolean         @default(true)
+  adminId       String
+  admin         Admin           @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  winnerEntryId String?         @unique
+  winnerEntry   GiveawayEntry?  @relation("GiveawayWinner", fields: [winnerEntryId], references: [id], onDelete: SetNull)
+  entries       GiveawayEntry[] @relation("GiveawayEntries")
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+}
+
+model GiveawayEntry {
+  id          String    @id @default(cuid())
+  firstName   String
+  email       String
+  giveawayId  String
+  giveaway    Giveaway  @relation("GiveawayEntries", fields: [giveawayId], references: [id], onDelete: Cascade)
+  wonGiveaway Giveaway? @relation("GiveawayWinner")
+  createdAt   DateTime  @default(now())
+
+  @@unique([giveawayId, email])
+}
