@@ -27,35 +27,33 @@ export default function AdminSidebar({
     .toUpperCase();
 
   return (
-    <aside className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-white p-6 shadow-md">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#75866D]" />
-
-      <div className="mt-2 flex items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EBE4D6] text-sm font-semibold text-[#75866D]">
+    <aside className="bg-white p-6 shadow-md border-t-4 border-[#0066cc] border-r border-b border-l border-[#e0e0e0]">
+      <div className="flex items-center gap-3 pb-6 border-b-2 border-[#e0e0e0]">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0066cc] text-base font-bold text-white">
           {initials}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-black">{adminName}</p>
-          <p className="text-xs text-[#6B5B4D]">Administrator</p>
+          <p className="truncate text-sm font-bold text-black">{adminName}</p>
+          <p className="text-xs text-[#666] uppercase tracking-wider">Administrator</p>
         </div>
       </div>
 
-      <h2 className="font-heading italic font-light text-3xl text-black mt-6">Newsletter HQ</h2>
+      <h2 className="text-lg font-bold text-black mt-6 mb-4 uppercase tracking-wide">Newsletter HQ</h2>
 
-      <nav className="mt-6 space-y-1">
+      <nav className="space-y-1">
         {navItems.map((item) => {
           const isActive = pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${
+              className={`flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-150 border-l-4 ${
                 isActive
-                  ? "bg-[#EBE4D6] font-medium text-black"
-                  : "text-[#6B5B4D] hover:bg-[#F5F1E9] hover:text-black"
+                  ? "bg-[#e3f2fd] border-[#0066cc] text-black"
+                  : "border-transparent text-[#666] hover:bg-[#f5f5f5] hover:text-black hover:border-[#ccc]"
               }`}
             >
-              <item.icon className="h-4 w-4 shrink-0" />
+              <item.icon className="h-5 w-5 shrink-0" />
               {item.label}
             </Link>
           );
@@ -65,7 +63,7 @@ export default function AdminSidebar({
       <form action={logoutAction} className="mt-8">
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#E2D9CD] px-3 py-2.5 text-sm text-[#6B5B4D] transition-all duration-200 hover:bg-[#F5F1E9] hover:text-black"
+          className="flex w-full items-center justify-center gap-2 border-2 border-[#d1d5db] px-4 py-3 text-sm font-semibold text-[#666] transition-all duration-150 hover:bg-[#f5f5f5] hover:text-black hover:border-[#999]"
         >
           <LogOut className="h-4 w-4" />
           Log Out

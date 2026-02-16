@@ -14,10 +14,10 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
   }
 
   return (
-    <main className="min-h-screen bg-[#FCF8F0] text-black">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-8 md:grid-cols-[260px_1fr]">
+    <main className="min-h-screen bg-[#f5f5f5] text-black">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-8 md:grid-cols-[280px_1fr]">
         <AdminSidebar adminName={session.user.name || "Admin"} logoutAction={logoutAction} />
-        <section className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-white p-8 shadow-sm">
+        <section className="bg-white p-8 shadow-md border border-[#e0e0e0]">
           {children}
         </section>
       </div>

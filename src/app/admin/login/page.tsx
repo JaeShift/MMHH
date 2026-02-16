@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] px-6 py-20">
+    <main className="flex min-h-screen items-center justify-center bg-[#1a1a1a] px-6 py-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,15 +47,11 @@ export default function AdminLoginPage() {
         className="w-full max-w-md"
       >
         <div className="mb-8 text-center">
-          <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] font-semibold">Modern Mental Health &amp; Hormones</p>
+          <p className="uppercase tracking-[0.2em] text-xs font-bold text-white">Modern Mental Health &amp; Hormones</p>
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-white p-10 shadow-lg">
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#75866D]" />
-
-          <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[#6B5B4D] mt-1">Admin Portal</p>
-          <h1 className="font-heading italic font-light text-5xl text-black mt-3">Welcome Back</h1>
-          <p className="mt-3 text-[17px] text-black font-light">Sign in to manage subscribers, broadcasts, and giveaways.</p>
+        <div className="relative bg-white p-10 shadow-2xl border-t-4 border-[#0066cc]">
+          <p className="uppercase tracking-[0.15em] text-[10px] font-bold text-[#666] mb-2">Admin Portal</p>
 
           <form className="mt-8 space-y-4" onSubmit={onSubmit}>
             <input
@@ -64,7 +60,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Admin email"
-              className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3.5 text-[17px] text-black outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+              className="w-full border-2 border-[#d1d5db] bg-white px-4 py-3.5 text-[15px] text-black outline-none transition focus:border-[#0066cc] focus:ring-0"
             />
             <input
               type="password"
@@ -72,22 +68,20 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Password"
-              className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3.5 text-[17px] text-black outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+              className="w-full border-2 border-[#d1d5db] bg-white px-4 py-3.5 text-[15px] text-black outline-none transition focus:border-[#0066cc] focus:ring-0"
             />
-            <motion.button
+            <button
               type="submit"
               disabled={isPending}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#75866D] px-4 py-3.5 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#677560] hover:shadow-xl disabled:opacity-60"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              className="flex w-full items-center justify-center gap-2 bg-[#0066cc] px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-[#0052a3] disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Lock className="h-4 w-4" />
               {isPending ? "Signing in..." : "Sign In"}
-            </motion.button>
+            </button>
           </form>
 
           {error ? (
-            <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>
+            <p className="mt-4 border-l-4 border-red-600 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>
           ) : null}
         </div>
       </motion.div>

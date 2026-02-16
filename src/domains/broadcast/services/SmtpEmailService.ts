@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import path from "path";
 
 type SmtpConfig = {
   host: string;
@@ -37,7 +38,7 @@ function createTransporter(config: SmtpConfig) {
   });
 }
 
-async function sendToMany(emails: string[], subject: string, html: string) {
+async function sendToMany(emails: string[], subject: string, html: string, pdfUrl?: string, pdfName?: string) {
   if (!emails.length) {
     return;
   }
@@ -47,6 +48,16 @@ async function sendToMany(emails: string[], subject: string, html: string) {
   const transporter = createTransporter(config);
   let sentCount = 0;
   let lastError: unknown;
+
+  // Prepare attachment if PDF is provided
+  const attachments = pdfUrl
+    ? [
+        {
+          filename: pdfName || "attachment.pdf",
+          path: path.join(process.cwd(), "public", pdfUrl),
+        },
+      ]
+    : [];
 
   for (const email of emails) {
     const normalizedEmail = email.trim();
@@ -60,6 +71,7 @@ async function sendToMany(emails: string[], subject: string, html: string) {
         from,
         subject,
         html,
+        attachments,
       });
       sentCount += 1;
     } catch (error) {

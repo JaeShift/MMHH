@@ -8,6 +8,8 @@ type SendBroadcastInput = {
   subject: string;
   bodyText: string;
   adminId: string;
+  pdfUrl?: string;
+  pdfName?: string;
 };
 
 async function execute(input: SendBroadcastInput) {
@@ -28,13 +30,15 @@ async function execute(input: SendBroadcastInput) {
       bodyText: parsed.bodyText,
     });
 
-    await sendToMany(emails, parsed.subject, html);
+    await sendToMany(emails, parsed.subject, html, input.pdfUrl, input.pdfName);
 
     const broadcast = await create({
       adminId: input.adminId,
       subject: parsed.subject,
       bodyText: parsed.bodyText,
       recipientCount: emails.length,
+      pdfUrl: input.pdfUrl,
+      pdfName: input.pdfName,
     });
 
     return { success: true, data: broadcast };

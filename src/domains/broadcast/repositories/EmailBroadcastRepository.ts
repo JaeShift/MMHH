@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 
-async function create(data: { subject: string; bodyText: string; recipientCount: number; adminId: string }) {
+async function create(data: { subject: string; bodyText: string; recipientCount: number; adminId: string; pdfUrl?: string; pdfName?: string }) {
   return prisma.emailBroadcast.create({
     data: {
       ...data,
@@ -20,6 +20,8 @@ async function createWeeklySchedule(data: {
   weeklyDayOfWeek: number;
   weeklyTime: string;
   nextRunAt: Date;
+  pdfUrl?: string;
+  pdfName?: string;
 }) {
   return prisma.emailBroadcast.create({
     data: {
@@ -33,6 +35,8 @@ async function createWeeklySchedule(data: {
       weeklyDayOfWeek: data.weeklyDayOfWeek,
       weeklyTime: data.weeklyTime,
       nextRunAt: data.nextRunAt,
+      pdfUrl: data.pdfUrl,
+      pdfName: data.pdfName,
       sentAt: null,
       recipientCount: 0,
     },

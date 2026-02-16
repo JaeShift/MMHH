@@ -9,17 +9,11 @@ export default async function AdminSubscribersPage() {
 
   return (
     <div>
-      <div className="mb-8">
-        <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] font-semibold">Newsletter</p>
-        <h1 className="font-heading italic font-light text-4xl sm:text-5xl text-black mt-3">Subscribers</h1>
-        <div className="flex items-center gap-3 mt-4">
-          <div className="h-px w-12 bg-[#8B9D7F]/30" />
-          <div className="w-2 h-2 rounded-full bg-[#8B9D7F]" />
-          <div className="h-px w-12 bg-[#8B9D7F]/30" />
-        </div>
-        <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#EBE4D6] px-4 py-1.5 text-sm font-medium text-black">
-          <Users className="h-4 w-4 text-[#75866D]" />
-          {total} total subscribers
+      <div className="mb-8 pb-6 border-b-2 border-[#e0e0e0]">
+        <h1 className="text-3xl font-bold text-black uppercase tracking-wide">Subscribers</h1>
+        <div className="mt-4 inline-flex items-center gap-2 bg-[#e3f2fd] border-l-4 border-[#0066cc] px-4 py-2.5 text-sm font-bold text-black">
+          <Users className="h-5 w-5 text-[#0066cc]" />
+          {total} Total
         </div>
       </div>
       <SubscribersTable subscribers={subscribers} />

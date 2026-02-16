@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -49,7 +50,14 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="text-xs text-[color:var(--text-muted)] scale-75 origin-left">
               <p className="mb-1">
-                © {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
+                <Link 
+                  href="/admin/login" 
+                  className="inline-block text-black hover:opacity-70 transition-opacity"
+                  aria-label="Admin"
+                >
+                  ©
+                </Link>{" "}
+                {new Date().getFullYear()} Modern Mental Health &amp; Hormones. All rights reserved.
               </p>
               <p className="text-[color:var(--text-secondary)]">
                 Serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio

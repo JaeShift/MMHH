@@ -5,7 +5,7 @@ async function create(data: { firstName?: string; email: string; source?: string
     data: {
       firstName: data.firstName?.trim() || null,
       email: data.email.toLowerCase().trim(),
-      source: data.source?.trim() || "SPENGA Easton QR",
+      source: data.source?.trim() || "SPENGA Gahanna QR",
     },
   });
 }
@@ -15,12 +15,12 @@ async function upsert(data: { firstName?: string; email: string; source?: string
     where: { email: data.email.toLowerCase().trim() },
     update: {
       firstName: data.firstName?.trim() || null,
-      source: data.source?.trim() || "SPENGA Easton QR",
+      source: data.source?.trim() || "SPENGA Gahanna QR",
     },
     create: {
       firstName: data.firstName?.trim() || null,
       email: data.email.toLowerCase().trim(),
-      source: data.source?.trim() || "SPENGA Easton QR",
+      source: data.source?.trim() || "SPENGA Gahanna QR",
     },
   });
 }

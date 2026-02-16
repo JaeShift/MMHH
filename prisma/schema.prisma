@@ -21,7 +21,7 @@ model NewsletterSubscriber {
   id        String   @id @default(cuid())
   firstName String?
   email     String   @unique
-  source    String   @default("SPENGA Easton QR")
+  source    String   @default("SPENGA Gahanna QR")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -42,6 +42,8 @@ model EmailBroadcast {
   lastRunAt      DateTime?
   lastRunStatus  String?
   lastError      String?  @db.Text
+  pdfUrl         String?
+  pdfName        String?
   adminId        String
   admin          Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
   createdAt      DateTime @default(now())

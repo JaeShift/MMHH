@@ -62,7 +62,7 @@ async function execute(input?: ProcessDueWeeklyBroadcastsInput) {
       });
 
       try {
-        await sendToMany(emails, broadcast.subject, html);
+        await sendToMany(emails, broadcast.subject, html, broadcast.pdfUrl || undefined, broadcast.pdfName || undefined);
         sent += 1;
         await markScheduledRunSuccess({
           id: broadcast.id,

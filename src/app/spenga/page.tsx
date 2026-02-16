@@ -23,7 +23,7 @@ export default function SpengaNewsletterPage() {
       const result = await subscribeAction({
         firstName,
         email,
-        source: "SPENGA Easton QR",
+        source: "SPENGA Gahanna QR",
       });
 
       if (!result.success) {

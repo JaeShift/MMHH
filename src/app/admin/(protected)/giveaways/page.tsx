@@ -7,15 +7,9 @@ export default async function AdminGiveawaysPage() {
 
   return (
     <div>
-      <div className="mb-8">
-        <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] font-semibold">Promotions</p>
-        <h1 className="font-heading italic font-light text-4xl sm:text-5xl text-black mt-3">Giveaways</h1>
-        <div className="flex items-center gap-3 mt-4">
-          <div className="h-px w-12 bg-[#8B9D7F]/30" />
-          <div className="w-2 h-2 rounded-full bg-[#8B9D7F]" />
-          <div className="h-px w-12 bg-[#8B9D7F]/30" />
-        </div>
-        <p className="mt-4 text-[17px] text-black font-light">Create campaign URLs, collect entries, and pick a random winner.</p>
+      <div className="mb-8 pb-6 border-b-2 border-[#e0e0e0]">
+        <h1 className="text-3xl font-bold text-black uppercase tracking-wide">Giveaways</h1>
+        <p className="mt-2 text-sm text-[#666] font-semibold">Create campaign URLs, collect entries, and pick a random winner.</p>
       </div>
       <GiveawaysManager giveaways={giveaways} />
     </div>

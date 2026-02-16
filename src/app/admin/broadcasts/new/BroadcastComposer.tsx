@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Loader2, Send, Calendar } from "lucide-react";
+import { Eye, Loader2, Send, Calendar, Upload, X } from "lucide-react";
 import { useState, useTransition } from "react";
 import { scheduleWeeklyBroadcastAction, sendBroadcastAction } from "@/domains/broadcast/actions/BroadcastActions";
 
@@ -11,6 +11,47 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
   const [time, setTime] = useState("09:00");
   const [statusMessage, setStatusMessage] = useState("");
   const [isPending, startTransition] = useTransition();
+  const [pdfUrl, setPdfUrl] = useState("");
+  const [pdfName, setPdfName] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
+
+  async function handlePdfUpload(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setIsUploading(true);
+    setStatusMessage("");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/upload-pdf", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        setStatusMessage(result.error || "Failed to upload PDF");
+        return;
+      }
+
+      setPdfUrl(result.data.url);
+      setPdfName(result.data.name);
+      setStatusMessage("PDF uploaded successfully");
+    } catch (error) {
+      setStatusMessage("Failed to upload PDF");
+    } finally {
+      setIsUploading(false);
+    }
+  }
+
+  function removePdf() {
+    setPdfUrl("");
+    setPdfName("");
+  }
 
   function onSendNow(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -22,7 +63,7 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
     }
 
     startTransition(async () => {
-      const result = await sendBroadcastAction({ subject, bodyText });
+      const result = await sendBroadcastAction({ subject, bodyText, pdfUrl: pdfUrl || undefined, pdfName: pdfName || undefined });
       if (!result.success) {
         setStatusMessage(result.error || "Failed to send broadcast.");
         return;
@@ -47,6 +88,8 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
         weekday,
         time,
         timezone: "America/New_York",
+        pdfUrl: pdfUrl || undefined,
+        pdfName: pdfName || undefined,
       });
 
       if (!result.success) {
@@ -62,20 +105,18 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       {/* Editor Panel */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-white p-6 shadow-md">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#75866D]" />
-
-        <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#EBE4D6] px-3 py-1 text-xs font-medium text-black">
-          {subscriberCount} recipients
+      <div className="bg-white p-6 shadow-md border-t-4 border-[#0066cc] border-r border-b border-l border-[#e0e0e0]">
+        <div className="inline-flex items-center gap-2 bg-[#e3f2fd] border-l-4 border-[#0066cc] px-4 py-2.5 text-xs font-bold text-black mb-6">
+          {subscriberCount} Recipients
         </div>
 
-        <div className="mt-5 space-y-4">
+        <div className="space-y-4">
           <input
             value={subject}
             onChange={(event) => setSubject(event.target.value)}
             required
             placeholder="Email subject"
-            className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3 outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+            className="w-full border-2 border-[#d1d5db] bg-white px-4 py-3 text-[15px] outline-none transition focus:border-[#0066cc] focus:ring-0"
           />
           <textarea
             value={bodyText}
@@ -83,35 +124,78 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
             required
             rows={14}
             placeholder="Write your newsletter message..."
-            className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3 outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+            className="w-full border-2 border-[#d1d5db] bg-white px-4 py-3 text-[15px] outline-none transition focus:border-[#0066cc] focus:ring-0"
           />
+
+          {/* PDF Attachment */}
+          <div>
+            <label className="block text-xs font-bold text-black uppercase tracking-wide mb-2">
+              PDF Attachment (Optional)
+            </label>
+            {!pdfUrl ? (
+              <label className="flex items-center justify-center gap-2 border-2 border-dashed border-[#d1d5db] bg-[#f5f5f5] px-4 py-6 text-sm font-semibold text-[#666] transition-all duration-150 hover:border-[#0066cc] hover:bg-white cursor-pointer">
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={handlePdfUpload}
+                  disabled={isUploading}
+                  className="hidden"
+                />
+                {isUploading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Uploading...
+                  </>
+                ) : (
+                  <>
+                    <Upload className="h-4 w-4" />
+                    Click to Upload PDF (Max 10MB)
+                  </>
+                )}
+              </label>
+            ) : (
+              <div className="flex items-center justify-between border-2 border-[#d1d5db] bg-white px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-black">📎 {pdfName}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={removePdf}
+                  className="flex items-center gap-1 text-xs font-bold text-red-600 transition-colors hover:text-red-700"
+                >
+                  <X className="h-4 w-4" />
+                  Remove
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Send Now */}
-        <form onSubmit={onSendNow} className="mt-6 border-t border-[#EFE7DA] pt-5">
-          <p className="uppercase tracking-[0.16em] text-xs font-semibold text-[#6B5B4D] mb-3">Send Now</p>
+        <form onSubmit={onSendNow} className="mt-6 border-t-2 border-[#e0e0e0] pt-6">
+          <p className="uppercase tracking-wider text-[10px] font-bold text-[#666] mb-3">Send Now</p>
           <button
             type="submit"
             disabled={isPending}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#75866D] px-5 py-2.5 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#677560] hover:shadow-lg disabled:opacity-60"
+            className="inline-flex items-center gap-2 bg-[#0066cc] px-5 py-3 text-sm font-bold text-white transition-all duration-150 hover:bg-[#0052a3] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-            {isPending ? "Sending..." : "Send to all subscribers"}
+            {isPending ? "Sending..." : "Send to All Subscribers"}
           </button>
         </form>
 
         {/* Schedule Weekly */}
-        <form onSubmit={onScheduleWeekly} className="mt-6 border-t border-[#EFE7DA] pt-5">
-          <p className="uppercase tracking-[0.16em] text-xs font-semibold text-[#6B5B4D] mb-3">Schedule Weekly</p>
+        <form onSubmit={onScheduleWeekly} className="mt-6 border-t-2 border-[#e0e0e0] pt-6">
+          <p className="uppercase tracking-wider text-[10px] font-bold text-[#666] mb-3">Schedule Weekly</p>
           <div className="grid gap-3 sm:grid-cols-2">
-            <label className="space-y-1">
-              <span className="text-xs text-[#6B5B4D]">Day</span>
+            <label className="space-y-2">
+              <span className="text-xs font-bold text-black uppercase tracking-wide">Day</span>
               <select
                 value={weekday}
                 onChange={(event) =>
                   setWeekday(event.target.value as "SUNDAY" | "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY")
                 }
-                className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-2.5 outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+                className="w-full border-2 border-[#d1d5db] bg-white px-4 py-2.5 text-[15px] outline-none transition focus:border-[#0066cc] focus:ring-0"
               >
                 <option value="SUNDAY">Sunday</option>
                 <option value="MONDAY">Monday</option>
@@ -122,47 +206,45 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
                 <option value="SATURDAY">Saturday</option>
               </select>
             </label>
-            <label className="space-y-1">
-              <span className="text-xs text-[#6B5B4D]">Time</span>
+            <label className="space-y-2">
+              <span className="text-xs font-bold text-black uppercase tracking-wide">Time (ET)</span>
               <input
                 type="time"
                 value={time}
                 onChange={(event) => setTime(event.target.value)}
                 required
-                className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-2.5 outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
+                className="w-full border-2 border-[#d1d5db] bg-white px-4 py-2.5 text-[15px] outline-none transition focus:border-[#0066cc] focus:ring-0"
               />
             </label>
           </div>
-          <p className="mt-2 text-xs text-[#6B5B4D]">Timezone: America/New_York</p>
+          <p className="mt-3 text-xs text-[#666] font-semibold">Timezone: America/New_York (Eastern Time)</p>
           <button
             type="submit"
             disabled={isPending}
-            className="mt-3 inline-flex items-center gap-2 rounded-xl border border-[#75866D] bg-white px-5 py-2.5 font-semibold text-black transition-all duration-300 hover:bg-[#F8F4EC] disabled:opacity-60"
+            className="mt-4 inline-flex items-center gap-2 border-2 border-[#d1d5db] bg-white px-5 py-3 text-sm font-bold text-black transition-all duration-150 hover:bg-[#f5f5f5] hover:border-[#999] disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Calendar className="h-4 w-4 text-[#75866D]" />}
-            {isPending ? "Working..." : "Schedule weekly broadcast"}
+            {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Calendar className="h-4 w-4" />}
+            {isPending ? "Working..." : "Schedule Weekly Broadcast"}
           </button>
         </form>
 
         {statusMessage ? (
-          <p className="mt-4 rounded-xl border border-[#E2D9CD] bg-[#F5F1E9] px-4 py-3 text-sm text-black">{statusMessage}</p>
+          <p className="mt-4 border-l-4 border-[#0066cc] bg-[#e3f2fd] px-4 py-3 text-sm font-semibold text-black">{statusMessage}</p>
         ) : null}
       </div>
 
       {/* Preview Panel */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-[#FCF8F0] p-6 shadow-md">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#8B9D7F]" />
-
-        <div className="mt-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B5B4D]">
+      <div className="bg-[#f5f5f5] p-6 shadow-md border-t-4 border-[#666] border-r border-b border-l border-[#e0e0e0]">
+        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#666] mb-6">
           <Eye className="h-4 w-4" />
-          Live Preview
+          Email Preview
         </div>
 
-        <div className="mt-4 rounded-xl border border-[#E2D9CD] bg-white p-6">
-          <div className="mb-5 h-1 w-20 rounded-full bg-[#75866D]" />
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#6B5B4D] mb-2">Modern Mental Health &amp; Hormones</p>
-          <h2 className="font-heading italic font-light text-3xl text-black">{subject || "Your Subject Line"}</h2>
-          <div className="mt-4 whitespace-pre-line text-[17px] leading-relaxed text-black font-light">
+        <div className="border-2 border-[#d1d5db] bg-white p-6">
+          <div className="mb-5 h-1 w-20 bg-[#0066cc]" />
+          <p className="text-[10px] font-bold uppercase tracking-wider text-[#666] mb-2">Modern Mental Health &amp; Hormones</p>
+          <h2 className="text-2xl font-bold text-black">{subject || "Your Subject Line"}</h2>
+          <div className="mt-4 whitespace-pre-line text-[15px] leading-relaxed text-black">
             {bodyText || "Your custom message will render here in the branded template."}
           </div>
         </div>

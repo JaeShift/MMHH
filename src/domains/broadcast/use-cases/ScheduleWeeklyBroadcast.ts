@@ -9,6 +9,8 @@ type ScheduleWeeklyBroadcastInput = {
   time: string;
   timezone: "America/New_York";
   adminId: string;
+  pdfUrl?: string;
+  pdfName?: string;
 };
 
 async function execute(input: ScheduleWeeklyBroadcastInput) {
@@ -36,6 +38,8 @@ async function execute(input: ScheduleWeeklyBroadcastInput) {
       weeklyDayOfWeek: weekdayToIndex[parsed.weekday],
       weeklyTime: parsed.time,
       nextRunAt,
+      pdfUrl: input.pdfUrl,
+      pdfName: input.pdfName,
     });
 
     return { success: true, data: scheduled };

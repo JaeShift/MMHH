@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     const dbResult = await subscribeToNewsletter({
       firstName: firstName || "",
       email,
-      source: source || "SPENGA Easton QR",
+      source: source || "SPENGA Gahanna QR",
     });
 
     if (!dbResult.success) {
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
             <tr>
               <td style="padding:32px 40px 24px;text-align:center;">
                 <div style="background-color:#0F6B47;color:#ffffff;display:inline-block;padding:8px 16px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:0.5px;margin-bottom:16px;">
-                  SPENGA EASTON × MODERN MHH
+                  SPENGA GAHANNA × MODERN MHH
                 </div>
                 <h1 style="margin:0;font-size:28px;font-weight:600;color:#0F6B47;line-height:1.3;">
                   Welcome to Women's Wellness 💚
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
                   Hi ${displayName},
                 </p>
                 <p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#333;">
-                  Thanks for joining from <strong>SPENGA Easton</strong>! You're officially part of the Women's Wellness Newsletter — a weekly dose of real talk about mental health, hormones, and the connection between them.
+                  Thanks for joining from <strong>SPENGA Gahanna</strong>! You're officially part of the Women's Wellness Newsletter — a weekly dose of real talk about mental health, hormones, and the connection between them.
                 </p>
                 <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#333;">
                   Expect your first newsletter soon with topics like PMS vs PMDD, anxiety + hormones, burnout signals, cycle syncing basics, and practical tools that actually make sense.
@@ -116,10 +116,10 @@ export async function POST(request: NextRequest) {
             <tr>
               <td style="padding:24px 40px;border-top:1px solid #e7dfd2;text-align:center;">
                 <p style="margin:0 0 8px;font-size:12px;color:#999;">
-                  In partnership with SPENGA Easton • Easton Town Center, Ohio
+                  In partnership with SPENGA Gahanna • Gahanna, Ohio
                 </p>
                 <p style="margin:0;font-size:11px;color:#aaa;">
-                  You're receiving this because you signed up via QR code at SPENGA Easton.
+                  You're receiving this because you signed up via QR code at SPENGA Gahanna.
                 </p>
               </td>
             </tr>
