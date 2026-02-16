@@ -1,8 +1,8 @@
 "use client";
 
-import { Loader2, Search, Trash2 } from "lucide-react";
+import { Loader2, Search, Trash2, Plus } from "lucide-react";
 import { useMemo, useState, useTransition } from "react";
-import { deleteSubscriberAction } from "@/domains/newsletter/actions/NewsletterActions";
+import { deleteSubscriberAction, subscribeAction } from "@/domains/newsletter/actions/NewsletterActions";
 
 type Subscriber = {
   id: string;
@@ -15,6 +15,10 @@ type Subscriber = {
 export default function SubscribersTable({ subscribers }: { subscribers: Subscriber[] }) {
   const [query, setQuery] = useState("");
   const [isPending, startTransition] = useTransition();
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [addMessage, setAddMessage] = useState("");
 
   const filteredSubscribers = useMemo(() => {
     const value = query.trim().toLowerCase();
@@ -41,6 +45,37 @@ export default function SubscribersTable({ subscribers }: { subscribers: Subscri
     });
   }
 
+  function onAddSubscriber(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setAddMessage("");
+
+    if (!email.trim()) {
+      setAddMessage("Email is required");
+      return;
+    }
+
+    startTransition(async () => {
+      const result = await subscribeAction({
+        firstName: firstName.trim() || undefined,
+        email: email.trim(),
+        source: "Manual Admin Add",
+      });
+
+      if (result.success) {
+        setAddMessage("Subscriber added successfully!");
+        setFirstName("");
+        setEmail("");
+        setTimeout(() => {
+          setShowAddForm(false);
+          setAddMessage("");
+          window.location.reload();
+        }, 1500);
+      } else {
+        setAddMessage(result.error || "Failed to add subscriber");
+      }
+    });
+  }
+
   return (
     <div>
       <div className="mb-6 flex items-center gap-4">
@@ -53,6 +88,13 @@ export default function SubscribersTable({ subscribers }: { subscribers: Subscri
             className="w-full border-2 border-[#d1d5db] bg-white py-3 pl-10 pr-4 text-sm outline-none transition focus:border-[#0066cc] focus:ring-0"
           />
         </div>
+        <button
+          onClick={() => setShowAddForm(!showAddForm)}
+          className="flex items-center gap-2 bg-[#0066cc] px-4 py-3 text-sm font-bold text-white transition-all hover:bg-[#005bb5] whitespace-nowrap"
+        >
+          <Plus className="h-4 w-4" />
+          Add Subscriber
+        </button>
         {isPending ? (
           <div className="flex items-center gap-1.5 text-xs text-[#666] font-semibold">
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -60,6 +102,58 @@ export default function SubscribersTable({ subscribers }: { subscribers: Subscri
           </div>
         ) : null}
       </div>
+
+      {showAddForm ? (
+        <div className="mb-6 border-t-4 border-[#0066cc] bg-[#f9f9f9] p-6">
+          <h3 className="text-lg font-bold text-black uppercase tracking-wide mb-4">Add New Subscriber</h3>
+          <form onSubmit={onAddSubscriber} className="space-y-4">
+            <div className="grid gap-4 md:grid-cols-2">
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First Name (optional)"
+                className="border-2 border-[#d1d5db] bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20"
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email Address *"
+                required
+                className="border-2 border-[#d1d5db] bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20"
+              />
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                type="submit"
+                disabled={isPending}
+                className="flex items-center gap-2 bg-[#0066cc] px-5 py-2.5 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#005bb5] disabled:opacity-60"
+              >
+                {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
+                {isPending ? "Adding..." : "Add Subscriber"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowAddForm(false);
+                  setFirstName("");
+                  setEmail("");
+                  setAddMessage("");
+                }}
+                className="border-2 border-[#d1d5db] px-5 py-2.5 font-semibold text-[#666] transition-all hover:bg-[#f0f0f0]"
+              >
+                Cancel
+              </button>
+            </div>
+            {addMessage ? (
+              <p className={`text-sm ${addMessage.includes("success") ? "text-green-700" : "text-red-700"}`}>
+                {addMessage}
+              </p>
+            ) : null}
+          </form>
+        </div>
+      ) : null}
 
       <div className="overflow-x-auto border-2 border-[#d1d5db]">
         <table className="min-w-full divide-y-2 divide-[#d1d5db] text-sm">
