@@ -41,7 +41,7 @@ export default function BroadcastComposer({ subscriberCount }: { subscriberCount
       setPdfUrl(result.data.url);
       setPdfName(result.data.name);
       setStatusMessage("PDF uploaded successfully");
-    } catch (error) {
+    } catch {
       setStatusMessage("Failed to upload PDF");
     } finally {
       setIsUploading(false);

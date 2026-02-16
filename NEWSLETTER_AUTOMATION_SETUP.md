@@ -243,7 +243,7 @@ Use a service like **cron-job.org**, **EasyCron**, or **UptimeRobot**:
      ```
      Authorization: Bearer ngpoiu3y074gfbicn9823ebf23uf293
      ```
-     (This is your `ZAPIER_BROADCAST_CRON_SECRET` from `.env`)
+     (This is your `BROADCAST_CRON_SECRET` from `.env`)
    - **Schedule**: Every 15 minutes
    - **Timezone**: America/New_York
 
@@ -452,7 +452,7 @@ isActive: Can pause/unpause broadcasts
 **Process Due Broadcasts**
 - **URL**: `/api/cron/broadcasts`
 - **Method**: POST
-- **Headers**: `Authorization: Bearer [ZAPIER_BROADCAST_CRON_SECRET]`
+- **Headers**: `Authorization: Bearer [BROADCAST_CRON_SECRET]`
 - **Response**: `{ "success": true, "data": { "processed": 1, "sent": 1, "failed": 0 } }`
 
 ## Environment Variables
@@ -479,7 +479,7 @@ SMTP_HOST="smtp.gmail.com"
 SMTP_PORT="587"
 
 # Cron Security
-ZAPIER_BROADCAST_CRON_SECRET="ngpoiu3y074gfbicn9823ebf23uf293"
+BROADCAST_CRON_SECRET="ngpoiu3y074gfbicn9823ebf23uf293"
 ```
 
 ## Support

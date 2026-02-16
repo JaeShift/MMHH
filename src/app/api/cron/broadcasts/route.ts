@@ -4,12 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 function isAuthorized(request: NextRequest) {
-  const secret = process.env.ZAPIER_BROADCAST_CRON_SECRET;
+  const secret = process.env.BROADCAST_CRON_SECRET;
   if (!secret) {
     return false;
   }
 
-  const headerSecret = request.headers.get("x-zapier-secret");
+  const headerSecret = request.headers.get("x-cron-secret");
   const authHeader = request.headers.get("authorization");
   const bearerToken = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : null;
 
