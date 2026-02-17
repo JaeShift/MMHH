@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Lock, ShieldCheck, Sparkles } from "lucide-react";
 import { useState, useTransition } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { subscribeAction } from "@/domains/newsletter/actions/NewsletterActions";
+import Image from "next/image";
 
 export default function SpengaNewsletterPage() {
   const [firstName, setFirstName] = useState("");
@@ -33,7 +34,7 @@ export default function SpengaNewsletterPage() {
       }
 
       setStatus("success");
-      setMessage("You are in. Your weekly wellness email will arrive soon.");
+      setMessage("You're in! Your first email starts this week. Welcome to The Empowered Project.");
       setFirstName("");
       setEmail("");
     });
@@ -43,85 +44,263 @@ export default function SpengaNewsletterPage() {
     <>
       <Header />
 
-      <main>
-        <section className="min-h-[calc(100vh-5rem)] flex items-center bg-gradient-to-b from-[#EBE4D6] to-[#FCF8F0] px-4 pt-20 pb-16 md:pt-32 md:pb-24">
-          <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[1.2fr_0.9fr]">
+      <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#FAF7F2] via-[#F5F1E9] to-[#EBE4D6]">
+        {/* Background texture + glow */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JhaW4iIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+')] opacity-40" />
+        <div className="absolute top-1/3 left-1/4 h-[500px] w-[500px] rounded-full bg-[#B5BDAC]/20 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-[#E2D9CD]/30 blur-[120px]" />
+
+        <section className="relative py-16 md:py-24 px-4">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            {/* LEFT — Content */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center text-center"
             >
-              <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] font-semibold flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Weekly Wellness Newsletter
+              {/* Mini header */}
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-[#75866D]">
+                SPENGA Gahanna × Modern MHH
               </p>
 
-              <div className="flex items-center gap-3 mt-4 mb-6">
-                <div className="h-px w-12 bg-[#8B9D7F]/40" />
-                <div className="w-2 h-2 rounded-full bg-[#8B9D7F]" />
-                <div className="h-px w-12 bg-[#8B9D7F]/40" />
-              </div>
-
-              <h1 className="font-heading italic font-light text-5xl sm:text-6xl md:text-7xl leading-[1.08] text-black">
-                Women&apos;s Wellness Education That Actually Makes Sense
+              {/* Headline */}
+              <h1 className="font-heading text-5xl font-light italic leading-[0.95] tracking-tight text-black md:text-6xl lg:text-7xl">
+                The{" "}
+                <motion.span
+                  className="relative inline-block cursor-pointer"
+                  initial={{ y: -100, opacity: 0, rotateX: -90 }}
+                  animate={{ 
+                    y: 0, 
+                    opacity: 1,
+                    rotateX: 0
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.3 }
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.8,
+                    ease: [0.34, 1.56, 0.64, 1],
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  style={{ perspective: "1000px" }}
+                >
+                  {/* Main text with gradient */}
+                  <motion.span
+                    className="relative z-10 inline-block bg-gradient-to-br from-[#5d7255] via-[#75866D] to-[#8B9D7F] bg-clip-text text-transparent transition-all duration-300"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 0.4 }}
+                  >
+                    Empowered
+                  </motion.span>
+                  
+                  {/* Glow layer - appears on hover */}
+                  <motion.span
+                    className="absolute inset-0 z-0 inline-block bg-gradient-to-br from-[#75866D] to-[#8B9D7F] blur-2xl opacity-0"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ 
+                      opacity: 0.8,
+                      scale: 1.3,
+                      transition: { duration: 0.4, ease: "easeOut" }
+                    }}
+                    aria-hidden="true"
+                  >
+                    Empowered
+                  </motion.span>
+                  
+                  {/* Secondary glow layer */}
+                  <motion.span
+                    className="absolute inset-0 z-0 inline-block bg-gradient-to-br from-[#B5BDAC] to-[#75866D] blur-3xl opacity-0"
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    whileHover={{ 
+                      opacity: 0.6,
+                      scale: 1.5,
+                      transition: { duration: 0.5, ease: "easeOut", delay: 0.1 }
+                    }}
+                    aria-hidden="true"
+                  >
+                    Empowered
+                  </motion.span>
+                </motion.span>{" "}
+                Project
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-black font-light">
-                PMHNP-led insights on mood, hormones, stress, and sleep. One concise email each week built for women who want clear, practical guidance.
+              {/* Subhead */}
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600 md:text-xl">
+                A 4-week wellness program delivered to your inbox — designed for active women who want real guidance on mood, hormones, and mental health.
               </p>
+
+              {/* Benefits */}
+              <ul className="mt-8 space-y-3 text-center">
+                {[
+                  "One powerful email per week for 4 weeks",
+                  "PMHNP-led insights on hormones, stress, and sleep",
+                  "Practical tools you can use immediately",
+                ].map((benefit, idx) => (
+                  <motion.li
+                    key={benefit}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
+                    className="flex items-center justify-center gap-3 text-[15px] leading-relaxed text-neutral-700"
+                  >
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-[#75866D]" strokeWidth={2.5} />
+                    <span>{benefit}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+              {/* Trust row */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="mt-10 flex flex-wrap items-center justify-center gap-4 border-t border-neutral-200 pt-6"
+              >
+                <div className="flex items-center gap-2 text-xs text-neutral-500">
+                  <ShieldCheck className="h-4 w-4 text-[#75866D]" />
+                  <span>100% Free</span>
+                </div>
+                <div className="h-3 w-px bg-neutral-300" />
+                <div className="flex items-center gap-2 text-xs text-neutral-500">
+                  <Lock className="h-4 w-4 text-[#75866D]" />
+                  <span>No Spam</span>
+                </div>
+                <div className="h-3 w-px bg-neutral-300" />
+                <div className="flex items-center gap-2 text-xs text-neutral-500">
+                  <Sparkles className="h-4 w-4 text-[#75866D]" />
+                  <span>Educational Only</span>
+                </div>
+              </motion.div>
+
+              {/* Provider credibility */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="mt-8 flex items-center justify-center gap-3"
+              >
+                <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-[#75866D]/20">
+                  <Image
+                    src="/stephanie-headshot.jpg"
+                    alt="Stephanie Nichols"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-base font-semibold text-black">Stephanie Nichols, PMHNP-BC</p>
+                  <p className="text-sm text-neutral-500">Women's Mental Health Specialist</p>
+                </div>
+              </motion.div>
+
+              {/* Partnership badge */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="mt-6 text-center text-xs text-neutral-400"
+              >
+                In partnership with SPENGA Gahanna
+              </motion.p>
             </motion.div>
 
-            <motion.form
-              initial={{ opacity: 0, y: 30 }}
+            {/* RIGHT — Signup card */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              onSubmit={onSubmit}
-              className="relative overflow-hidden rounded-2xl border border-[#E2D9CD] bg-white p-8 shadow-lg"
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative mx-auto w-full max-w-lg"
             >
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#75866D]" />
+              <form
+                onSubmit={onSubmit}
+                className="relative overflow-hidden rounded-2xl border border-white/60 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-sm"
+              >
+                {/* Free badge */}
+                <div className="absolute right-6 top-6">
+                  <span className="inline-block rounded-full bg-[#75866D] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+                    Free
+                  </span>
+                </div>
 
-              <h2 className="font-heading italic font-light text-4xl text-black mt-2">Join the Newsletter</h2>
-              <p className="mt-3 text-[17px] text-black font-light">Free. Weekly. Unsubscribe anytime.</p>
-
-              <div className="mt-6 space-y-4">
-                <input
-                  value={firstName}
-                  onChange={(event) => setFirstName(event.target.value)}
-                  placeholder="First name"
-                  autoComplete="given-name"
-                  className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3.5 text-[17px] outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
-                />
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder="Email address"
-                  autoComplete="email"
-                  className="w-full rounded-xl border border-[#E2D9CD] bg-[#FCF8F0] px-4 py-3.5 text-[17px] outline-none transition focus:border-[#75866D] focus:ring-2 focus:ring-[#75866D]/20"
-                />
-                <motion.button
-                  type="submit"
-                  disabled={isPending}
-                  className="w-full rounded-xl bg-[#75866D] px-4 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#677560] hover:shadow-xl disabled:opacity-60"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  {isPending ? "Submitting..." : "Get Weekly Wellness Tips"}
-                </motion.button>
-              </div>
-
-              {message ? (
-                <p className={`mt-4 rounded-xl px-4 py-3 text-sm ${status === "success" ? "bg-emerald-50 text-emerald-800 border border-emerald-200" : "bg-red-50 text-red-800 border border-red-200"}`}>
-                  {message}
+                <h2 className="font-heading text-3xl font-light italic text-black">
+                  Start Your Journey
+                </h2>
+                <p className="mt-2 text-sm text-neutral-600">
+                  4 weeks • 4 emails
                 </p>
-              ) : null}
 
-              <div className="mt-5 flex items-start gap-2 text-xs text-[#6B5B4D]">
-                <ShieldCheck className="h-4 w-4 shrink-0 mt-0.5 text-[#8B9D7F]" />
-                <span>Educational content only and not individualized medical advice. Unsubscribe anytime.</span>
+                <div className="mt-6 space-y-3">
+                  <input
+                    value={firstName}
+                    onChange={(event) => setFirstName(event.target.value)}
+                    placeholder="First name"
+                    autoComplete="given-name"
+                    className="w-full rounded-xl border border-neutral-200 bg-neutral-50/50 px-4 py-3 text-[15px] outline-none transition-all placeholder:text-neutral-400 focus:border-[#75866D] focus:bg-white focus:ring-2 focus:ring-[#75866D]/20"
+                  />
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    placeholder="Email address"
+                    autoComplete="email"
+                    className="w-full rounded-xl border border-neutral-200 bg-neutral-50/50 px-4 py-3 text-[15px] outline-none transition-all placeholder:text-neutral-400 focus:border-[#75866D] focus:bg-white focus:ring-2 focus:ring-[#75866D]/20"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isPending}
+                    className="w-full rounded-xl bg-[#75866D] px-4 py-3.5 text-[15px] font-semibold text-white shadow-lg shadow-[#75866D]/20 transition-all duration-300 hover:bg-[#677560] hover:shadow-xl hover:shadow-[#75866D]/30 active:scale-[0.98] disabled:opacity-60"
+                  >
+                    {isPending ? "Joining..." : "Join The Empowered Project"}
+                  </button>
+                </div>
+
+                {message && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`mt-4 rounded-xl px-4 py-3 text-sm ${
+                      status === "success"
+                        ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200"
+                        : "bg-red-50 text-red-800 ring-1 ring-red-200"
+                    }`}
+                  >
+                    {message}
+                  </motion.p>
+                )}
+
+                {/* Privacy line */}
+                <div className="mt-5 flex items-start gap-2 text-[11px] leading-relaxed text-neutral-500">
+                  <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#75866D]" />
+                  <span>
+                    Educational content only — not medical advice. One email per week for 4 weeks. Unsubscribe anytime.
+                  </span>
+                </div>
+              </form>
+
+              {/* Trust icons row below card */}
+              <div className="mt-6 flex items-center justify-center gap-4 text-[11px] text-neutral-400">
+                <div className="flex items-center gap-1.5">
+                  <Lock className="h-3.5 w-3.5" />
+                  <span>Secure</span>
+                </div>
+                <span>•</span>
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5" />
+                  <span>Private</span>
+                </div>
+                <span>•</span>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-3.5 w-3.5" />
+                  <span>No Spam</span>
+                </div>
               </div>
-            </motion.form>
+            </motion.div>
           </div>
         </section>
       </main>

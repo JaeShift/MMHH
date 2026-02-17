@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Gift, LogOut, Send, Users } from "lucide-react";
+import { Gift, Home, LogOut, Send, Users } from "lucide-react";
 
 const navItems = [
   { href: "/admin/subscribers", label: "Subscribers", icon: Users },
@@ -60,15 +60,25 @@ export default function AdminSidebar({
         })}
       </nav>
 
-      <form action={logoutAction} className="mt-8">
-        <button
-          type="submit"
-          className="flex w-full items-center justify-center gap-2 border-2 border-[#d1d5db] px-4 py-3 text-sm font-semibold text-[#666] transition-all duration-150 hover:bg-[#f5f5f5] hover:text-black hover:border-[#999]"
+      <div className="mt-8 space-y-2">
+        <Link
+          href="/"
+          className="flex w-full items-center justify-center gap-2 border-2 border-[#75866D] px-4 py-3 text-sm font-semibold text-[#75866D] transition-all duration-150 hover:bg-[#75866D] hover:text-white"
         >
-          <LogOut className="h-4 w-4" />
-          Log Out
-        </button>
-      </form>
+          <Home className="h-4 w-4" />
+          Back to Site
+        </Link>
+
+        <form action={logoutAction}>
+          <button
+            type="submit"
+            className="flex w-full items-center justify-center gap-2 border-2 border-[#d1d5db] px-4 py-3 text-sm font-semibold text-[#666] transition-all duration-150 hover:bg-[#f5f5f5] hover:text-black hover:border-[#999]"
+          >
+            <LogOut className="h-4 w-4" />
+            Log Out
+          </button>
+        </form>
+      </div>
     </aside>
   );
 }
