@@ -65,7 +65,7 @@ export default function SpengaNewsletterPage() {
               </p>
 
               {/* Headline */}
-              <h1 className="font-heading text-5xl font-light italic leading-[0.95] tracking-tight text-black md:text-6xl lg:text-7xl">
+              <h1 className="font-heading text-5xl font-light italic leading-[1.1] tracking-tight text-black md:text-6xl lg:text-7xl">
                 The{" "}
                 <motion.span
                   className="relative inline-block cursor-pointer"
@@ -88,9 +88,9 @@ export default function SpengaNewsletterPage() {
                   }}
                   style={{ perspective: "1000px" }}
                 >
-                  {/* Main text with gradient */}
+                  {/* Main text - black */}
                   <motion.span
-                    className="relative z-10 inline-block bg-gradient-to-br from-[#5d7255] via-[#75866D] to-[#8B9D7F] bg-clip-text text-transparent transition-all duration-300"
+                    className="relative z-10 inline-block text-black transition-all duration-300"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 0.4 }}
@@ -98,33 +98,6 @@ export default function SpengaNewsletterPage() {
                     Empowered
                   </motion.span>
                   
-                  {/* Glow layer - appears on hover */}
-                  <motion.span
-                    className="absolute inset-0 z-0 inline-block bg-gradient-to-br from-[#75866D] to-[#8B9D7F] blur-2xl opacity-0"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileHover={{ 
-                      opacity: 0.8,
-                      scale: 1.3,
-                      transition: { duration: 0.4, ease: "easeOut" }
-                    }}
-                    aria-hidden="true"
-                  >
-                    Empowered
-                  </motion.span>
-                  
-                  {/* Secondary glow layer */}
-                  <motion.span
-                    className="absolute inset-0 z-0 inline-block bg-gradient-to-br from-[#B5BDAC] to-[#75866D] blur-3xl opacity-0"
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    whileHover={{ 
-                      opacity: 0.6,
-                      scale: 1.5,
-                      transition: { duration: 0.5, ease: "easeOut", delay: 0.1 }
-                    }}
-                    aria-hidden="true"
-                  >
-                    Empowered
-                  </motion.span>
                 </motion.span>{" "}
                 Project
               </h1>
@@ -194,7 +167,7 @@ export default function SpengaNewsletterPage() {
                 </div>
                 <div>
                   <p className="text-base font-semibold text-black">Stephanie Nichols, PMHNP-BC</p>
-                  <p className="text-sm text-neutral-500">Women's Mental Health Specialist</p>
+                  <p className="text-sm text-neutral-500">Women&apos;s Mental Health Specialist</p>
                 </div>
               </motion.div>
 
