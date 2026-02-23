@@ -11,6 +11,7 @@ import Image from "next/image";
 export default function SpengaNewsletterPage() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [location, setLocation] = useState<"Gahanna" | "Hilliard" | "">("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isPending, startTransition] = useTransition();
@@ -20,11 +21,17 @@ export default function SpengaNewsletterPage() {
     setMessage("");
     setStatus("idle");
 
+    if (!location) {
+      setStatus("error");
+      setMessage("Please select a location.");
+      return;
+    }
+
     startTransition(async () => {
       const result = await subscribeAction({
         firstName,
         email,
-        source: "SPENGA Gahanna QR",
+        source: `SPENGA ${location} QR`,
       });
 
       if (!result.success) {
@@ -37,6 +44,7 @@ export default function SpengaNewsletterPage() {
       setMessage("You're in! Your first email starts this week. Welcome to The Empowered Project.");
       setFirstName("");
       setEmail("");
+      setLocation("");
     });
   }
 
@@ -61,7 +69,7 @@ export default function SpengaNewsletterPage() {
             >
               {/* Mini header */}
               <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-[#75866D]">
-                SPENGA Gahanna × Modern MHH
+                SPENGA × Modern MHH
               </p>
 
               {/* Headline */}
@@ -178,7 +186,7 @@ export default function SpengaNewsletterPage() {
                 transition={{ delay: 0.7, duration: 0.6 }}
                 className="mt-6 text-center text-xs text-neutral-400"
               >
-                In partnership with SPENGA Gahanna
+                In partnership with SPENGA
               </motion.p>
             </motion.div>
 
@@ -224,6 +232,16 @@ export default function SpengaNewsletterPage() {
                     autoComplete="email"
                     className="w-full rounded-xl border border-neutral-200 bg-neutral-50/50 px-4 py-3 text-[15px] outline-none transition-all placeholder:text-neutral-400 focus:border-[#75866D] focus:bg-white focus:ring-2 focus:ring-[#75866D]/20"
                   />
+                  <select
+                    required
+                    value={location}
+                    onChange={(event) => setLocation(event.target.value as "Gahanna" | "Hilliard")}
+                    className="w-full rounded-xl border border-neutral-200 bg-neutral-50/50 px-4 py-3 text-[15px] outline-none transition-all text-black focus:border-[#75866D] focus:bg-white focus:ring-2 focus:ring-[#75866D]/20"
+                  >
+                    <option value="" className="text-neutral-400">Select location</option>
+                    <option value="Gahanna">SPENGA Gahanna</option>
+                    <option value="Hilliard">SPENGA Hilliard</option>
+                  </select>
                   <button
                     type="submit"
                     disabled={isPending}
