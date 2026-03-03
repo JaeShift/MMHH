@@ -1,20 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
+import { put } from "@vercel/blob";
+import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 
-export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-// Configure route to handle larger files
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: "25mb",
-    },
-  },
-};
-
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
     // Check authentication
     const session = await auth();
@@ -22,16 +12,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
     }
 
-    const formData = await request.formData();
-    const file = formData.get("file") as File | null;
+    const formData = await req.formData();
+    const file = formData.get("file");
 
-    if (!file) {
-      return NextResponse.json({ success: false, error: "No file provided" }, { status: 400 });
+    if (!file || !(file instanceof File)) {
+      return NextResponse.json({ success: false, error: "No file uploaded" }, { status: 400 });
     }
+
+    console.log("Uploading PDF:", { name: file.name, size: file.size, type: file.type });
 
     // Validate file type
     if (file.type !== "application/pdf") {
-      return NextResponse.json({ success: false, error: "Only PDF files are allowed" }, { status: 400 });
+      return NextResponse.json({ success: false, error: "Only PDF files allowed" }, { status: 400 });
     }
 
     // Validate file size (25MB max)
@@ -40,36 +32,31 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: "File size must be less than 25MB" }, { status: 400 });
     }
 
-    // Generate unique filename
-    const timestamp = Date.now();
-    const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
-    const fileName = `newsletter-${timestamp}-${sanitizedName}`;
+    const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
+    const key = `newsletters/${Date.now()}-${safeName}`;
 
-    // Ensure uploads directory exists
-    const uploadsDir = path.join(process.cwd(), "public", "uploads", "newsletters");
-    await mkdir(uploadsDir, { recursive: true });
+    const blob = await put(key, file, {
+      access: "public",
+      contentType: "application/pdf",
+      addRandomSuffix: false,
+    });
 
-    // Save file
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const filePath = path.join(uploadsDir, fileName);
-    await writeFile(filePath, buffer);
+    console.log("Upload successful:", blob.url);
 
-    // Return public URL
-    const publicUrl = `/uploads/newsletters/${fileName}`;
-
+    // Return in the format the frontend expects
     return NextResponse.json({
       success: true,
       data: {
-        url: publicUrl,
+        url: blob.url,
         name: file.name,
         size: file.size,
       },
     });
-  } catch (error) {
-    console.error("PDF upload error:", error);
+  } catch (err) {
+    console.error("Upload failed:", err);
+    const errorMessage = err instanceof Error ? err.message : "Upload failed";
     return NextResponse.json(
-      { success: false, error: "Failed to upload PDF" },
+      { success: false, error: errorMessage },
       { status: 500 }
     );
   }

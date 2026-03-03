@@ -83,6 +83,7 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
       const result = await response.json();
 
       if (!result.success) {
+        console.error("Upload error:", result.error);
         setStatusMessage(result.error || "Failed to upload PDF");
         return;
       }
@@ -90,8 +91,10 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
       setPdfUrl(result.data.url);
       setPdfName(result.data.name);
       setStatusMessage("PDF uploaded successfully");
-    } catch {
-      setStatusMessage("Failed to upload PDF");
+    } catch (error) {
+      console.error("Upload exception:", error);
+      const errorMsg = error instanceof Error ? error.message : "Failed to upload PDF";
+      setStatusMessage(`Upload error: ${errorMsg}`);
     } finally {
       setIsUploading(false);
     }

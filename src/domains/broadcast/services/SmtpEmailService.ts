@@ -50,14 +50,27 @@ async function sendToMany(emails: string[], subject: string, html: string, pdfUr
   let lastError: unknown;
 
   // Prepare attachment if PDF is provided
-  const attachments = pdfUrl
-    ? [
+  let attachments = [];
+  if (pdfUrl) {
+    // Check if it's a full URL (Vercel Blob) or a local path
+    if (pdfUrl.startsWith("http://") || pdfUrl.startsWith("https://")) {
+      // Use the URL directly for Vercel Blob
+      attachments = [
+        {
+          filename: pdfName || "attachment.pdf",
+          path: pdfUrl,
+        },
+      ];
+    } else {
+      // Use local file path for development
+      attachments = [
         {
           filename: pdfName || "attachment.pdf",
           path: path.join(process.cwd(), "public", pdfUrl.replace(/^\//, "")),
         },
-      ]
-    : [];
+      ];
+    }
+  }
 
   for (const email of emails) {
     const normalizedEmail = email.trim();
