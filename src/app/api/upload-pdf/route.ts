@@ -5,6 +5,15 @@ import { auth } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
+// Configure route to handle larger files
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "25mb",
+    },
+  },
+};
+
 export async function POST(request: NextRequest) {
   try {
     // Check authentication
@@ -25,10 +34,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: "Only PDF files are allowed" }, { status: 400 });
     }
 
-    // Validate file size (10MB max)
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    // Validate file size (25MB max)
+    const maxSize = 25 * 1024 * 1024; // 25MB
     if (file.size > maxSize) {
-      return NextResponse.json({ success: false, error: "File size must be less than 10MB" }, { status: 400 });
+      return NextResponse.json({ success: false, error: "File size must be less than 25MB" }, { status: 400 });
     }
 
     // Generate unique filename
