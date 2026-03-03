@@ -30,7 +30,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' use.typekit.net p.typekit.net fonts.googleapis.com *.practicebetter.io",
               "font-src 'self' use.typekit.net fonts.gstatic.com data:",
               "img-src 'self' data: blob: https: *.practicebetter.io",
-              "connect-src 'self' p.typekit.net performance.typekit.net *.practicebetter.io https://modernmentalhealthhormones.practicebetter.io",
+              "connect-src 'self' p.typekit.net performance.typekit.net *.practicebetter.io https://modernmentalhealthhormones.practicebetter.io vercel.com *.vercel.com *.vercel-storage.com",
               "frame-src 'self' https: *.practicebetter.io https://modernmentalhealthhormones.practicebetter.io",
               "frame-ancestors 'none'",
               "base-uri 'self'",
