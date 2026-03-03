@@ -11,6 +11,7 @@ type ScheduleWeeklyBroadcastInput = {
   adminId: string;
   pdfUrl?: string;
   pdfName?: string;
+  subscriberIds?: string[];
 };
 
 async function execute(input: ScheduleWeeklyBroadcastInput) {
@@ -40,6 +41,7 @@ async function execute(input: ScheduleWeeklyBroadcastInput) {
       nextRunAt,
       pdfUrl: input.pdfUrl,
       pdfName: input.pdfName,
+      subscriberIds: input.subscriberIds,
     });
 
     return { success: true, data: scheduled };

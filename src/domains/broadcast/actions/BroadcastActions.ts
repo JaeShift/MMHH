@@ -9,7 +9,7 @@ import { sendToOne } from "../services/SmtpEmailService";
 import { execute as scheduleWeeklyBroadcastUseCase } from "../use-cases/ScheduleWeeklyBroadcast";
 import { execute as sendBroadcastUseCase } from "../use-cases/SendBroadcast";
 
-async function sendBroadcastAction(input: { subject: string; bodyText: string; pdfUrl?: string; pdfName?: string }) {
+async function sendBroadcastAction(input: { subject: string; bodyText: string; pdfUrl?: string; pdfName?: string; subscriberIds?: string[] }) {
   const session = await auth();
   if (!session?.user?.id) {
     return { success: false, data: null, error: "Unauthorized" };
@@ -20,6 +20,7 @@ async function sendBroadcastAction(input: { subject: string; bodyText: string; p
     bodyText: input.bodyText,
     pdfUrl: input.pdfUrl,
     pdfName: input.pdfName,
+    subscriberIds: input.subscriberIds,
     adminId: session.user.id,
   });
 
@@ -39,6 +40,7 @@ async function scheduleWeeklyBroadcastAction(input: {
   timezone: "America/New_York";
   pdfUrl?: string;
   pdfName?: string;
+  subscriberIds?: string[];
 }) {
   const session = await auth();
   if (!session?.user?.id) {

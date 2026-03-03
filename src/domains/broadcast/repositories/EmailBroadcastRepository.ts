@@ -22,6 +22,7 @@ async function createWeeklySchedule(data: {
   nextRunAt: Date;
   pdfUrl?: string;
   pdfName?: string;
+  subscriberIds?: string[];
 }) {
   return prisma.emailBroadcast.create({
     data: {
@@ -37,6 +38,7 @@ async function createWeeklySchedule(data: {
       nextRunAt: data.nextRunAt,
       pdfUrl: data.pdfUrl,
       pdfName: data.pdfName,
+      subscriberIds: data.subscriberIds || [],
       sentAt: null,
       recipientCount: 0,
     },

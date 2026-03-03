@@ -54,7 +54,7 @@ async function sendToMany(emails: string[], subject: string, html: string, pdfUr
     ? [
         {
           filename: pdfName || "attachment.pdf",
-          path: path.join(process.cwd(), "public", pdfUrl),
+          path: path.join(process.cwd(), "public", pdfUrl.replace(/^\//, "")),
         },
       ]
     : [];

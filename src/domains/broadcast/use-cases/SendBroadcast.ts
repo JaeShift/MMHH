@@ -10,6 +10,7 @@ type SendBroadcastInput = {
   adminId: string;
   pdfUrl?: string;
   pdfName?: string;
+  subscriberIds?: string[];
 };
 
 async function execute(input: SendBroadcastInput) {
@@ -19,10 +20,16 @@ async function execute(input: SendBroadcastInput) {
       bodyText: input.bodyText,
     });
 
-    const subscribers = await findAll();
+    const allSubscribers = await findAll();
+    
+    // Filter subscribers if specific IDs are provided
+    const subscribers = input.subscriberIds && input.subscriberIds.length > 0
+      ? allSubscribers.filter(sub => input.subscriberIds!.includes(sub.id))
+      : allSubscribers;
+
     const emails = subscribers.map((subscriber) => subscriber.email);
     if (!emails.length) {
-      return { success: false, error: "No subscribers found." };
+      return { success: false, error: "No subscribers selected or found." };
     }
 
     const html = buildEmailTemplate({

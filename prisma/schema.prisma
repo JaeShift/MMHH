@@ -44,6 +44,7 @@ model EmailBroadcast {
   lastError      String?  @db.Text
   pdfUrl         String?
   pdfName        String?
+  subscriberIds  String[] @default([])
   adminId        String
   admin          Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
   createdAt      DateTime @default(now())

@@ -1,8 +1,8 @@
 import BroadcastComposer from "@/app/admin/broadcasts/new/BroadcastComposer";
-import { count } from "@/domains/newsletter/repositories/NewsletterSubscriberRepository";
+import { findAll } from "@/domains/newsletter/repositories/NewsletterSubscriberRepository";
 
 export default async function NewBroadcastPage() {
-  const subscriberCount = await count();
+  const subscribers = await findAll();
 
   return (
     <div>
@@ -10,7 +10,7 @@ export default async function NewBroadcastPage() {
         <h1 className="text-3xl font-bold text-black uppercase tracking-wide">Compose Broadcast</h1>
         <p className="mt-2 text-sm text-[#666] font-semibold">Compose your message. The branded email styling is applied automatically.</p>
       </div>
-      <BroadcastComposer subscriberCount={subscriberCount} />
+      <BroadcastComposer subscribers={subscribers} />
     </div>
   );
 }

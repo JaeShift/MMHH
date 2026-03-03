@@ -17,12 +17,18 @@ async function execute(input?: ProcessDueWeeklyBroadcastsInput) {
     }
 
     const subscribers = await findAllSubscribers();
-    const emails = subscribers.map((subscriber) => subscriber.email.trim()).filter(Boolean);
-
+    
     let sent = 0;
     let failed = 0;
 
     for (const broadcast of dueBroadcasts) {
+      // Filter subscribers if specific IDs are stored
+      const targetSubscribers = broadcast.subscriberIds && broadcast.subscriberIds.length > 0
+        ? subscribers.filter(sub => broadcast.subscriberIds!.includes(sub.id))
+        : subscribers;
+        
+      const emails = targetSubscribers.map((subscriber) => subscriber.email.trim()).filter(Boolean);
+      
       const weekday = broadcast.weeklyDayOfWeek;
       const time = broadcast.weeklyTime;
       const timezone = broadcast.timezone || "America/New_York";
