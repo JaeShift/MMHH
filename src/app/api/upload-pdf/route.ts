@@ -4,14 +4,6 @@ import { auth } from "@/lib/auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-export const dynamic = "force-dynamic";
-
-// Vercel's body size limit configuration
-export const config = {
-  api: {
-    bodyParser: false, // Disable default body parsing
-  },
-};
 
 export async function POST(req: Request) {
   try {
@@ -25,14 +17,6 @@ export async function POST(req: Request) {
     }
 
     console.log("User authenticated:", session.user.id);
-
-    // Get content length to check size before parsing
-    const contentLength = req.headers.get("content-length");
-    console.log("Content length:", contentLength);
-    
-    if (contentLength && parseInt(contentLength) > 4 * 1024 * 1024) {
-      return NextResponse.json({ success: false, error: "File too large (max 4MB)" }, { status: 413 });
-    }
 
     const formData = await req.formData();
     const file = formData.get("file");
@@ -51,7 +35,7 @@ export async function POST(req: Request) {
     // Validate file size
     const maxSize = 4 * 1024 * 1024; // 4MB (Vercel free tier limit)
     if (file.size > maxSize) {
-      return NextResponse.json({ success: false, error: "File size must be less than 4MB" }, { status: 400 });
+      return NextResponse.json({ success: false, error: `File size must be less than 4MB (yours is ${(file.size / 1024).toFixed(0)}KB)` }, { status: 400 });
     }
 
     const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
