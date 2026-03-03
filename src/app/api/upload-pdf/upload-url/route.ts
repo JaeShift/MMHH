@@ -36,10 +36,7 @@ export async function POST(request: Request): Promise<NextResponse> {
         };
       },
 
-      // This runs AFTER upload completes (callback/webhook from Blob)
-      onUploadCompleted: async ({ blob, tokenPayload }) => {
-        console.log("Upload completed:", blob.url, tokenPayload);
-      },
+      // Removed onUploadCompleted - doesn't work on localhost and is optional
     });
 
     console.log("Token generated successfully");
