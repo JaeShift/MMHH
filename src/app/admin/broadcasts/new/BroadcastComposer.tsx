@@ -39,6 +39,14 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
 
   const selectedCount = selectedSubscriberIds.size;
   const allFilteredSelected = filteredSubscribers.every(sub => selectedSubscriberIds.has(sub.id));
+  const allSelected = selectedCount === subscribers.length;
+
+  function getSendButtonText() {
+    if (selectedCount === 0) return "No Subscribers Selected";
+    if (selectedCount === 1) return "Send to Subscriber";
+    if (allSelected) return "Send to All Subscribers";
+    return "Send to Subscribers";
+  }
 
   function toggleSelectAll() {
     if (allFilteredSelected) {
@@ -341,7 +349,7 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
             className="inline-flex items-center gap-2 bg-[#0066cc] px-5 py-3 text-sm font-bold text-white transition-all duration-150 hover:bg-[#0052a3] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-            {isPending ? "Sending..." : "Send to All Subscribers"}
+            {isPending ? "Sending..." : getSendButtonText()}
           </button>
         </form>
 
