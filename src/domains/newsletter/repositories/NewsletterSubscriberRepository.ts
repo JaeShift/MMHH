@@ -47,4 +47,15 @@ async function count() {
   return prisma.newsletterSubscriber.count();
 }
 
-export { count, create, deleteById, findAll, findByEmail, upsert };
+async function updateById(id: string, data: { firstName?: string; email: string; source?: string }) {
+  return prisma.newsletterSubscriber.update({
+    where: { id },
+    data: {
+      firstName: data.firstName?.trim() || null,
+      email: data.email.toLowerCase().trim(),
+      source: data.source?.trim() || "SPENGA Gahanna QR",
+    },
+  });
+}
+
+export { count, create, deleteById, findAll, findByEmail, updateById, upsert };

@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { deleteSubscriberSchema, subscribeNewsletterSchema } from "../dtos/NewsletterSubscriberDto";
-import { count, deleteById, findAll } from "../repositories/NewsletterSubscriberRepository";
+import { count, deleteById, findAll, updateById } from "../repositories/NewsletterSubscriberRepository";
 import { execute as subscribeUseCase } from "../use-cases/SubscribeToNewsletter";
 
 async function sendWelcomeEmail(email: string, firstName?: string) {
@@ -87,4 +87,23 @@ async function deleteSubscriberAction(input: { id: string }) {
   }
 }
 
-export { deleteSubscriberAction, getSubscribersAction, subscribeAction };
+async function updateSubscriberAction(input: { id: string; firstName?: string; email: string; source?: string }) {
+  const session = await auth();
+  if (!session?.user) {
+    return { success: false, data: null, error: "Unauthorized" };
+  }
+
+  try {
+    const updated = await updateById(input.id, {
+      firstName: input.firstName,
+      email: input.email,
+      source: input.source,
+    });
+    revalidatePath("/admin/subscribers");
+    return { success: true, data: updated };
+  } catch {
+    return { success: false, data: null, error: "Unable to update subscriber." };
+  }
+}
+
+export { deleteSubscriberAction, getSubscribersAction, subscribeAction, updateSubscriberAction };
