@@ -4,6 +4,10 @@ import { auth } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
+// Increase body size limit for this route
+export const maxDuration = 60; // 60 seconds max execution time
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   try {
     // Check authentication
@@ -26,10 +30,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: "Only PDF files allowed" }, { status: 400 });
     }
 
-    // Validate file size (25MB max)
-    const maxSize = 25 * 1024 * 1024; // 25MB
+    // Validate file size (10MB max - Vercel has limits on body size)
+    const maxSize = 10 * 1024 * 1024; // 10MB
     if (file.size > maxSize) {
-      return NextResponse.json({ success: false, error: "File size must be less than 25MB" }, { status: 400 });
+      return NextResponse.json({ success: false, error: "File size must be less than 10MB" }, { status: 400 });
     }
 
     const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
