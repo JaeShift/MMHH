@@ -80,7 +80,25 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
         body: formData,
       });
 
-      const result = await response.json();
+      // Check if response is ok before parsing JSON
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Upload failed with status:", response.status, text);
+        setStatusMessage(`Upload failed: ${response.status} ${response.statusText}`);
+        return;
+      }
+
+      // Try to parse JSON
+      let result;
+      try {
+        result = await response.json();
+      } catch (parseError) {
+        console.error("Failed to parse response as JSON:", parseError);
+        const text = await response.text();
+        console.error("Response text:", text);
+        setStatusMessage("Server returned invalid response. Check console for details.");
+        return;
+      }
 
       if (!result.success) {
         console.error("Upload error:", result.error);
