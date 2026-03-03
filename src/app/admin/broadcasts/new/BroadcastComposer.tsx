@@ -3,6 +3,7 @@
 import { Eye, Loader2, Send, Calendar, Upload, X, Users, CheckSquare, Square } from "lucide-react";
 import { useState, useTransition, useMemo } from "react";
 import { scheduleWeeklyBroadcastAction, sendBroadcastAction } from "@/domains/broadcast/actions/BroadcastActions";
+import { upload } from "@vercel/blob/client";
 
 type Subscriber = {
   id: string;
@@ -80,42 +81,18 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
     setStatusMessage("");
 
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      console.log("Starting client-side upload:", { name: file.name, size: file.size });
 
-      const response = await fetch("/api/upload-pdf", {
-        method: "POST",
-        body: formData,
+      // Client-side direct upload to Vercel Blob
+      const blob = await upload(file.name, file, {
+        access: "public",
+        handleUploadUrl: "/api/upload-pdf/upload-url",
       });
 
-      // Check if response is ok before parsing JSON
-      if (!response.ok) {
-        const text = await response.text();
-        console.error("Upload failed with status:", response.status, text);
-        setStatusMessage(`Upload failed: ${response.status} ${response.statusText}`);
-        return;
-      }
+      console.log("Upload successful:", blob.url);
 
-      // Try to parse JSON
-      let result;
-      try {
-        result = await response.json();
-      } catch (parseError) {
-        console.error("Failed to parse response as JSON:", parseError);
-        const text = await response.text();
-        console.error("Response text:", text);
-        setStatusMessage("Server returned invalid response. Check console for details.");
-        return;
-      }
-
-      if (!result.success) {
-        console.error("Upload error:", result.error);
-        setStatusMessage(result.error || "Failed to upload PDF");
-        return;
-      }
-
-      setPdfUrl(result.data.url);
-      setPdfName(result.data.name);
+      setPdfUrl(blob.url);
+      setPdfName(file.name);
       setStatusMessage("PDF uploaded successfully");
     } catch (error) {
       console.error("Upload exception:", error);
