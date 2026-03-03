@@ -83,15 +83,19 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
     try {
       console.log("Starting client-side upload:", { name: file.name, size: file.size });
 
+      // Put it in a folder path in Blob
+      const pathname = `newsletters/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
+
       // Client-side direct upload to Vercel Blob
-      const blob = await upload(file.name, file, {
+      const blob = await upload(pathname, file, {
         access: "public",
         handleUploadUrl: "/api/upload-pdf/upload-url",
+        clientPayload: JSON.stringify({ purpose: "newsletter-pdf" }),
       });
 
       console.log("Upload successful:", blob.url);
 
-      setPdfUrl(blob.url);
+      setPdfUrl(blob.url); // Full blob.url stored
       setPdfName(file.name);
       setStatusMessage("PDF uploaded successfully");
     } catch (error) {
