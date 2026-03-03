@@ -50,7 +50,7 @@ async function sendToMany(emails: string[], subject: string, html: string, pdfUr
   let lastError: unknown;
 
   // Prepare attachment if PDF is provided
-  let attachments = [];
+  let attachments: Array<{ filename: string; path: string }> = [];
   if (pdfUrl) {
     // Check if it's a full URL (Vercel Blob) or a local path
     if (pdfUrl.startsWith("http://") || pdfUrl.startsWith("https://")) {
