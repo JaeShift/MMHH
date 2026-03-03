@@ -192,13 +192,13 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
           <button
             type="button"
             onClick={() => setShowSubscriberList(!showSubscriberList)}
-            className="w-full inline-flex items-center justify-between gap-2 bg-[#e3f2fd] border-l-4 border-[#0066cc] px-4 py-2.5 text-xs font-bold text-black transition-colors hover:bg-[#d1e9fc]"
+            className="w-full inline-flex items-center justify-between gap-3 bg-[#e3f2fd] border-l-4 border-[#0066cc] px-5 py-4 text-base font-bold text-black transition-colors hover:bg-[#d1e9fc] shadow-sm"
           >
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4" />
-              <span>{selectedCount} of {subscribers.length} Recipients Selected</span>
+            <div className="flex items-center gap-3">
+              <Users className="h-6 w-6" />
+              <span className="text-lg">{selectedCount} of {subscribers.length} Recipients Selected</span>
             </div>
-            <span className="text-[10px]">{showSubscriberList ? "▼ Hide" : "▶ Show"}</span>
+            <span className="text-sm">{showSubscriberList ? "▼ Hide" : "▶ Show"}</span>
           </button>
 
           {showSubscriberList && (
