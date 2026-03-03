@@ -318,7 +318,7 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
                 ) : (
                   <>
                     <Upload className="h-4 w-4" />
-                    Click to Upload PDF (Max 10MB)
+                    Click to Upload PDF (Max 4MB)
                   </>
                 )}
               </label>

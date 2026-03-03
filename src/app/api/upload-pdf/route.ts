@@ -30,8 +30,8 @@ export async function POST(req: Request) {
     const contentLength = req.headers.get("content-length");
     console.log("Content length:", contentLength);
     
-    if (contentLength && parseInt(contentLength) > 10 * 1024 * 1024) {
-      return NextResponse.json({ success: false, error: "File too large (max 10MB)" }, { status: 413 });
+    if (contentLength && parseInt(contentLength) > 4 * 1024 * 1024) {
+      return NextResponse.json({ success: false, error: "File too large (max 4MB)" }, { status: 413 });
     }
 
     const formData = await req.formData();
@@ -49,9 +49,9 @@ export async function POST(req: Request) {
     }
 
     // Validate file size
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 4 * 1024 * 1024; // 4MB (Vercel free tier limit)
     if (file.size > maxSize) {
-      return NextResponse.json({ success: false, error: "File size must be less than 10MB" }, { status: 400 });
+      return NextResponse.json({ success: false, error: "File size must be less than 4MB" }, { status: 400 });
     }
 
     const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
