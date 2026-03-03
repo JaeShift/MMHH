@@ -8,37 +8,38 @@ export async function POST(request: Request): Promise<NextResponse> {
   const body = (await request.json()) as HandleUploadBody;
 
   try {
-    // Check authentication
-    const session = await auth();
-    if (!session?.user?.id) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const jsonResponse = await handleUpload({
       body,
       request,
-      onBeforeGenerateToken: async (pathname) => {
-        console.log("Generating upload token for:", pathname);
-        
+
+      // This runs BEFORE the browser uploads to Blob
+      onBeforeGenerateToken: async (pathname, clientPayload) => {
+        // Auth check for admin-only access
+        const session = await auth();
+        if (!session?.user?.id) {
+          throw new Error("Unauthorized");
+        }
+
+        // Allow PDF uploads only
         return {
           allowedContentTypes: ["application/pdf"],
-          maximumSizeInBytes: 4 * 1024 * 1024, // 4MB
-          tokenPayload: JSON.stringify({
-            userId: session.user.id,
-          }),
+          maximumSizeInBytes: 50 * 1024 * 1024, // 50MB
+          tokenPayload: typeof clientPayload === "string" ? clientPayload : undefined,
         };
       },
+
+      // This runs AFTER upload completes (callback/webhook from Blob)
       onUploadCompleted: async ({ blob, tokenPayload }) => {
-        console.log("Upload completed:", blob.url);
-        // You can save to database here if needed
+        // Optional: update DB here if you want (e.g., attach blob.url to a broadcast)
+        // NOTE: this callback does NOT work on localhost without a public URL (ngrok, etc.)
+        console.log("Upload completed:", blob.url, tokenPayload);
       },
     });
 
     return NextResponse.json(jsonResponse);
   } catch (error) {
-    console.error("Upload URL generation failed:", error);
     return NextResponse.json(
-      { error: (error as Error).message },
+      { error: error instanceof Error ? error.message : String(error) },
       { status: 400 }
     );
   }
