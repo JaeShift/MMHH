@@ -102,6 +102,11 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
       console.error("Upload exception:", error);
       const errorMsg = error instanceof Error ? error.message : "Failed to upload PDF";
       setStatusMessage(`Upload error: ${errorMsg}`);
+      
+      // Show more details if available
+      if (error && typeof error === 'object' && 'cause' in error) {
+        console.error("Error cause:", error.cause);
+      }
     } finally {
       setIsUploading(false);
     }
