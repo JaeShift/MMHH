@@ -42,6 +42,16 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
   const allFilteredSelected = filteredSubscribers.every(sub => selectedSubscriberIds.has(sub.id));
   const allSelected = selectedCount === subscribers.length;
 
+  // Email validation
+  function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  const selectedSubscribers = subscribers.filter(sub => selectedSubscriberIds.has(sub.id));
+  const invalidEmails = selectedSubscribers.filter(sub => !isValidEmail(sub.email));
+  const hasInvalidEmails = invalidEmails.length > 0;
+
   function getSendButtonText() {
     if (selectedCount === 0) return "No Subscribers Selected";
     if (selectedCount === 1) return "Send to Subscriber";
@@ -126,6 +136,19 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
       return;
     }
 
+    // Check for invalid emails
+    if (hasInvalidEmails) {
+      const confirmed = window.confirm(
+        `Warning: ${invalidEmails.length} subscriber(s) have invalid email addresses and will be skipped:\n\n` +
+        invalidEmails.slice(0, 5).map(s => `- ${s.email}`).join('\n') +
+        (invalidEmails.length > 5 ? `\n...and ${invalidEmails.length - 5} more` : '') +
+        `\n\nDo you want to continue sending to the ${selectedCount - invalidEmails.length} valid email(s)?`
+      );
+      if (!confirmed) {
+        return;
+      }
+    }
+
     const confirmed = window.confirm(`Send this email to ${selectedCount} selected subscriber${selectedCount === 1 ? '' : 's'}?`);
     if (!confirmed) {
       return;
@@ -192,11 +215,22 @@ export default function BroadcastComposer({ subscribers }: { subscribers: Subscr
           <button
             type="button"
             onClick={() => setShowSubscriberList(!showSubscriberList)}
-            className="w-full inline-flex items-center justify-between gap-3 bg-[#e3f2fd] border-l-4 border-[#0066cc] px-5 py-4 text-base font-bold text-black transition-colors hover:bg-[#d1e9fc] shadow-sm"
+            className={`w-full inline-flex items-center justify-between gap-3 px-5 py-4 text-base font-bold text-black transition-colors shadow-sm ${
+              hasInvalidEmails 
+                ? 'bg-red-50 border-l-4 border-red-500 hover:bg-red-100' 
+                : 'bg-[#e3f2fd] border-l-4 border-[#0066cc] hover:bg-[#d1e9fc]'
+            }`}
           >
             <div className="flex items-center gap-3">
               <Users className="h-6 w-6" />
-              <span className="text-lg">{selectedCount} of {subscribers.length} Recipients Selected</span>
+              <div className="text-left">
+                <div className="text-lg">{selectedCount} of {subscribers.length} Recipients Selected</div>
+                {hasInvalidEmails && (
+                  <div className="text-xs text-red-600 font-normal mt-1">
+                    ⚠️ {invalidEmails.length} invalid email address{invalidEmails.length === 1 ? '' : 'es'} selected
+                  </div>
+                )}
+              </div>
             </div>
             <span className="text-sm">{showSubscriberList ? "▼ Hide" : "▶ Show"}</span>
           </button>

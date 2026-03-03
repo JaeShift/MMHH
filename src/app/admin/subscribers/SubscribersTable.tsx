@@ -75,6 +75,13 @@ export default function SubscribersTable({ subscribers }: { subscribers: Subscri
       return;
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
     startTransition(async () => {
       const result = await updateSubscriberAction({
         id,
@@ -99,6 +106,13 @@ export default function SubscribersTable({ subscribers }: { subscribers: Subscri
 
     if (!email.trim()) {
       setAddMessage("Email is required");
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      setAddMessage("Please enter a valid email address");
       return;
     }
 
