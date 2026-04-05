@@ -58,14 +58,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
-          <a 
-            href="https://modernmentalhealthhormones.practicebetter.io/#/signin" 
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/book/existing"
             className="px-4 py-2 text-sm font-medium text-[color:var(--text-secondary)] hover:text-[#75866D] transition-colors"
           >
             Sign In
-          </a>
+          </Link>
           <Link href="/book" className="inline-flex px-4 py-2 text-white text-sm font-medium transition-colors" style={{ backgroundColor: '#75866D' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#677560'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#75866D'}>
             Request Appointment
           </Link>
@@ -133,7 +131,7 @@ export default function Header() {
                     { href: navLinks.provider, label: "Your Provider" },
                     { href: navLinks.testimonials, label: "Patient Experience" },
                     { href: navLinks.faq, label: "FAQ's" },
-                    { href: "https://modernmentalhealthhormones.practicebetter.io/#/signin", label: "Sign In", external: true }
+                    { href: "/book/existing", label: "Sign In" }
                   ].map((item, index) => (
                     <motion.div
                       key={item.label}
@@ -141,45 +139,23 @@ export default function Header() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05, duration: 0.3 }}
                     >
-                      {item.external ? (
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group relative flex items-center justify-between px-5 py-4 text-lg font-medium text-gray-800 bg-white rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200"
-                          onClick={() => setOpen(false)}
+                      <Link
+                        href={item.href}
+                        className="group relative flex items-center justify-between px-5 py-4 text-lg font-medium text-gray-800 bg-white rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="group-hover:text-[#75866D] transition-colors duration-200">
+                          {item.label}
+                        </span>
+                        <svg 
+                          className="w-5 h-5 text-gray-400 group-hover:text-[#75866D] group-hover:translate-x-1 transition-all duration-200" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
                         >
-                          <span className="group-hover:text-[#75866D] transition-colors duration-200">
-                            {item.label}
-                          </span>
-                          <svg 
-                            className="w-5 h-5 text-gray-400 group-hover:text-[#75866D] group-hover:translate-x-1 transition-all duration-200" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </a>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="group relative flex items-center justify-between px-5 py-4 text-lg font-medium text-gray-800 bg-white rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200"
-                          onClick={() => setOpen(false)}
-                        >
-                          <span className="group-hover:text-[#75866D] transition-colors duration-200">
-                            {item.label}
-                          </span>
-                          <svg 
-                            className="w-5 h-5 text-gray-400 group-hover:text-[#75866D] group-hover:translate-x-1 transition-all duration-200" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                      )}
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </motion.div>
                   ))}
                 </nav>

@@ -43,7 +43,7 @@ export default function NewPatientForm() {
   // Additional Info (non-PHI)
   const [additionalInfo, setAdditionalInfo] = useState("");
   const [consent, setConsent] = useState(false);
-  const [practiceBetterConsent, setPracticeBetterConsent] = useState(false);
+  const [platformConsent, setPlatformConsent] = useState(false);
 
   // Anti-spam
   const [honey, setHoney] = useState("");
@@ -51,7 +51,7 @@ export default function NewPatientForm() {
 
   const canSubmit = 
     consent && 
-    practiceBetterConsent &&
+    platformConsent &&
     firstName.trim() && 
     lastName.trim() && 
     dateOfBirth.trim() && 
@@ -104,7 +104,7 @@ export default function NewPatientForm() {
     setContactPreference(CONTACT_PREFERENCES[0]); setBestTime(BEST_TIMES[3]);
     setAdditionalInfo("");
     setConsent(false);
-    setPracticeBetterConsent(false);
+    setPlatformConsent(false);
     localStorage.removeItem("newPatientDraft");
   };
 
@@ -362,14 +362,14 @@ export default function NewPatientForm() {
 
             <div className="flex items-start gap-4 bg-slate-50 p-4 rounded-lg">
               <input 
-                id="practiceBetterConsent" 
+                id="platformConsent" 
                 type="checkbox" 
-                checked={practiceBetterConsent} 
-                onChange={(e)=>setPracticeBetterConsent(e.target.checked)} 
+                checked={platformConsent} 
+                onChange={(e)=>setPlatformConsent(e.target.checked)} 
                 className="mt-1 h-5 w-5 text-[#75866D] focus:ring-[#75866D] border-slate-300 rounded flex-shrink-0" 
               />
-              <label htmlFor="practiceBetterConsent" className="text-sm text-slate-700 leading-relaxed">
-                <span className="font-medium">I agree</span> for this information to be shared with Practice Better, my secure practice management platform used for appointment scheduling and patient care coordination.
+              <label htmlFor="platformConsent" className="text-sm text-slate-700 leading-relaxed">
+                <span className="font-medium">I agree</span> for this information to be shared with OptiMantra, my secure practice management platform used for appointment scheduling and patient care coordination.
               </label>
             </div>
           </div>
