@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  async redirects() {
+    return [
+      { source: '/testimonials', destination: '/reviews', permanent: true },
+    ];
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: '25mb',

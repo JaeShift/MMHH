@@ -13,7 +13,7 @@ Disallow: /test-widget
 Allow: /
 Allow: /about-me
 Allow: /services
-Allow: /testimonials
+Allow: /reviews
 Allow: /faq
 Allow: /contact
 Allow: /book

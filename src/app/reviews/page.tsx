@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import Header from "../../components/Header";
 import Testimonials from "../../components/Testimonials";
+import GoogleReviewsEmbed from "../../components/GoogleReviewsEmbed";
 
 export const metadata: Metadata = {
-  title: "Patient Experience & Testimonials | Modern MHH | Ohio",
-  description: "Read testimonials from women who have received mental health and hormone care at Modern MHH. Real patient experiences and success stories.",
+  title: "Patient Reviews | Modern MHH | Ohio",
+  description:
+    "Read reviews from women who have received mental health and hormone care at Modern MHH, plus Google reviews. Real patient experiences across Ohio.",
 };
 
-export default function TestimonialsPage() {
+export default function ReviewsPage() {
   return (
     <>
       <Header />
       <main className="min-h-screen bg-[color:var(--surface)]">
-        <section id="testimonials" className="py-12 md:py-16 bg-[color:var(--surface)]">
+        <section id="reviews" className="py-12 md:py-16 bg-[color:var(--surface)]">
           <div className="container mx-auto px-6 lg:px-8">
             <Testimonials />
+            <div className="max-w-4xl mx-auto mt-16 md:mt-20 pt-12 border-t border-[color:var(--neutral-200)]">
+              <GoogleReviewsEmbed />
+            </div>
           </div>
         </section>
       </main>
@@ -46,4 +51,3 @@ export default function TestimonialsPage() {
     </>
   );
 }
-

@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 export const metadata: Metadata = {
   title: "Financial Disclosure | Modern Mental Health & Hormones",
   description:
-    "Read the financial disclosure and consent for self-pay services at Modern Mental Health & Hormones, including policies, fees, and billing information.",
+    "Financial disclosure for Modern Mental Health & Hormones: fees, in-network insurance participation (Cigna, United Healthcare, Optum, Medical Mutual, Anthem, Aetna, Carelon, MultiPlan, UMR, and related plans where applicable), superbills, and billing policies.",
   alternates: { canonical: "/financial-disclosure" },
 };
 
@@ -43,20 +43,20 @@ export default function FinancialDisclosurePage() {
 
               <section>
                 <h2 className="text-2xl font-semibold mb-4 text-[color:var(--text-primary)]">
-                  II. Insurance Credentialing and Out-of-Network (OON) Billing
+                  II. Insurance, In-Network Participation, and Out-of-Network (OON) Billing
                 </h2>
                 <ul className="list-disc pl-6 space-y-3 mb-4">
                   <li>
-                    <strong>Current Credentialing Status:</strong> I understand that Modern Mental Health & Hormones is currently NOT IN-NETWORK with any health insurance plans, including Aetna, Anthem, BCBS, and Cigna.
+                    <strong>In-network participation:</strong> I understand that Modern Mental Health & Hormones participates in-network with certain health plans and networks (including, for example, Cigna Evernorth, United Healthcare / Optum, Medical Mutual Supermed, Anthem, Aetna, Carelon, MultiPlan, and UMR, as updated on the website and at intake). Whether my specific member plan is in-network can depend on my employer, product type, and state; I will confirm benefits with my carrier when scheduling.
                   </li>
                   <li>
-                    <strong>No Guarantee of Acceptance:</strong> I understand that this practice has applied for credentialing.
+                    <strong>No guarantee of coverage:</strong> I understand that in-network status does not guarantee that my visit will be covered, that prior authorization may be required, or that I will not owe deductibles, copays, or coinsurance as defined by my plan.
                   </li>
                   <li>
-                    <strong>No Direct Claim Submission:</strong> I understand and agree that the practice will not submit claims to my insurance company on my behalf for reimbursement.
+                    <strong>Claims and coordination:</strong> I understand that for in-network care the practice may bill my plan according to its contracts and policies. For services not covered or when I am out-of-network, I remain responsible for fees as disclosed.
                   </li>
                   <li>
-                    <strong>Superbill Provision:</strong> Upon request, the practice will provide me with a Superbill (an itemized receipt containing all necessary codes and information) that I may submit to my insurance company for potential Out-of-Network (OON) reimbursement. I understand that the decision to reimburse any portion of the fees rests solely with my insurance carrier.
+                    <strong>Superbill provision (OON):</strong> Upon request, the practice may provide me with a Superbill (an itemized receipt with appropriate codes) that I may submit to my insurance company for potential out-of-network reimbursement. Any reimbursement is solely between me and my insurer.
                   </li>
                 </ul>
               </section>

@@ -2,10 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import AcceptedInsuranceLogos from "../components/AcceptedInsuranceLogos";
+import GoogleReviewsEmbed from "../components/GoogleReviewsEmbed";
+import { acceptedInsuranceNamesSentence } from "../content/acceptedInsurance";
 
 export default function Page() {
   return (
@@ -390,8 +394,58 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PATIENT EXPERIENCE - Split Layout */}
-      <section id="testimonials" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
+      {/* ACCEPTED INSURANCE */}
+      <section
+        id="insurance"
+        className="relative pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-28 lg:pb-16 bg-gradient-to-b from-[#FCF8F0] to-[#EBE4D6] overflow-hidden"
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-[#8B9D7F]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#75866D]/10 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto text-center mb-8 md:mb-10"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-3 font-semibold">
+              Coverage
+            </p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-4 leading-tight">
+              Accepted insurance
+            </h2>
+            <p className="text-lg md:text-xl text-black/85 max-w-3xl mx-auto leading-relaxed font-light">
+              I am in-network with the plans and networks below, including{" "}
+              {acceptedInsuranceNamesSentence()}. Superbills and HSA/FSA are available as described in the{" "}
+              <Link href="/faq" className="text-[#75866D] underline underline-offset-4 hover:text-[#677560] font-medium">
+                FAQ
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/financial-disclosure"
+                className="text-[#75866D] underline underline-offset-4 hover:text-[#677560] font-medium"
+              >
+                financial disclosure
+              </Link>
+              .
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+          >
+            <AcceptedInsuranceLogos />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section id="reviews" className="relative py-24 md:py-32 lg:py-40 bg-[#EBE4D6] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
             className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto"
@@ -411,7 +465,7 @@ export default function Page() {
             >
               <Image
                 src="/reviews.jpg"
-                alt="Patient testimonials"
+                alt="Patient reviews"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -430,20 +484,19 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <p className="uppercase tracking-[0.25em] text-sm text-[#75866D] mb-4 font-semibold" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.1)' }}>
-                Hear from Patients
+                Hear from patients
               </p>
               
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 leading-tight" style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)' }}>
-                Patient Experience
+                Reviews
               </h2>
               
-              {/* Testimonial Quote */}
               <div className="bg-white p-8 md:p-10 shadow-lg mb-8">
                 <p className="text-xl md:text-2xl text-black font-light leading-relaxed italic mb-6">
-                  Real patient experiences and success stories from women who have received care at Modern MHH
+                  {`Real patient experiences and success stories from patients who have received care at Modern Mental Health & Hormones`}
                 </p>
                 <p className="text-base text-black font-medium">
-                  — Patient Testimonials
+                  — Patient reviews
                 </p>
               </div>
               
@@ -452,18 +505,22 @@ export default function Page() {
               </p>
               
               <motion.a
-                href="/testimonials"
+                href="/reviews"
                 className="inline-flex items-center justify-center bg-[#75866D] text-white px-10 py-5 font-medium text-lg hover:bg-[#677560] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Read more from Patients
+                Read more reviews
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </motion.a>
             </motion.div>
           </motion.div>
+
+          <div className="mt-16 md:mt-20 pt-10 border-t border-[#8B9D7F]/20">
+            <GoogleReviewsEmbed />
+          </div>
         </div>
       </section>
 
@@ -508,47 +565,18 @@ export default function Page() {
                 answer: (
                   <div className="space-y-4">
                     <p className="text-base md:text-lg text-black leading-relaxed font-light">
-                      Yes! I am now in-network with the following insurance providers:
+                      Yes! I am in-network with major plans and networks, including{" "}
+                      {acceptedInsuranceNamesSentence()}.
                     </p>
-                    
-                    {/* Insurance Logos */}
-                    <div className="grid grid-cols-3 gap-4 my-4">
-                      <div className="flex items-center justify-center">
-                        <div className="relative w-full h-16 flex items-center justify-center">
-                          <Image
-                            src="/cigna-logo-wallpaper-e1474921230453.webp"
-                            alt="Cigna - Evernorth"
-                            width={120}
-                            height={45}
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-center">
-                        <div className="relative w-full h-16 flex items-center justify-center">
-                          <Image
-                            src="/unitedhealthcare.webp"
-                            alt="United Healthcare / Optum"
-                            width={120}
-                            height={45}
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-center">
-                        <div className="relative w-full h-16 flex items-center justify-center">
-                          <Image
-                            src="/MedicalMutual.webp"
-                            alt="Medical Mutual - Supermed"
-                            width={120}
-                            height={45}
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
+                    <div className="my-4">
+                      <AcceptedInsuranceLogos variant="compact" />
                     </div>
+                    <p className="text-sm md:text-base text-black/80 leading-relaxed font-light">
+                      I also provide superbills for out-of-network reimbursement when applicable and accept HSA/FSA payments.{" "}
+                      <Link href="/faq" className="text-[#75866D] underline underline-offset-4 hover:text-[#677560]">
+                        Full insurance FAQ
+                      </Link>
+                    </p>
                   </div>
                 )
               },

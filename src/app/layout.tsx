@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Crimson_Text, Crimson_Pro } from "next/font/google";
+import { acceptedInsuranceCarriers } from "../content/acceptedInsurance";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const crimsonText = Crimson_Text({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-serif" });
@@ -12,11 +13,19 @@ const crimsonPro = Crimson_Pro({
   variable: '--font-caslon',
 });
 
+const insuranceKeywords = acceptedInsuranceCarriers.map((c) => c.name);
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.modernmhh.com'),
   title: "Modern Mental Health & Hormones | PMHNP for Women in Ohio",
   description:
-    "One provider, complete care — no referrals. Mental health & hormone care serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio with Stephanie Nichols, PMHNP-BC. Virtual and in-person appointments available.",
+    "One provider, complete care — no referrals. Mental health & hormone care for women in Ohio with Stephanie Nichols, PMHNP-BC. In-network with major plans including Cigna Evernorth, United Healthcare, Optum, Medical Mutual, Anthem, Aetna, Carelon, MultiPlan, and UMR where applicable. Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and statewide telehealth.",
+  keywords: [
+    "Ohio PMHNP",
+    "women's mental health Ohio",
+    "hormone care Ohio",
+    ...insuranceKeywords,
+  ],
   icons: {
     icon: [
       { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
@@ -33,7 +42,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Modern Mental Health & Hormones | Ohio",
-    description: "Mental health & hormone care for women in mid-life. Specialized care with Stephanie Nichols, PMHNP-BC serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio.",
+    description:
+      "Mental health & hormone care for women in Ohio with Stephanie Nichols, PMHNP-BC. In-network with Cigna, United Healthcare / Optum, Medical Mutual, Anthem, Aetna, Carelon, MultiPlan, UMR, and related networks where applicable. Virtual and in-person visits.",
     url: "https://www.modernmhh.com",
     siteName: "Modern Mental Health & Hormones",
     images: [
@@ -51,7 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Modern Mental Health & Hormones | Ohio",
-    description: "Mental health & hormone care for women serving Columbus, Cleveland, Cincinnati, Toledo, Akron, Dayton, and all of Ohio. Virtual and in-person appointments.",
+    description:
+      "Women's mental health & hormone care in Ohio. Major insurance plans accepted where in-network; telehealth statewide.",
     images: ['/LOGO%20PNG.png'],
   },
 };
@@ -98,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "name": "Modern Mental Health & Hormones",
                   "url": "https://www.modernmhh.com/",
                   "logo": "https://www.modernmhh.com/LOGO%20PNG.png",
+                  "description": "Psychiatric mental health and hormone-informed care for adult women in Ohio. In-network with multiple major commercial plans and networks (including Cigna Evernorth, United Healthcare, Optum, Medical Mutual, Anthem, Aetna, Carelon, MultiPlan, and UMR) where member benefits apply; superbills and HSA or FSA may be available as described on the site.",
                   "areaServed": "US-OH",
                   "medicalSpecialty": ["MentalHealth", "Women'sHealth"],
                   "founder": {

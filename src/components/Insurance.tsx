@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import AcceptedInsuranceLogos from "./AcceptedInsuranceLogos";
+import { acceptedInsuranceNamesSentence } from "../content/acceptedInsurance";
 
 type FAQ = {
   question: string;
@@ -24,51 +26,14 @@ export default function Insurance() {
             I am passionately committed to providing high-quality, specialized care that fully integrates Modern Mental Health and Hormones to your needs.
           </p>
           <p>
-            Great news! I am now in-network with the following insurance providers:
+            Great news! I am now in-network with many major plans and networks, including{" "}
+            {acceptedInsuranceNamesSentence()}.
           </p>
-          
-          {/* Insurance Logos */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-6 items-center justify-items-center">
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="relative w-full h-20 flex items-center justify-center">
-                <Image
-                  src="/cigna-logo-wallpaper-e1474921230453.webp"
-                  alt="Cigna - Evernorth"
-                  width={160}
-                  height={60}
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-sm font-medium text-black">Cigna - Evernorth</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="relative w-full h-20 flex items-center justify-center">
-                <Image
-                  src="/unitedhealthcare.webp"
-                  alt="United Healthcare / Optum"
-                  width={160}
-                  height={60}
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-sm font-medium text-black">United Healthcare / Optum</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="relative w-full h-20 flex items-center justify-center">
-                <Image
-                  src="/MedicalMutual.webp"
-                  alt="Medical Mutual - Supermed"
-                  width={160}
-                  height={60}
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-sm font-medium text-black">Medical Mutual - Supermed</p>
-            </div>
+
+          <div className="my-4">
+            <AcceptedInsuranceLogos />
           </div>
-          
+
           <p>
             I provide superbills for reimbursement if you have a different insurance provider, and I also accept HSA/FSA payments.
           </p>

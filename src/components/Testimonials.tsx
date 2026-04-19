@@ -130,10 +130,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
         >
           <p className="uppercase tracking-[0.4em] text-xs sm:text-sm text-[#75866D] font-semibold mb-4">
-            Hear from Patients
+            Hear from patients
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6">
-            Patient Experience
+            Reviews
           </h2>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#8B9D7F]"></div>

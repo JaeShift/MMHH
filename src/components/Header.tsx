@@ -15,7 +15,7 @@ export default function Header() {
   const navLinks = {
     provider: isHome ? "#about" : "/about-me",
     services: isHome ? "#services" : "/services",
-    testimonials: isHome ? "#testimonials" : "/testimonials",
+    reviews: isHome ? "#reviews" : "/reviews",
     faq: isHome ? "#faq" : "/faq",
   };
 
@@ -52,7 +52,7 @@ export default function Header() {
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={navLinks.provider} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Your Provider</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
-          <Link href={navLinks.testimonials} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Patient Experience</Link>
+          <Link href={navLinks.reviews} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">Reviews</Link>
           <div className="w-px h-4 bg-[color:var(--neutral-300)]"></div>
           <Link href={navLinks.faq} className="text-sm lg:text-base text-[color:var(--text-secondary)] hover:opacity-80 transition-opacity">FAQ&apos;s</Link>
         </nav>
@@ -129,7 +129,7 @@ export default function Header() {
                   {[
                     { href: navLinks.services, label: "Your Care" },
                     { href: navLinks.provider, label: "Your Provider" },
-                    { href: navLinks.testimonials, label: "Patient Experience" },
+                    { href: navLinks.reviews, label: "Reviews" },
                     { href: navLinks.faq, label: "FAQ's" },
                     { href: "/book/existing", label: "Sign In" }
                   ].map((item, index) => (
