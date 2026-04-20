@@ -10,9 +10,9 @@ import { OPTIMANTRA_NEW_PATIENT_URL } from "@/lib/bookingLinks";
 const STEPS = [
   {
     number: "1",
-    title: "Complete Your Registration",
+    title: "Fill Out the Form",
     description:
-      "Fill in your personal details and insurance information securely below.",
+      "Complete the secure registration below with your details and insurance information.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -21,23 +21,23 @@ const STEPS = [
   },
   {
     number: "2",
-    title: "Check Your Email",
+    title: "Receive an Email",
     description:
-      "You'll receive an email with a link to create your patient account and complete your intake forms.",
+      "You'll get a confirmation email after your form is submitted.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
   },
   {
     number: "3",
-    title: "Start Your Care",
+    title: "Stephanie Will Reach Out",
     description:
-      "Attend your appointment — available via telehealth or in-person at our office.",
+      "She'll contact you to schedule your first appointment — telehealth or in-person.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
   },
@@ -121,8 +121,8 @@ export default function NewPatientPage() {
                 Welcome — Let&apos;s Get You Started
               </h1>
               <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-                Complete your secure registration below. Stephanie personally reviews every submission
-                and her team will follow up within 1–2 business days.
+                Complete your secure registration below. You&apos;ll receive a confirmation email, then
+                Stephanie will reach out to schedule your first appointment (typically within 1–2 business days).
               </p>
             </motion.div>
 
@@ -170,7 +170,7 @@ export default function NewPatientPage() {
                 <div>
                   <p className="font-semibold text-[#75866D]">Registration submitted!</p>
                   <p className="text-sm text-[color:var(--text-secondary)] mt-0.5">
-                    Thank you — we&apos;ll be in touch within 1–2 business days to confirm your appointment.
+                    Thank you — check your email for confirmation. Stephanie will reach out to schedule your first visit.
                   </p>
                 </div>
               </motion.div>

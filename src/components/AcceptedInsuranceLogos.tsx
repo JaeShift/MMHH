@@ -13,7 +13,7 @@ export default function AcceptedInsuranceLogos({ variant = "default" }: { varian
 
   return (
     <div
-      className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 ${isCompact ? "gap-2.5" : "gap-3 sm:gap-4"} w-full`}
+      className={`grid grid-cols-2 sm:grid-cols-3 ${isCompact ? "gap-2.5" : "gap-3 sm:gap-4"} w-full`}
     >
       {acceptedInsuranceCarriers.map((carrier) => (
         <div
